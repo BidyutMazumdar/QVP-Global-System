@@ -1,6 +1,6 @@
 # QSSI™ — Quantum Sovereign Security Index System
 
-![Preview](dashboard-preview.png)
+![Preview](Screenshot_2026-03-30-11-21-51-747_com.android.chrome-edit~2.jpg)
 
 ---
 
