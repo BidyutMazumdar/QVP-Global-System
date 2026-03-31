@@ -14,7 +14,6 @@ def load_data():
         reader = csv.DictReader(f, delimiter='\t')
 
         for row in reader:
-            # 🔥 Normalize keys (fixes PQC / Risk error)
             row = {k.strip().upper(): v for k, v in row.items()}
 
             try:
@@ -24,7 +23,6 @@ def load_data():
                 res = float(row.get('RES', 0))
                 risk = float(row.get('RISK', 0))
             except ValueError:
-                # skip bad rows safely
                 continue
 
             score = 100 * (0.25*pqc + 0.25*ai + 0.25*legal + 0.25*res)
