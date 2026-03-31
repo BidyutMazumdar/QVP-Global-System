@@ -99,9 +99,31 @@ Founder, FAIR+D Canon™
 
 ---
 
+---
+
 📜 License
 
-This project is released under the MIT License.
+This project is NOT open-source.
+
+QSSI™ is licensed under a Proprietary License Agreement.
+
+Usage Terms
+
+- Academic Use:
+  Permitted for research, education, and personal study (strictly non-commercial)
+
+- Commercial / Government Use:
+  Requires a paid license and explicit written permission from the author
+
+Restrictions
+
+- No unauthorized commercial use
+- No SaaS / API monetization without license
+- No production deployment without agreement
+
+Full License
+
+See: "PROPRIETARY_LICENSE.md"
 
 ---
 
