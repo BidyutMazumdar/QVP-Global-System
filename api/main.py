@@ -11,7 +11,7 @@ def load_data():
     file_path = os.path.join(BASE_DIR, "dataset", "qssi_data.csv")
 
     with open(file_path, "r", encoding="utf-8") as f:
-        reader = csv.DictReader(f, delimiter='\t')
+        reader = csv.DictReader(f)
 
         for row in reader:
             row = {k.strip().upper(): v for k, v in row.items()}
