@@ -1,11 +1,17 @@
 from fastapi import FastAPI
 import csv
+import os
 
 app = FastAPI()
 
 def load_data():
     data = []
-    with open("dataset/qssi_data.csv", "r") as f:
+
+    # Absolute path fix (VERY IMPORTANT for Railway)
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    file_path = os.path.join(BASE_DIR, "dataset", "qssi_data.csv")
+
+    with open(file_path, "r") as f:
         reader = csv.DictReader(f)
         for row in reader:
             pqc = float(row['PQC'])
@@ -25,9 +31,11 @@ def load_data():
 
     return sorted(data, key=lambda x: x["Adjusted"], reverse=True)
 
+
 @app.get("/")
 def home():
     return {"message": "QVP Global Security Index API is running"}
+
 
 @app.get("/rankings")
 def rankings():
