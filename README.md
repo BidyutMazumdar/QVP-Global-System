@@ -4,44 +4,117 @@
 
 ## 🌍 Overview
 
-QSSI™ (Quantum Sovereign Security Index System) is a sovereign-grade global security intelligence platform designed to compute, benchmark, and visualize national security performance across countries through a structured, multi-dimensional index model.
+QSSI™ (Quantum Sovereign Security Index System) is a sovereign-grade global security intelligence platform designed to compute, benchmark, and visualize national security performance across countries using a structured, multi-dimensional index model.
 
-It establishes a computational foundation for real-time security evaluation, strategic risk assessment, and policy-grade decision intelligence.
+The system establishes a **deterministic, mathematically rigorous, and computationally reproducible foundation** for real-time security evaluation, strategic risk assessment, and policy-grade decision intelligence across sovereign systems.
+
+---
+
+## 🔗 DOI (Canonical Record)
+
+https://doi.org/10.5281/zenodo.19371223
 
 ---
 
 ## ⚙️ System Architecture
 
-QSSI™ is structured as a layered computational intelligence system:
+QSSI™ is structured as a layered deterministic computational system:
 
-- **Dataset Layer** → Structured global QSSI dataset  
-- **Engine Layer** → Scoring, normalization, and ranking algorithms  
-- **API Layer** → Programmatic data access and execution interface  
-- **Dashboard Layer** → Real-time interactive visualization  
-- **Reporting Layer** → Policy-grade analytical outputs  
+- **Dataset Layer** → Structured, normalized, and version-controlled global dataset  
+- **Engine Layer** → Deterministic scoring, normalization, and ranking algorithms  
+- **API Layer** → Stateless REST-based data access and integration interface  
+- **Frontend Layer** → Dashboard visualization and user interaction  
+- **Certification Layer** → Cryptographic identity generation and validation  
+- **Audit Layer** → Deterministic verification framework (S100–S400)  
 
----
-
-## 🌐 Live System
-
-- **API Base**  
-  https://qvp-global-system-production.up.railway.app/
-
-- **Live Dashboard**  
-  https://qvp-global-system-production.up.railway.app/dashboard
-
-- **Data Endpoint**  
-  https://qvp-global-system-production.up.railway.app/rankings
+**System = Dataset ∧ Engine ∧ API ∧ Frontend ∧ Certification ∧ Audit**
 
 ---
 
-## 📊 Core Capabilities
+## 🧮 Mathematical Model
 
-- Global security benchmarking across sovereign states  
-- Multi-factor risk assessment and comparative analysis  
-- Real-time ranking and index computation  
-- Strategic intelligence modeling for governance systems  
-- Data-driven policy evaluation and simulation  
+QSSI = w₁·PQC + w₂·AI + w₃·LEGAL + w₄·RES  
+
+QSSI_scaled = 100 × QSSI  
+
+QSSI_adj = QSSI_scaled × (1 − Risk)  
+
+ΔQSSI = QSSI_scaled − QSSI_adj  
+
+**Constraints:**
+
+- w₁ + w₂ + w₃ + w₄ = 1  
+- 0 ≤ PQC, AI, LEGAL, RES ≤ 1  
+- 0 ≤ Risk ≤ 1  
+
+---
+
+## 📊 Core Dimensions
+
+- **PQC** — Post-Quantum Cryptography Readiness  
+- **AI** — Artificial Intelligence Governance  
+- **LEGAL** — Legal Infrastructure Maturity  
+- **RES** — Systemic Resilience  
+
+---
+
+## 🔁 Deterministic Conditions
+
+QSSI(t) = QSSI(t′) ⇔ Input(t) = Input(t′)  
+
+∂QSSI / ∂Mᵢ = wᵢ > 0  
+
+∂QSSI_adj / ∂Risk < 0  
+
+Audit_PASS ⇔ S100 ∧ S200 ∧ S300 ∧ S400  
+
+---
+
+## 🔐 Certification & Security Model
+
+ID_cert = SHA3-256(System ∥ Timestamp)
+
+- **Integrity** → Cryptographic hash consistency  
+- **Authenticity** → Deterministic identity generation  
+- **Tamper Resistance** → Hash mismatch detection  
+
+---
+
+## 🌐 System Access
+
+**Repository**  
+https://github.com/BidyutMazumdar/QVP-Global-System  
+
+**Dataset**  
+https://github.com/BidyutMazumdar/QVP-Global-System/tree/main/dataset  
+
+**API Base**  
+https://qvp-global-system-production.up.railway.app/  
+
+**Dashboard**  
+https://qvp-global-system-production.up.railway.app/dashboard  
+
+**Ranking Endpoint**  
+https://qvp-global-system-production.up.railway.app/rankings  
+
+---
+
+## 🚀 Deployment Model
+
+Deploy = Data ∧ Compute ∧ Validate ∧ Publish  
+
+- Cloud-native architecture  
+- Stateless API system  
+- Real-time computation (no static caching)  
+- Horizontally scalable infrastructure  
+
+---
+
+## 📦 System Components
+
+- Global Security Index Report 2026  
+- QSSI Dataset Methodology 2026  
+- Platform & System Architecture 2026  
 
 ---
 
@@ -66,17 +139,17 @@ The QSSI™ framework integrates:
 - Comparative geopolitical analytics  
 - Data-driven decision intelligence architecture  
 
-This enables a transition from static reporting systems to dynamic, computational governance infrastructures.
+This enables the transition from static reporting systems to **computational governance infrastructures**.
 
 ---
 
 ## 🚀 System Characteristics
 
 - Fully API-driven architecture  
-- Real-time computation and ranking  
-- Cloud-native deployment (Railway)  
-- Scalable and integration-ready  
-- Designed for sovereign and institutional use  
+- Deterministic computation and ranking  
+- Real-time intelligence generation  
+- Scalable, modular, and integration-ready  
+- Designed for sovereign-grade deployment  
 
 ---
 
@@ -84,24 +157,22 @@ This enables a transition from static reporting systems to dynamic, computationa
 
 - **Sovereign License** → Country-level deployment  
 - **Institutional License** → Policy and research organizations  
-- **API Access Model** → Subscription-based integration  
+- **API Access Model** → Controlled integration access  
 
 ---
 
-## 📄 Research & Citation
+## 📌 Canonical Definition
 
-Zenodo DOI:  
-https://doi.org/10.5281/zenodo.19298458  
+QVP_Global_System = Data ∧ Computation ∧ Ranking ∧ Governance ∧ Deployment  
+
+System = Complete ∧ Consistent ∧ Deterministic ∧ Reproducible ∧ Verifiable  
 
 ---
 
-## 🔍 System Access Summary
+## 🔒 Version
 
-| Component        | Endpoint |
-|----------------|---------|
-| API Status      | `/` |
-| Rankings Data   | `/rankings` |
-| Live Dashboard  | `/dashboard` |
+Version: **2026.1.1**  
+State: **Immutable**
 
 ---
 
@@ -109,31 +180,28 @@ https://doi.org/10.5281/zenodo.19298458
 
 **Dr. B. Mazumdar**  
 Independent Researcher–Scholar  
-(AI Governance, Cybersecurity, Post-Quantum Cryptography, Digital Statecraft)  
-Founder — FAIR+D Canon (India, 2025)
+AI Governance • Cybersecurity • Post-Quantum Cryptography • Digital Statecraft  
+Founder & Principal Architect, FAIR+D Canon™
 
 ---
 
-## 📜 License
+## 📜 License (Full Legal Notice)
 
-This project is **NOT open-source**.
+Copyright © 2026 Dr. B. Mazumdar. All Rights Reserved.
 
-QSSI™ is licensed under a **Proprietary License Agreement**.
+This publication and associated system architecture constitute an original, proprietary, and non-derivative intellectual property of the author.
 
-### Usage Terms
+No license—express or implied—is granted for:
 
-- Academic Use: Permitted for research, education, and personal study (non-commercial)  
-- Commercial / Government Use: Requires a paid license and explicit written permission  
+- Reproduction  
+- Redistribution  
+- Modification  
+- Translation  
+- Derivative development  
+- Commercial exploitation  
+- Institutional adoption  
+- Operational implementation  
 
-### Restrictions
+in whole or in part, without prior written authorization from the author.
 
-- No unauthorized commercial use  
-- No SaaS / API monetization without license  
-- No production deployment without agreement  
-
-Full License:  
-See `PROPRIETARY_LICENSE.md`
-
----
-
-© 2026 QSSI™ Framework — All Rights Reserved
+All rights not expressly granted are strictly reserved.
