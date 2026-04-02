@@ -1,7 +1,8 @@
 # QSSI™ — Quantum Sovereign Security Index System
 
 ![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.19375967-blue)
-![Version](https://img.shields.io/badge/Version-2026.1.0--A-black)
+![Canonical Release](https://img.shields.io/badge/Canonical%20Release-2026.1.0--A-black)
+![Live Build](https://img.shields.io/badge/Live%20Build-v2026.1.1-success)
 ![API](https://img.shields.io/badge/API-Live-success)
 ![Dashboard](https://img.shields.io/badge/Dashboard-Live-success)
 ![License](https://img.shields.io/badge/License-Proprietary-red)
@@ -141,6 +142,9 @@ from scipy.stats import norm
 WEIGHTS = np.array([0.30, 0.25, 0.25, 0.20])
 SIGMA = np.array([0.05, 0.06, 0.04, 0.05])
 
+CANONICAL_RELEASE = "2026.1.0-A"
+LIVE_BUILD = "v2026.1.1"
+
 def compute_qssi(df):
     M = df[["PQC", "AI", "LEGAL", "RES"]].values
     df["QSSI"] = np.dot(M, WEIGHTS)
@@ -160,7 +164,7 @@ def compute_qssi(df):
     return df
 
 def system_hash(df):
-    raw = f"{df.to_csv(index=False)}_{WEIGHTS}_2026.1.0-A".encode()
+    raw = f"{df.to_csv(index=False)}_{WEIGHTS}_{CANONICAL_RELEASE}".encode()
     return hashlib.sha3_256(raw).hexdigest()
 ```
 
@@ -208,10 +212,10 @@ Domain and range framing:
 Core properties:
 
 - **Closure** — all valid inputs produce bounded valid outputs
-- **Determinism** — fixed inputs under fixed version produce fixed outputs
+- **Determinism** — fixed inputs under fixed canonical release produce fixed outputs
 - **Continuity** — the scoring function is continuous over its bounded input domain
 - **Boundedness** — adjusted scores remain in `[0,100]`
-- **Reproducibility** — fixed dataset + fixed weights + fixed version => same result
+- **Reproducibility** — fixed dataset + fixed weights + fixed canonical release => same result
 
 ---
 
@@ -249,24 +253,27 @@ UI Layer -> API Layer -> Compute Engine -> Dataset Layer -> Validation Logic -> 
 
 QSSI™ is designed around **methodological stability**.
 
-### Release Discipline
+### Version Declaration
 
-- **Current Version:** `2026.1.0-A`
-- **State:** `IMMUTABLE`
-- **Rule:** Any substantive methodological or computational change requires a **version increment**
+- **Canonical Scholarly Release (DOI):** `2026.1.0-A`
+- **Current Live Deployment Build:** `v2026.1.1`
+- **Canonical State:** `IMMUTABLE`
+- **Rule:** Any substantive methodological or computational change requires a **canonical version increment**
+- **Rule:** Non-substantive UI, deployment, or infrastructure changes may increment the **live build** without altering the canonical DOI release
 
 ### Integrity Logic
 
 ```text
 Hash = SHA3-256(Input)
-System_ID = SHA3-256(System || Version || Timestamp)
+System_ID = SHA3-256(System || Canonical_Release || Timestamp)
 ```
 
 Interpretive principles:
 
 - **Integrity** ⇔ hash-consistent content
-- **Authenticity** ⇔ version-bound deterministic identity
+- **Authenticity** ⇔ canonical-release-bound deterministic identity
 - **Tamper Signal** ⇔ hash mismatch or undocumented methodological divergence
+- **Deployment Drift Check** ⇔ live build must remain doctrinally consistent with the declared canonical release unless formally re-versioned
 
 ### Reproducibility Condition
 
@@ -275,7 +282,7 @@ A result is considered reproducible when:
 - the dataset is fixed
 - the weighting vector is fixed
 - the model logic is fixed
-- the release version is fixed
+- the canonical release is fixed
 
 ---
 
@@ -289,7 +296,7 @@ This repository already includes critical institutional files:
 - `docs/` — methodology, explanatory, and support documentation
 - `reports/` — generated outputs and publication artifacts
 
-> For institutional credibility, the repository should preserve consistency between the README, the data source file, the codebase, and any published DOI record.
+> For institutional credibility, the repository should preserve consistency between the README, the data source file, the codebase, the live deployment surface, and any published DOI record.
 
 ---
 
@@ -357,7 +364,7 @@ QSSI™ may be used as a structured framework for:
 https://doi.org/10.5281/zenodo.19375967
 
 **Recommended canonical citation record:**  
-Bidyut, M. (2026). *Quantum Veil Protocol (QVP) — Global System 2026: Sovereign Digital Security Index (QSSI), Methodology, Mathematical Architecture, and Platform Framework (2026.1.0).* Zenodo. https://doi.org/10.5281/zenodo.19375967
+Bidyut, M. (2026). *Quantum Veil Protocol (QVP) — Global System 2026: Sovereign Digital Security Index (QSSI), Methodology, Mathematical Architecture, and Platform Framework (2026.1.0-A).* Zenodo. https://doi.org/10.5281/zenodo.19375967
 
 ---
 
@@ -375,8 +382,10 @@ If referencing this repository in academic, institutional, policy, or technical 
 Suggested format:
 
 ```text
-Bidyut, M. (2026). Quantum Veil Protocol (QVP) — Global System 2026: Sovereign Digital Security Index (QSSI), Methodology, Mathematical Architecture, and Platform Framework (Version 2026.1.0). Zenodo. https://doi.org/10.5281/zenodo.19375967
+Bidyut, M. (2026). Quantum Veil Protocol (QVP) — Global System 2026: Sovereign Digital Security Index (QSSI), Methodology, Mathematical Architecture, and Platform Framework (Version 2026.1.0-A). Zenodo. https://doi.org/10.5281/zenodo.19375967
 ```
+
+> For live platform references, the deployment build may additionally be noted as `v2026.1.1` where operational context is relevant.
 
 ---
 
@@ -419,6 +428,8 @@ All naming, framework architecture, documentation structure, and release discipl
 - documentation files
 - reports
 - public deployment surfaces
+- canonical scholarly release declarations
+- live deployment build declarations
 
 ---
 
@@ -433,11 +444,12 @@ https://github.com/BidyutMazumdar/QVP-Global-System
 
 **Current Release State:** `PUBLIC / LIVE / VERSIONED / DEPLOYED`
 
+- Canonical DOI release: `2026.1.0-A`
+- Current live deployment build: `v2026.1.1`
 - Public repository active
 - Live API reachable
 - Dashboard published
 - DOI minted
-- Version fixed
 - Documentation active
 
 ---
