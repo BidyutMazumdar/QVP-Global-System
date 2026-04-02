@@ -1,10 +1,10 @@
 # QSSI™ — Quantum Sovereign Security Index System
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19375967.svg)](https://doi.org/10.5281/zenodo.19375967)
-[![Canonical Release](https://img.shields.io/badge/Canonical%20Release-2026.1.0--A-black.svg)](#-integrity--version-discipline)
-[![Live Build](https://img.shields.io/badge/Live%20Build-v2026.1.1-brightgreen.svg)](#-integrity--version-discipline)
-[![API](https://img.shields.io/badge/API-live-success.svg)](https://qvp-global-system-production.up.railway.app/)
-[![Dashboard](https://img.shields.io/badge/Dashboard-live-success.svg)](https://qvp-global-system-production.up.railway.app/dashboard)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19375967.svg)](https://doi.org/10.5281/zenodo.19375967)  
+[![Canonical Release](https://img.shields.io/badge/Canonical%20Release-2026.1.0--A-black.svg)](#integrity--version-discipline)  
+[![Live Build](https://img.shields.io/badge/Live%20Build-v2026.1.1-brightgreen.svg)](#integrity--version-discipline)  
+[![API](https://img.shields.io/badge/API-live-success.svg)](https://qvp-global-system-production.up.railway.app/)  
+[![Dashboard](https://img.shields.io/badge/Dashboard-live-success.svg)](https://qvp-global-system-production.up.railway.app/dashboard)  
 [![License](https://img.shields.io/badge/License-Proprietary-red.svg)](./PROPRIETARY_LICENSE.md)
 
 > **A sovereign-grade, computationally deployable national security benchmarking platform for deterministic scoring, risk-adjusted ranking, and live comparative intelligence across nations.**
@@ -13,50 +13,55 @@
 
 ## Executive Summary
 
-**QSSI™ (Quantum Sovereign Security Index System)** is a **research-grade and platform-grade sovereign security benchmarking architecture** designed to compute, rank, and visualize national security readiness using a reproducible, weighted, multi-dimensional index model.
+**QSSI™ (Quantum Sovereign Security Index System)** is a **research-grade and platform-grade sovereign security benchmarking architecture** designed to compute, rank, and visualize national security readiness through a reproducible, weighted, multi-dimensional index model.
 
-Unlike purely conceptual frameworks, **QSSI™ is operationalized as a live, versioned system** with:
+It is presented not merely as a conceptual framework, but as a **live, versioned computational system** with:
 
-- **deterministic scoring**
-- **risk-adjusted sovereign ranking**
-- **machine-readable API outputs**
-- **public dashboard deployment**
-- **version-disciplined computational integrity**
-- **formal scholarly anchoring via DOI**
+- deterministic scoring
+- risk-adjusted sovereign ranking
+- machine-readable API outputs
+- public dashboard deployment
+- version-disciplined computational integrity
+- formal scholarly anchoring via DOI
 
-QSSI™ is structured for **institutional review, policy-facing interpretation, computational demonstration, and public infrastructure-grade presentation**.
+QSSI™ is structured for:
 
----
-
-## Live System
-
-- **API Base:** `https://qvp-global-system-production.up.railway.app/`
-- **Dashboard:** `https://qvp-global-system-production.up.railway.app/dashboard`
-- **Rankings (JSON):** `https://qvp-global-system-production.up.railway.app/rankings`
+- institutional review
+- computational governance demonstration
+- policy-facing analytical interpretation
+- reproducible public benchmarking
+- infrastructure-grade platform presentation
 
 ---
 
-## Why This Repository Commands Attention
+## Live Access
 
-QSSI™ is not presented as a speculative concept or static white-paper artifact.
+- **API Base:** [https://qvp-global-system-production.up.railway.app/](https://qvp-global-system-production.up.railway.app/)
+- **Dashboard:** [https://qvp-global-system-production.up.railway.app/dashboard](https://qvp-global-system-production.up.railway.app/dashboard)
+- **Rankings (JSON):** [https://qvp-global-system-production.up.railway.app/rankings](https://qvp-global-system-production.up.railway.app/rankings)
 
-It is presented as a **deployable sovereign systems reference** that combines:
+---
 
-- **formal methodological structure**
-- **live computational execution**
-- **publicly inspectable outputs**
-- **version-bound reproducibility**
-- **integrity-aware release discipline**
-- **institutional documentation architecture**
+## Why This Repository Matters
 
-This makes the repository relevant for:
+QSSI™ is designed as a **deployable sovereign systems reference** rather than a static white-paper artifact.
 
-- reviewers and academic evaluators
-- sovereign systems researchers
+It combines:
+
+- formal methodological structure
+- live computational execution
+- publicly inspectable outputs
+- version-bound reproducibility
+- integrity-aware release discipline
+- institutional documentation architecture
+
+This repository may be relevant for:
+
+- academic and scholarly reviewers
 - public policy and strategic analysis observers
 - computational governance audiences
-- infrastructure and platform assessors
-- award, grant, and institutional screening contexts
+- infrastructure and platform evaluators
+- grant, award, and institutional screening contexts
 
 ---
 
@@ -86,7 +91,7 @@ Score_i = QSSI_adj_i - epsilon
 - **Tier C** — `50 <= QSSI_adj < 75`
 - **Tier D** — `QSSI_adj < 50`
 
-> This README provides an executive mathematical summary only. Detailed methodological implementation should be maintained in source files and technical documentation.
+> This README provides an executive mathematical summary only. Detailed implementation and methodological controls should be maintained in the source code and technical documentation.
 
 ---
 
@@ -170,7 +175,13 @@ Core properties:
 UI Layer -> API Layer -> Compute Engine -> Dataset Layer -> Validation Logic -> Output Surface
 ```
 
-QSSI™ is operationally structured as a **live sovereign intelligence platform**, not merely a descriptive model.
+QSSI™ is structured as a **live sovereign intelligence platform** with:
+
+- dashboard presentation
+- machine-readable API output
+- deterministic scoring engine
+- structured dataset layer
+- reproducibility-aware validation logic
 
 ---
 
@@ -203,7 +214,7 @@ QVP-Global-System/
 ### Governance Rule
 
 - substantive methodological or computational changes require a **canonical version increment**
-- UI, deployment, or infrastructure refinements may increment the **live build** without altering the DOI-bound canonical release
+- deployment, interface, or infrastructure refinements may increment the **live build** without altering the DOI-bound canonical release
 
 ### Integrity Logic
 
@@ -216,11 +227,11 @@ System_ID = SHA3-256(System || Canonical_Release || Timestamp)
 
 ## Documentation
 
-- `README.md` — public institutional overview
-- `DATA_SOURCES.md` — data provenance discipline
-- `PROPRIETARY_LICENSE.md` — governing legal instrument
-- `docs/` — technical and methodological documentation
-- `reports/` — generated outputs and publication artifacts
+- [`README.md`](./README.md) — public institutional overview
+- [`DATA_SOURCES.md`](./DATA_SOURCES.md) — data provenance discipline
+- [`PROPRIETARY_LICENSE.md`](./PROPRIETARY_LICENSE.md) — governing legal instrument
+- [`docs/`](./docs/) — technical and methodological documentation
+- [`reports/`](./reports/) — generated outputs and publication artifacts
 
 ---
 
@@ -268,8 +279,8 @@ QSSI™ may be used for:
 
 ## Canonical DOI Record
 
-- **DOI:** `https://doi.org/10.5281/zenodo.19375967`
-- **ORCID:** `https://orcid.org/0009-0007-5615-3558`
+- **DOI:** [https://doi.org/10.5281/zenodo.19375967](https://doi.org/10.5281/zenodo.19375967)
+- **ORCID:** [https://orcid.org/0009-0007-5615-3558](https://orcid.org/0009-0007-5615-3558)
 
 ### Canonical Citation
 
@@ -291,7 +302,7 @@ Founder & Principal Architect, FAIR+D Canon™
 
 This repository is governed by a **proprietary license**.
 
-- See: `PROPRIETARY_LICENSE.md`
+- See: [`PROPRIETARY_LICENSE.md`](./PROPRIETARY_LICENSE.md)
 
 **High-level summary:**
 
@@ -315,6 +326,12 @@ This repository is governed by a **proprietary license**.
 - Dashboard published
 - DOI minted
 - Documentation active
+
+---
+
+## Repository
+
+- **GitHub:** [https://github.com/BidyutMazumdar/QVP-Global-System](https://github.com/BidyutMazumdar/QVP-Global-System)
 
 ---
 
