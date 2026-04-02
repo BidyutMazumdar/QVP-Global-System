@@ -1,18 +1,18 @@
 # QSSI™ — Quantum Sovereign Security Index System
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19375967.svg)](https://doi.org/10.5281/zenodo.19375967)
-[![Version](https://img.shields.io/badge/version-2026.1.0--A-blue.svg)](#-versioning--release-discipline)
-[![API](https://img.shields.io/badge/API-live-success.svg)](https://qvp-global-system-production.up.railway.app/)
-[![Dashboard](https://img.shields.io/badge/dashboard-live-brightgreen.svg)](https://qvp-global-system-production.up.railway.app/dashboard)
-[![License](https://img.shields.io/badge/license-proprietary-red.svg)](./PROPRIETARY_LICENSE.md)
+![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.19375967-blue)
+![Version](https://img.shields.io/badge/Version-2026.1.0--A-black)
+![API](https://img.shields.io/badge/API-Live-success)
+![Dashboard](https://img.shields.io/badge/Dashboard-Live-success)
+![License](https://img.shields.io/badge/License-Proprietary-red)
 
-> **Sovereign-grade global security benchmarking platform for deterministic scoring, risk-adjusted ranking, and live comparative security intelligence across nations.**
+**Sovereign-grade global security benchmarking platform for deterministic scoring, risk-adjusted ranking, and live comparative security intelligence across nations.**
 
 ---
 
 ## 🌍 Overview
 
-**QSSI™ (Quantum Sovereign Security Index System)** is a structured national-security benchmarking platform designed to **compute, rank, and visualize sovereign security performance across countries** using a reproducible, weighted, multi-dimensional index model.
+QSSI™ (Quantum Sovereign Security Index System) is a structured national-security benchmarking platform designed to compute, rank, and visualize sovereign security performance across countries using a reproducible, weighted, multi-dimensional index model.
 
 It combines:
 
@@ -23,7 +23,7 @@ It combines:
 - live dashboard access
 - versioned methodological discipline
 
-QSSI™ is intended as a **research-grade and platform-grade framework** for:
+QSSI™ is intended as a research-grade and platform-grade framework for:
 
 - comparative sovereign security analysis
 - structured resilience benchmarking
@@ -35,20 +35,20 @@ QSSI™ is intended as a **research-grade and platform-grade framework** for:
 
 ## 🚀 Live Access
 
-- **API Base:**  
-  https://qvp-global-system-production.up.railway.app/
+**API Base:**  
+https://qvp-global-system-production.up.railway.app/
 
-- **Dashboard:**  
-  https://qvp-global-system-production.up.railway.app/dashboard
+**Dashboard:**  
+https://qvp-global-system-production.up.railway.app/dashboard
 
-- **Rankings (JSON):**  
-  https://qvp-global-system-production.up.railway.app/rankings
+**Rankings (JSON):**  
+https://qvp-global-system-production.up.railway.app/rankings
 
 ---
 
 ## ⭐ Why This Repository Matters
 
-This repository provides a **public, versioned, computational reference** for a sovereign-grade security scoring system that is:
+This repository provides a public, versioned, computational reference for a sovereign-grade security scoring system that is:
 
 - **deterministic** — fixed inputs produce reproducible outputs
 - **structured** — scoring is defined over explicit weighted dimensions
@@ -57,7 +57,7 @@ This repository provides a **public, versioned, computational reference** for a 
 - **platform-ready** — the system is deployable as a service, not only a paper framework
 - **audit-oriented** — integrity signaling and version discipline are part of the design logic
 
-For reviewers, institutions, developers, and researchers, the value of QSSI™ is that it is not presented only as a conceptual doctrine — it is presented as a **computationally framed, operationally deployable benchmark system**.
+For reviewers, institutions, developers, and researchers, the value of QSSI™ is that it is not presented only as a conceptual doctrine — it is presented as a computationally framed, operationally deployable benchmark system.
 
 ---
 
@@ -72,10 +72,9 @@ QSSI™ uses four normalized scoring dimensions:
 
 ### Canonical Inputs
 
-```text
-M = (PQC, AI, LEGAL, RES), each in [0,1]
-w = (0.30, 0.25, 0.25, 0.20), sum(w) = 1
-Risk in [0,1]
+- `M = (PQC, AI, LEGAL, RES)`, each in `[0,1]`
+- `w = (0.30, 0.25, 0.25, 0.20)`, `sum(w) = 1`
+- `Risk ∈ [0,1]`
 
 ### Core Score
 
