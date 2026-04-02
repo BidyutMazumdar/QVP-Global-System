@@ -78,19 +78,25 @@ QSSI™ uses four normalized scoring dimensions:
 
 ### Core Score
 
-    QSSI = sum(w_i * M_i)
-    QSSI_scaled = 100 * QSSI
-    QSSI_adj = QSSI_scaled * (1 - Risk)
+```text
+QSSI = sum(w_i * M_i)
+QSSI_scaled = 100 * QSSI
+QSSI_adj = QSSI_scaled * (1 - Risk)
+```
 
 ### Uncertainty Layer
 
-    epsilon = sqrt(sum((w_i^2) * (sigma_i^2))) * 100
-    QSSI_final = QSSI_adj ± epsilon
+```text
+epsilon = sqrt(sum((w_i^2) * (sigma_i^2))) * 100
+QSSI_final = QSSI_adj ± epsilon
+```
 
 ### Ranking Rule
 
-    Score_i = QSSI_adj_i - epsilon
-    Rank = descending sort by Score_i
+```text
+Score_i = QSSI_adj_i - epsilon
+Rank = descending sort by Score_i
+```
 
 ### Tier Model
 
@@ -116,7 +122,9 @@ QSSI™ uses four normalized scoring dimensions:
 
 ### Example Request
 
-    curl https://qvp-global-system-production.up.railway.app/rankings
+```bash
+curl https://qvp-global-system-production.up.railway.app/rankings
+```
 
 > Future releases may expose additional versioned service endpoints such as `/health`, `/version`, `/audit/hash`, `/docs`, or `/openapi.json` depending on deployment evolution.
 
@@ -124,51 +132,55 @@ QSSI™ uses four normalized scoring dimensions:
 
 ## 🧠 Computational Reference (Python)
 
-    import pandas as pd
-    import numpy as np
-    import hashlib
-    from scipy.stats import norm
+```python
+import pandas as pd
+import numpy as np
+import hashlib
+from scipy.stats import norm
 
-    WEIGHTS = np.array([0.30, 0.25, 0.25, 0.20])
-    SIGMA = np.array([0.05, 0.06, 0.04, 0.05])
+WEIGHTS = np.array([0.30, 0.25, 0.25, 0.20])
+SIGMA = np.array([0.05, 0.06, 0.04, 0.05])
 
-    def compute_qssi(df):
-        M = df[["PQC", "AI", "LEGAL", "RES"]].values
-        df["QSSI"] = np.dot(M, WEIGHTS)
-        df["QSSI_scaled"] = df["QSSI"] * 100
-        df["QSSI_adj"] = df["QSSI_scaled"] * (1 - df["Risk"])
+def compute_qssi(df):
+    M = df[["PQC", "AI", "LEGAL", "RES"]].values
+    df["QSSI"] = np.dot(M, WEIGHTS)
+    df["QSSI_scaled"] = df["QSSI"] * 100
+    df["QSSI_adj"] = df["QSSI_scaled"] * (1 - df["Risk"])
 
-        df["epsilon"] = np.sqrt(np.sum((WEIGHTS ** 2) * (SIGMA ** 2))) * 100
+    df["epsilon"] = np.sqrt(np.sum((WEIGHTS ** 2) * (SIGMA ** 2))) * 100
 
-        df["Score"] = df["QSSI_adj"] - df["epsilon"]
-        df = df.sort_values(by="Score", ascending=False).reset_index(drop=True)
-        df["Rank"] = np.arange(1, len(df) + 1)
+    df["Score"] = df["QSSI_adj"] - df["epsilon"]
+    df = df.sort_values(by="Score", ascending=False).reset_index(drop=True)
+    df["Rank"] = np.arange(1, len(df) + 1)
 
-        threshold = df["QSSI_adj"].mean() - 0.5 * df["QSSI_adj"].std()
-        prob = 1 - norm.cdf((threshold - df["QSSI_adj"]) / df["epsilon"])
+    threshold = df["QSSI_adj"].mean() - 0.5 * df["QSSI_adj"].std()
+    prob = 1 - norm.cdf((threshold - df["QSSI_adj"]) / df["epsilon"])
 
-        df["Cert_VALID"] = prob >= 0.5
-        return df
+    df["Cert_VALID"] = prob >= 0.5
+    return df
 
-    def system_hash(df):
-        raw = f"{df.to_csv(index=False)}_{WEIGHTS}_2026.1.0-A".encode()
-        return hashlib.sha3_256(raw).hexdigest()
+def system_hash(df):
+    raw = f"{df.to_csv(index=False)}_{WEIGHTS}_2026.1.0-A".encode()
+    return hashlib.sha3_256(raw).hexdigest()
+```
 
 ---
 
 ## 🏗️ Repository Structure
 
-    QVP-Global-System/
-    ├── api/                # API layer and service interfaces
-    ├── dataset/            # Source data and structured scoring inputs
-    ├── docs/               # Documentation, methodology, and support materials
-    ├── engine/             # Core scoring and ranking computation logic
-    ├── reports/            # Output artifacts, rankings, and report materials
-    ├── .gitignore
-    ├── DATA_SOURCES.md
-    ├── PROPRIETARY_LICENSE.md
-    ├── README.md
-    └── requirements.txt
+```text
+QVP-Global-System/
+├── api/                # API layer and service interfaces
+├── dataset/            # Source data and structured scoring inputs
+├── docs/               # Documentation, methodology, and support materials
+├── engine/             # Core scoring and ranking computation logic
+├── reports/            # Output artifacts, rankings, and report materials
+├── .gitignore
+├── DATA_SOURCES.md
+├── PROPRIETARY_LICENSE.md
+├── README.md
+└── requirements.txt
+```
 
 > This structure is aligned to the current public repository layout.
 
@@ -178,7 +190,9 @@ QSSI™ uses four normalized scoring dimensions:
 
 QSSI™ can be expressed as a deterministic sovereign scoring function:
 
-    F : (M, Risk, sigma) -> (QSSI_adj, epsilon, Rank, Cert)
+```text
+F : (M, Risk, sigma) -> (QSSI_adj, epsilon, Rank, Cert)
+```
 
 Where:
 
@@ -207,7 +221,9 @@ The platform is structured as a deployable sovereign intelligence system rather 
 
 ### Canonical Architecture
 
-    UI Layer -> API Layer -> Compute Engine -> Dataset Layer -> Validation Logic -> Output / Ranking Surface
+```text
+UI Layer -> API Layer -> Compute Engine -> Dataset Layer -> Validation Logic -> Output / Ranking Surface
+```
 
 ### Operational Interpretation
 
@@ -241,8 +257,10 @@ QSSI™ is designed around **methodological stability**.
 
 ### Integrity Logic
 
-    Hash = SHA3-256(Input)
-    System_ID = SHA3-256(System || Version || Timestamp)
+```text
+Hash = SHA3-256(Input)
+System_ID = SHA3-256(System || Version || Timestamp)
+```
 
 Interpretive principles:
 
@@ -279,28 +297,40 @@ This repository already includes critical institutional files:
 
 ### 1) Clone the repository
 
-    git clone https://github.com/BidyutMazumdar/QVP-Global-System.git
-    cd QVP-Global-System
+```bash
+git clone https://github.com/BidyutMazumdar/QVP-Global-System.git
+cd QVP-Global-System
+```
 
 ### 2) Create virtual environment (recommended)
 
-    python -m venv .venv
+```bash
+python -m venv .venv
+```
 
 Windows:
 
-    .venv\Scripts\activate
+```bash
+.venv\Scripts\activate
+```
 
 Linux / macOS:
 
-    source .venv/bin/activate
+```bash
+source .venv/bin/activate
+```
 
 ### 3) Install dependencies
 
-    pip install -r requirements.txt
+```bash
+pip install -r requirements.txt
+```
 
 ### 4) Run the platform (adjust to actual entrypoint if needed)
 
-    python api/app.py
+```bash
+python api/app.py
+```
 
 > If your actual API entrypoint differs (for example `main.py`, `server.py`, `run.py`, or FastAPI/Uvicorn boot commands), keep this README aligned to the real implementation.
 
@@ -344,7 +374,9 @@ If referencing this repository in academic, institutional, policy, or technical 
 
 Suggested format:
 
-    Bidyut, M. (2026). Quantum Veil Protocol (QVP) — Global System 2026: Sovereign Digital Security Index (QSSI), Methodology, Mathematical Architecture, and Platform Framework (Version 2026.1.0). Zenodo. https://doi.org/10.5281/zenodo.19375967
+```text
+Bidyut, M. (2026). Quantum Veil Protocol (QVP) — Global System 2026: Sovereign Digital Security Index (QSSI), Methodology, Mathematical Architecture, and Platform Framework (Version 2026.1.0). Zenodo. https://doi.org/10.5281/zenodo.19375967
+```
 
 ---
 
