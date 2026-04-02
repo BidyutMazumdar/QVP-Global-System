@@ -219,4 +219,47 @@ Proprietary Sovereign Systems Architecture & Governance Framework
 
 © Copyright
 
-© 2026 Dr. B. Mazumdar. All Rights Reserved. Proprietary Sovereign Digital Security Infrastructure Framework
+© 2026 Dr. B. Mazumdar. All Rights Reserved.
+Proprietary Sovereign Digital Security Infrastructure Framework
+
+
+---
+
+🌐 System Access Layer
+
+🔗 Core Endpoints
+
+API Base
+https://qvp-global-system-production.up.railway.app/
+
+Live Dashboard (UI Layer)
+https://qvp-global-system-production.up.railway.app/dashboard
+
+Ranking Data Endpoint (JSON API)
+https://qvp-global-system-production.up.railway.app/rankings
+
+
+---
+
+📡 Endpoint Description
+
+Endpoint	Type	Description
+
+/	Status	API service health check
+/rankings	Data API	Real-time QSSI rankings (JSON)
+/dashboard	UI Layer	Live interactive dashboard
+
+
+
+---
+
+⚙️ Access Characteristics
+
+Real-time computed data (no static caching)
+API-driven frontend architecture
+Cloud-native deployment (Railway)
+Stateless service design
+Direct integration ready (REST API)
+
+
+---
