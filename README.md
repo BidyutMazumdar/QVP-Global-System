@@ -12,196 +12,211 @@ The system establishes a **deterministic, mathematically rigorous, and computati
 
 ## 🔗 DOI (Canonical Record)
 
-https://doi.org/10.5281/zenodo.19371223
+**https://doi.org/10.5281/zenodo.19375967**
 
 ---
 
-## ⚙️ System Architecture
+## 🧾 Citation
 
-QSSI™ is structured as a layered deterministic computational system:
-
-- **Dataset Layer** → Structured, normalized, and version-controlled global dataset  
-- **Engine Layer** → Deterministic scoring, normalization, and ranking algorithms  
-- **API Layer** → Stateless REST-based data access and integration interface  
-- **Frontend Layer** → Dashboard visualization and user interaction  
-- **Certification Layer** → Cryptographic identity generation and validation  
-- **Audit Layer** → Deterministic verification framework (S100–S400)  
-
-**System = Dataset ∧ Engine ∧ API ∧ Frontend ∧ Certification ∧ Audit**
+**Bidyut, M. (2026). Quantum Veil Protocol (QVP) — Global System 2026: Sovereign Digital Security Index (QSSI), Methodology, Mathematical Architecture, and Platform Framework (2026.1.0). Zenodo. https://doi.org/10.5281/zenodo.19375967**
 
 ---
 
-## 🧮 Mathematical Model
+## 🆔 ORCID
 
-QSSI = w₁·PQC + w₂·AI + w₃·LEGAL + w₄·RES  
-
-QSSI_scaled = 100 × QSSI  
-
-QSSI_adj = QSSI_scaled × (1 − Risk)  
-
-ΔQSSI = QSSI_scaled − QSSI_adj  
-
-**Constraints:**
-
-- w₁ + w₂ + w₃ + w₄ = 1  
-- 0 ≤ PQC, AI, LEGAL, RES ≤ 1  
-- 0 ≤ Risk ≤ 1  
+**https://orcid.org/0009-0007-5615-3558**
 
 ---
 
-## 📊 Core Dimensions
+## ⚙️ Core Mathematical Framework
 
-- **PQC** — Post-Quantum Cryptography Readiness  
-- **AI** — Artificial Intelligence Governance  
-- **LEGAL** — Legal Infrastructure Maturity  
-- **RES** — Systemic Resilience  
-
----
-
-## 🔁 Deterministic Conditions
-
-QSSI(t) = QSSI(t′) ⇔ Input(t) = Input(t′)  
-
-∂QSSI / ∂Mᵢ = wᵢ > 0  
-
-∂QSSI_adj / ∂Risk < 0  
-
-Audit_PASS ⇔ S100 ∧ S200 ∧ S300 ∧ S400  
+**M = (PQC, AI, LEGAL, RES) ∈ [0,1]⁴**  
+**w = (0.30, 0.25, 0.25, 0.20), Σ wᵢ = 1**  
+**Risk ∈ [0,1]**
 
 ---
 
-## 🔐 Certification & Security Model
+## 📐 Deterministic Model
 
-ID_cert = SHA3-256(System ∥ Timestamp)
-
-- **Integrity** → Cryptographic hash consistency  
-- **Authenticity** → Deterministic identity generation  
-- **Tamper Resistance** → Hash mismatch detection  
-
----
-
-## 🌐 System Access
-
-**Repository**  
-https://github.com/BidyutMazumdar/QVP-Global-System  
-
-**Dataset**  
-https://github.com/BidyutMazumdar/QVP-Global-System/tree/main/dataset  
-
-**API Base**  
-https://qvp-global-system-production.up.railway.app/  
-
-**Dashboard**  
-https://qvp-global-system-production.up.railway.app/dashboard  
-
-**Ranking Endpoint**  
-https://qvp-global-system-production.up.railway.app/rankings  
+**QSSI = Σ (wᵢ · Mᵢ)**  
+**QSSI_scaled = 100 × QSSI**  
+**QSSI_adj = QSSI_scaled × (1 − Risk)**  
+**ΔQSSI = QSSI_scaled − QSSI_adj**
 
 ---
 
-## 🚀 Deployment Model
+## 📊 Uncertainty Model
 
-Deploy = Data ∧ Compute ∧ Validate ∧ Publish  
-
-- Cloud-native architecture  
-- Stateless API system  
-- Real-time computation (no static caching)  
-- Horizontally scalable infrastructure  
+**σᵢ² = Var(Mᵢ)**  
+**ε = √(Σ (wᵢ² · σᵢ²)) × 100**  
+**QSSI_final = QSSI_adj ± ε**  
+**0 ≤ ε ≤ 5**
 
 ---
 
-## 📦 System Components
+## 📈 Probabilistic Framework
 
-- Global Security Index Report 2026  
-- QSSI Dataset Methodology 2026  
-- Platform & System Architecture 2026  
+**QSSIᵢ ~ 𝒩(μᵢ, ε²)**  
+**μᵢ = QSSI_adjᵢ**
 
----
+**P(i ≻ j) = Φ((μᵢ − μⱼ) / √(ε² + ε²))**
 
-## 🏛 Institutional Relevance
+**E[Rankᵢ] = 1 + Σⱼ≠ᵢ P(j ≻ i)**
 
-QSSI™ is designed for deployment across:
+**Scoreᵢ = μᵢ − ε**
 
-- National Governments  
-- Defence and Security Ministries  
-- Strategic Policy Institutions  
-- International Organizations  
-- Intelligence and Risk Analysis Units  
+**Rank = sort_desc(Scoreᵢ)**
 
 ---
 
-## 🧠 Methodological Foundation
+## 🧩 Tier Classification
 
-The QSSI™ framework integrates:
-
-- Multi-variable index modeling  
-- Weighted scoring and normalization techniques  
-- Comparative geopolitical analytics  
-- Data-driven decision intelligence architecture  
-
-This enables the transition from static reporting systems to **computational governance infrastructures**.
+**Tier A: QSSI_adj ≥ 85**  
+**Tier B: 75 ≤ QSSI_adj < 85**  
+**Tier C: 50 ≤ QSSI_adj < 75**  
+**Tier D: QSSI_adj < 50**
 
 ---
 
-## 🚀 System Characteristics
+## 🔀 Multi-Data Fusion
 
-- Fully API-driven architecture  
-- Deterministic computation and ranking  
-- Real-time intelligence generation  
-- Scalable, modular, and integration-ready  
-- Designed for sovereign-grade deployment  
+**QSSI_fused = Σ (αₖ · QSSI^(k)), Σ αₖ = 1**
 
----
+**σ_fused² = Σ (αₖ² σₖ²) + 2 Σ_{k<l} αₖ αₗ Cov(k,l)**
 
-## 💰 Licensing & Deployment Model
-
-- **Sovereign License** → Country-level deployment  
-- **Institutional License** → Policy and research organizations  
-- **API Access Model** → Controlled integration access  
+**QSSI_fused_final = QSSI_fused ± σ_fused**
 
 ---
 
-## 📌 Canonical Definition
+## 🏅 Certification Model
 
-QVP_Global_System = Data ∧ Computation ∧ Ranking ∧ Governance ∧ Deployment  
+**μ_global = mean(QSSI_adj)**  
+**σ_global = std(QSSI_adj)**
 
-System = Complete ∧ Consistent ∧ Deterministic ∧ Reproducible ∧ Verifiable  
+**Cert_VALID ⇔ (QSSI_adj − ε) ≥ μ_global − 0.5·σ_global ∧ Audit_PASS**
 
----
+**P(QSSI_adj ≥ Threshold) = 1 − Φ((Threshold − μ) / ε)**
 
-## 🔒 Version
-
-Version: **2026.1.1**  
-State: **Immutable**
+**ID_cert = SHA3-256(System ∥ Dataset ∥ Version ∥ Timestamp)**
 
 ---
 
-## 👤 Author
+## 🔍 Audit System
 
-**Dr. B. Mazumdar**  
-Independent Researcher–Scholar  
-AI Governance • Cybersecurity • Post-Quantum Cryptography • Digital Statecraft  
+**S100 ⇔ Data Integrity**  
+**S200 ⇔ Computation Consistency**  
+**S300 ⇔ Ranking Verification**  
+**S400 ⇔ Certification Validation**
+
+**Audit_PASS ⇔ S100 ∧ S200 ∧ S300 ∧ S400**
+
+---
+
+## 🏗️ System Architecture
+
+**System = Frontend ∧ API ∧ Engine ∧ Data ∧ Certification ∧ Audit**
+
+**Flow = UI → API → Engine → Data → Certification → Audit**
+
+**Deploy = Data ∧ Compute ∧ Validate ∧ Publish**
+
+**Scale(System) ∝ Nodes × Throughput**
+
+**Distributed Nodes ∧ Load Balancing ∧ Parallel Execution ∧ Stateless Architecture**
+
+---
+
+## 🔐 Security Model
+
+**Hash = SHA3-256(Input)**  
+**System_ID = SHA3-256(System ∥ Version ∥ Timestamp)**
+
+**Integrity ⇔ Hash Valid**  
+**Authenticity ⇔ Deterministic ID**  
+**Tamper ⇔ Hash Mismatch**
+
+---
+
+## 🧠 Computational Core (Python)
+
+```python
+import pandas as pd
+import numpy as np
+import hashlib
+from scipy.stats import norm
+
+WEIGHTS = np.array([0.30, 0.25, 0.25, 0.20])
+SIGMA = np.array([0.05, 0.06, 0.04, 0.05])
+
+def compute_qssi(df):
+    M = df[["PQC","AI","LEGAL","RES"]].values
+    df["QSSI"] = np.dot(M, WEIGHTS)
+    df["QSSI_scaled"] = df["QSSI"] * 100
+    df["QSSI_adj"] = df["QSSI_scaled"] * (1 - df["Risk"])
+
+    df["ε"] = np.sqrt(np.sum((WEIGHTS**2)*(SIGMA**2))) * 100
+
+    df["Score"] = df["QSSI_adj"] - df["ε"]
+    df = df.sort_values(by="Score", ascending=False).reset_index(drop=True)
+    df["Rank"] = np.arange(1, len(df)+1)
+
+    threshold = df["QSSI_adj"].mean() - 0.5 * df["QSSI_adj"].std()
+    prob = 1 - norm.cdf((threshold - df["QSSI_adj"]) / df["ε"])
+
+    df["Cert_VALID"] = prob >= 0.5
+    return df
+
+def system_hash(df):
+    raw = f"{df.to_csv(index=False)}_{WEIGHTS}_2026.1.0-A".encode()
+    return hashlib.sha3_256(raw).hexdigest()
+
+
+---
+
+🧱 Formal System Definition
+
+F : (M, Risk, σ) → (QSSI_adj, ε, Rank, Cert)
+
+D = [0,1]⁴ × [0,1] × ℝ⁴₊
+R = [0,100] × [0,5] × ℝ × {0,1}
+
+Closure ⇔ ∀ input ∈ D ⇒ output ∈ R
+Determinism ⇔ F(x₁) = F(x₂) ⇔ x₁ = x₂
+Continuity ⇔ F continuous over D
+Boundedness ⇔ QSSI_adj ∈ [0,100], ε ∈ [0,5]
+Reproducibility ⇔ Dataset ∧ Model ∧ Weights ∧ Version Fixed
+
+
+---
+
+🧩 System Composition
+
+QVP_System = Architecture ∧ Computation ∧ Probability ∧ Certification ∧ Audit ∧ Security ∧ Deployment
+
+∀ t ≥ t₀ : System(t) = Deterministic ∧ Probabilistic ∧ Secure ∧ Scalable ∧ Verifiable
+
+
+---
+
+🔒 Version Control
+
+Version = 2026.1.0-A
+State = IMMUTABLE
+Modification ⇒ Version Increment Required
+
+
+---
+
+👤 Author
+
+Dr. B. Mazumdar, D.Sc. (Hon.), D.Litt. (Hon.)
+Architect of Modern Statehood
 Founder & Principal Architect, FAIR+D Canon™
+Proprietary Sovereign Systems Architecture & Governance Framework
+
 
 ---
 
-## 📜 License (Full Legal Notice)
+© Copyright
 
-Copyright © 2026 Dr. B. Mazumdar. All Rights Reserved.
-
-This publication and associated system architecture constitute an original, proprietary, and non-derivative intellectual property of the author.
-
-No license—express or implied—is granted for:
-
-- Reproduction  
-- Redistribution  
-- Modification  
-- Translation  
-- Derivative development  
-- Commercial exploitation  
-- Institutional adoption  
-- Operational implementation  
-
-in whole or in part, without prior written authorization from the author.
-
-All rights not expressly granted are strictly reserved.
+© 2026 Dr. B. Mazumdar. All Rights Reserved. Proprietary Sovereign Digital Security Infrastructure Framework
