@@ -19,3 +19,6 @@ RES,Environment,ND-GAIN,University of Notre Dame,ND-GAIN Index,https://gain.nd.e
 RISK,Geopolitical,Policy Uncertainty Index,Baker Bloom Davis,Geopolitical Risk Index,https://www.policyuncertainty.com/,2026-04-01,Monthly,Global,Geopolitical instability measure,Index,Scaled inversion,1 - normalized value,0.91,Indicator-level weighted aggregation after normalization (0.5 GPR, 0.5 DBIR),LOCF (high-frequency),2026.2,Medium,Widely cited in academic research; All inputs normalized to [0,1] prior to aggregation
 
 RISK,Cybersecurity,Verizon DBIR,Verizon,Cyber Incident Reports,https://www.verizon.com/business/resources/reports/dbir/,2026-04-01,Annual,Global,Frequency and severity of cyber incidents,Count/Severity Index,Log scaling + normalization,Min-Max scaling,0.89,Indicator-level weighted aggregation after normalization (0.5 GPR, 0.5 DBIR),LOCF (high-frequency),2026.2,Medium,Empirical cyber risk proxy; All inputs normalized to [0,1] prior to aggregation
+
+Aggregation is performed at the indicator level after grouping all relevant sources per indicator.
+All variables are normalized to [0,1] prior to aggregation, followed by weighted combination as specified.
