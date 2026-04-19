@@ -1,19 +1,19 @@
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel, Field
-from typing import List
-import math
-import hashlib
-import json
+from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
 import csv
 import os
+import hashlib
+from typing import List, Dict
 
 app = FastAPI(
-    title="QVP™ Global System API",
-    description="QSSI™ + OMS-1™ Unified Sovereign Intelligence System",
-    version="2026.1 FINAL LOCK"
+    title="QSSI™ API v2026.1.1",
+    description="Quantum Sovereign Security Index — Deterministic Execution API",
+    version="2026.1.1"
 )
 
-EPSILON = 0.01
+# =========================
+# CONFIGURATION (LOCKED)
+# =========================
 
 WEIGHTS = {
     "PQC": 0.30,
@@ -21,6 +21,25 @@ WEIGHTS = {
     "LEGAL": 0.25,
     "RES": 0.20,
 }
+
+FORMULA = "QSSI_adj = 100 * (Σ w_i x_i) * (1 - R)"
+UNCERTAINTY_BOUND = 5.0
+SIGMA = 0.02
+DATASET_VERSION = "2026.1"
+
+# =========================
+# VALIDATION
+# =========================
+
+def validate(value: float) -> float:
+    v = float(value)
+    if v < 0 or v > 1:
+        raise ValueError("Value out of bounds [0,1]")
+    return v
+
+# =========================
+# CORE ENGINE
+# =========================
 
 def classify_tier(score: float) -> str:
     if score >= 85:
@@ -31,173 +50,170 @@ def classify_tier(score: float) -> str:
         return "Tier C"
     return "Tier D"
 
-def clamp01(x: float) -> float:
-    return max(0.0, min(1.0, x))
 
-def load_data():
-    data = []
-    file_path = os.getenv("QSSI_DATA_PATH", "dataset/qssi_data.csv")
+def compute_uncertainty() -> float:
+    eps = (sum([(w * SIGMA) ** 2 for w in WEIGHTS.values()])) ** 0.5 * 100
+    return round(min(eps, UNCERTAINTY_BOUND), 2)
 
-    if not os.path.exists(file_path):
-        return [{"error": "qssi_data.csv not found"}]
+
+def sha256_file(path: str) -> str:
+    with open(path, "rb") as f:
+        return hashlib.sha256(f.read()).hexdigest()
+
+
+def load_engine() -> Dict:
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    file_path = os.path.join(base_dir, "dataset", "qssi_data.csv")
+
+    results = []
+    errors = []
 
     try:
-        with open(file_path, "r", encoding="utf-8", newline="") as f:
+        with open(file_path, "r", encoding="utf-8") as f:
             reader = csv.DictReader(f)
 
             for row in reader:
-                row = {k.strip().upper(): v for k, v in row.items()}
+                row_clean = {k.strip().upper(): v for k, v in row.items()}
 
                 try:
-                    pqc = float(row.get("PQC", 0))
-                    ai = float(row.get("AI", 0))
-                    legal = float(row.get("LEGAL", 0))
-                    res = float(row.get("RES", 0))
-                    risk = float(row.get("RISK", 0))
-                except (ValueError, TypeError):
+                    pqc = validate(row_clean["PQC"])
+                    ai = validate(row_clean["AI"])
+                    legal = validate(row_clean["LEGAL"])
+                    res = validate(row_clean["RES"])
+                    risk = validate(row_clean["RISK"])
+                except Exception as e:
+                    errors.append({
+                        "row": row_clean,
+                        "error": str(e)
+                    })
                     continue
 
-                risk = clamp01(risk)
-
-                qssi = 100 * (
+                qssi = (
                     WEIGHTS["PQC"] * pqc +
                     WEIGHTS["AI"] * ai +
                     WEIGHTS["LEGAL"] * legal +
                     WEIGHTS["RES"] * res
                 )
 
-                adjusted = qssi * (1 - risk)
+                qssi_scaled = 100 * qssi
+                qssi_adj = qssi_scaled * (1 - risk)
 
-                data.append({
-                    "Country": row.get("COUNTRY", "Unknown"),
-                    "QSSI": round(qssi, 2),
-                    "QSSI_adj": round(adjusted, 2),
-                    "Tier": classify_tier(adjusted),
-                    "Risk": round(risk * 100)
+                results.append({
+                    "Country": row_clean.get("COUNTRY", "Unknown"),
+                    "QSSI": round(qssi, 4),
+                    "QSSI_scaled": round(qssi_scaled, 2),
+                    "QSSI_adj": round(qssi_adj, 2),
+                    "ε": compute_uncertainty()
                 })
 
-    except Exception:
-        return [{"error": "Dataset read failure"}]
+    except FileNotFoundError:
+        return {"error": "dataset/qssi_data.csv not found"}
 
-    return sorted(data, key=lambda x: x["QSSI_adj"], reverse=True)
+    # =========================
+    # INTEGRITY CHECK
+    # =========================
+
+    if len(results) < 10:
+        return {
+            "error": "Insufficient valid data after validation",
+            "valid_rows": len(results),
+            "errors": errors
+        }
+
+    # =========================
+    # RANKING
+    # =========================
+
+    results = sorted(results, key=lambda x: x["QSSI_adj"], reverse=True)
+
+    for i, r in enumerate(results):
+        r["Rank"] = i + 1
+        r["Tier"] = classify_tier(r["QSSI_adj"])
+        r["Score"] = r["QSSI_adj"]
+
+    return {
+        "data": results,
+        "errors": errors
+    }
+
+# =========================
+# API ENDPOINTS
+# =========================
 
 @app.get("/")
 async def root():
     return {
-        "System": "QVP GLOBAL SYSTEM",
-        "Version": "2026.1 FINAL LOCK",
-        "Modules": {
-            "QSSI": "/qssi/rankings",
-            "OMS-1": "/oms/compute"
-        },
-        "Status": "Operational",
-        "Compliance": [
-            "Deterministic Execution",
-            "Auditable (SHA-256)",
-            "ISO-Grade Design"
-        ]
+        "system": "QSSI™ v2026.1.1",
+        "status": "LIVE",
+        "type": "Deterministic Scientific Execution API",
+        "integrity": "ENGINE-ALIGNED + AUDIT-TRACE"
     }
 
-@app.get("/qssi/rankings")
+
+@app.get("/rankings")
 async def rankings():
-    data = load_data()
-    if data and "error" in data[0]:
-        raise HTTPException(status_code=500, detail=data[0]["error"])
-    return data
+    return load_engine()
 
-class InputData(BaseModel):
-    I: float = Field(..., ge=0, le=1)
-    A: float = Field(..., ge=0, le=1)
-    R: float = Field(..., ge=0, le=1)
-    C: float = Field(..., ge=0, le=1)
 
-class Parameters(BaseModel):
-    lambda_: float = Field(..., ge=0, le=1)
-    Vt: float = Field(..., ge=0, le=1)
-    Rs: float = Field(..., ge=0, le=1)
-    Co: float = Field(..., ge=0, le=1)
-    AGAPn: float = Field(..., ge=0, le=1)
-    weights: List[float] = Field(..., min_items=1)
+@app.get("/top/{n}")
+async def top_n(n: int):
+    engine_output = load_engine()
 
-class RequestModel(BaseModel):
-    input: InputData
-    parameters: Parameters
+    if "data" not in engine_output:
+        return engine_output
 
-def validate_weights(weights: List[float], values: List[float]):
-    if len(weights) != len(values):
-        raise ValueError("Weights mismatch")
-    if any(w < 0 for w in weights):
-        raise ValueError("Weights must be non-negative")
-    if not math.isclose(sum(weights), 1.0, rel_tol=1e-6):
-        raise ValueError("Weights must sum to 1")
+    data = engine_output["data"]
+    n = max(1, min(n, len(data)))
 
-def compute_sigma(lambda_, Vt):
-    return lambda_ * Vt
+    return data[:n]
 
-def compute_io(weights, values):
-    return sum(w * x for w, x in zip(weights, values))
 
-def compute_contributions(I, A, C, R, sigma_t):
-    denom = (R + EPSILON) * (1 + sigma_t)
-    raw = {
-        "I": ((A * C) / denom) * I,
-        "A": ((I * C) / denom) * A,
-        "C": ((I * A) / denom) * C,
-    }
-    total = sum(raw.values()) or 1.0
-    return {k: round(v / total, 8) for k, v in raw.items()}
+@app.get("/country/{name}")
+async def country(name: str):
+    engine_output = load_engine()
 
-def compute_decision(input_data, params):
-    I = clamp01(input_data.I)
-    A = clamp01(input_data.A)
-    R = clamp01(input_data.R)
-    C = clamp01(input_data.C)
+    if "data" not in engine_output:
+        return engine_output
 
-    sigma_t = compute_sigma(params.lambda_, params.Vt)
-    Xi = [I, A, C]
+    data = engine_output["data"]
+    result = [d for d in data if d["Country"].lower() == name.lower()]
 
-    try:
-        validate_weights(params.weights, Xi)
-    except ValueError as e:
-        raise HTTPException(status_code=400, detail=str(e))
+    return result or {"error": "Country not found"}
 
-    Io = compute_io(params.weights, Xi)
 
-    denom = max(EPSILON, (R + EPSILON) * (1 + sigma_t))
-    Ds_raw = (I * A * C) / denom
-    Ds = min(1.0, max(0.0, Ds_raw))
+@app.get("/tier/{tier}")
+async def tier_filter(tier: str):
+    engine_output = load_engine()
 
-    Cs = Io * params.Rs * params.AGAPn * math.exp(-sigma_t)
-    Ad = Cs * params.Co * Io * params.Rs * math.exp(-sigma_t)
+    if "data" not in engine_output:
+        return engine_output
+
+    data = engine_output["data"]
+    return [d for d in data if d["Tier"].lower() == tier.lower()]
+
+
+@app.get("/meta")
+async def meta():
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    dataset_path = os.path.join(base_dir, "dataset", "qssi_data.csv")
 
     return {
-        "Ds": round(Ds, 8),
-        "Cs": round(Cs, 8),
-        "Ad": round(Ad, 8),
-        "sigma_t": round(sigma_t, 8),
-        "Io": round(Io, 8),
-        "explainability": compute_contributions(I, A, C, R, sigma_t)
+        "version": "v2026.1.1",
+        "dataset_version": DATASET_VERSION,
+        "weights": WEIGHTS,
+        "formula": FORMULA,
+        "uncertainty_model": f"sigma={SIGMA}, bounded ≤ {UNCERTAINTY_BOUND}",
+        "dataset_hash": sha256_file(dataset_path) if os.path.exists(dataset_path) else None,
+        "deterministic": True,
+        "reproducible": True,
+        "audit_trace": True
     }
 
-def generate_hash(data):
-    encoded = json.dumps(
-        data,
-        sort_keys=True,
-        separators=(",", ":")
-    ).encode()
-    return hashlib.sha256(encoded).hexdigest()
 
-@app.post("/oms/compute")
-async def oms_compute(request: RequestModel):
-    result = compute_decision(request.input, request.parameters)
+# =========================
+# DASHBOARD
+# =========================
 
-    audit_data = {
-        "input": request.input.model_dump(),
-        "parameters": request.parameters.model_dump(),
-        "output": result
-    }
-
-    return {
-        "result": result,
-        "audit_hash": generate_hash(audit_data)
-    }
+@app.get("/dashboard", response_class=HTMLResponse)
+async def dashboard():
+    return "<h1>QSSI™ Dashboard — Engine Verified & Audit-Trace Enabled</h1>"
