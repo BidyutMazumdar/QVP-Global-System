@@ -1,3 +1,5 @@
+📄 docs/VALIDATION.md
+
 QSSI™ v2026.1.1 — Data Validation & Scientific Integrity Protocol 🔒
 
 STATUS: LOCKED — ABSOLUTE FINAL EDITION (FORMALLY CLOSED, 10/10)
@@ -39,7 +41,7 @@ QSSI validation is a three-layer deterministic integrity system:
 
 
 
-👉 A dataset MUST pass ALL layers simultaneously.
+👉 A dataset MUST pass ALL layers simultaneously
 
 
 ---
@@ -50,7 +52,7 @@ QSSI validation is a three-layer deterministic integrity system:
 
 Country | Year | PQC | AI | LEGAL | RES | RISK
 
-Constraints:
+Constraints
 
 Case-sensitive column names
 
@@ -103,6 +105,7 @@ Text with commas must be quoted "..."
 2.1 Value Bounds (STRICT)
 
 0 ≤ Mᵢ ≤ 1
+
 Violation → ❌ REJECT
 
 
@@ -110,16 +113,16 @@ Violation → ❌ REJECT
 
 2.2 Missing Data Policy
 
-Allowed with strict control.
+Allowed with strict control
 
-Rules:
+Rules
 
 Must be explicit (NaN / null)
 
 No silent omission
 
 
-Allowed Imputation:
+Allowed Imputation
 
 Linear interpolation
 
@@ -128,9 +131,10 @@ Domain-weighted mean
 Source-consistent substitution
 
 
-Mandatory Logging:
+Mandatory Logging
 
 All imputations MUST be recorded in:
+
 docs/DATA_VALIDATION_REPORT.md
 
 
@@ -157,7 +161,7 @@ High PQC + near-zero AI
 High LEGAL + extreme RISK
 
 
-Defined Thresholds:
+Defined thresholds:
 
 High ≥ 0.7
 
@@ -165,8 +169,6 @@ Near-zero ≤ 0.1
 
 Extreme ≥ 0.9
 
-
-👉 Ensures semantic realism
 
 
 ---
@@ -176,12 +178,15 @@ Extreme ≥ 0.9
 3.1 Allowed Methods
 
 Min-Max Scaling
+
 x' = (x − min) / (max − min)
 
 Index Scaling
+
 x' = x / 100
 
 Linear Shift Scaling
+
 x' = (x + a) / (2a)
 
 
@@ -232,8 +237,7 @@ Fully reproducible
 0 ≤ QSSI_adj ≤ 100
 0 ≤ ε ≤ 5
 
-📌 Note:
-ε upper bound (5) is an empirical stability threshold calibrated for interpretability within the 0–100 scale.
+📌 ε upper bound (5) is an empirical stability threshold calibrated for interpretability within the 0–100 scale
 
 
 ---
@@ -253,7 +257,7 @@ Then:
 
 ---
 
-4.4 Weight Integrity (COMPLETE)
+4.4 Weight Integrity
 
 wᵢ ≥ 0 and ∑ wᵢ = 1
 
@@ -319,6 +323,7 @@ Version tag
 
 
 Stored in:
+
 docs/DATA_VALIDATION_REPORT.md
 
 
@@ -370,7 +375,8 @@ Temporal variance stability required
 Cross-country variance consistency enforced
 
 
-⚠ Note:
+⚠
+
 ε ≠ probabilistic CI
 ε = deterministic uncertainty envelope
 
@@ -483,7 +489,7 @@ Level	Meaning	Action
 
 CRITICAL	Constraint violation	Reject
 WARNING	Suspicious	Allow + flag
-INFO	Informational	Log
+INFO	Informational	Log only
 
 
 
@@ -507,9 +513,7 @@ Violation → ❌ REJECT
 
 🧠 FINAL STATEMENT
 
-> “No QSSI computation is valid unless it satisfies ALL validation layers defined in this protocol.”
-
-
+“No QSSI computation is valid unless it satisfies ALL validation layers defined in this protocol.”
 
 
 ---
@@ -520,7 +524,3 @@ VALIDATION LAYER = FORMAL INTEGRITY SYSTEM
 STATE = VERIFIED + AUDITABLE + REPRODUCIBLE
 STATUS = LOCKED — ABSOLUTE FINAL EDITION
 VERSION = v2026.1.1
-
-
----
-
