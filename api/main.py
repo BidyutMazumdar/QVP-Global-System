@@ -1,15 +1,20 @@
-from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel, Field
+from typing import List
+import math
+import hashlib
+import json
 import csv
 import os
 
 app = FastAPI(
-    title="QSSI™ API v2026.1.1",
-    description="Quantum Sovereign Security Index Global Rankings API",
-    version="2026.1.1"
+    title="QVP™ Global System API",
+    description="QSSI™ + OMS-1™ Unified Sovereign Intelligence System",
+    version="2026.1 FINAL LOCK"
 )
 
-# Official QSSI methodology weights
+EPSILON = 0.01
+
 WEIGHTS = {
     "PQC": 0.30,
     "AI": 0.25,
@@ -17,9 +22,7 @@ WEIGHTS = {
     "RES": 0.20,
 }
 
-
 def classify_tier(score: float) -> str:
-    """Official QSSI tier classification"""
     if score >= 85:
         return "Tier A"
     elif score >= 75:
@@ -28,16 +31,18 @@ def classify_tier(score: float) -> str:
         return "Tier C"
     return "Tier D"
 
+def clamp01(x: float) -> float:
+    return max(0.0, min(1.0, x))
 
 def load_data():
-    """Load QSSI dataset and calculate rankings using official methodology"""
     data = []
+    file_path = os.getenv("QSSI_DATA_PATH", "dataset/qssi_data.csv")
 
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    file_path = os.path.join(base_dir, "dataset", "qssi_data.csv")
+    if not os.path.exists(file_path):
+        return [{"error": "qssi_data.csv not found"}]
 
     try:
-        with open(file_path, "r", encoding="utf-8") as f:
+        with open(file_path, "r", encoding="utf-8", newline="") as f:
             reader = csv.DictReader(f)
 
             for row in reader:
@@ -51,6 +56,8 @@ def load_data():
                     risk = float(row.get("RISK", 0))
                 except (ValueError, TypeError):
                     continue
+
+                risk = clamp01(risk)
 
                 qssi = 100 * (
                     WEIGHTS["PQC"] * pqc +
@@ -69,199 +76,128 @@ def load_data():
                     "Risk": round(risk * 100)
                 })
 
-    except FileNotFoundError:
-        return [{"error": "qssi_data.csv not found in dataset/"}]
+    except Exception:
+        return [{"error": "Dataset read failure"}]
 
     return sorted(data, key=lambda x: x["QSSI_adj"], reverse=True)
 
-
 @app.get("/")
-async def home():
+async def root():
     return {
-        "QSSI": "v2026.1.1 LIVE",
+        "System": "QVP GLOBAL SYSTEM",
+        "Version": "2026.1 FINAL LOCK",
+        "Modules": {
+            "QSSI": "/qssi/rankings",
+            "OMS-1": "/oms/compute"
+        },
         "Status": "Operational",
-        "TopRanked": "Finland",
-        "Tier": "Tier A",
-        "Methodology": "Official QSSI Weighted Model"
+        "Compliance": [
+            "Deterministic Execution",
+            "Auditable (SHA-256)",
+            "ISO-Grade Design"
+        ]
     }
 
-
-@app.get("/rankings")
+@app.get("/qssi/rankings")
 async def rankings():
-    return load_data()
+    data = load_data()
+    if data and "error" in data[0]:
+        raise HTTPException(status_code=500, detail=data[0]["error"])
+    return data
 
+class InputData(BaseModel):
+    I: float = Field(..., ge=0, le=1)
+    A: float = Field(..., ge=0, le=1)
+    R: float = Field(..., ge=0, le=1)
+    C: float = Field(..., ge=0, le=1)
 
-@app.get("/dashboard", response_class=HTMLResponse)
-async def dashboard():
-    return """
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QSSI™ Global Rankings v2026.1.1</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body class="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 min-h-screen p-6">
-    <div class="max-w-7xl mx-auto">
+class Parameters(BaseModel):
+    lambda_: float = Field(..., ge=0, le=1)
+    Vt: float = Field(..., ge=0, le=1)
+    Rs: float = Field(..., ge=0, le=1)
+    Co: float = Field(..., ge=0, le=1)
+    AGAPn: float = Field(..., ge=0, le=1)
+    weights: List[float] = Field(..., min_items=1)
 
-        <div class="text-center mb-12">
-            <h1 class="text-6xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
-                QSSI™ Global Rankings
-            </h1>
-            <p class="text-2xl text-gray-700 font-medium">Quantum Sovereign Security Index</p>
-            <p class="text-lg text-blue-600 font-semibold mt-2">v2026.1.1 | Official Production Dashboard</p>
-        </div>
+class RequestModel(BaseModel):
+    input: InputData
+    parameters: Parameters
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-            <div class="bg-white rounded-3xl p-8 shadow-xl border border-slate-200">
-                <h3 class="text-2xl font-bold text-gray-800 mb-3">Global Leader</h3>
-                <div class="text-4xl font-black text-emerald-600 mb-2">Finland</div>
-                <div class="text-xl font-bold text-gray-700">QSSI Adj: 85.97</div>
-                <span class="inline-block mt-4 px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full font-semibold text-sm">
-                    Tier A
-                </span>
-            </div>
+def validate_weights(weights: List[float], values: List[float]):
+    if len(weights) != len(values):
+        raise ValueError("Weights mismatch")
+    if any(w < 0 for w in weights):
+        raise ValueError("Weights must be non-negative")
+    if not math.isclose(sum(weights), 1.0, rel_tol=1e-6):
+        raise ValueError("Weights must sum to 1")
 
-            <div class="bg-white rounded-3xl p-8 shadow-xl border border-slate-200">
-                <h3 class="text-xl font-bold text-gray-800 mb-4">Tier Distribution</h3>
-                <canvas id="tierChart"></canvas>
-            </div>
+def compute_sigma(lambda_, Vt):
+    return lambda_ * Vt
 
-            <div class="bg-white rounded-3xl p-8 shadow-xl border border-slate-200">
-                <h3 class="text-xl font-bold text-gray-800 mb-4">Top 5 Countries</h3>
-                <div id="liveTop5" class="space-y-3"></div>
-            </div>
-        </div>
+def compute_io(weights, values):
+    return sum(w * x for w, x in zip(weights, values))
 
-        <div class="bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden">
-            <div class="flex flex-col md:flex-row justify-between items-center p-8 border-b border-slate-200 gap-4">
-                <h2 class="text-3xl font-bold text-gray-800">Global Rankings Table</h2>
+def compute_contributions(I, A, C, R, sigma_t):
+    denom = (R + EPSILON) * (1 + sigma_t)
+    raw = {
+        "I": ((A * C) / denom) * I,
+        "A": ((I * C) / denom) * A,
+        "C": ((I * A) / denom) * C,
+    }
+    total = sum(raw.values()) or 1.0
+    return {k: round(v / total, 8) for k, v in raw.items()}
 
-                <select id="tierFilter" class="px-5 py-3 rounded-2xl border border-slate-300 bg-slate-50 font-medium shadow-sm">
-                    <option>All Tiers</option>
-                    <option>Tier A</option>
-                    <option>Tier B</option>
-                    <option>Tier C</option>
-                    <option>Tier D</option>
-                </select>
-            </div>
+def compute_decision(input_data, params):
+    I = clamp01(input_data.I)
+    A = clamp01(input_data.A)
+    R = clamp01(input_data.R)
+    C = clamp01(input_data.C)
 
-            <div class="overflow-x-auto">
-                <table class="w-full text-sm text-left">
-                    <thead>
-                        <tr class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
-                            <th class="p-5">Rank</th>
-                            <th class="p-5">Country</th>
-                            <th class="p-5">QSSI</th>
-                            <th class="p-5">QSSI Adj</th>
-                            <th class="p-5">Risk %</th>
-                            <th class="p-5">Tier</th>
-                        </tr>
-                    </thead>
-                    <tbody id="rankingsTable"></tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+    sigma_t = compute_sigma(params.lambda_, params.Vt)
+    Xi = [I, A, C]
 
-    <script>
-        let allData = [];
+    try:
+        validate_weights(params.weights, Xi)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
 
-        async function loadData() {
-            try {
-                const res = await fetch('/rankings');
-                allData = await res.json();
+    Io = compute_io(params.weights, Xi)
 
-                if (allData[0]?.error) {
-                    document.body.innerHTML = `<div class="text-center mt-20 text-red-600 text-3xl font-bold">${allData[0].error}</div>`;
-                    return;
-                }
+    denom = max(EPSILON, (R + EPSILON) * (1 + sigma_t))
+    Ds_raw = (I * A * C) / denom
+    Ds = min(1.0, max(0.0, Ds_raw))
 
-                renderTable(allData);
-                renderTop5(allData);
-                renderCharts();
-            } catch (error) {
-                console.error(error);
-            }
-        }
+    Cs = Io * params.Rs * params.AGAPn * math.exp(-sigma_t)
+    Ad = Cs * params.Co * Io * params.Rs * math.exp(-sigma_t)
 
-        function renderTable(data = allData) {
-            const tbody = document.getElementById('rankingsTable');
-            const selectedTier = document.getElementById('tierFilter').value;
+    return {
+        "Ds": round(Ds, 8),
+        "Cs": round(Cs, 8),
+        "Ad": round(Ad, 8),
+        "sigma_t": round(sigma_t, 8),
+        "Io": round(Io, 8),
+        "explainability": compute_contributions(I, A, C, R, sigma_t)
+    }
 
-            const filtered = selectedTier === 'All Tiers'
-                ? data
-                : data.filter(d => d.Tier === selectedTier);
+def generate_hash(data):
+    encoded = json.dumps(
+        data,
+        sort_keys=True,
+        separators=(",", ":")
+    ).encode()
+    return hashlib.sha256(encoded).hexdigest()
 
-            tbody.innerHTML = filtered.map((d, i) => {
-                const tierColor =
-                    d.Tier === 'Tier A' ? 'bg-emerald-100 text-emerald-700' :
-                    d.Tier === 'Tier B' ? 'bg-blue-100 text-blue-700' :
-                    d.Tier === 'Tier C' ? 'bg-amber-100 text-amber-700' :
-                    'bg-red-100 text-red-700';
+@app.post("/oms/compute")
+async def oms_compute(request: RequestModel):
+    result = compute_decision(request.input, request.parameters)
 
-                return `
-                    <tr class="border-b border-slate-100 hover:bg-slate-50 transition-all">
-                        <td class="p-5 font-bold text-blue-600">${i + 1}</td>
-                        <td class="p-5 font-semibold text-gray-800">${d.Country}</td>
-                        <td class="p-5 text-gray-700 font-bold">${d.QSSI}</td>
-                        <td class="p-5 text-emerald-600 font-bold">${d.QSSI_adj}</td>
-                        <td class="p-5 text-gray-600 font-semibold">${d.Risk}%</td>
-                        <td class="p-5">
-                            <span class="px-4 py-2 rounded-full text-sm font-bold ${tierColor}">
-                                ${d.Tier}
-                            </span>
-                        </td>
-                    </tr>
-                `;
-            }).join('');
-        }
+    audit_data = {
+        "input": request.input.model_dump(),
+        "parameters": request.parameters.model_dump(),
+        "output": result
+    }
 
-        document.getElementById('tierFilter').addEventListener('change', () => renderTable());
-
-        function renderTop5(data) {
-            document.getElementById('liveTop5').innerHTML = data.slice(0, 5).map((d, i) => `
-                <div class="flex justify-between items-center bg-slate-50 rounded-2xl px-4 py-3">
-                    <div>
-                        <span class="font-bold text-blue-600">#${i + 1}</span>
-                        <span class="ml-2 font-semibold text-gray-800">${d.Country}</span>
-                    </div>
-                    <div class="font-bold text-emerald-600">${d.QSSI_adj}</div>
-                </div>
-            `).join('');
-        }
-
-        function renderCharts() {
-            const tierCounts = {
-                'Tier A': allData.filter(d => d.Tier === 'Tier A').length,
-                'Tier B': allData.filter(d => d.Tier === 'Tier B').length,
-                'Tier C': allData.filter(d => d.Tier === 'Tier C').length,
-                'Tier D': allData.filter(d => d.Tier === 'Tier D').length
-            };
-
-            new Chart(document.getElementById('tierChart'), {
-                type: 'doughnut',
-                data: {
-                    labels: Object.keys(tierCounts),
-                    datasets: [{
-                        data: Object.values(tierCounts)
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'bottom'
-                        }
-                    }
-                }
-            });
-        }
-
-        loadData();
-    </script>
-</body>
-</html>
-"""
+    return {
+        "result": result,
+        "audit_hash": generate_hash(audit_data)
+    }
