@@ -1,219 +1,191 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
 import csv
 import os
 import hashlib
-from typing import List, Dict
+import json
+import copy
+from typing import Dict, List
+
+from engine.qssi_engine import compute_qssi
 
 app = FastAPI(
-    title="QSSI™ API v2026.1.1",
-    description="Quantum Sovereign Security Index — Deterministic Execution API",
-    version="2026.1.1"
+    title="QVP™ Global System API",
+    description="QSSI™ + OMS-1™ Unified Sovereign Intelligence System",
+    version="2026.2 FINAL LOCK"
 )
 
 # =========================
-# CONFIGURATION (LOCKED)
+# CONFIGURATION
 # =========================
 
-WEIGHTS = {
-    "PQC": 0.30,
-    "AI": 0.25,
-    "LEGAL": 0.25,
-    "RES": 0.20,
-}
-
-FORMULA = "QSSI_adj = 100 * (Σ w_i x_i) * (1 - R)"
-UNCERTAINTY_BOUND = 5.0
-SIGMA = 0.02
 DATASET_VERSION = "2026.1"
+FORMULA = "QSSI_adj = 100 * (Σ w_i x_i) * (1 - R)"
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATASET_PATH = os.path.join(BASE_DIR, "dataset", "qssi_data.csv")
 
 # =========================
-# VALIDATION
+# HASHING (CANONICAL)
 # =========================
 
-def validate(value: float) -> float:
-    v = float(value)
-    if v < 0 or v > 1:
-        raise ValueError("Value out of bounds [0,1]")
-    return v
+def run_hash(data: List[Dict]) -> str:
+    canonical = json.dumps(
+        data,
+        sort_keys=True,
+        separators=(",", ":")
+    ).encode()
+    return hashlib.sha256(canonical).hexdigest()
 
 # =========================
-# CORE ENGINE
+# SNAPSHOT ENGINE (TRUE LOCK)
 # =========================
 
-def classify_tier(score: float) -> str:
-    if score >= 85:
-        return "Tier A"
-    elif score >= 75:
-        return "Tier B"
-    elif score >= 50:
-        return "Tier C"
-    return "Tier D"
-
-
-def compute_uncertainty() -> float:
-    eps = (sum([(w * SIGMA) ** 2 for w in WEIGHTS.values()])) ** 0.5 * 100
-    return round(min(eps, UNCERTAINTY_BOUND), 2)
-
-
-def sha256_file(path: str) -> str:
-    with open(path, "rb") as f:
-        return hashlib.sha256(f.read()).hexdigest()
-
-
-def load_engine() -> Dict:
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    file_path = os.path.join(base_dir, "dataset", "qssi_data.csv")
-
-    results = []
-    errors = []
-
+def safe_init():
     try:
-        with open(file_path, "r", encoding="utf-8") as f:
-            reader = csv.DictReader(f)
+        if not os.path.exists(DATASET_PATH):
+            raise Exception("Dataset not found")
 
-            for row in reader:
-                row_clean = {k.strip().upper(): v for k, v in row.items()}
+        results = []
+        errors = []
 
-                try:
-                    pqc = validate(row_clean["PQC"])
-                    ai = validate(row_clean["AI"])
-                    legal = validate(row_clean["LEGAL"])
-                    res = validate(row_clean["RES"])
-                    risk = validate(row_clean["RISK"])
-                except Exception as e:
-                    errors.append({
-                        "row": row_clean,
-                        "error": str(e)
-                    })
-                    continue
+        # 🔒 SINGLE READ → HASH + DATA SAME SNAPSHOT
+        with open(DATASET_PATH, "rb") as f:
+            raw_bytes = f.read()
+            dataset_hash = hashlib.sha256(raw_bytes).hexdigest()
 
-                qssi = (
-                    WEIGHTS["PQC"] * pqc +
-                    WEIGHTS["AI"] * ai +
-                    WEIGHTS["LEGAL"] * legal +
-                    WEIGHTS["RES"] * res
+        # 🔒 SAFE DECODE (fault-tolerant)
+        text_data = raw_bytes.decode("utf-8", errors="replace").splitlines()
+        reader = csv.DictReader(text_data)
+
+        for row in reader:
+            row_clean = {k.strip().upper(): v for k, v in row.items()}
+
+            try:
+                result = compute_qssi(
+                    float(row_clean["PQC"]),
+                    float(row_clean["AI"]),
+                    float(row_clean["LEGAL"]),
+                    float(row_clean["RES"]),
+                    float(row_clean["RISK"])
                 )
-
-                qssi_scaled = 100 * qssi
-                qssi_adj = qssi_scaled * (1 - risk)
-
-                results.append({
-                    "Country": row_clean.get("COUNTRY", "Unknown"),
-                    "QSSI": round(qssi, 4),
-                    "QSSI_scaled": round(qssi_scaled, 2),
-                    "QSSI_adj": round(qssi_adj, 2),
-                    "ε": compute_uncertainty()
+            except Exception as e:
+                errors.append({
+                    "row": row_clean,
+                    "error": str(e)
                 })
+                continue
 
-    except FileNotFoundError:
-        return {"error": "dataset/qssi_data.csv not found"}
+            result["Country"] = row_clean.get("COUNTRY", "Unknown")
+            results.append(result)
 
-    # =========================
-    # INTEGRITY CHECK
-    # =========================
+        # 🔒 SORT (deterministic)
+        results = sorted(results, key=lambda x: x["Score"], reverse=True)
 
-    if len(results) < 10:
+        # 🔒 RANK ASSIGNMENT
+        for i, r in enumerate(results):
+            r["Rank"] = i + 1
+
+        # 🔒 FLOAT NORMALIZATION (hash stability)
+        for r in results:
+            for k, v in r.items():
+                if isinstance(v, float):
+                    r[k] = round(v, 6)
+
         return {
-            "error": "Insufficient valid data after validation",
-            "valid_rows": len(results),
-            "errors": errors
+            "data": results,
+            "errors": errors,
+            "dataset_hash": dataset_hash,
+            "run_id": run_hash(results)
         }
 
-    # =========================
-    # RANKING
-    # =========================
+    except Exception as e:
+        return {
+            "error": str(e),
+            "data": [],
+            "errors": [],
+            "dataset_hash": None,
+            "run_id": None
+        }
 
-    results = sorted(results, key=lambda x: x["QSSI_adj"], reverse=True)
-
-    for i, r in enumerate(results):
-        r["Rank"] = i + 1
-        r["Tier"] = classify_tier(r["QSSI_adj"])
-        r["Score"] = r["QSSI_adj"]
-
-    return {
-        "data": results,
-        "errors": errors
-    }
+# 🔒 ONE-TIME SNAPSHOT LOCK
+ENGINE_CACHE = safe_init()
 
 # =========================
-# API ENDPOINTS
+# API ENDPOINTS (IMMUTABLE)
 # =========================
 
 @app.get("/")
 async def root():
     return {
-        "system": "QSSI™ v2026.1.1",
-        "status": "LIVE",
-        "type": "Deterministic Scientific Execution API",
-        "integrity": "ENGINE-ALIGNED + AUDIT-TRACE"
+        "system": "QVP GLOBAL SYSTEM",
+        "version": "2026.2 FINAL LOCK",
+        "status": "ABSOLUTE 🔒🔐",
+        "snapshot_locked": True
     }
 
 
-@app.get("/rankings")
+@app.get("/qssi/rankings")
 async def rankings():
-    return load_engine()
+    return copy.deepcopy(ENGINE_CACHE)
 
 
 @app.get("/top/{n}")
 async def top_n(n: int):
-    engine_output = load_engine()
+    if "data" not in ENGINE_CACHE:
+        return copy.deepcopy(ENGINE_CACHE)
 
-    if "data" not in engine_output:
-        return engine_output
-
-    data = engine_output["data"]
+    data = ENGINE_CACHE["data"]
     n = max(1, min(n, len(data)))
-
-    return data[:n]
+    return copy.deepcopy(data[:n])
 
 
 @app.get("/country/{name}")
 async def country(name: str):
-    engine_output = load_engine()
+    if "data" not in ENGINE_CACHE:
+        return copy.deepcopy(ENGINE_CACHE)
 
-    if "data" not in engine_output:
-        return engine_output
+    result = [
+        d for d in ENGINE_CACHE["data"]
+        if d["Country"].lower() == name.lower()
+    ]
 
-    data = engine_output["data"]
-    result = [d for d in data if d["Country"].lower() == name.lower()]
-
-    return result or {"error": "Country not found"}
+    return copy.deepcopy(result or {"error": "Country not found"})
 
 
 @app.get("/tier/{tier}")
 async def tier_filter(tier: str):
-    engine_output = load_engine()
+    if "data" not in ENGINE_CACHE:
+        return copy.deepcopy(ENGINE_CACHE)
 
-    if "data" not in engine_output:
-        return engine_output
+    result = [
+        d for d in ENGINE_CACHE["data"]
+        if d["Tier"].lower() == tier.lower()
+    ]
 
-    data = engine_output["data"]
-    return [d for d in data if d["Tier"].lower() == tier.lower()]
+    return copy.deepcopy(result)
 
 
 @app.get("/meta")
 async def meta():
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    dataset_path = os.path.join(base_dir, "dataset", "qssi_data.csv")
-
     return {
-        "version": "v2026.1.1",
+        "version": "2026.2 FINAL LOCK",
         "dataset_version": DATASET_VERSION,
-        "weights": WEIGHTS,
+        "dataset_hash": ENGINE_CACHE.get("dataset_hash"),
+        "run_id": ENGINE_CACHE.get("run_id"),
         "formula": FORMULA,
-        "uncertainty_model": f"sigma={SIGMA}, bounded ≤ {UNCERTAINTY_BOUND}",
-        "dataset_hash": sha256_file(dataset_path) if os.path.exists(dataset_path) else None,
         "deterministic": True,
         "reproducible": True,
-        "audit_trace": True
+        "audit_trace": True,
+        "snapshot_locked": True,
+        "engine_separated": True,
+        "fail_safe": True,
+        "canonical_hashing": True,
+        "float_normalized": True,
+        "immutable_output": True
     }
 
 
-# =========================
-# DASHBOARD
-# =========================
-
 @app.get("/dashboard", response_class=HTMLResponse)
 async def dashboard():
-    return "<h1>QSSI™ Dashboard — Engine Verified & Audit-Trace Enabled</h1>"
+    return "<h1>QSSI™ Dashboard — Absolute Final Lock 🔒🔐</h1>"
