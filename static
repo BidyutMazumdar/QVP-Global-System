@@ -1,155 +1,110 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>QSSI™ Dashboard</title>
-    <style>
-        body {
-            font-family: Arial;
-            background: #f5f7fb;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-        }
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .loading {
-            text-align: center;
-            font-size: 18px;
-        }
-        .error {
-            color: red;
-            text-align: center;
-            font-weight: bold;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background: #4a6cf7;
-            color: white;
-        }
-        .tiera { color: green; font-weight: bold; }
-        .tierb { color: blue; }
-        .tierc { color: orange; }
-        .tierd { color: red; }
-    </style>
-</head>
-<body>
-
-<h1>QSSI™ Global Rankings</h1>
-
-<div class="card">
-    <h2>System Metadata</h2>
-    <div id="meta" class="loading">Loading...</div>
-</div>
-
-<div class="card">
-    <h2>Top Leader</h2>
-    <div id="leader" class="loading">Loading...</div>
-</div>
-
-<div class="card">
-    <h2>Top 10 Countries</h2>
-    <ul id="top10"></ul>
-</div>
-
-<div class="card">
-    <h2>Global Rankings Table</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Rank</th>
-                <th>Country</th>
-                <th>QSSI</th>
-                <th>Adj</th>
-                <th>Score</th>
-                <th>Tier</th>
-            </tr>
-        </thead>
-        <tbody id="table"></tbody>
-    </table>
-</div>
-
 <script>
+// 🔒 HTML ESCAPE (XSS Protection)
+function escapeHTML(str) {
+    return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+// 🔒 SAFE FETCH (timeout + validation + JSON safety)
+async function safeFetch(url, timeout = 8000) {
+    const controller = new AbortController();
+    const id = setTimeout(() => controller.abort(), timeout);
+
+    try {
+        const res = await fetch(url, { signal: controller.signal });
+
+        if (!res.ok) {
+            throw new Error(`HTTP ${res.status}`);
+        }
+
+        const text = await res.text();
+        if (!text) throw new Error("Empty response");
+
+        return JSON.parse(text);
+
+    } catch (err) {
+        throw new Error(`Fetch failed: ${err.message}`);
+    } finally {
+        clearTimeout(id);
+    }
+}
+
+// 🔒 MAIN LOADER (parallel + optimized + secure)
 async function loadData() {
     try {
-        // 🔒 Fetch Rankings
-        const res = await fetch("/qssi/rankings");
-        const data = await res.json();
+        // 🚀 Parallel fetch
+        const [data, meta] = await Promise.all([
+            safeFetch("/qssi/rankings"),
+            safeFetch("/meta")
+        ]);
 
-        // 🔒 Strong validation
-        if (!data || !data.data || data.data.length === 0) {
-            document.getElementById("leader").innerHTML =
-                "<div class='error'>No data found</div>";
-            document.getElementById("meta").innerHTML =
-                "<div class='error'>Metadata unavailable</div>";
-            return;
+        if (!data?.data || data.data.length === 0) {
+            throw new Error("No dataset");
         }
 
-        // 🔒 Fetch Meta (separate endpoint)
-        const metaRes = await fetch("/meta");
-        const meta = await metaRes.json();
-
+        // 📊 META
         document.getElementById("meta").innerHTML = `
-            <b>Version:</b> ${meta.version}<br>
-            <b>Dataset Hash:</b> ${meta.dataset_hash}<br>
-            <b>Run ID:</b> ${meta.run_id}
+            <b>Version:</b> ${escapeHTML(meta?.version || "N/A")}<br>
+            <b>Dataset Hash:</b> ${escapeHTML(meta?.dataset_hash || "N/A")}<br>
+            <b>Run ID:</b> ${escapeHTML(meta?.run_id || "N/A")}
         `;
 
-        // Leader
+        // 🥇 LEADER
         const leader = data.data[0];
         document.getElementById("leader").innerHTML =
-            `<b>${leader.Country}</b> (Score: ${leader.Score})`;
+            `<b>${escapeHTML(leader?.Country || "Unknown")}</b> 
+             (Score: ${escapeHTML(leader?.Score ?? "N/A")})`;
 
-        // Top 10
+        // 🔝 TOP 10 (safe via innerText)
         const top10 = document.getElementById("top10");
         top10.innerHTML = "";
+
         data.data.slice(0, 10).forEach(c => {
             const li = document.createElement("li");
-            li.innerText = `${c.Rank}. ${c.Country} (${c.Score})`;
+            li.innerText = `${c?.Rank ?? "-"} . ${c?.Country ?? "Unknown"} (${c?.Score ?? "N/A"})`;
             top10.appendChild(li);
         });
 
-        // Table
+        // 📋 TABLE (single render + escaped)
         const table = document.getElementById("table");
-        table.innerHTML = "";
 
-        data.data.forEach(c => {
-            const row = `
+        const rows = data.data.map(c => {
+            const tierClass = (c?.Tier || "")
+                .replace(/\s+/g, "")
+                .toLowerCase();
+
+            return `
                 <tr>
-                    <td>${c.Rank}</td>
-                    <td>${c.Country}</td>
-                    <td>${c.QSSI}</td>
-                    <td>${c.QSSI_adj}</td>
-                    <td>${c.Score}</td>
-                    <td class="${c.Tier.replace(" ", "").toLowerCase()}">${c.Tier}</td>
+                    <td>${escapeHTML(c?.Rank ?? "-")}</td>
+                    <td>${escapeHTML(c?.Country ?? "Unknown")}</td>
+                    <td>${escapeHTML(c?.QSSI ?? "-")}</td>
+                    <td>${escapeHTML(c?.QSSI_adj ?? "-")}</td>
+                    <td>${escapeHTML(c?.Score ?? "-")}</td>
+                    <td class="${tierClass}">${escapeHTML(c?.Tier ?? "-")}</td>
                 </tr>
             `;
-            table.innerHTML += row;
-        });
+        }).join("");
+
+        table.innerHTML = rows;
 
     } catch (err) {
+        console.error(err);
+
         document.getElementById("leader").innerHTML =
-            "<div class='error'>API Load Failed</div>";
+            `<div class='error'>System Error</div>`;
+
         document.getElementById("meta").innerHTML =
-            "<div class='error'>Connection Error</div>";
+            `<div class='error'>Connection / API Failure</div>`;
+
+        document.getElementById("top10").innerHTML = "";
+        document.getElementById("table").innerHTML = "";
     }
 }
 
 // 🔒 INIT
 loadData();
 </script>
-
-</body>
-</html>
