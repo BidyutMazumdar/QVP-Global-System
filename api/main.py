@@ -1,6 +1,6 @@
-from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse
-from fastapi.templating import Jinja2Templates
+from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 
 import csv
 import os
@@ -18,45 +18,25 @@ app = FastAPI(
 )
 
 # =========================
-# 🔒 BASE PATH (DEPLOYMENT SAFE)
+# 🔒 BASE PATH
 # =========================
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-
-# =========================
-# 🔒 TEMPLATE CONFIG (FAIL-SAFE)
-# =========================
-
-TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
-
-if not os.path.exists(TEMPLATE_DIR):
-    raise RuntimeError("Templates directory missing")
-
-templates = Jinja2Templates(directory=TEMPLATE_DIR)
-
-# =========================
-# CONFIGURATION
-# =========================
+DATASET_PATH = os.path.join(BASE_DIR, "dataset", "qssi_data.csv")
 
 DATASET_VERSION = "2026.1"
 FORMULA = "QSSI_adj = 100 * (Σ w_i x_i) * (1 - R)"
 
-DATASET_PATH = os.path.join(BASE_DIR, "dataset", "qssi_data.csv")
-
 # =========================
-# HASHING (CANONICAL)
+# 🔒 HASH FUNCTION
 # =========================
 
 def run_hash(data: List[Dict]) -> str:
-    canonical = json.dumps(
-        data,
-        sort_keys=True,
-        separators=(",", ":")
-    ).encode()
+    canonical = json.dumps(data, sort_keys=True, separators=(",", ":")).encode()
     return hashlib.sha256(canonical).hexdigest()
 
 # =========================
-# SNAPSHOT ENGINE (TRUE LOCK)
+# 🔒 ENGINE INIT (SNAPSHOT LOCK)
 # =========================
 
 def safe_init():
@@ -67,7 +47,6 @@ def safe_init():
         results = []
         errors = []
 
-        # 🔒 SINGLE READ (HASH + DATA SAME SNAPSHOT)
         with open(DATASET_PATH, "rb") as f:
             raw_bytes = f.read()
             dataset_hash = hashlib.sha256(raw_bytes).hexdigest()
@@ -87,23 +66,20 @@ def safe_init():
                     float(row_clean["RISK"])
                 )
             except Exception as e:
-                errors.append({
-                    "row": row_clean,
-                    "error": str(e)
-                })
+                errors.append({"row": row_clean, "error": str(e)})
                 continue
 
             result["Country"] = row_clean.get("COUNTRY", "Unknown")
             results.append(result)
 
-        # 🔒 SORT (DETERMINISTIC)
+        # SORT
         results = sorted(results, key=lambda x: x["Score"], reverse=True)
 
-        # 🔒 RANK ASSIGNMENT
+        # RANK
         for i, r in enumerate(results):
             r["Rank"] = i + 1
 
-        # 🔒 FLOAT NORMALIZATION
+        # ROUND FLOATS
         for r in results:
             for k, v in r.items():
                 if isinstance(v, float):
@@ -126,10 +102,16 @@ def safe_init():
         }
 
 # =========================
-# 🔒 SNAPSHOT LOCK (IMMUTABLE STATE)
+# 🔒 SNAPSHOT CACHE
 # =========================
 
 ENGINE_CACHE = safe_init()
+
+# =========================
+# 🔒 STATIC FILES (IMPORTANT)
+# =========================
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # =========================
 # API ENDPOINTS
@@ -144,51 +126,28 @@ async def root():
         "snapshot_locked": True
     }
 
-
-# 🔒 FULL DATA (NO VALIDATION NEEDED)
 @app.get("/qssi/rankings")
 async def rankings():
     return copy.deepcopy(ENGINE_CACHE)
 
-
-# 🔒 SAFE FILTERED ENDPOINTS
 @app.get("/top/{n}")
 async def top_n(n: int):
-    if not ENGINE_CACHE.get("data"):
-        return copy.deepcopy(ENGINE_CACHE)
-
-    data = ENGINE_CACHE["data"]
+    data = ENGINE_CACHE.get("data", [])
     n = max(1, min(n, len(data)))
     return copy.deepcopy(data[:n])
 
-
 @app.get("/country/{name}")
 async def country(name: str):
-    if not ENGINE_CACHE.get("data"):
-        return copy.deepcopy(ENGINE_CACHE)
-
-    result = [
-        d for d in ENGINE_CACHE["data"]
-        if d["Country"].lower() == name.lower()
-    ]
-
+    data = ENGINE_CACHE.get("data", [])
+    result = [d for d in data if d["Country"].lower() == name.lower()]
     return copy.deepcopy(result or {"error": "Country not found"})
-
 
 @app.get("/tier/{tier}")
 async def tier_filter(tier: str):
-    if not ENGINE_CACHE.get("data"):
-        return copy.deepcopy(ENGINE_CACHE)
-
-    result = [
-        d for d in ENGINE_CACHE["data"]
-        if d["Tier"].lower() == tier.lower()
-    ]
-
+    data = ENGINE_CACHE.get("data", [])
+    result = [d for d in data if d["Tier"].lower() == tier.lower()]
     return copy.deepcopy(result)
 
-
-# 🔒 META (AUDIT SAFE)
 @app.get("/meta")
 async def meta():
     return {
@@ -203,14 +162,10 @@ async def meta():
         "snapshot_locked": True
     }
 
-
 # =========================
-# 🔒 DASHBOARD (FINAL UI BINDING)
+# 🔒 DASHBOARD (FINAL)
 # =========================
 
-@app.get("/dashboard", response_class=HTMLResponse)
-async def dashboard(request: Request):
-    return templates.TemplateResponse(
-        "dashboard.html",
-        {"request": request}
-    )
+@app.get("/dashboard")
+async def dashboard():
+    return FileResponse("static/index.html")
