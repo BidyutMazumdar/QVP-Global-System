@@ -1,5 +1,7 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
+
 import csv
 import os
 import hashlib
@@ -16,13 +18,29 @@ app = FastAPI(
 )
 
 # =========================
+# 🔒 BASE PATH (DEPLOYMENT SAFE)
+# =========================
+
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+# =========================
+# 🔒 TEMPLATE CONFIG (FAIL-SAFE)
+# =========================
+
+TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
+
+if not os.path.exists(TEMPLATE_DIR):
+    raise RuntimeError("Templates directory missing")
+
+templates = Jinja2Templates(directory=TEMPLATE_DIR)
+
+# =========================
 # CONFIGURATION
 # =========================
 
 DATASET_VERSION = "2026.1"
 FORMULA = "QSSI_adj = 100 * (Σ w_i x_i) * (1 - R)"
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATASET_PATH = os.path.join(BASE_DIR, "dataset", "qssi_data.csv")
 
 # =========================
@@ -49,12 +67,11 @@ def safe_init():
         results = []
         errors = []
 
-        # 🔒 SINGLE READ → HASH + DATA SAME SNAPSHOT
+        # 🔒 SINGLE READ (HASH + DATA SAME SNAPSHOT)
         with open(DATASET_PATH, "rb") as f:
             raw_bytes = f.read()
             dataset_hash = hashlib.sha256(raw_bytes).hexdigest()
 
-        # 🔒 SAFE DECODE (fault-tolerant)
         text_data = raw_bytes.decode("utf-8", errors="replace").splitlines()
         reader = csv.DictReader(text_data)
 
@@ -79,14 +96,14 @@ def safe_init():
             result["Country"] = row_clean.get("COUNTRY", "Unknown")
             results.append(result)
 
-        # 🔒 SORT (deterministic)
+        # 🔒 SORT (DETERMINISTIC)
         results = sorted(results, key=lambda x: x["Score"], reverse=True)
 
         # 🔒 RANK ASSIGNMENT
         for i, r in enumerate(results):
             r["Rank"] = i + 1
 
-        # 🔒 FLOAT NORMALIZATION (hash stability)
+        # 🔒 FLOAT NORMALIZATION
         for r in results:
             for k, v in r.items():
                 if isinstance(v, float):
@@ -108,11 +125,14 @@ def safe_init():
             "run_id": None
         }
 
-# 🔒 ONE-TIME SNAPSHOT LOCK
+# =========================
+# 🔒 SNAPSHOT LOCK (IMMUTABLE STATE)
+# =========================
+
 ENGINE_CACHE = safe_init()
 
 # =========================
-# API ENDPOINTS (IMMUTABLE)
+# API ENDPOINTS
 # =========================
 
 @app.get("/")
@@ -125,14 +145,16 @@ async def root():
     }
 
 
+# 🔒 FULL DATA (NO VALIDATION NEEDED)
 @app.get("/qssi/rankings")
 async def rankings():
     return copy.deepcopy(ENGINE_CACHE)
 
 
+# 🔒 SAFE FILTERED ENDPOINTS
 @app.get("/top/{n}")
 async def top_n(n: int):
-    if "data" not in ENGINE_CACHE:
+    if not ENGINE_CACHE.get("data"):
         return copy.deepcopy(ENGINE_CACHE)
 
     data = ENGINE_CACHE["data"]
@@ -142,7 +164,7 @@ async def top_n(n: int):
 
 @app.get("/country/{name}")
 async def country(name: str):
-    if "data" not in ENGINE_CACHE:
+    if not ENGINE_CACHE.get("data"):
         return copy.deepcopy(ENGINE_CACHE)
 
     result = [
@@ -155,7 +177,7 @@ async def country(name: str):
 
 @app.get("/tier/{tier}")
 async def tier_filter(tier: str):
-    if "data" not in ENGINE_CACHE:
+    if not ENGINE_CACHE.get("data"):
         return copy.deepcopy(ENGINE_CACHE)
 
     result = [
@@ -166,6 +188,7 @@ async def tier_filter(tier: str):
     return copy.deepcopy(result)
 
 
+# 🔒 META (AUDIT SAFE)
 @app.get("/meta")
 async def meta():
     return {
@@ -177,15 +200,17 @@ async def meta():
         "deterministic": True,
         "reproducible": True,
         "audit_trace": True,
-        "snapshot_locked": True,
-        "engine_separated": True,
-        "fail_safe": True,
-        "canonical_hashing": True,
-        "float_normalized": True,
-        "immutable_output": True
+        "snapshot_locked": True
     }
 
 
+# =========================
+# 🔒 DASHBOARD (FINAL UI BINDING)
+# =========================
+
 @app.get("/dashboard", response_class=HTMLResponse)
-async def dashboard():
-    return "<h1>QSSI™ Dashboard — Absolute Final Lock 🔒🔐</h1>"
+async def dashboard(request: Request):
+    return templates.TemplateResponse(
+        "dashboard.html",
+        {"request": request}
+    )
