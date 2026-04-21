@@ -1,16 +1,26 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
+from fastapi.middleware.cors import CORSMiddleware
 
 import csv
 import os
 import hashlib
 import json
 import copy
+import logging
 from typing import Dict, List
 
 from engine.qssi_engine import compute_qssi
 
+# =========================
+# LOGGING
+# =========================
+logging.basicConfig(level=logging.INFO)
+
+# =========================
+# APP INIT
+# =========================
 app = FastAPI(
     title="QVP™ Global System API",
     description="QSSI™ + OMS-1™ Unified Sovereign Intelligence System",
@@ -18,27 +28,45 @@ app = FastAPI(
 )
 
 # =========================
-# 🔒 BASE PATH
+# CORS
 # =========================
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
+# =========================
+# BASE PATH
+# =========================
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DATASET_PATH = os.path.join(BASE_DIR, "dataset", "qssi_data.csv")
+STATIC_DIR = os.path.join(BASE_DIR, "static")
 
 DATASET_VERSION = "2026.1"
 FORMULA = "QSSI_adj = 100 * (Σ w_i x_i) * (1 - R)"
 
 # =========================
-# 🔒 HASH FUNCTION
+# SAFE FLOAT PARSER
 # =========================
+def to_float(x):
+    try:
+        return float(x)
+    except (TypeError, ValueError):
+        return 0.0
 
+# =========================
+# HASH FUNCTION
+# =========================
 def run_hash(data: List[Dict]) -> str:
     canonical = json.dumps(data, sort_keys=True, separators=(",", ":")).encode()
     return hashlib.sha256(canonical).hexdigest()
 
 # =========================
-# 🔒 ENGINE INIT (SNAPSHOT LOCK)
+# ENGINE INIT
 # =========================
-
 def safe_init():
     try:
         if not os.path.exists(DATASET_PATH):
@@ -55,15 +83,18 @@ def safe_init():
         reader = csv.DictReader(text_data)
 
         for row in reader:
-            row_clean = {k.strip().upper(): v for k, v in row.items()}
+            row_clean = {
+                k.strip().upper(): (v.strip() if isinstance(v, str) else v)
+                for k, v in row.items()
+            }
 
             try:
                 result = compute_qssi(
-                    float(row_clean["PQC"]),
-                    float(row_clean["AI"]),
-                    float(row_clean["LEGAL"]),
-                    float(row_clean["RES"]),
-                    float(row_clean["RISK"])
+                    to_float(row_clean.get("PQC")),
+                    to_float(row_clean.get("AI")),
+                    to_float(row_clean.get("LEGAL")),
+                    to_float(row_clean.get("RES")),
+                    to_float(row_clean.get("RISK"))
                 )
             except Exception as e:
                 errors.append({"row": row_clean, "error": str(e)})
@@ -72,14 +103,11 @@ def safe_init():
             result["Country"] = row_clean.get("COUNTRY", "Unknown")
             results.append(result)
 
-        # SORT
         results = sorted(results, key=lambda x: x["Score"], reverse=True)
 
-        # RANK
         for i, r in enumerate(results):
             r["Rank"] = i + 1
 
-        # ROUND FLOATS
         for r in results:
             for k, v in r.items():
                 if isinstance(v, float):
@@ -93,6 +121,7 @@ def safe_init():
         }
 
     except Exception as e:
+        logging.error(f"Engine init failed: {e}")
         return {
             "error": str(e),
             "data": [],
@@ -102,32 +131,44 @@ def safe_init():
         }
 
 # =========================
-# 🔒 SNAPSHOT CACHE
+# SNAPSHOT CACHE
 # =========================
-
 ENGINE_CACHE = safe_init()
 
 # =========================
-# 🔒 STATIC FILES (IMPORTANT)
+# STATIC FILES
 # =========================
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
+# =========================
+# ROOT
+# =========================
+@app.get("/", include_in_schema=False)
+async def root():
+    return {
+        "system": "QVP GLOBAL SYSTEM",
+        "docs": "/docs",
+        "rankings": "/rankings",
+        "health": "/health"
+    }
+
+# =========================
+# DASHBOARD
+# =========================
+@app.get("/dashboard")
+async def dashboard():
+    return FileResponse(os.path.join(STATIC_DIR, "index.html"))
 
 # =========================
 # API ENDPOINTS
 # =========================
 
-@app.get("/")
-async def root():
-    return {
-        "system": "QVP GLOBAL SYSTEM",
-        "version": "2026.2 FINAL LOCK",
-        "status": "ABSOLUTE 🔒🔐",
-        "snapshot_locked": True
-    }
-
 @app.get("/qssi/rankings")
 async def rankings():
+    return copy.deepcopy(ENGINE_CACHE)
+
+@app.get("/rankings")
+async def rankings_alias():
     return copy.deepcopy(ENGINE_CACHE)
 
 @app.get("/top/{n}")
@@ -139,13 +180,19 @@ async def top_n(n: int):
 @app.get("/country/{name}")
 async def country(name: str):
     data = ENGINE_CACHE.get("data", [])
-    result = [d for d in data if d["Country"].lower() == name.lower()]
+    result = [
+        d for d in data
+        if str(d.get("Country", "")).lower() == name.lower()
+    ]
     return copy.deepcopy(result or {"error": "Country not found"})
 
 @app.get("/tier/{tier}")
 async def tier_filter(tier: str):
     data = ENGINE_CACHE.get("data", [])
-    result = [d for d in data if d["Tier"].lower() == tier.lower()]
+    result = [
+        d for d in data
+        if str(d.get("Tier", "")).lower() == tier.lower()
+    ]
     return copy.deepcopy(result)
 
 @app.get("/meta")
@@ -163,9 +210,8 @@ async def meta():
     }
 
 # =========================
-# 🔒 DASHBOARD (FINAL)
+# HEALTH CHECK
 # =========================
-
-@app.get("/dashboard")
-async def dashboard():
-    return FileResponse("static/index.html")
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
