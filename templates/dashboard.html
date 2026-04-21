@@ -1,0 +1,79 @@
+<script>
+async function loadData() {
+    try {
+        // 🔒 Fetch Rankings (SAFE)
+        const res = await fetch("/qssi/rankings");
+
+        if (!res.ok) {
+            throw new Error("Rankings API failed");
+        }
+
+        const data = await res.json();
+
+        // 🔒 Validate Data
+        if (!data || !data.data || data.data.length === 0) {
+            document.getElementById("leader").innerHTML =
+                "<div class='error'>No data found</div>";
+            document.getElementById("meta").innerHTML =
+                "<div class='error'>Metadata unavailable</div>";
+            return;
+        }
+
+        // 🔒 Fetch Meta (SAFE)
+        const metaRes = await fetch("/meta");
+
+        if (!metaRes.ok) {
+            throw new Error("Meta API failed");
+        }
+
+        const meta = await metaRes.json();
+
+        document.getElementById("meta").innerHTML = `
+            <b>Version:</b> ${meta.version}<br>
+            <b>Dataset Hash:</b> ${meta.dataset_hash}<br>
+            <b>Run ID:</b> ${meta.run_id}
+        `;
+
+        // Leader
+        const leader = data.data[0];
+        document.getElementById("leader").innerHTML =
+            `<b>${leader.Country}</b> (Score: ${leader.Score})`;
+
+        // Top 10
+        const top10 = document.getElementById("top10");
+        top10.innerHTML = "";
+        data.data.slice(0, 10).forEach(c => {
+            const li = document.createElement("li");
+            li.innerText = `${c.Rank}. ${c.Country} (${c.Score})`;
+            top10.appendChild(li);
+        });
+
+        // Table
+        const table = document.getElementById("table");
+        table.innerHTML = "";
+
+        data.data.forEach(c => {
+            const row = `
+                <tr>
+                    <td>${c.Rank}</td>
+                    <td>${c.Country}</td>
+                    <td>${c.QSSI}</td>
+                    <td>${c.QSSI_adj}</td>
+                    <td>${c.Score}</td>
+                    <td class="${c.Tier.replace(" ", "").toLowerCase()}">${c.Tier}</td>
+                </tr>
+            `;
+            table.innerHTML += row;
+        });
+
+    } catch (err) {
+        document.getElementById("leader").innerHTML =
+            "<div class='error'>API Load Failed</div>";
+        document.getElementById("meta").innerHTML =
+            "<div class='error'>Connection Error</div>";
+    }
+}
+
+// 🔒 INIT
+loadData();
+</script>
