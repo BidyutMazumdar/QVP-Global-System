@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QSSI™ Dashboard</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f5f7fb;
+            padding: 20px;
+        }
+        h1 { text-align: center; }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #4a6cf7;
+            color: white;
+        }
+
+        #loading {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>QSSI™ Global Rankings</h1>
+
+<div id="loading">Loading data...</div>
+
+<div class="card">
+    <h2>Leader</h2>
+    <div id="leader"></div>
+</div>
+
+<div class="card">
+    <h2>Top 10</h2>
+    <ul id="top10"></ul>
+</div>
+
+<div class="card">
+    <h2>Ranking Table</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Country</th>
+                <th>QSSI</th>
+                <th>Adj</th>
+                <th>Score</th>
+                <th>Tier</th>
+            </tr>
+        </thead>
+        <tbody id="table"></tbody>
+    </table>
+</div>
+
+<!-- ✅ IMPORTANT -->
+<script src="/static/app.js"></script>
+
+</body>
+</html>
