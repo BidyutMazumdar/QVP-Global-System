@@ -1,86 +1,59 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Header, HTTPException, status
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 
-import csv
-import os
-import hashlib
-import json
-import copy
-import logging
+import csv, os, hashlib, json, copy, logging, asyncio
 from typing import Dict, List
+from asyncio import Lock
+from contextlib import asynccontextmanager
 
 from engine.qssi_engine import compute_qssi
 
-# =========================
-# LOGGING
-# =========================
-logging.basicConfig(level=logging.INFO)
+API_KEY = os.getenv("API_KEY")
+if not API_KEY:
+    raise RuntimeError("API_KEY not set")
 
-# =========================
-# APP INIT
-# =========================
-app = FastAPI(
-    title="QVP™ Global System API",
-    description="QSSI™ + OMS-1™ Unified Sovereign Intelligence System",
-    version="2026.2 FINAL LOCK"
+ALLOWED_ORIGINS = [
+    o.strip() for o in os.getenv("ALLOWED_ORIGINS", "").split(",") if o.strip()
+]
+if not ALLOWED_ORIGINS:
+    raise RuntimeError("ALLOWED_ORIGINS not set")
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s | %(levelname)s | %(message)s"
 )
 
-# =========================
-# CORS
-# =========================
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+ENGINE_CACHE: Dict = {}
+CACHE_LOCK = Lock()
 
-# =========================
-# BASE PATH
-# =========================
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DATASET_PATH = os.path.join(BASE_DIR, "dataset", "qssi_data.csv")
 STATIC_DIR = os.path.join(BASE_DIR, "static")
 
-DATASET_VERSION = "2026.1"
-FORMULA = "QSSI_adj = 100 * (Σ w_i x_i) * (1 - R)"
-
-# =========================
-# SAFE FLOAT PARSER
-# =========================
 def to_float(x):
     try:
         return float(x)
-    except (TypeError, ValueError):
+    except:
         return 0.0
 
-# =========================
-# HASH FUNCTION
-# =========================
 def run_hash(data: List[Dict]) -> str:
     canonical = json.dumps(data, sort_keys=True, separators=(",", ":")).encode()
     return hashlib.sha256(canonical).hexdigest()
 
-# =========================
-# ENGINE INIT
-# =========================
 def safe_init():
     try:
         if not os.path.exists(DATASET_PATH):
             raise Exception("Dataset not found")
 
-        results = []
-        errors = []
+        results, errors = [], []
 
         with open(DATASET_PATH, "rb") as f:
             raw_bytes = f.read()
             dataset_hash = hashlib.sha256(raw_bytes).hexdigest()
 
-        text_data = raw_bytes.decode("utf-8", errors="replace").splitlines()
-        reader = csv.DictReader(text_data)
+        reader = csv.DictReader(raw_bytes.decode("utf-8", "replace").splitlines())
 
         for row in reader:
             row_clean = {
@@ -103,12 +76,10 @@ def safe_init():
             result["Country"] = row_clean.get("COUNTRY", "Unknown")
             results.append(result)
 
-        results = sorted(results, key=lambda x: x["Score"], reverse=True)
+        results.sort(key=lambda x: x["Score"], reverse=True)
 
         for i, r in enumerate(results):
             r["Rank"] = i + 1
-
-        for r in results:
             for k, v in r.items():
                 if isinstance(v, float):
                     r[k] = round(v, 6)
@@ -130,19 +101,38 @@ def safe_init():
             "run_id": None
         }
 
-# =========================
-# SNAPSHOT CACHE
-# =========================
-ENGINE_CACHE = safe_init()
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    global ENGINE_CACHE
+    ENGINE_CACHE = safe_init()
 
-# =========================
-# STATIC FILES
-# =========================
+    if "error" in ENGINE_CACHE:
+        logging.critical("Startup failed: dataset invalid")
+        raise RuntimeError("Critical startup failure: dataset invalid")
+
+    yield
+
+app = FastAPI(
+    title="QVP™ Global System API",
+    description="QSSI™ Sovereign Intelligence Infrastructure",
+    version="2026.8",
+    lifespan=lifespan
+)
+
+def verify_key(x_api_key: str = Header(None, alias="X-API-KEY")):
+    if x_api_key != API_KEY:
+        raise HTTPException(status_code=401, detail="Unauthorized")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=ALLOWED_ORIGINS,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
-# =========================
-# ROOT
-# =========================
 @app.get("/", include_in_schema=False)
 async def root():
     return {
@@ -152,66 +142,120 @@ async def root():
         "health": "/health"
     }
 
-# =========================
-# DASHBOARD
-# =========================
 @app.get("/dashboard")
 async def dashboard():
     return FileResponse(os.path.join(STATIC_DIR, "index.html"))
 
-# =========================
-# API ENDPOINTS
-# =========================
-
-@app.get("/qssi/rankings")
-async def rankings():
-    return copy.deepcopy(ENGINE_CACHE)
-
 @app.get("/rankings")
-async def rankings_alias():
+async def rankings():
+    if "error" in ENGINE_CACHE:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail=ENGINE_CACHE["error"]
+        )
     return copy.deepcopy(ENGINE_CACHE)
 
 @app.get("/top/{n}")
 async def top_n(n: int):
+    if "error" in ENGINE_CACHE:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail=ENGINE_CACHE["error"]
+        )
     data = ENGINE_CACHE.get("data", [])
-    n = max(1, min(n, len(data)))
-    return copy.deepcopy(data[:n])
+    return copy.deepcopy(data[:max(1, min(n, len(data)))])
 
 @app.get("/country/{name}")
 async def country(name: str):
+    if "error" in ENGINE_CACHE:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail=ENGINE_CACHE["error"]
+        )
     data = ENGINE_CACHE.get("data", [])
-    result = [
-        d for d in data
-        if str(d.get("Country", "")).lower() == name.lower()
-    ]
-    return copy.deepcopy(result or {"error": "Country not found"})
+    result = [d for d in data if d.get("Country", "").lower() == name.lower()]
+    if not result:
+        raise HTTPException(status_code=404, detail="Not found")
+    return copy.deepcopy(result)
 
 @app.get("/tier/{tier}")
 async def tier_filter(tier: str):
+    if "error" in ENGINE_CACHE:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail=ENGINE_CACHE["error"]
+        )
     data = ENGINE_CACHE.get("data", [])
-    result = [
-        d for d in data
-        if str(d.get("Tier", "")).lower() == tier.lower()
-    ]
+    result = [d for d in data if d.get("Tier", "").lower() == tier.lower()]
     return copy.deepcopy(result)
 
 @app.get("/meta")
 async def meta():
     return {
-        "version": "2026.2 FINAL LOCK",
-        "dataset_version": DATASET_VERSION,
+        "version": "2026.8",
         "dataset_hash": ENGINE_CACHE.get("dataset_hash"),
         "run_id": ENGINE_CACHE.get("run_id"),
-        "formula": FORMULA,
+        "records": len(ENGINE_CACHE.get("data", [])),
+        "errors": len(ENGINE_CACHE.get("errors", [])),
         "deterministic": True,
-        "reproducible": True,
-        "audit_trace": True,
-        "snapshot_locked": True
+        "audit_trace": True
     }
 
-# =========================
-# HEALTH CHECK
-# =========================
+@app.post("/refresh")
+async def refresh(x_api_key: str = Header(None, alias="X-API-KEY")):
+    verify_key(x_api_key)
+
+    try:
+        await asyncio.wait_for(CACHE_LOCK.acquire(), timeout=10)
+        try:
+            global ENGINE_CACHE
+            new_cache = safe_init()
+
+            if "error" in new_cache:
+                raise HTTPException(
+                    status_code=503,
+                    detail="Refresh failed: dataset invalid"
+                )
+
+            ENGINE_CACHE = new_cache
+        finally:
+            CACHE_LOCK.release()
+    except asyncio.TimeoutError:
+        raise HTTPException(status_code=503, detail="Refresh timeout")
+
+    return {
+        "status": "refreshed",
+        "dataset_hash": ENGINE_CACHE.get("dataset_hash"),
+        "run_id": ENGINE_CACHE.get("run_id")
+    }
+
+@app.get("/v1/rankings")
+async def v1_rankings(x_api_key: str = Header(None, alias="X-API-KEY")):
+    verify_key(x_api_key)
+    return await rankings()
+
+@app.get("/v1/top/{n}")
+async def v1_top(n: int, x_api_key: str = Header(None, alias="X-API-KEY")):
+    verify_key(x_api_key)
+    return await top_n(n)
+
+@app.get("/v1/meta")
+async def v1_meta(x_api_key: str = Header(None, alias="X-API-KEY")):
+    verify_key(x_api_key)
+    return await meta()
+
 @app.get("/health")
 async def health():
-    return {"status": "ok"}
+    if "error" in ENGINE_CACHE:
+        return {
+            "status": "error",
+            "dataset_loaded": False,
+            "records": 0,
+            "errors": len(ENGINE_CACHE.get("errors", []))
+        }
+    return {
+        "status": "ok",
+        "dataset_loaded": True,
+        "records": len(ENGINE_CACHE.get("data", [])),
+        "errors": len(ENGINE_CACHE.get("errors", []))
+    }
