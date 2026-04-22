@@ -222,16 +222,13 @@ async def meta():
 
 
 async def _refresh_logic():
+    new_cache = safe_init()
+
+    if "error" in new_cache:
+        raise ValueError("dataset invalid")
+
     async with CACHE_LOCK:
         global ENGINE_CACHE
-        new_cache = safe_init()
-
-        if "error" in new_cache:
-            raise HTTPException(
-                status_code=503,
-                detail="Refresh failed: dataset invalid"
-            )
-
         ENGINE_CACHE = new_cache
 
 
@@ -243,6 +240,11 @@ async def refresh(x_api_key: str = Header(None, alias="X-API-KEY")):
         await asyncio.wait_for(_refresh_logic(), timeout=10)
     except asyncio.TimeoutError:
         raise HTTPException(status_code=503, detail="Refresh timeout")
+    except ValueError:
+        raise HTTPException(
+            status_code=503,
+            detail="Refresh failed: dataset invalid"
+        )
 
     return {
         "status": "refreshed",
