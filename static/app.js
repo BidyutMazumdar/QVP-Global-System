@@ -1,16 +1,30 @@
 const API_URL = "/rankings";
 
+let controller = null;
+
 async function loadData() {
-  const loading = document.getElementById("loading");
+  const loading = document?.getElementById("loading");
+
+  // ✅ cancel previous request
+  if (controller) controller.abort();
+  controller = new AbortController();
+
+  let timeout;
 
   try {
-    const res = await fetch(API_URL, { cache: "no-store" });
+    // ✅ timeout protection
+    timeout = setTimeout(() => controller.abort(), 8000);
+
+    const res = await fetch(API_URL, {
+      cache: "no-store",
+      signal: controller.signal
+    });
 
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
     const data = await res.json();
 
-    // ✅ Hide loading
+    // ✅ hide loading
     if (loading) loading.style.display = "none";
 
     const rows = Array.isArray(data?.data) ? data.data : [];
@@ -20,35 +34,41 @@ async function loadData() {
       return;
     }
 
+    // =========================
     // ✅ Leader
+    // =========================
     const leaderEl = document.getElementById("leader");
     if (leaderEl) {
       const leader = rows[0];
       leaderEl.innerHTML = `
-        <h3>${leader.Country}</h3>
-        <p>Score: ${leader.Score}</p>
-        <p>${leader.Tier}</p>
+        <h3>${leader.Country ?? "-"}</h3>
+        <p>Score: ${leader.Score ?? "-"}</p>
+        <p>${leader.Tier ?? "-"}</p>
       `;
     }
 
+    // =========================
     // ✅ Top 10
+    // =========================
     const top10 = document.getElementById("top10");
     if (top10) {
       top10.innerHTML = "";
 
       rows.slice(0, 10).forEach(r => {
         const li = document.createElement("li");
-        li.textContent = `${r.Rank}. ${r.Country} (${r.Score})`;
+        li.textContent = `${r.Rank ?? "-"} . ${r.Country ?? "-"} (${r.Score ?? "-"})`;
         top10.appendChild(li);
       });
     }
 
+    // =========================
     // ✅ Table
+    // =========================
     const table = document.getElementById("table");
     if (table) {
       table.innerHTML = "";
 
-      rows.forEach(r => {
+      rows.forEach((r) => {
         const tr = document.createElement("tr");
 
         tr.innerHTML = `
@@ -67,12 +87,20 @@ async function loadData() {
   } catch (err) {
     console.error("Frontend error:", err);
 
+    // ✅ silent abort (clean UX)
+    if (err.name === "AbortError") return;
+
     if (loading) {
+      loading.style.display = "block";
       loading.innerText = "⚠️ Failed to load data";
       loading.style.color = "red";
     }
+
+  } finally {
+    // ✅ ALWAYS clear timeout
+    if (timeout) clearTimeout(timeout);
   }
 }
 
-// ✅ Run
-loadData();
+// ✅ run after DOM ready
+document.addEventListener("DOMContentLoaded", loadData);
