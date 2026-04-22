@@ -5,14 +5,14 @@ let controller = null;
 async function loadData() {
   const loading = document?.getElementById("loading");
 
-  // ✅ cancel previous request
+  // cancel previous request
   if (controller) controller.abort();
   controller = new AbortController();
 
   let timeout;
 
   try {
-    // ✅ timeout protection
+    // timeout protection
     timeout = setTimeout(() => controller.abort(), 8000);
 
     const res = await fetch(API_URL, {
@@ -24,20 +24,19 @@ async function loadData() {
 
     const data = await res.json();
 
-    // ✅ hide loading
     if (loading) loading.style.display = "none";
 
     const rows = Array.isArray(data?.data) ? data.data : [];
 
     if (rows.length === 0) {
-      document.body.innerHTML = "<h2>No Data Available</h2>";
+      if (loading) {
+        loading.style.display = "block";
+        loading.innerText = "No Data Available";
+      }
       return;
     }
 
-    // =========================
-    // ✅ Leader
-    // =========================
-    const leaderEl = document.getElementById("leader");
+    const leaderEl = document?.getElementById("leader");
     if (leaderEl) {
       const leader = rows[0];
       leaderEl.innerHTML = `
@@ -47,10 +46,7 @@ async function loadData() {
       `;
     }
 
-    // =========================
-    // ✅ Top 10
-    // =========================
-    const top10 = document.getElementById("top10");
+    const top10 = document?.getElementById("top10");
     if (top10) {
       top10.innerHTML = "";
 
@@ -61,14 +57,11 @@ async function loadData() {
       });
     }
 
-    // =========================
-    // ✅ Table
-    // =========================
-    const table = document.getElementById("table");
+    const table = document?.getElementById("table");
     if (table) {
       table.innerHTML = "";
 
-      rows.forEach((r) => {
+      rows.forEach(r => {
         const tr = document.createElement("tr");
 
         tr.innerHTML = `
@@ -87,7 +80,6 @@ async function loadData() {
   } catch (err) {
     console.error("Frontend error:", err);
 
-    // ✅ silent abort (clean UX)
     if (err.name === "AbortError") return;
 
     if (loading) {
@@ -97,10 +89,9 @@ async function loadData() {
     }
 
   } finally {
-    // ✅ ALWAYS clear timeout
     if (timeout) clearTimeout(timeout);
+    controller = null;
   }
 }
 
-// ✅ run after DOM ready
 document.addEventListener("DOMContentLoaded", loadData);
