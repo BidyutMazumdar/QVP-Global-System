@@ -1,80 +1,181 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>QSSI™ Dashboard</title>
-    <style>
-        body {
-            font-family: Arial;
-            background: #f5f7fb;
-            padding: 20px;
-        }
-        h1 { text-align: center; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
+<title>QSSI™ Global Intelligence Terminal | Sovereign Analytics</title>
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+<!-- ✅ Libraries (deferred, no duplication) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+<script src="https://d3js.org/d3.v7.min.js" defer></script>
 
-        th, td {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0f1a;
+  color: #e6edf3;
+}
 
-        th {
-            background: #4a6cf7;
-            color: white;
-        }
+/* Layout */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  height: 100vh;
+}
 
-        #loading {
-            text-align: center;
-            font-size: 18px;
-            margin-top: 20px;
-        }
-    </style>
+/* Panels */
+#map-panel, #center-panel, #analytics-panel {
+  padding: 15px;
+  overflow-y: auto;
+}
+
+#map-panel {
+  border-right: 1px solid #1f2a44;
+}
+
+#analytics-panel {
+  border-left: 1px solid #1f2a44;
+}
+
+/* Cards */
+.card {
+  background: #111827;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td, th {
+  padding: 8px;
+  border-bottom: 1px solid #1f2a44;
+}
+
+th {
+  background: #1f2a44;
+}
+
+/* Inputs */
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  background: #0b0f1a;
+  border: 1px solid #1f2a44;
+  color: white;
+}
+
+/* Tier colors */
+.tier-a { color: #00ff9c; }
+.tier-b { color: #f1c40f; }
+.tier-c { color: #e67e22; }
+.tier-d { color: #e74c3c; }
+
+/* Loading */
+#loading {
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+/* Scroll polish */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2a44;
+}
+</style>
 </head>
-<body>
 
-<h1>QSSI™ Global Rankings</h1>
+<body>
 
 <div id="loading">Loading data...</div>
 
-<div class="card">
-    <h2>Leader</h2>
-    <div id="leader"></div>
-</div>
+<div class="layout">
 
-<div class="card">
-    <h2>Top 10</h2>
-    <ul id="top10"></ul>
-</div>
+  <!-- LEFT: MAP -->
+  <div id="map-panel">
+    <h3>Global Heatmap</h3>
+    <svg id="worldMap" viewBox="0 0 1000 500" style="width:100%; height:auto;"></svg>
+  </div>
 
-<div class="card">
-    <h2>Ranking Table</h2>
-    <table>
+  <!-- CENTER -->
+  <div id="center-panel">
+
+    <input id="command" placeholder="type: tier:A | score>80 | country:India" />
+
+    <div class="card">
+      <h3>Leader Intelligence</h3>
+      <div id="leader"></div>
+    </div>
+
+    <div class="card">
+      <h3>Top 10</h3>
+      <ul id="top10"></ul>
+    </div>
+
+    <div class="card">
+      <h3>Ranking Table</h3>
+      <table>
         <thead>
-            <tr>
-                <th>Rank</th>
-                <th>Country</th>
-                <th>QSSI</th>
-                <th>Adj</th>
-                <th>Score</th>
-                <th>Tier</th>
-            </tr>
+          <tr>
+            <th>Rank</th>
+            <th>Country</th>
+            <th>Score</th>
+            <th>Tier</th>
+          </tr>
         </thead>
         <tbody id="table"></tbody>
-    </table>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- RIGHT: ANALYTICS -->
+  <div id="analytics-panel">
+
+    <div class="card">
+      <h3>Metric Selection</h3>
+      <select id="metric">
+        <option value="Score">Score</option>
+        <option value="QSSI_scaled">QSSI</option>
+        <option value="QSSI_adj">Adjusted</option>
+      </select>
+    </div>
+
+    <div class="card">
+      <h3>Analytics</h3>
+      <canvas id="chart"></canvas>
+    </div>
+
+    <div class="card">
+      <h3>Simulation</h3>
+      <label>Adjustment %</label>
+      <input type="range" id="adjust" min="-10" max="10" value="0" />
+    </div>
+
+    <div class="card">
+      <h3>Policy Engine</h3>
+      <label>Risk Factor (ε)</label>
+      <input type="range" id="risk" min="0.9" max="1.1" step="0.01" value="1.01" />
+    </div>
+
+  </div>
+
 </div>
 
-<!-- ✅ IMPORTANT -->
-<script src="/static/app.js"></script>
+<!-- ✅ App Logic (single source of truth) -->
+<script src="/static/app.js" defer></script>
 
 </body>
 </html>
