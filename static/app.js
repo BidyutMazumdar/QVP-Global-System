@@ -10,6 +10,14 @@ let debounce;
 let mapInitialized = false;
 
 // =========================
+// 🔢 SAFE NUMBER PARSER
+// =========================
+function toNum(v) {
+  const n = Number(v);
+  return isNaN(n) ? 0 : n;
+}
+
+// =========================
 // 🌍 GEOJSON CACHE
 // =========================
 async function getGeoData() {
@@ -69,7 +77,7 @@ async function loadData() {
 }
 
 // =========================
-// 🔍 COMMAND PARSER (DEBOUNCED)
+// 🔍 COMMAND PARSER
 // =========================
 document.getElementById("command")?.addEventListener("input", (e) => {
   clearTimeout(debounce);
@@ -85,7 +93,7 @@ document.getElementById("command")?.addEventListener("input", (e) => {
 
     if (q.includes("score>")) {
       const v = Number(q.split("score>")[1]);
-      filtered = filtered.filter(d => Number(d.Score) > v);
+      filtered = filtered.filter(d => toNum(d.Score) > v);
     }
 
     if (q.includes("country:")) {
@@ -112,7 +120,16 @@ function renderAll(data) {
 // 🎨 UI RENDER
 // =========================
 function render(rows) {
-  if (!rows.length) return;
+  const leaderEl = document.getElementById("leader");
+  const top10El = document.getElementById("top10");
+  const tableEl = document.getElementById("table");
+
+  if (!rows.length) {
+    if (leaderEl) leaderEl.innerHTML = "No data";
+    if (top10El) top10El.innerHTML = "";
+    if (tableEl) tableEl.innerHTML = "";
+    return;
+  }
 
   const newRanks = {};
 
@@ -122,53 +139,55 @@ function render(rows) {
   const delta = prev ? prev - leader.Rank : 0;
   const arrow = delta > 0 ? "↑" : delta < 0 ? "↓" : "→";
 
-  document.getElementById("leader").innerHTML = `
-    <div style="font-size:20px;font-weight:bold">${leader.Country}</div>
-    <div>Score: ${leader.Score}</div>
-    <div class="${tierClass(leader.Tier)}">${leader.Tier}</div>
-    <div>Change: ${arrow} ${delta}</div>
-  `;
+  if (leaderEl) {
+    leaderEl.innerHTML = `
+      <div style="font-size:20px;font-weight:bold">${leader.Country}</div>
+      <div>Score: ${toNum(leader.Score)}</div>
+      <div class="${tierClass(leader.Tier)}">${leader.Tier}</div>
+      <div>Change: ${arrow} ${delta}</div>
+    `;
+  }
 
   // Top 10
-  const top10 = document.getElementById("top10");
-  top10.innerHTML = "";
-
-  rows.slice(0, 10).forEach(r => {
-    const li = document.createElement("li");
-    li.textContent = `${r.Rank}. ${r.Country} (${r.Score})`;
-    top10.appendChild(li);
-  });
+  if (top10El) {
+    top10El.innerHTML = "";
+    rows.slice(0, 10).forEach(r => {
+      const li = document.createElement("li");
+      li.textContent = `${r.Rank}. ${r.Country} (${toNum(r.Score)})`;
+      top10El.appendChild(li);
+    });
+  }
 
   // Table
-  const table = document.getElementById("table");
-  table.innerHTML = "";
+  if (tableEl) {
+    tableEl.innerHTML = "";
 
-  rows.forEach(r => {
-    const prevRank = previousRanks[r.Country];
-    const change = prevRank ? prevRank - r.Rank : 0;
+    rows.forEach(r => {
+      const prevRank = previousRanks[r.Country];
+      const change = prevRank ? prevRank - r.Rank : 0;
 
-    let arrow = "";
-    if (change > 0) arrow = "↑";
-    else if (change < 0) arrow = "↓";
+      let arrow = "";
+      if (change > 0) arrow = "↑";
+      else if (change < 0) arrow = "↓";
 
-    const tr = document.createElement("tr");
+      const tr = document.createElement("tr");
 
-    tr.innerHTML = `
-      <td>${r.Rank} ${arrow}</td>
-      <td>${r.Country}</td>
-      <td>${r.Score}</td>
-      <td class="${tierClass(r.Tier)}">${r.Tier}</td>
-    `;
+      tr.innerHTML = `
+        <td>${r.Rank} ${arrow}</td>
+        <td>${r.Country}</td>
+        <td>${toNum(r.Score)}</td>
+        <td class="${tierClass(r.Tier)}">${r.Tier}</td>
+      `;
 
-    if (arrow) {
-      tr.style.transition = "all 0.3s ease-in-out";
-      tr.style.background = change > 0 ? "#063" : "#600";
-    }
+      if (arrow) {
+        tr.style.transition = "all 0.3s ease-in-out";
+        tr.style.background = change > 0 ? "#063" : "#600";
+      }
 
-    table.appendChild(tr);
-
-    newRanks[r.Country] = r.Rank;
-  });
+      tableEl.appendChild(tr);
+      newRanks[r.Country] = r.Rank;
+    });
+  }
 
   previousRanks = newRanks;
 }
@@ -185,7 +204,7 @@ function tierClass(t) {
 }
 
 // =========================
-// 📊 CHART (OPTIMIZED)
+// 📊 CHART
 // =========================
 function renderChart(data) {
   const ctx = document.getElementById("chart");
@@ -195,7 +214,7 @@ function renderChart(data) {
 
   if (chartInstance) {
     chartInstance.data.labels = top.map(d => d.Country);
-    chartInstance.data.datasets[0].data = top.map(d => d.Score);
+    chartInstance.data.datasets[0].data = top.map(d => toNum(d.Score));
     chartInstance.update();
     return;
   }
@@ -206,14 +225,14 @@ function renderChart(data) {
       labels: top.map(d => d.Country),
       datasets: [{
         label: "Score",
-        data: top.map(d => d.Score)
+        data: top.map(d => toNum(d.Score))
       }]
     }
   });
 }
 
 // =========================
-// 🌍 MAP (NO RE-RENDER)
+// 🌍 MAP
 // =========================
 async function renderMap(data) {
   const svg = d3.select("#worldMap");
@@ -223,7 +242,7 @@ async function renderMap(data) {
   const path = d3.geoPath().projection(projection);
 
   const scoreMap = {};
-  data.forEach(d => scoreMap[d.Country] = d.Score);
+  data.forEach(d => scoreMap[d.Country] = toNum(d.Score));
 
   const color = d3.scaleSequential(d3.interpolateYlGnBu)
     .domain([40, 90]);
@@ -235,7 +254,9 @@ async function renderMap(data) {
       .append("path")
       .attr("d", path)
       .attr("stroke", "#222")
-      .append("title");
+      .each(function () {
+        d3.select(this).append("title");
+      });
 
     mapInitialized = true;
   }
@@ -262,7 +283,7 @@ document.getElementById("adjust")?.addEventListener("input", (e) => {
 
   const simulated = fullData.map(d => ({
     ...d,
-    Score: Number(d.Score) + val
+    Score: toNum(d.Score) + val
   }));
 
   renderAll(simulated);
@@ -276,7 +297,7 @@ document.getElementById("risk")?.addEventListener("input", (e) => {
 
   const updated = fullData.map(d => ({
     ...d,
-    Score: Number(d.Score) * epsilon
+    Score: toNum(d.Score) * epsilon
   }));
 
   renderAll(updated);
@@ -296,7 +317,7 @@ async function loadPrediction() {
     const pred = await res.json();
 
     const map = {};
-    pred.forEach(p => map[p.Country] = p.PredictedScore);
+    pred.forEach(p => map[p.Country] = toNum(p.PredictedScore));
 
     fullData.forEach(d => {
       d.predicted = map[d.Country];
