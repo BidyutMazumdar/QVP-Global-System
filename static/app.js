@@ -18,6 +18,7 @@ let path = null;
 
 // POLLING
 let polling = false;
+let pollTimer = null;
 
 // REQUEST GUARD
 let requestId = 0;
@@ -28,6 +29,18 @@ let requestId = 0;
 const toNum = (v) => {
   const n = Number(v);
   return Number.isFinite(n) ? n : 0;
+};
+
+// =========================
+// 🔐 REGEX SAFETY
+// =========================
+const escapeRegex = (s) =>
+  s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+const getValue = (q, key) => {
+  const safeKey = escapeRegex(key);
+  const match = q.match(new RegExp(`${safeKey}:?([^ ]+)`));
+  return match ? match[1] : null;
 };
 
 // =========================
@@ -48,7 +61,7 @@ async function getGeoData() {
 }
 
 // =========================
-// 🚀 LOAD DATA (FULL SAFE)
+// 🚀 LOAD DATA
 // =========================
 async function loadData() {
   const currentId = ++requestId;
@@ -76,7 +89,7 @@ async function loadData() {
     if (json.dataset_hash && json.dataset_hash === lastHash) return;
     lastHash = json.dataset_hash;
 
-    // ✅ Immutable safe data layer
+    // ✅ Immutable data
     fullData = Object.freeze(
       (Array.isArray(json.data) ? json.data : []).map(d => ({ ...d }))
     );
@@ -103,7 +116,7 @@ async function loadData() {
 }
 
 // =========================
-// 🔁 DRIFT-FREE POLLING
+// 🔁 POLLING (FULL SAFE)
 // =========================
 async function startPolling() {
   if (polling) return;
@@ -112,7 +125,7 @@ async function startPolling() {
   const loop = async () => {
     if (!polling) return;
     await loadData();
-    setTimeout(loop, 15000);
+    pollTimer = setTimeout(loop, 15000);
   };
 
   loop();
@@ -120,6 +133,10 @@ async function startPolling() {
 
 function stopPolling() {
   polling = false;
+  if (pollTimer) {
+    clearTimeout(pollTimer);
+    pollTimer = null;
+  }
 }
 
 // TAB CONTROL
@@ -128,13 +145,8 @@ document.addEventListener("visibilitychange", () => {
 });
 
 // =========================
-// 🔍 FILTER ENGINE (ROBUST)
+// 🔍 FILTER ENGINE
 // =========================
-const getValue = (q, key) => {
-  const match = q.match(new RegExp(`${key}:?([^ ]+)`));
-  return match ? match[1] : null;
-};
-
 document.getElementById("command")?.addEventListener("input", (e) => {
   clearTimeout(debounce);
 
