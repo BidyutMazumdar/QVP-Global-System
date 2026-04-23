@@ -1,5 +1,8 @@
 const API_URL = "/rankings";
 
+// =========================
+// 🌐 GLOBAL STATE
+// =========================
 let controller = null;
 let fullData = [];
 let chartInstance = null;
@@ -7,32 +10,48 @@ let lastHash = null;
 let previousRanks = {};
 let geoData = null;
 let debounce;
+
+// MAP CACHE
 let mapInitialized = false;
+let projection = null;
+let path = null;
+
+// POLLING
+let polling = false;
+
+// REQUEST GUARD
+let requestId = 0;
 
 // =========================
-// 🔢 SAFE NUMBER PARSER
+// 🔢 SAFE NUMBER
 // =========================
-function toNum(v) {
+const toNum = (v) => {
   const n = Number(v);
-  return isNaN(n) ? 0 : n;
-}
+  return Number.isFinite(n) ? n : 0;
+};
 
 // =========================
-// 🌍 GEOJSON CACHE
+// 🌍 GEO DATA (FAIL-SAFE)
 // =========================
 async function getGeoData() {
   if (!geoData) {
-    geoData = await d3.json(
-      "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson"
-    );
+    try {
+      geoData = await d3.json(
+        "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson"
+      );
+    } catch {
+      console.error("GeoJSON load failed");
+      geoData = { features: [] };
+    }
   }
   return geoData;
 }
 
 // =========================
-// 🚀 LOAD DATA
+// 🚀 LOAD DATA (FULL SAFE)
 // =========================
 async function loadData() {
+  const currentId = ++requestId;
   const loading = document.getElementById("loading");
 
   if (controller) controller.abort();
@@ -52,6 +71,9 @@ async function loadData() {
 
     const json = await res.json();
 
+    // 🛑 RACE GUARD
+    if (currentId !== requestId) return;
+
     if (json.dataset_hash && json.dataset_hash === lastHash) return;
     lastHash = json.dataset_hash;
 
@@ -61,23 +83,48 @@ async function loadData() {
 
     renderAll(fullData);
 
+    // ✅ Sync prediction safely
+    if (fullData.length) loadPrediction(currentId);
+
   } catch (err) {
     if (err.name === "AbortError") return;
 
-    if (loading) {
+    if (currentId === requestId && loading) {
       loading.style.display = "block";
       loading.innerText = "⚠️ Failed to load data";
       loading.style.color = "red";
     }
 
   } finally {
-    if (timeout) clearTimeout(timeout);
+    clearTimeout(timeout);
     controller = null;
   }
 }
 
 // =========================
-// 🔍 COMMAND PARSER
+// 🔁 POLLING ENGINE
+// =========================
+async function startPolling() {
+  if (polling) return;
+  polling = true;
+
+  while (polling) {
+    await loadData();
+    await new Promise(r => setTimeout(r, 15000));
+  }
+}
+
+function stopPolling() {
+  polling = false;
+}
+
+// TAB VISIBILITY CONTROL
+document.addEventListener("visibilitychange", () => {
+  document.hidden ? stopPolling() : startPolling();
+});
+
+// =========================
+// 🔍 COMMAND FILTER
 // =========================
 document.getElementById("command")?.addEventListener("input", (e) => {
   clearTimeout(debounce);
@@ -108,7 +155,7 @@ document.getElementById("command")?.addEventListener("input", (e) => {
 });
 
 // =========================
-// 🎯 MAIN PIPELINE
+// 🎯 PIPELINE
 // =========================
 function renderAll(data) {
   render(data);
@@ -125,15 +172,14 @@ function render(rows) {
   const tableEl = document.getElementById("table");
 
   if (!rows.length) {
-    if (leaderEl) leaderEl.innerHTML = "No data";
-    if (top10El) top10El.innerHTML = "";
-    if (tableEl) tableEl.innerHTML = "";
+    leaderEl && (leaderEl.innerHTML = "No data");
+    top10El && (top10El.innerHTML = "");
+    tableEl && (tableEl.innerHTML = "");
     return;
   }
 
   const newRanks = {};
 
-  // Leader
   const leader = rows[0];
   const prev = previousRanks[leader.Country];
   const delta = prev ? prev - leader.Rank : 0;
@@ -148,7 +194,6 @@ function render(rows) {
     `;
   }
 
-  // Top 10
   if (top10El) {
     top10El.innerHTML = "";
     rows.slice(0, 10).forEach(r => {
@@ -158,7 +203,6 @@ function render(rows) {
     });
   }
 
-  // Table
   if (tableEl) {
     tableEl.innerHTML = "";
 
@@ -166,9 +210,7 @@ function render(rows) {
       const prevRank = previousRanks[r.Country];
       const change = prevRank ? prevRank - r.Rank : 0;
 
-      let arrow = "";
-      if (change > 0) arrow = "↑";
-      else if (change < 0) arrow = "↓";
+      const arrow = change > 0 ? "↑" : change < 0 ? "↓" : "";
 
       const tr = document.createElement("tr");
 
@@ -180,7 +222,6 @@ function render(rows) {
       `;
 
       if (arrow) {
-        tr.style.transition = "all 0.3s ease-in-out";
         tr.style.background = change > 0 ? "#063" : "#600";
       }
 
@@ -193,7 +234,7 @@ function render(rows) {
 }
 
 // =========================
-// 🎯 TIER CLASS
+// 🎯 TIER
 // =========================
 function tierClass(t) {
   if (!t) return "";
@@ -232,20 +273,26 @@ function renderChart(data) {
 }
 
 // =========================
-// 🌍 MAP
+// 🌍 MAP (AUTO SCALE SAFE)
 // =========================
 async function renderMap(data) {
   const svg = d3.select("#worldMap");
   const geo = await getGeoData();
 
-  const projection = d3.geoMercator().fitSize([1000, 500], geo);
-  const path = d3.geoPath().projection(projection);
+  if (!projection) {
+    projection = d3.geoMercator().fitSize([1000, 500], geo);
+    path = d3.geoPath().projection(projection);
+  }
 
   const scoreMap = {};
   data.forEach(d => scoreMap[d.Country] = toNum(d.Score));
 
+  const scores = Object.values(scoreMap);
+  const min = scores.length ? Math.min(...scores) : 0;
+  const max = scores.length ? Math.max(...scores) : 100;
+
   const color = d3.scaleSequential(d3.interpolateYlGnBu)
-    .domain([40, 90]);
+    .domain([min, max]);
 
   if (!mapInitialized) {
     svg.selectAll("path")
@@ -276,45 +323,14 @@ async function renderMap(data) {
 }
 
 // =========================
-// 🎛️ SIMULATION
+// 🤖 PREDICTION (RACE SAFE)
 // =========================
-document.getElementById("adjust")?.addEventListener("input", (e) => {
-  const val = Number(e.target.value);
-
-  const simulated = fullData.map(d => ({
-    ...d,
-    Score: toNum(d.Score) + val
-  }));
-
-  renderAll(simulated);
-});
-
-// =========================
-// ⚙️ POLICY ENGINE
-// =========================
-document.getElementById("risk")?.addEventListener("input", (e) => {
-  const epsilon = Number(e.target.value);
-
-  const updated = fullData.map(d => ({
-    ...d,
-    Score: toNum(d.Score) * epsilon
-  }));
-
-  renderAll(updated);
-});
-
-// =========================
-// 🔁 AUTO REFRESH
-// =========================
-setInterval(loadData, 15000);
-
-// =========================
-// 🤖 AI PREDICTION
-// =========================
-async function loadPrediction() {
+async function loadPrediction(currentId) {
   try {
     const res = await fetch("/predict");
     const pred = await res.json();
+
+    if (currentId !== requestId) return;
 
     const map = {};
     pred.forEach(p => map[p.Country] = toNum(p.PredictedScore));
@@ -331,5 +347,5 @@ async function loadPrediction() {
 // =========================
 document.addEventListener("DOMContentLoaded", () => {
   loadData();
-  loadPrediction();
+  startPolling();
 });
