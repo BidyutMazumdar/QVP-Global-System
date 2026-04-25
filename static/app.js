@@ -1,50 +1,46 @@
 const API_URL = "/rankings";
 
 // =========================
-// 🌐 GLOBAL STATE
+// 🌐 GLOBAL STATE (LOCKED)
 // =========================
 let controller = null;
 let fullData = [];
+let currentViewData = []; // ✅ SINGLE SOURCE OF TRUTH
 let chartInstance = null;
-let lastHash = null;
 let previousRanks = {};
 let geoData = null;
-let debounce;
 
-// MAP CACHE
-let mapInitialized = false;
 let projection = null;
 let path = null;
 
-// POLLING
+let requestId = 0;
 let polling = false;
 let pollTimer = null;
 
-// REQUEST GUARD
-let requestId = 0;
+let simTimeout = null;
 
 // =========================
-// 🔢 SAFE NUMBER
+// 🔢 SAFE NUMBER (HARDENED)
 // =========================
 const toNum = (v) => {
   const n = Number(v);
   return Number.isFinite(n) ? n : 0;
 };
 
-// =========================
-// 🔐 REGEX SAFETY
-// =========================
-const escapeRegex = (s) =>
-  s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-
-const getValue = (q, key) => {
-  const safeKey = escapeRegex(key);
-  const match = q.match(new RegExp(`${safeKey}:?([^ ]+)`));
-  return match ? match[1] : null;
-};
+const safeMul = (a, b) =>
+  Number((toNum(a) * toNum(b)).toFixed(2));
 
 // =========================
-// 🌍 GEO DATA (FAIL-SAFE)
+// 🧠 RANK ENGINE (DETERMINISTIC)
+// =========================
+function recomputeRanks(data) {
+  return [...data]
+    .sort((a, b) => toNum(b.Score) - toNum(a.Score))
+    .map((d, i) => ({ ...d, Rank: i + 1 }));
+}
+
+// =========================
+// 🌍 GEO DATA (CACHED)
 // =========================
 async function getGeoData() {
   if (!geoData) {
@@ -53,7 +49,6 @@ async function getGeoData() {
         "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson"
       );
     } catch {
-      console.error("GeoJSON load failed");
       geoData = { features: [] };
     }
   }
@@ -70,55 +65,70 @@ async function loadData() {
   if (controller) controller.abort();
   controller = new AbortController();
 
-  let timeout;
-
   try {
-    timeout = setTimeout(() => controller.abort(), 8000);
+    if (loading) {
+      loading.style.display = "flex";
+      loading.innerText = "Loading intelligence data...";
+      loading.style.color = "#9ca3af";
+    }
 
     const res = await fetch(API_URL, {
       cache: "no-store",
       signal: controller.signal
     });
 
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    if (!res.ok) throw new Error();
 
     const json = await res.json();
-
     if (currentId !== requestId) return;
 
-    if (json.dataset_hash && json.dataset_hash === lastHash) return;
-    lastHash = json.dataset_hash;
+    // ✅ Immutable base data
+    fullData = Object.freeze((json.data || []).map(d => ({ ...d })));
 
-    // ✅ Immutable data
-    fullData = Object.freeze(
-      (Array.isArray(json.data) ? json.data : []).map(d => ({ ...d }))
-    );
+    await loadPrediction(currentId);
 
-    loading && (loading.style.display = "none");
+    if (loading) loading.style.display = "none";
 
-    renderAll(fullData);
+    renderAll(recomputeRanks(fullData));
 
-    if (fullData.length) loadPrediction(currentId);
-
-  } catch (err) {
-    if (err.name === "AbortError") return;
-
-    if (currentId === requestId && loading) {
-      loading.style.display = "block";
-      loading.innerText = "⚠️ Failed to load data";
+  } catch {
+    if (loading) {
+      loading.style.display = "flex";
+      loading.innerText = "⚠️ Data load failed";
       loading.style.color = "red";
     }
-
   } finally {
-    clearTimeout(timeout);
     controller = null;
   }
 }
 
 // =========================
-// 🔁 POLLING (FULL SAFE)
+// 🤖 PREDICTION
 // =========================
-async function startPolling() {
+async function loadPrediction(currentId) {
+  try {
+    const res = await fetch("/predict");
+    const pred = await res.json();
+
+    if (currentId !== requestId) return;
+
+    const map = {};
+    pred.forEach(p => {
+      map[p.Country] = toNum(p.PredictedScore);
+    });
+
+    fullData = fullData.map(d => ({
+      ...d,
+      predicted: map[d.Country] ?? null
+    }));
+
+  } catch {}
+}
+
+// =========================
+// 🔁 POLLING CONTROL
+// =========================
+function startPolling() {
   if (polling) return;
   polling = true;
 
@@ -133,127 +143,95 @@ async function startPolling() {
 
 function stopPolling() {
   polling = false;
-  if (pollTimer) {
-    clearTimeout(pollTimer);
-    pollTimer = null;
-  }
+  if (pollTimer) clearTimeout(pollTimer);
 }
 
-// TAB CONTROL
 document.addEventListener("visibilitychange", () => {
   document.hidden ? stopPolling() : startPolling();
 });
 
 // =========================
-// 🔍 FILTER ENGINE
-// =========================
-document.getElementById("command")?.addEventListener("input", (e) => {
-  clearTimeout(debounce);
-
-  debounce = setTimeout(() => {
-    const q = e.target.value.toLowerCase().trim();
-    let filtered = [...fullData];
-
-    const tier = getValue(q, "tier");
-    const country = getValue(q, "country");
-    const scoreMatch = q.match(/score>(\d+)/);
-
-    if (tier) {
-      filtered = filtered.filter(d => d.Tier?.includes(tier.toUpperCase()));
-    }
-
-    if (scoreMatch) {
-      const v = Number(scoreMatch[1]);
-      filtered = filtered.filter(d => toNum(d.Score) > v);
-    }
-
-    if (country) {
-      filtered = filtered.filter(d =>
-        d.Country?.toLowerCase().includes(country)
-      );
-    }
-
-    renderAll(filtered);
-  }, 200);
-});
-
-// =========================
-// 🎯 PIPELINE
+// 🎯 RENDER PIPELINE (LOCK)
 // =========================
 function renderAll(data) {
-  render(data);
+  currentViewData = data; // ✅ STATE LOCK
+  renderTable(data);
   renderChart(data);
   renderMap(data);
 }
 
 // =========================
-// 🎨 UI RENDER
+// 📊 TABLE (EVENT SAFE)
 // =========================
-function render(rows) {
+function renderTable(rows) {
+  const table = document.getElementById("table");
   const leaderEl = document.getElementById("leader");
-  const top10El = document.getElementById("top10");
-  const tableEl = document.getElementById("table");
 
   if (!rows.length) {
-    leaderEl && (leaderEl.innerHTML = "No data");
-    top10El && (top10El.innerHTML = "");
-    tableEl && (tableEl.innerHTML = "");
+    table.innerHTML = "";
+    leaderEl.innerHTML = "No data";
     return;
   }
 
-  const newRanks = {};
   const fragment = document.createDocumentFragment();
+  const newRanks = {};
 
   const leader = rows[0];
-  const prev = previousRanks[leader.Country];
-  const delta = prev ? prev - leader.Rank : 0;
-  const arrow = delta > 0 ? "↑" : delta < 0 ? "↓" : "→";
 
-  if (leaderEl) {
-    leaderEl.innerHTML = `
-      <div style="font-size:20px;font-weight:bold">${leader.Country}</div>
-      <div>Score: ${toNum(leader.Score)}</div>
-      <div class="${tierClass(leader.Tier)}">${leader.Tier}</div>
-      <div>Change: ${arrow} ${delta}</div>
-    `;
-  }
-
-  top10El && (top10El.innerHTML = "");
-  rows.slice(0, 10).forEach(r => {
-    const li = document.createElement("li");
-    li.textContent = `${r.Rank}. ${r.Country} (${toNum(r.Score)})`;
-    top10El?.appendChild(li);
-  });
+  leaderEl.innerHTML = `
+    <div style="font-size:20px;font-weight:bold">${leader.Country}</div>
+    <div>Score: ${toNum(leader.Score)}</div>
+    <div>Predicted: ${toNum(leader.predicted ?? "-")}</div>
+    <div class="${tierClass(leader.Tier)}">${leader.Tier}</div>
+  `;
 
   rows.forEach(r => {
-    const prevRank = previousRanks[r.Country];
-    const change = prevRank ? prevRank - r.Rank : 0;
-    const arrow = change > 0 ? "↑" : change < 0 ? "↓" : "";
+    const prev = previousRanks[r.Country];
+    const change = prev ? prev - r.Rank : 0;
 
     const tr = document.createElement("tr");
+
+    if (change > 0) tr.classList.add("flash-up");
+    if (change < 0) tr.classList.add("flash-down");
+
     tr.innerHTML = `
-      <td>${r.Rank} ${arrow}</td>
+      <td>${r.Rank}</td>
       <td>${r.Country}</td>
       <td>${toNum(r.Score)}</td>
+      <td>${toNum(r.predicted ?? "-")}</td>
       <td class="${tierClass(r.Tier)}">${r.Tier}</td>
     `;
-
-    if (arrow) {
-      tr.style.background = change > 0 ? "#063" : "#600";
-    }
 
     fragment.appendChild(tr);
     newRanks[r.Country] = r.Rank;
   });
 
-  tableEl && (tableEl.innerHTML = "");
-  tableEl?.appendChild(fragment);
+  table.innerHTML = "";
+  table.appendChild(fragment);
 
   previousRanks = newRanks;
 }
 
+// ✅ Delegated click (no memory churn)
+document.getElementById("table")?.addEventListener("click", (e) => {
+  const row = e.target.closest("tr");
+  if (!row) return;
+
+  const country = row.children[1].innerText;
+  const r = currentViewData.find(d => d.Country === country);
+  if (!r) return;
+
+  document.getElementById("countryDetail").innerHTML = `
+    <h3>${r.Country}</h3>
+    <p>Rank: ${r.Rank}</p>
+    <p>Score: ${r.Score}</p>
+    <p>Predicted: ${r.predicted ?? "-"}</p>
+    <p>Tier: ${r.Tier}</p>
+  `;
+});
+
 // =========================
-// 🎯 TIER
+// 🎨 TIER CLASS
 // =========================
 function tierClass(t) {
   if (!t) return "";
@@ -264,7 +242,7 @@ function tierClass(t) {
 }
 
 // =========================
-// 📊 CHART
+// 📈 CHART (SAFE)
 // =========================
 function renderChart(data) {
   const ctx = document.getElementById("chart");
@@ -272,39 +250,31 @@ function renderChart(data) {
 
   const top = data.slice(0, 10);
 
-  if (chartInstance) {
+  if (chartInstance && chartInstance.data.datasets.length > 1) {
     chartInstance.data.labels = top.map(d => d.Country);
     chartInstance.data.datasets[0].data = top.map(d => toNum(d.Score));
+    chartInstance.data.datasets[1].data = top.map(d => toNum(d.predicted ?? 0));
     chartInstance.update();
     return;
   }
 
   chartInstance = new Chart(ctx, {
-    type: "bar",
     data: {
       labels: top.map(d => d.Country),
-      datasets: [{
-        label: "Score",
-        data: top.map(d => toNum(d.Score))
-      }]
+      datasets: [
+        { type: "bar", label: "Score", data: top.map(d => toNum(d.Score)) },
+        { type: "line", label: "Predicted", data: top.map(d => toNum(d.predicted ?? 0)), borderDash: [5, 5] }
+      ]
     }
   });
 }
 
-function destroyChart() {
-  if (chartInstance) {
-    chartInstance.destroy();
-    chartInstance = null;
-  }
-}
-
 // =========================
-// 🌍 MAP
+// 🌍 MAP (OPTIMIZED + CONSISTENT)
 // =========================
 async function renderMap(data) {
   const svg = d3.select("#worldMap");
   const geo = await getGeoData();
-
   if (!geo.features.length) return;
 
   if (!projection) {
@@ -315,68 +285,59 @@ async function renderMap(data) {
   const scoreMap = {};
   data.forEach(d => scoreMap[d.Country] = toNum(d.Score));
 
-  const scores = Object.values(scoreMap);
-  const min = scores.length ? Math.min(...scores) : 0;
-  const max = scores.length ? Math.max(...scores) : 100;
+  const intensity = Number(document.getElementById("intensity")?.value || 1);
 
   const color = d3.scaleSequential(d3.interpolateYlGnBu)
-    .domain([min, max]);
-
-  if (!mapInitialized) {
-    svg.selectAll("path")
-      .data(geo.features)
-      .enter()
-      .append("path")
-      .attr("d", path)
-      .attr("stroke", "#222")
-      .each(function () {
-        d3.select(this).append("title");
-      });
-
-    mapInitialized = true;
-  }
+    .domain([0, 100]);
 
   svg.selectAll("path")
-    .transition()
-    .duration(300)
+    .data(geo.features)
+    .join("path")
+    .attr("d", path)
+    .attr("stroke", "#222")
     .attr("fill", d => {
       const s = scoreMap[d.properties.name];
-      return s ? color(s) : "#111";
-    })
-    .select("title")
-    .text(d => {
-      const s = scoreMap[d.properties.name];
-      return `${d.properties.name}: ${s ?? "N/A"}`;
+      return s ? color(s * intensity) : "#111";
     });
 }
 
 // =========================
-// 🤖 PREDICTION
+// 🎚️ SIMULATION (LOCKED)
 // =========================
-async function loadPrediction(currentId) {
-  try {
-    const res = await fetch("/predict");
-    const pred = await res.json();
+document.getElementById("adjust")?.addEventListener("input", (e) => {
+  clearTimeout(simTimeout);
 
-    if (currentId !== requestId) return;
+  simTimeout = setTimeout(() => {
+    const val = Number(e.target.value);
 
-    const map = {};
-    pred.forEach(p => map[p.Country] = toNum(p.PredictedScore));
+    const simulated = fullData.map(d => ({
+      ...d,
+      Score: safeMul(d.Score, (1 + val / 100))
+    }));
 
-    fullData.forEach(d => {
-      d.predicted = map[d.Country];
-    });
-
-  } catch {}
-}
+    renderAll(recomputeRanks(simulated));
+  }, 100);
+});
 
 // =========================
-// 🧹 CLEANUP
+// ⚖️ POLICY ENGINE (SAFE)
 // =========================
-window.addEventListener("beforeunload", () => {
-  stopPolling();
-  if (controller) controller.abort();
-  destroyChart();
+document.getElementById("risk")?.addEventListener("input", (e) => {
+  const eps = Number(e.target.value);
+
+  const updated = fullData.map(d => ({
+    ...d,
+    Score: safeMul(d.QSSI_adj ?? d.Score, eps)
+  }));
+
+  renderAll(recomputeRanks(updated));
+});
+
+// =========================
+// 🌡️ MAP INTENSITY (SYNCED)
+// =========================
+document.getElementById("intensity")?.addEventListener("input", () => {
+  renderMap(currentViewData);
 });
 
 // =========================
