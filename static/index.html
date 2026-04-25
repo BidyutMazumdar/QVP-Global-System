@@ -6,49 +6,44 @@
 
 <title>QSSI™ Global Intelligence Terminal | Sovereign Analytics</title>
 
-<!-- ✅ Libraries (deferred, no duplication) -->
+<!-- Libraries -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
 <script src="https://d3js.org/d3.v7.min.js" defer></script>
 
 <style>
+/* ===== BASE ===== */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: system-ui, -apple-system, Arial, sans-serif;
   background: #0b0f1a;
   color: #e6edf3;
 }
 
-/* Layout */
+/* ===== LAYOUT ===== */
 .layout {
   display: grid;
-  grid-template-columns: 1fr 1.2fr 1fr;
+  grid-template-columns: 1fr 1.3fr 1fr;
   height: 100vh;
 }
 
-/* Panels */
 #map-panel, #center-panel, #analytics-panel {
   padding: 15px;
   overflow-y: auto;
 }
 
-#map-panel {
-  border-right: 1px solid #1f2a44;
-}
+#map-panel { border-right: 1px solid #1f2a44; }
+#analytics-panel { border-left: 1px solid #1f2a44; }
 
-#analytics-panel {
-  border-left: 1px solid #1f2a44;
-}
-
-/* Cards */
+/* ===== CARDS ===== */
 .card {
   background: #111827;
   padding: 15px;
   border-radius: 10px;
   margin-bottom: 15px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
-/* Table */
+/* ===== TABLE ===== */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -61,9 +56,16 @@ td, th {
 
 th {
   background: #1f2a44;
+  text-align: left;
 }
 
-/* Inputs */
+/* Hover interaction */
+tbody tr:hover {
+  background: rgba(255,255,255,0.04);
+  cursor: pointer;
+}
+
+/* ===== INPUTS ===== */
 input, select {
   width: 100%;
   padding: 8px;
@@ -73,77 +75,120 @@ input, select {
   color: white;
 }
 
-/* Tier colors */
+/* ===== TIERS ===== */
 .tier-a { color: #00ff9c; }
 .tier-b { color: #f1c40f; }
 .tier-c { color: #e67e22; }
 .tier-d { color: #e74c3c; }
 
-/* Loading */
-#loading {
-  text-align: center;
-  padding: 10px;
-  font-size: 14px;
-  color: #9ca3af;
+/* ===== ANIMATIONS ===== */
+.flash-up {
+  animation: flashUp 0.5s ease;
+}
+.flash-down {
+  animation: flashDown 0.5s ease;
 }
 
-/* Scroll polish */
-::-webkit-scrollbar {
-  width: 6px;
+@keyframes flashUp {
+  0% { background: rgba(0,255,156,0.25); }
+  100% { background: transparent; }
 }
-::-webkit-scrollbar-thumb {
-  background: #1f2a44;
+
+@keyframes flashDown {
+  0% { background: rgba(231,76,60,0.25); }
+  100% { background: transparent; }
+}
+
+/* ===== SCROLL ===== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-thumb { background: #1f2a44; }
+
+/* ===== LOADING OVERLAY ===== */
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0b0f1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  z-index: 999;
+  font-size: 14px;
 }
 </style>
 </head>
 
 <body>
 
-<div id="loading">Loading data...</div>
+<!-- 🔄 LOADING OVERLAY -->
+<div id="loading">Loading intelligence data...</div>
 
 <div class="layout">
 
-  <!-- LEFT: MAP -->
+  <!-- 🌍 MAP PANEL -->
   <div id="map-panel">
     <h3>Global Heatmap</h3>
+
     <svg id="worldMap" viewBox="0 0 1000 500" style="width:100%; height:auto;"></svg>
+
+    <label>Heatmap Intensity</label>
+    <input type="range" id="intensity" min="0.5" max="2" step="0.1" value="1">
   </div>
 
-  <!-- CENTER -->
+  <!-- 🧠 CENTER PANEL -->
   <div id="center-panel">
 
+    <!-- Query Input -->
     <input id="command" placeholder="type: tier:A | score>80 | country:India" />
 
+    <!-- Leader -->
     <div class="card">
       <h3>Leader Intelligence</h3>
       <div id="leader"></div>
     </div>
 
+    <!-- Top 10 -->
     <div class="card">
       <h3>Top 10</h3>
       <ul id="top10"></ul>
     </div>
 
+    <!-- Ranking Table -->
     <div class="card">
       <h3>Ranking Table</h3>
       <table>
         <thead>
           <tr>
-            <th>Rank</th>
-            <th>Country</th>
-            <th>Score</th>
-            <th>Tier</th>
+            <th scope="col">Rank</th>
+            <th scope="col">Country</th>
+            <th scope="col">Score</th>
+            <th scope="col">Predicted</th>
+            <th scope="col">Tier</th>
           </tr>
         </thead>
         <tbody id="table"></tbody>
       </table>
     </div>
 
+    <!-- Drill-down -->
+    <div class="card">
+      <h3>Country Intelligence</h3>
+      <div id="countryDetail">
+        <p style="color:#9ca3af;">
+          Click a country row to view detailed intelligence, prediction drift, and risk profile.
+        </p>
+      </div>
+    </div>
+
   </div>
 
-  <!-- RIGHT: ANALYTICS -->
+  <!-- 📊 ANALYTICS PANEL -->
   <div id="analytics-panel">
 
+    <!-- Metric -->
     <div class="card">
       <h3>Metric Selection</h3>
       <select id="metric">
@@ -153,28 +198,31 @@ input, select {
       </select>
     </div>
 
+    <!-- Chart -->
     <div class="card">
       <h3>Analytics</h3>
       <canvas id="chart"></canvas>
     </div>
 
+    <!-- Simulation -->
     <div class="card">
-      <h3>Simulation</h3>
+      <h3>Simulation Engine</h3>
       <label>Adjustment %</label>
-      <input type="range" id="adjust" min="-10" max="10" value="0" />
+      <input type="range" id="adjust" min="-10" max="10" value="0">
     </div>
 
+    <!-- Policy -->
     <div class="card">
       <h3>Policy Engine</h3>
       <label>Risk Factor (ε)</label>
-      <input type="range" id="risk" min="0.9" max="1.1" step="0.01" value="1.01" />
+      <input type="range" id="risk" min="0.9" max="1.1" step="0.01" value="1.01">
     </div>
 
   </div>
 
 </div>
 
-<!-- ✅ App Logic (single source of truth) -->
+<!-- App Logic -->
 <script src="/static/app.js" defer></script>
 
 </body>
