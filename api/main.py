@@ -67,7 +67,7 @@ def get_ip(request: Request):
     return request.client.host if request.client else "unknown"
 
 # =========================
-# 🚦 REDIS RATE LIMIT
+# 🚦 RATE LIMIT (SAFE)
 # =========================
 try:
     RATE_SCRIPT = redis_client.register_script("""
@@ -81,13 +81,14 @@ except Exception as e:
 
 async def rate_limit(ip: str, limit=60, window=60):
     if not RATE_SCRIPT:
-        logging.warning("Rate limit disabled (Redis not ready)")
         return
-
-    key = f"rate:{ip}"
-    count = await RATE_SCRIPT(keys=[key], args=[window])
-    if int(count) > limit:
-        raise HTTPException(429, "Too many requests")
+    try:
+        key = f"rate:{ip}"
+        count = await RATE_SCRIPT(keys=[key], args=[window])
+        if int(count) > limit:
+            raise HTTPException(429, "Too many requests")
+    except Exception as e:
+        logging.warning(f"Rate limit error: {e}")
 
 # =========================
 # 📊 ENGINE
@@ -104,35 +105,30 @@ def safe_init():
 
     reader = csv.DictReader(raw.decode("utf-8", errors="replace").splitlines())
 
-    EXPECTED_FIELDS = ["PQC", "AI", "LEGAL", "RES", "RISK", "COUNTRY"]
+    EXPECTED = ["PQC", "AI", "LEGAL", "RES", "RISK", "COUNTRY"]
 
     for row in reader:
-        row_clean = {
-            k.strip().upper(): (v.strip() if isinstance(v, str) else v)
-            for k, v in row.items()
-        }
-
-        for field in EXPECTED_FIELDS:
-            row_clean.setdefault(field, 0)
+        row = {k.strip().upper(): (v.strip() if isinstance(v, str) else v) for k, v in row.items()}
+        for f in EXPECTED:
+            row.setdefault(f, 0)
 
         try:
             r = compute_qssi(
-                to_float(row_clean["PQC"]),
-                to_float(row_clean["AI"]),
-                to_float(row_clean["LEGAL"]),
-                to_float(row_clean["RES"]),
-                to_float(row_clean["RISK"])
+                to_float(row["PQC"]),
+                to_float(row["AI"]),
+                to_float(row["LEGAL"]),
+                to_float(row["RES"]),
+                to_float(row["RISK"])
             )
         except Exception as e:
-            logging.error(f"Row failed: {row_clean} | {e}")
-            errors.append({"row": row_clean, "error": str(e)})
+            errors.append({"row": row, "error": str(e)})
             continue
 
-        r["Country"] = row_clean.get("COUNTRY", "Unknown")
+        r["Country"] = row.get("COUNTRY", "Unknown")
 
-        for k, v in r.items():
-            if isinstance(v, float):
-                r[k] = round(v, 6)
+        for k in r:
+            if isinstance(r[k], float):
+                r[k] = round(r[k], 6)
 
         results.append(r)
 
@@ -146,9 +142,7 @@ def safe_init():
         "errors": errors,
         "dataset_hash": dataset_hash,
         "run_id": run_hash(results),
-        "country_index": {
-            r["Country"].lower().strip(): r for r in results
-        }
+        "country_index": {r["Country"].lower().strip(): r for r in results}
     }
 
 # =========================
@@ -204,10 +198,10 @@ if os.path.exists(STATIC_DIR):
     app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
 # =========================
-# 🔐 ERROR HANDLER
+# 🔐 GLOBAL ERROR HANDLER
 # =========================
 @app.exception_handler(Exception)
-async def global_handler(request, exc):
+async def global_handler(request: Request, exc: Exception):
     logging.error(f"{request.method} {request.url.path} | {exc}")
     return JSONResponse(status_code=500, content={"error": "Internal Server Error"})
 
@@ -223,9 +217,17 @@ async def core(request: Request, call_next):
         if request.headers.get("If-None-Match") == etag:
             return Response(status_code=304)
 
-    res = await asyncio.wait_for(call_next(request), timeout=10)
+    try:
+        res = await asyncio.wait_for(call_next(request), timeout=10)
+    except asyncio.TimeoutError:
+        return JSONResponse(status_code=504, content={"error": "timeout"})
 
-    res.headers["Cache-Control"] = "public, max-age=20"
+    # Security Headers
+    res.headers["X-Content-Type-Options"] = "nosniff"
+    res.headers["X-Frame-Options"] = "DENY"
+    res.headers["Referrer-Policy"] = "no-referrer"
+
+    res.headers["Cache-Control"] = "public, max-age=20, stale-while-revalidate=60"
     res.headers["X-API-Version"] = "FINAL.2026.LOCKED"
 
     if etag:
@@ -234,7 +236,7 @@ async def core(request: Request, call_next):
     return res
 
 # =========================
-# 🔐 SECURITY
+# 🔐 HELPERS
 # =========================
 def verify_key(k):
     if not k or k != API_KEY:
@@ -252,20 +254,19 @@ async def root():
     return {
         "system": "QVP GLOBAL SYSTEM",
         "version": "FINAL.2026.LOCKED",
-        "endpoints": {
-            "rankings": "/rankings",
-            "top": "/top/{n}",
-            "country": "/country/{name}",
-            "meta": "/meta",
-            "health": "/health"
-        }
+        "status": "operational",
+        "endpoints": ["/rankings", "/top/{n}", "/country/{name}", "/meta", "/health"]
     }
 
 @app.get("/rankings")
 async def rankings(request: Request):
     await rate_limit(get_ip(request))
     ensure_ready()
-    return ENGINE_CACHE
+    return {
+        "data": ENGINE_CACHE["data"],
+        "run_id": ENGINE_CACHE["run_id"],
+        "dataset_hash": ENGINE_CACHE.get("dataset_hash")
+    }
 
 @app.get("/top/{n}")
 async def top(n: int, request: Request):
@@ -274,7 +275,7 @@ async def top(n: int, request: Request):
 
     await rate_limit(get_ip(request))
     ensure_ready()
-    return ENGINE_CACHE["data"][:n]
+    return ENGINE_CACHE["data"][:min(n, 100)]
 
 @app.get("/country/{name}")
 async def country(name: str, request: Request):
@@ -295,7 +296,8 @@ async def meta(request: Request):
     return {
         "records": len(ENGINE_CACHE["data"]),
         "dataset_hash": ENGINE_CACHE.get("dataset_hash"),
-        "run_id": ENGINE_CACHE["run_id"]
+        "run_id": ENGINE_CACHE["run_id"],
+        "errors": len(ENGINE_CACHE.get("errors", []))
     }
 
 @app.get("/health")
@@ -308,7 +310,9 @@ async def health():
 
     return {
         "status": "ok" if ENGINE_CACHE.get("data") else "init",
-        "redis": "ok" if redis_ok else "degraded"
+        "records": len(ENGINE_CACHE.get("data", [])),
+        "redis": "ok" if redis_ok else "degraded",
+        "version": "FINAL.2026.LOCKED"
     }
 
 # =========================
