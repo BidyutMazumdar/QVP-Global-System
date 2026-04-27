@@ -67,7 +67,7 @@ def get_ip(request: Request):
     return request.client.host if request.client else "unknown"
 
 # =========================
-# 🚦 REDIS RATE LIMIT (SAFE INIT)
+# 🚦 REDIS RATE LIMIT
 # =========================
 try:
     RATE_SCRIPT = redis_client.register_script("""
@@ -81,16 +81,13 @@ except Exception as e:
 
 async def rate_limit(ip: str, limit=60, window=60):
     if not RATE_SCRIPT:
+        logging.warning("Rate limit disabled (Redis not ready)")
         return
 
     key = f"rate:{ip}"
-    try:
-        count = await RATE_SCRIPT(keys=[key], args=[window])
-        if int(count) > limit:
-            raise HTTPException(429, "Too many requests")
-    except Exception as e:
-        logging.warning(f"Rate limit fallback: {e}")
-        return
+    count = await RATE_SCRIPT(keys=[key], args=[window])
+    if int(count) > limit:
+        raise HTTPException(429, "Too many requests")
 
 # =========================
 # 📊 ENGINE
@@ -99,8 +96,7 @@ def safe_init():
     if not os.path.exists(DATASET_PATH):
         raise RuntimeError("Dataset missing")
 
-    results = []
-    errors = []
+    results, errors = [], []
 
     with open(DATASET_PATH, "rb") as f:
         raw = f.read()
@@ -117,16 +113,15 @@ def safe_init():
         }
 
         for field in EXPECTED_FIELDS:
-            if field not in row_clean:
-                row_clean[field] = 0
+            row_clean.setdefault(field, 0)
 
         try:
             r = compute_qssi(
-                to_float(row_clean.get("PQC")),
-                to_float(row_clean.get("AI")),
-                to_float(row_clean.get("LEGAL")),
-                to_float(row_clean.get("RES")),
-                to_float(row_clean.get("RISK"))
+                to_float(row_clean["PQC"]),
+                to_float(row_clean["AI"]),
+                to_float(row_clean["LEGAL"]),
+                to_float(row_clean["RES"]),
+                to_float(row_clean["RISK"])
             )
         except Exception as e:
             logging.error(f"Row failed: {row_clean} | {e}")
@@ -161,11 +156,7 @@ def safe_init():
 # =========================
 async def refresh_cache():
     loop = asyncio.get_running_loop()
-    try:
-        new = await loop.run_in_executor(None, safe_init)
-    except Exception as e:
-        logging.error(f"Refresh failed: {e}")
-        return
+    new = await loop.run_in_executor(None, safe_init)
 
     if new.get("data"):
         async with CACHE_LOCK:
@@ -188,7 +179,7 @@ async def lifespan(app: FastAPI):
         logging.info("Startup cache loaded")
     except Exception as e:
         logging.critical(f"Startup failed: {e}")
-        ENGINE_CACHE = {"data": [], "run_id": None, "errors": ["startup_failed"]}
+        ENGINE_CACHE = {"data": [], "errors": ["startup_failed"]}
 
     app.state.refreshing = False
     yield
@@ -225,8 +216,6 @@ async def global_handler(request, exc):
 # =========================
 @app.middleware("http")
 async def core(request: Request, call_next):
-    logging.info(f"{request.method} {request.url.path} | IP={get_ip(request)}")
-
     run_id = ENGINE_CACHE.get("run_id")
     etag = f'W/"{run_id}"' if run_id else None
 
@@ -234,13 +223,9 @@ async def core(request: Request, call_next):
         if request.headers.get("If-None-Match") == etag:
             return Response(status_code=304)
 
-    try:
-        res = await asyncio.wait_for(call_next(request), timeout=10)
-    except asyncio.TimeoutError:
-        return JSONResponse(status_code=504, content={"error": "timeout"})
+    res = await asyncio.wait_for(call_next(request), timeout=10)
 
-    res.headers["Cache-Control"] = "public, max-age=20, stale-while-revalidate=60"
-    res.headers["Vary"] = "Accept-Encoding"
+    res.headers["Cache-Control"] = "public, max-age=20"
     res.headers["X-API-Version"] = "FINAL.2026.LOCKED"
 
     if etag:
@@ -256,25 +241,31 @@ def verify_key(k):
         raise HTTPException(401, "Unauthorized")
 
 def ensure_ready():
-    if not ENGINE_CACHE or "data" not in ENGINE_CACHE:
-        raise HTTPException(503, "Not ready")
+    if not ENGINE_CACHE or not ENGINE_CACHE.get("data"):
+        raise HTTPException(503, "Service not ready")
 
 # =========================
 # 🌍 ROUTES
 # =========================
 @app.get("/")
 async def root():
-    return {"system": "QVP GLOBAL SYSTEM"}
+    return {
+        "system": "QVP GLOBAL SYSTEM",
+        "version": "FINAL.2026.LOCKED",
+        "endpoints": {
+            "rankings": "/rankings",
+            "top": "/top/{n}",
+            "country": "/country/{name}",
+            "meta": "/meta",
+            "health": "/health"
+        }
+    }
 
 @app.get("/rankings")
 async def rankings(request: Request):
     await rate_limit(get_ip(request))
     ensure_ready()
-    return {
-        "data": ENGINE_CACHE["data"],
-        "run_id": ENGINE_CACHE["run_id"],
-        "dataset_hash": ENGINE_CACHE.get("dataset_hash")
-    }
+    return ENGINE_CACHE
 
 @app.get("/top/{n}")
 async def top(n: int, request: Request):
@@ -283,7 +274,7 @@ async def top(n: int, request: Request):
 
     await rate_limit(get_ip(request))
     ensure_ready()
-    return ENGINE_CACHE["data"][:min(n, len(ENGINE_CACHE["data"]))]
+    return ENGINE_CACHE["data"][:n]
 
 @app.get("/country/{name}")
 async def country(name: str, request: Request):
@@ -294,7 +285,7 @@ async def country(name: str, request: Request):
     if not r:
         raise HTTPException(404, "Not found")
 
-    return [r]
+    return r
 
 @app.get("/meta")
 async def meta(request: Request):
@@ -304,8 +295,7 @@ async def meta(request: Request):
     return {
         "records": len(ENGINE_CACHE["data"]),
         "dataset_hash": ENGINE_CACHE.get("dataset_hash"),
-        "run_id": ENGINE_CACHE["run_id"],
-        "errors": len(ENGINE_CACHE.get("errors", []))
+        "run_id": ENGINE_CACHE["run_id"]
     }
 
 @app.get("/health")
@@ -318,7 +308,6 @@ async def health():
 
     return {
         "status": "ok" if ENGINE_CACHE.get("data") else "init",
-        "records": len(ENGINE_CACHE.get("data", [])),
         "redis": "ok" if redis_ok else "degraded"
     }
 
