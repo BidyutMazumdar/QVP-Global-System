@@ -151,7 +151,7 @@ def safe_init():
             tier = compute_tier(score)
             tier_clean = tier.split(" ")[1]
 
-            # 🧱 CLEAN RECORD (NO CONTAMINATION)
+            # 🧱 CLEAN RECORD
             record = {}
             for k, v in r.items():
                 if k not in ("Score", "Tier", "TierRaw"):
@@ -174,11 +174,11 @@ def safe_init():
     # 🏁 SORT
     results.sort(key=lambda x: x["Score"], reverse=True)
 
-    # 🏆 RANK (keep OR remove — choose one architecture)
+    # 🏆 RANK (KEEP ONLY IF BACKEND IS SOURCE OF TRUTH)
     for i, r in enumerate(results):
         r["Rank"] = i + 1
 
-    # ⚡ INDEX
+    # ⚡ INDEX (normalized key)
     country_index = {}
     for r in results:
         key = r["Country"].lower()
@@ -226,7 +226,7 @@ async def lifespan(app: FastAPI):
 # =========================
 app = FastAPI(
     title="QVP Global System",
-    version="v3.2.0-FINAL-LOCKED",
+    version="v3.2.1-LOCKED-CONSISTENT",
     lifespan=lifespan
 )
 
@@ -268,7 +268,11 @@ async def rankings():
 async def country(name: str):
     async with CACHE_LOCK:
         ensure_ready()
-        r = ENGINE_CACHE["country_index"].get(name.lower().strip())
+
+        # ✅ FINAL FIX (CRITICAL)
+        normalized = normalize_country(name)
+        r = ENGINE_CACHE["country_index"].get(normalized.lower())
+
         if r:
             return r
         raise HTTPException(404, "Not found")
