@@ -1,42 +1,39 @@
-from fastapi import FastAPI, Header, HTTPException, status, Request
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
+from fastapi import FastAPI, Header, HTTPException, Request
+from fastapi.responses import JSONResponse, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
+from fastapi.staticfiles import StaticFiles
 
-import csv, os, hashlib, json, logging, asyncio
-from typing import Dict, List
-from asyncio import Lock
+import os, csv, json, hashlib, asyncio, logging
+from typing import Dict
 from contextlib import asynccontextmanager
-from time import time
+from asyncio import Lock
 
+import redis.asyncio as redis
+from prometheus_fastapi_instrumentator import Instrumentator
 from engine.qssi_engine import compute_qssi
-
 
 # =========================
 # 🔐 ENV CONFIG
 # =========================
 API_KEY = os.getenv("API_KEY")
-if not API_KEY:
-    raise RuntimeError("API_KEY not set")
-
-ALLOWED_ORIGINS = [
-    o.strip() for o in os.getenv("ALLOWED_ORIGINS", "").split(",") if o.strip()
-]
-if not ALLOWED_ORIGINS:
-    raise RuntimeError("ALLOWED_ORIGINS not set")
-
+REDIS_URL = os.getenv("REDIS_URL")
 TRUST_PROXY = os.getenv("TRUST_PROXY", "false").lower() == "true"
 
+if not API_KEY:
+    raise RuntimeError("API_KEY missing")
+if not REDIS_URL:
+    raise RuntimeError("REDIS_URL missing")
+
+redis_client = redis.from_url(REDIS_URL, decode_responses=True)
 
 # =========================
 # 🧠 LOGGING
 # =========================
 logging.basicConfig(
     level=logging.INFO,
-    format="%(asctime)s | %(levelname)s | %(message)s"
+    format="%(asctime)s | %(levelname)s | %(name)s | %(message)s"
 )
-
 
 # =========================
 # ⚡ GLOBAL STATE
@@ -44,13 +41,9 @@ logging.basicConfig(
 ENGINE_CACHE: Dict = {}
 CACHE_LOCK = Lock()
 
-LAST_CALL = {}
-MAX_TRACKED_IPS = 10000
-
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DATASET_PATH = os.path.join(BASE_DIR, "dataset", "qssi_data.csv")
 STATIC_DIR = os.path.join(BASE_DIR, "static")
-
 
 # =========================
 # 🔧 UTILS
@@ -61,51 +54,59 @@ def to_float(x):
     except:
         return 0.0
 
+def run_hash(data):
+    return hashlib.sha256(
+        json.dumps(data, sort_keys=True, separators=(",", ":")).encode()
+    ).hexdigest()
 
-def run_hash(data: List[Dict]) -> str:
-    canonical = json.dumps(data, sort_keys=True, separators=(",", ":")).encode()
-    return hashlib.sha256(canonical).hexdigest()
-
-
-def get_client_ip(request: Request) -> str:
+def get_ip(request: Request):
     if TRUST_PROXY:
         forwarded = request.headers.get("X-Forwarded-For")
         if forwarded:
             return forwarded.split(",")[0].strip()
     return request.client.host if request.client else "unknown"
 
+# =========================
+# 🚦 REDIS RATE LIMIT (SAFE INIT)
+# =========================
+try:
+    RATE_SCRIPT = redis_client.register_script("""
+    local current = redis.call("INCR", KEYS[1])
+    if current == 1 then redis.call("EXPIRE", KEYS[1], ARGV[1]) end
+    return current
+    """)
+except Exception as e:
+    logging.warning(f"Redis script init failed: {e}")
+    RATE_SCRIPT = None
 
-def rate_limit(ip: str, limit=10, window=1):
-    now = time()
-    calls = LAST_CALL.get(ip, [])
-    calls = [t for t in calls if now - t < window]
+async def rate_limit(ip: str, limit=60, window=60):
+    if not RATE_SCRIPT:
+        return
 
-    if len(calls) >= limit:
-        raise HTTPException(status_code=429, detail="Too many requests")
-
-    calls.append(now)
-    LAST_CALL[ip] = calls
-
-    if len(LAST_CALL) > MAX_TRACKED_IPS:
-        LAST_CALL.clear()
-
+    key = f"rate:{ip}"
+    try:
+        count = await RATE_SCRIPT(keys=[key], args=[window])
+        if int(count) > limit:
+            raise HTTPException(429, "Too many requests")
+    except Exception as e:
+        logging.warning(f"Rate limit fallback: {e}")
+        return
 
 # =========================
-# 📊 ENGINE INIT
+# 📊 ENGINE
 # =========================
 def safe_init():
     if not os.path.exists(DATASET_PATH):
-        raise RuntimeError("Dataset not found")
+        raise RuntimeError("Dataset missing")
 
-    results, errors = [], []
+    results = []
+    errors = []
 
     with open(DATASET_PATH, "rb") as f:
-        raw_bytes = f.read()
-        dataset_hash = hashlib.sha256(raw_bytes).hexdigest()
+        raw = f.read()
+        dataset_hash = hashlib.sha256(raw).hexdigest()
 
-    reader = csv.DictReader(
-        raw_bytes.decode("utf-8", errors="replace").splitlines()
-    )
+    reader = csv.DictReader(raw.decode("utf-8", errors="replace").splitlines())
 
     EXPECTED_FIELDS = ["PQC", "AI", "LEGAL", "RES", "RISK", "COUNTRY"]
 
@@ -120,7 +121,7 @@ def safe_init():
                 row_clean[field] = 0
 
         try:
-            result = compute_qssi(
+            r = compute_qssi(
                 to_float(row_clean.get("PQC")),
                 to_float(row_clean.get("AI")),
                 to_float(row_clean.get("LEGAL")),
@@ -132,206 +133,213 @@ def safe_init():
             errors.append({"row": row_clean, "error": str(e)})
             continue
 
-        result["Country"] = row_clean.get("COUNTRY", "Unknown")
-        results.append(result)
+        r["Country"] = row_clean.get("COUNTRY", "Unknown")
+
+        for k, v in r.items():
+            if isinstance(v, float):
+                r[k] = round(v, 6)
+
+        results.append(r)
 
     results.sort(key=lambda x: x["Score"], reverse=True)
 
     for i, r in enumerate(results):
         r["Rank"] = i + 1
-        for k, v in r.items():
-            if isinstance(v, float):
-                r[k] = round(v, 6)
-
-    logging.info(f"Dataset loaded: {len(results)} records")
-    logging.warning(f"Dataset errors: {len(errors)}")
 
     return {
         "data": results,
         "errors": errors,
         "dataset_hash": dataset_hash,
-        "run_id": run_hash(results)
+        "run_id": run_hash(results),
+        "country_index": {
+            r["Country"].lower().strip(): r for r in results
+        }
     }
 
+# =========================
+# 🔄 REFRESH
+# =========================
+async def refresh_cache():
+    loop = asyncio.get_running_loop()
+    try:
+        new = await loop.run_in_executor(None, safe_init)
+    except Exception as e:
+        logging.error(f"Refresh failed: {e}")
+        return
+
+    if new.get("data"):
+        async with CACHE_LOCK:
+            global ENGINE_CACHE
+            ENGINE_CACHE = new
 
 # =========================
 # 🚀 LIFECYCLE
 # =========================
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    loop = asyncio.get_running_loop()
     global ENGINE_CACHE
+    loop = asyncio.get_running_loop()
 
     try:
         ENGINE_CACHE = await asyncio.wait_for(
             loop.run_in_executor(None, safe_init),
             timeout=30
         )
+        logging.info("Startup cache loaded")
     except Exception as e:
         logging.critical(f"Startup failed: {e}")
-        ENGINE_CACHE = {
-            "data": [],
-            "errors": ["startup_failed"],
-            "dataset_hash": None,
-            "run_id": None
-        }
+        ENGINE_CACHE = {"data": [], "run_id": None, "errors": ["startup_failed"]}
 
+    app.state.refreshing = False
     yield
-
+    logging.info("Shutdown clean")
 
 # =========================
-# 🌐 APP INIT
+# 🌐 APP
 # =========================
-app = FastAPI(
-    title="QVP™ Global System API",
-    version="2026.10",
-    lifespan=lifespan
-)
+app = FastAPI(title="QVP API", version="FINAL.2026.LOCKED", lifespan=lifespan)
 
-app.add_middleware(GZipMiddleware, minimum_size=1000)
-
+app.add_middleware(GZipMiddleware)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=ALLOWED_ORIGINS,
-    allow_credentials=True,
+    allow_origins=["*"],
     allow_methods=["*"],
-    allow_headers=["*"],
+    allow_headers=["*"]
 )
+
+Instrumentator().instrument(app).expose(app)
 
 if os.path.exists(STATIC_DIR):
     app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
-else:
-    logging.warning("Static directory not found, skipping mount")
 
+# =========================
+# 🔐 ERROR HANDLER
+# =========================
+@app.exception_handler(Exception)
+async def global_handler(request, exc):
+    logging.error(f"{request.method} {request.url.path} | {exc}")
+    return JSONResponse(status_code=500, content={"error": "Internal Server Error"})
+
+# =========================
+# ⚡ MIDDLEWARE
+# =========================
+@app.middleware("http")
+async def core(request: Request, call_next):
+    logging.info(f"{request.method} {request.url.path} | IP={get_ip(request)}")
+
+    run_id = ENGINE_CACHE.get("run_id")
+    etag = f'W/"{run_id}"' if run_id else None
+
+    if etag and request.url.path in ["/rankings", "/meta"]:
+        if request.headers.get("If-None-Match") == etag:
+            return Response(status_code=304)
+
+    try:
+        res = await asyncio.wait_for(call_next(request), timeout=10)
+    except asyncio.TimeoutError:
+        return JSONResponse(status_code=504, content={"error": "timeout"})
+
+    res.headers["Cache-Control"] = "public, max-age=20, stale-while-revalidate=60"
+    res.headers["Vary"] = "Accept-Encoding"
+    res.headers["X-API-Version"] = "FINAL.2026.LOCKED"
+
+    if etag:
+        res.headers["ETag"] = etag
+
+    return res
 
 # =========================
 # 🔐 SECURITY
 # =========================
-def verify_key(x_api_key: str = Header(None, alias="X-API-KEY")):
-    if x_api_key != API_KEY:
-        raise HTTPException(status_code=401, detail="Unauthorized")
-
+def verify_key(k):
+    if not k or k != API_KEY:
+        raise HTTPException(401, "Unauthorized")
 
 def ensure_ready():
     if not ENGINE_CACHE or "data" not in ENGINE_CACHE:
-        raise HTTPException(
-            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-            detail="Service unavailable"
-        )
-
-
-# =========================
-# 📡 MIDDLEWARE
-# =========================
-@app.middleware("http")
-async def version_header(request: Request, call_next):
-    response = await call_next(request)
-    response.headers["X-API-Version"] = "2026.10"
-    return response
-
+        raise HTTPException(503, "Not ready")
 
 # =========================
 # 🌍 ROUTES
 # =========================
 @app.get("/")
 async def root():
-    return {
-        "system": "QVP GLOBAL SYSTEM",
-        "docs": "/docs",
-        "rankings": "/rankings",
-        "health": "/health"
-    }
-
-
-@app.get("/dashboard")
-async def dashboard():
-    path = os.path.join(STATIC_DIR, "index.html")
-    if not os.path.exists(path):
-        raise HTTPException(status_code=404, detail="Dashboard not found")
-    return FileResponse(path)
-
+    return {"system": "QVP GLOBAL SYSTEM"}
 
 @app.get("/rankings")
-async def rankings(request: Request, x_api_key: str = Header(None, alias="X-API-KEY")):
-    verify_key(x_api_key)
-    rate_limit(get_client_ip(request))
-
-    async with CACHE_LOCK:
-        ensure_ready()
-        return ENGINE_CACHE
-
+async def rankings(request: Request):
+    await rate_limit(get_ip(request))
+    ensure_ready()
+    return {
+        "data": ENGINE_CACHE["data"],
+        "run_id": ENGINE_CACHE["run_id"],
+        "dataset_hash": ENGINE_CACHE.get("dataset_hash")
+    }
 
 @app.get("/top/{n}")
-async def top_n(n: int, request: Request, x_api_key: str = Header(None, alias="X-API-KEY")):
+async def top(n: int, request: Request):
     if n <= 0:
-        raise HTTPException(status_code=400, detail="Invalid n")
+        raise HTTPException(400, "Invalid n")
 
-    verify_key(x_api_key)
-    rate_limit(get_client_ip(request))
-
-    async with CACHE_LOCK:
-        ensure_ready()
-        return ENGINE_CACHE["data"][:min(n, len(ENGINE_CACHE["data"]))]
-
+    await rate_limit(get_ip(request))
+    ensure_ready()
+    return ENGINE_CACHE["data"][:min(n, len(ENGINE_CACHE["data"]))]
 
 @app.get("/country/{name}")
-async def country(name: str):
-    async with CACHE_LOCK:
-        ensure_ready()
-        result = [d for d in ENGINE_CACHE["data"] if d["Country"].lower() == name.lower()]
-    if not result:
-        raise HTTPException(status_code=404, detail="Not found")
-    return result
+async def country(name: str, request: Request):
+    await rate_limit(get_ip(request))
+    ensure_ready()
 
+    r = ENGINE_CACHE["country_index"].get(name.lower().strip())
+    if not r:
+        raise HTTPException(404, "Not found")
 
-@app.get("/tier/{tier}")
-async def tier_filter(tier: str):
-    async with CACHE_LOCK:
-        ensure_ready()
-        return [d for d in ENGINE_CACHE["data"] if d.get("Tier", "").lower() == tier.lower()]
-
+    return [r]
 
 @app.get("/meta")
-async def meta():
-    async with CACHE_LOCK:
-        ensure_ready()
-        return {
-            "version": "2026.10",
-            "dataset_hash": ENGINE_CACHE["dataset_hash"],
-            "run_id": ENGINE_CACHE["run_id"],
-            "records": len(ENGINE_CACHE["data"]),
-            "errors": len(ENGINE_CACHE["errors"])
-        }
+async def meta(request: Request):
+    await rate_limit(get_ip(request))
+    ensure_ready()
 
+    return {
+        "records": len(ENGINE_CACHE["data"]),
+        "dataset_hash": ENGINE_CACHE.get("dataset_hash"),
+        "run_id": ENGINE_CACHE["run_id"],
+        "errors": len(ENGINE_CACHE.get("errors", []))
+    }
 
+@app.get("/health")
+async def health():
+    try:
+        await asyncio.wait_for(redis_client.ping(), timeout=1)
+        redis_ok = True
+    except:
+        redis_ok = False
+
+    return {
+        "status": "ok" if ENGINE_CACHE.get("data") else "init",
+        "records": len(ENGINE_CACHE.get("data", [])),
+        "redis": "ok" if redis_ok else "degraded"
+    }
+
+# =========================
+# 🔐 ADMIN
+# =========================
 @app.post("/refresh")
 async def refresh(x_api_key: str = Header(None, alias="X-API-KEY")):
     verify_key(x_api_key)
 
-    loop = asyncio.get_running_loop()
-    new_cache = await asyncio.wait_for(
-        loop.run_in_executor(None, safe_init),
-        timeout=15
-    )
+    if getattr(app.state, "refreshing", False):
+        return {"status": "already_running"}
 
-    # 🔒 CRITICAL SAFETY
-    if not new_cache or "data" not in new_cache:
-        raise HTTPException(status_code=503, detail="Invalid dataset")
+    app.state.refreshing = True
 
-    async with CACHE_LOCK:
-        global ENGINE_CACHE
-        ENGINE_CACHE = new_cache
+    async def _run():
+        try:
+            await refresh_cache()
+        finally:
+            app.state.refreshing = False
 
-    return {
-        "status": "refreshed",
-        "dataset_hash": ENGINE_CACHE.get("dataset_hash"),
-        "run_id": ENGINE_CACHE.get("run_id")
-    }
+    asyncio.create_task(_run())
 
-
-@app.get("/health")
-async def health():
-    return {
-        "status": "ok" if ENGINE_CACHE else "initializing",
-        "records": len(ENGINE_CACHE.get("data", []))
-    }
+    return {"status": "refresh_started"}
