@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Header, HTTPException, status
+from fastapi import FastAPI, HTTPException, Header
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
@@ -11,9 +11,11 @@ from contextlib import asynccontextmanager
 from engine.qssi_engine import compute_qssi
 
 # =========================
-# 🔐 ENV
+# 🔐 CONFIG
 # =========================
+
 API_KEY = os.getenv("API_KEY", "dev-key")
+ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS", "*").split(",")
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DATASET_PATH = os.path.join(BASE_DIR, "dataset", "qssi_data.csv")
@@ -22,27 +24,31 @@ STATIC_DIR = os.path.join(BASE_DIR, "static")
 # =========================
 # 🧠 LOGGING
 # =========================
+
 logging.basicConfig(level=logging.INFO)
 
 # =========================
 # ⚡ CACHE
 # =========================
+
 ENGINE_CACHE: Dict = {}
 CACHE_LOCK = Lock()
 
 # =========================
 # 🔧 UTILS
 # =========================
+
 def to_float(x):
     try:
-        return float(x)
+        return float(str(x).strip())
     except:
         return 0.0
 
+def canonical_json(data):
+    return json.dumps(data, sort_keys=True, separators=(",", ":"))
+
 def run_hash(data):
-    return hashlib.sha256(
-        json.dumps(data, sort_keys=True).encode()
-    ).hexdigest()
+    return hashlib.sha256(canonical_json(data).encode()).hexdigest()
 
 def ensure_ready():
     if "data" not in ENGINE_CACHE:
@@ -51,9 +57,11 @@ def ensure_ready():
 # =========================
 # 📊 LOAD ENGINE
 # =========================
+
 def safe_init():
     if not os.path.exists(DATASET_PATH):
-        raise RuntimeError("Dataset missing")
+        logging.error("Dataset missing")
+        return {"data": [], "country_index": {}, "dataset_hash": None, "run_id": None}
 
     results = []
 
@@ -61,6 +69,12 @@ def safe_init():
         reader = csv.DictReader(f)
 
         for row in reader:
+            # 🔥 CSV normalization (critical)
+            row = {
+                k.strip().upper(): v.strip() if isinstance(v, str) else v
+                for k, v in row.items()
+            }
+
             try:
                 r = compute_qssi(
                     to_float(row.get("PQC")),
@@ -81,14 +95,14 @@ def safe_init():
 
             results.append(r)
 
-    # sort deterministic
-    results.sort(key=lambda x: x["Score"], reverse=True)
+    # 🔐 deterministic sort (safe)
+    results.sort(key=lambda x: x.get("Score", 0), reverse=True)
 
-    # ranking
+    # 🏁 ranking
     for i, r in enumerate(results):
         r["Rank"] = i + 1
 
-    # 🔥 country index (O(1) lookup)
+    # ⚡ O(1) lookup index
     country_index = {
         r["Country"].lower().strip(): r for r in results
     }
@@ -97,7 +111,7 @@ def safe_init():
         "data": results,
         "country_index": country_index,
         "dataset_hash": hashlib.sha256(
-            json.dumps(results, sort_keys=True).encode()
+            canonical_json(results).encode()
         ).hexdigest(),
         "run_id": run_hash(results)
     }
@@ -105,67 +119,62 @@ def safe_init():
 # =========================
 # 🚀 LIFECYCLE
 # =========================
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     global ENGINE_CACHE
     loop = asyncio.get_running_loop()
 
-    ENGINE_CACHE = await loop.run_in_executor(None, safe_init)
-    logging.info("System ready")
+    try:
+        ENGINE_CACHE = await loop.run_in_executor(None, safe_init)
+        logging.info("System ready")
+    except Exception as e:
+        logging.error(f"Startup failed: {e}")
+        ENGINE_CACHE = {"data": [], "country_index": {}, "dataset_hash": None, "run_id": None}
 
     yield
 
 # =========================
 # 🌐 APP
 # =========================
+
 app = FastAPI(
     title="QVP Global System",
-    version="v2.0.0-ABSOLUTE-LOCK",
+    version="v2.0.0-ABSOLUTE-FINAL-LOCK",
     lifespan=lifespan
 )
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=ALLOWED_ORIGINS,
     allow_methods=["*"],
     allow_headers=["*"]
 )
 
-app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
-
-# =========================
-# 🔐 AUTH
-# =========================
-def verify_key(x_api_key: str = Header(None)):
-    if x_api_key != API_KEY:
-        raise HTTPException(401, "Unauthorized")
+# static safe mount
+if os.path.exists(STATIC_DIR):
+    app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
 # =========================
 # 🌍 ROUTES
 # =========================
+
 @app.get("/")
 async def root():
     return {"system": "QVP", "status": "ok"}
 
 @app.get("/dashboard")
 async def dashboard():
-    return FileResponse(os.path.join(STATIC_DIR, "index.html"))
+    path = os.path.join(STATIC_DIR, "index.html")
+    if not os.path.exists(path):
+        raise HTTPException(404, "Dashboard not found")
+    return FileResponse(path)
 
 @app.get("/rankings")
 async def rankings():
     async with CACHE_LOCK:
         ensure_ready()
         return ENGINE_CACHE["data"]
-
-@app.get("/meta")
-async def meta():
-    async with CACHE_LOCK:
-        ensure_ready()
-        return {
-            "run_id": ENGINE_CACHE["run_id"],
-            "dataset_hash": ENGINE_CACHE["dataset_hash"],
-            "records": len(ENGINE_CACHE["data"])
-        }
 
 @app.get("/country/{name}")
 async def country(name: str):
@@ -174,20 +183,30 @@ async def country(name: str):
         r = ENGINE_CACHE["country_index"].get(name.lower().strip())
         if r:
             return r
-    raise HTTPException(404, "Country not found")
+        raise HTTPException(404, "Not found")
 
 @app.get("/top/{n}")
 async def top(n: int):
     async with CACHE_LOCK:
         ensure_ready()
         data = ENGINE_CACHE["data"]
-        n = max(1, min(n, len(data)))
-        return data[:n]
+        return data[:max(1, min(n, len(data)))]
+
+@app.get("/meta")
+async def meta():
+    async with CACHE_LOCK:
+        ensure_ready()
+        return {
+            "run_id": ENGINE_CACHE.get("run_id"),
+            "dataset_hash": ENGINE_CACHE.get("dataset_hash"),
+            "records": len(ENGINE_CACHE.get("data", []))
+        }
 
 @app.get("/health")
 async def health():
-    status_val = "ok" if ENGINE_CACHE.get("data") else "init"
+    data = ENGINE_CACHE.get("data")
     return {
-        "status": status_val,
-        "records": len(ENGINE_CACHE.get("data", []))
+        "status": "ok" if data else "init",
+        "records": len(data or []),
+        "cache_ready": bool(data)
     }
