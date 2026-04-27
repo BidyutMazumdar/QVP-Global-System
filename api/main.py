@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.staticfiles import StaticFiles
 
-import os, csv, json, hashlib, asyncio, logging
+import os, csv, json, hashlib, asyncio, logging, uuid
 from typing import Dict
 from contextlib import asynccontextmanager
 from asyncio import Lock
@@ -32,7 +32,7 @@ redis_client = redis.from_url(REDIS_URL, decode_responses=True)
 # =========================
 logging.basicConfig(
     level=logging.INFO,
-    format="%(asctime)s | %(levelname)s | %(name)s | %(message)s"
+    format="%(asctime)s | %(levelname)s | %(message)s"
 )
 
 # =========================
@@ -88,7 +88,7 @@ async def rate_limit(ip: str, limit=60, window=60):
         if int(count) > limit:
             raise HTTPException(429, "Too many requests")
     except Exception as e:
-        logging.warning(f"Rate limit error: {e}")
+        logging.warning(f"Rate limit fallback: {e}")
 
 # =========================
 # 📊 ENGINE
@@ -104,7 +104,6 @@ def safe_init():
         dataset_hash = hashlib.sha256(raw).hexdigest()
 
     reader = csv.DictReader(raw.decode("utf-8", errors="replace").splitlines())
-
     EXPECTED = ["PQC", "AI", "LEGAL", "RES", "RISK", "COUNTRY"]
 
     for row in reader:
@@ -177,17 +176,24 @@ async def lifespan(app: FastAPI):
 
     app.state.refreshing = False
     yield
+
+    try:
+        await redis_client.close()
+    except Exception as e:
+        logging.warning(f"Redis shutdown issue: {e}")
+
     logging.info("Shutdown clean")
 
 # =========================
 # 🌐 APP
 # =========================
-app = FastAPI(title="QVP API", version="FINAL.2026.LOCKED", lifespan=lifespan)
+app = FastAPI(title="QVP API", version="v1.0.0-FINAL-LOCK", lifespan=lifespan)
 
 app.add_middleware(GZipMiddleware)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=os.getenv("CORS_ORIGINS", "*").split(","),
     allow_methods=["*"],
     allow_headers=["*"]
 )
@@ -203,13 +209,23 @@ if os.path.exists(STATIC_DIR):
 @app.exception_handler(Exception)
 async def global_handler(request: Request, exc: Exception):
     logging.error(f"{request.method} {request.url.path} | {exc}")
-    return JSONResponse(status_code=500, content={"error": "Internal Server Error"})
+
+    return JSONResponse(
+        status_code=500,
+        content={
+            "error": "Internal Server Error",
+            "request_id": getattr(request.state, "request_id", None)
+        }
+    )
 
 # =========================
-# ⚡ MIDDLEWARE
+# ⚡ CORE MIDDLEWARE
 # =========================
 @app.middleware("http")
 async def core(request: Request, call_next):
+    request_id = str(uuid.uuid4())
+    request.state.request_id = request_id
+
     run_id = ENGINE_CACHE.get("run_id")
     etag = f'W/"{run_id}"' if run_id else None
 
@@ -220,18 +236,23 @@ async def core(request: Request, call_next):
     try:
         res = await asyncio.wait_for(call_next(request), timeout=10)
     except asyncio.TimeoutError:
-        return JSONResponse(status_code=504, content={"error": "timeout"})
+        return JSONResponse(
+            status_code=504,
+            content={"error": "timeout", "request_id": request_id}
+        )
 
-    # Security Headers
     res.headers["X-Content-Type-Options"] = "nosniff"
     res.headers["X-Frame-Options"] = "DENY"
     res.headers["Referrer-Policy"] = "no-referrer"
 
+    res.headers["X-Request-ID"] = request_id
     res.headers["Cache-Control"] = "public, max-age=20, stale-while-revalidate=60"
-    res.headers["X-API-Version"] = "FINAL.2026.LOCKED"
+    res.headers["X-API-Version"] = "v1.0.0-FINAL-LOCK"
 
     if etag:
         res.headers["ETag"] = etag
+
+    res.headers.pop("server", None)
 
     return res
 
@@ -253,15 +274,15 @@ def ensure_ready():
 async def root():
     return {
         "system": "QVP GLOBAL SYSTEM",
-        "version": "FINAL.2026.LOCKED",
-        "status": "operational",
-        "endpoints": ["/rankings", "/top/{n}", "/country/{name}", "/meta", "/health"]
+        "version": "v1.0.0-FINAL-LOCK",
+        "status": "operational"
     }
 
 @app.get("/rankings")
 async def rankings(request: Request):
     await rate_limit(get_ip(request))
     ensure_ready()
+
     return {
         "data": ENGINE_CACHE["data"],
         "run_id": ENGINE_CACHE["run_id"],
@@ -282,6 +303,10 @@ async def country(name: str, request: Request):
     await rate_limit(get_ip(request))
     ensure_ready()
 
+    name = name.strip()
+    if len(name) > 100:
+        raise HTTPException(400, "Invalid input")
+
     r = ENGINE_CACHE["country_index"].get(name.lower().strip())
     if not r:
         raise HTTPException(404, "Not found")
@@ -295,9 +320,8 @@ async def meta(request: Request):
 
     return {
         "records": len(ENGINE_CACHE["data"]),
-        "dataset_hash": ENGINE_CACHE.get("dataset_hash"),
         "run_id": ENGINE_CACHE["run_id"],
-        "errors": len(ENGINE_CACHE.get("errors", []))
+        "dataset_hash": ENGINE_CACHE.get("dataset_hash")
     }
 
 @app.get("/health")
@@ -310,14 +334,9 @@ async def health():
 
     return {
         "status": "ok" if ENGINE_CACHE.get("data") else "init",
-        "records": len(ENGINE_CACHE.get("data", [])),
-        "redis": "ok" if redis_ok else "degraded",
-        "version": "FINAL.2026.LOCKED"
+        "redis": "ok" if redis_ok else "degraded"
     }
 
-# =========================
-# 🔐 ADMIN
-# =========================
 @app.post("/refresh")
 async def refresh(x_api_key: str = Header(None, alias="X-API-KEY")):
     verify_key(x_api_key)
