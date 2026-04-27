@@ -3,6 +3,7 @@ from fastapi.responses import JSONResponse, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.staticfiles import StaticFiles
+from fastapi.exceptions import RequestValidationError
 
 import os, csv, json, hashlib, asyncio, logging, uuid
 from typing import Dict
@@ -51,7 +52,7 @@ STATIC_DIR = os.path.join(BASE_DIR, "static")
 def to_float(x):
     try:
         return float(x)
-    except:
+    except Exception:
         return 0.0
 
 def run_hash(data):
@@ -67,7 +68,7 @@ def get_ip(request: Request):
     return request.client.host if request.client else "unknown"
 
 # =========================
-# 🚦 RATE LIMIT (SAFE)
+# 🚦 RATE LIMIT
 # =========================
 try:
     RATE_SCRIPT = redis_client.register_script("""
@@ -151,7 +152,7 @@ async def refresh_cache():
     loop = asyncio.get_running_loop()
     new = await loop.run_in_executor(None, safe_init)
 
-    if new.get("data"):
+    if "data" in new:
         async with CACHE_LOCK:
             global ENGINE_CACHE
             ENGINE_CACHE = new
@@ -204,16 +205,30 @@ if os.path.exists(STATIC_DIR):
     app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
 # =========================
-# 🔐 GLOBAL ERROR HANDLER
+# 🔐 ERROR HANDLERS
 # =========================
 @app.exception_handler(Exception)
 async def global_handler(request: Request, exc: Exception):
     logging.error(f"{request.method} {request.url.path} | {exc}")
-
     return JSONResponse(
         status_code=500,
+        content={"error": "Internal Server Error", "request_id": getattr(request.state, "request_id", None)}
+    )
+
+@app.exception_handler(HTTPException)
+async def http_exception_handler(request: Request, exc: HTTPException):
+    return JSONResponse(
+        status_code=exc.status_code,
+        content={"error": exc.detail, "request_id": getattr(request.state, "request_id", None)}
+    )
+
+@app.exception_handler(RequestValidationError)
+async def validation_exception_handler(request: Request, exc: RequestValidationError):
+    return JSONResponse(
+        status_code=422,
         content={
-            "error": "Internal Server Error",
+            "error": "Validation Error",
+            "details": exc.errors(),
             "request_id": getattr(request.state, "request_id", None)
         }
     )
@@ -236,24 +251,21 @@ async def core(request: Request, call_next):
     try:
         res = await asyncio.wait_for(call_next(request), timeout=10)
     except asyncio.TimeoutError:
-        return JSONResponse(
-            status_code=504,
-            content={"error": "timeout", "request_id": request_id}
-        )
+        return JSONResponse(status_code=504, content={"error": "timeout", "request_id": request_id})
 
-    res.headers["X-Content-Type-Options"] = "nosniff"
-    res.headers["X-Frame-Options"] = "DENY"
-    res.headers["Referrer-Policy"] = "no-referrer"
-
-    res.headers["X-Request-ID"] = request_id
-    res.headers["Cache-Control"] = "public, max-age=20, stale-while-revalidate=60"
-    res.headers["X-API-Version"] = "v1.0.0-FINAL-LOCK"
+    res.headers.update({
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Referrer-Policy": "no-referrer",
+        "X-Request-ID": request_id,
+        "Cache-Control": "public, max-age=20, stale-while-revalidate=60",
+        "X-API-Version": "v1.0.0-FINAL-LOCK"
+    })
 
     if etag:
         res.headers["ETag"] = etag
 
     res.headers.pop("server", None)
-
     return res
 
 # =========================
@@ -272,17 +284,12 @@ def ensure_ready():
 # =========================
 @app.get("/")
 async def root():
-    return {
-        "system": "QVP GLOBAL SYSTEM",
-        "version": "v1.0.0-FINAL-LOCK",
-        "status": "operational"
-    }
+    return {"system": "QVP GLOBAL SYSTEM", "version": "v1.0.0-FINAL-LOCK", "status": "operational"}
 
 @app.get("/rankings")
 async def rankings(request: Request):
     await rate_limit(get_ip(request))
     ensure_ready()
-
     return {
         "data": ENGINE_CACHE["data"],
         "run_id": ENGINE_CACHE["run_id"],
@@ -293,10 +300,9 @@ async def rankings(request: Request):
 async def top(n: int, request: Request):
     if n <= 0:
         raise HTTPException(400, "Invalid n")
-
     await rate_limit(get_ip(request))
     ensure_ready()
-    return ENGINE_CACHE["data"][:min(n, 100)]
+    return ENGINE_CACHE.get("data", [])[:min(n, 100)]
 
 @app.get("/country/{name}")
 async def country(name: str, request: Request):
@@ -317,7 +323,6 @@ async def country(name: str, request: Request):
 async def meta(request: Request):
     await rate_limit(get_ip(request))
     ensure_ready()
-
     return {
         "records": len(ENGINE_CACHE.get("data", [])),
         "run_id": ENGINE_CACHE["run_id"],
@@ -329,7 +334,7 @@ async def health():
     try:
         await asyncio.wait_for(redis_client.ping(), timeout=1)
         redis_ok = True
-    except:
+    except Exception:
         redis_ok = False
 
     return {
