@@ -264,7 +264,7 @@ def verify_key(k):
         raise HTTPException(401, "Unauthorized")
 
 def ensure_ready():
-    if not ENGINE_CACHE or not ENGINE_CACHE.get("data"):
+    if "data" not in ENGINE_CACHE:
         raise HTTPException(503, "Service not ready")
 
 # =========================
@@ -319,7 +319,7 @@ async def meta(request: Request):
     ensure_ready()
 
     return {
-        "records": len(ENGINE_CACHE["data"]),
+        "records": len(ENGINE_CACHE.get("data", [])),
         "run_id": ENGINE_CACHE["run_id"],
         "dataset_hash": ENGINE_CACHE.get("dataset_hash")
     }
@@ -334,6 +334,7 @@ async def health():
 
     return {
         "status": "ok" if ENGINE_CACHE.get("data") else "init",
+        "records": len(ENGINE_CACHE.get("data", [])),
         "redis": "ok" if redis_ok else "degraded"
     }
 
