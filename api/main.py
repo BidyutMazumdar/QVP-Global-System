@@ -29,9 +29,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATASET_PATH = os.path.join(BASE_DIR, "dataset", "qssi_data.csv")
 STATIC_DIR = os.path.join(BASE_DIR, "static")
 
-# =========================
-# 🧠 LOGGING
-# =========================
 logging.basicConfig(level=logging.INFO)
 
 # =========================
@@ -64,6 +61,46 @@ def ensure_ready():
 
 
 # =========================
+# 🌍 NORMALIZATION (STRICT)
+# =========================
+def normalize_country(name: str) -> str:
+    name = str(name).strip()
+
+    mapping = {
+        "Republic Of Korea": "South Korea",
+        "Korea, Republic Of": "South Korea",
+        "Korea": "South Korea",
+
+        "Russian Federation": "Russia",
+
+        "Türkiye": "Turkey",
+
+        "UAE": "United Arab Emirates",
+        "United Arab Emirates (UAE)": "United Arab Emirates",
+
+        "USA": "United States",
+        "United States Of America": "United States",
+
+        "Iran, Islamic Republic Of": "Iran"
+    }
+
+    return mapping.get(name, name)
+
+
+# =========================
+# 🏷️ TIER ENGINE
+# =========================
+def compute_tier(score: float) -> str:
+    if score >= 85:
+        return "Tier A"
+    if score >= 75:
+        return "Tier B"
+    if score >= 60:
+        return "Tier C"
+    return "Tier D"
+
+
+# =========================
 # 📊 CORE ENGINE INIT
 # =========================
 def safe_init():
@@ -82,7 +119,6 @@ def safe_init():
         reader = csv.DictReader(f)
 
         for row in reader:
-            # 🔧 CSV NORMALIZATION
             row = {
                 k.strip().upper(): (v.strip() if isinstance(v, str) else v)
                 for k, v in row.items()
@@ -100,43 +136,49 @@ def safe_init():
                 logging.warning(f"Row skipped: {e}")
                 continue
 
-            # 🌍 COUNTRY NORMALIZATION
-            country = str(row.get("COUNTRY", "Unknown")).strip().title()
+            # 🌍 COUNTRY
+            country = normalize_country(row.get("COUNTRY", "Unknown"))
 
-            # 📊 SCORE NORMALIZATION
+            # 📊 SCORE
             try:
                 score = float(r.get("Score", 0))
             except:
                 score = 0.0
 
-            # 🏷️ TIER NORMALIZATION
-            raw_tier = str(r.get("Tier", "")).strip()
-            tier_clean = raw_tier.lower().replace("tier", "").strip().upper()
+            score = round(score, 2)
 
-            # 🧱 FINAL RECORD (NO MUTATION RISK)
-            record = dict(r)
+            # 🏷️ TIER
+            tier = compute_tier(score)
+            tier_clean = tier.split(" ")[1]
+
+            # 🧱 CLEAN RECORD (NO CONTAMINATION)
+            record = {}
+            for k, v in r.items():
+                if k not in ("Score", "Tier", "TierRaw"):
+                    record[k] = v
+
             record.update({
                 "Country": country,
-                "Score": round(score, 6),
-                "Tier": f"Tier {tier_clean}" if tier_clean else "Unknown",
-                "TierRaw": tier_clean if tier_clean else "Unknown",
+                "Score": score,
+                "Tier": tier,
+                "TierRaw": tier_clean
             })
 
-            # 🔒 FLOAT CONSISTENCY
+            # 🔒 FLOAT CONTROL
             for k, v in record.items():
-                if isinstance(v, float):
+                if isinstance(v, float) and k != "Score":
                     record[k] = round(v, 6)
 
             results.append(record)
 
-    # 🏁 SORT (DETERMINISTIC)
+    # 🏁 SORT
     results.sort(key=lambda x: x["Score"], reverse=True)
 
-    # 🏆 RANK
+    # 🏆 RANK (keep OR remove — choose one architecture)
     for i, r in enumerate(results):
         r["Rank"] = i + 1
 
-    # ⚡ INDEX (SAFE)
+    # ⚡ INDEX
     country_index = {}
     for r in results:
         key = r["Country"].lower()
@@ -184,7 +226,7 @@ async def lifespan(app: FastAPI):
 # =========================
 app = FastAPI(
     title="QVP Global System",
-    version="v2.2.3-ABSOLUTE-FINAL-COMMIT-LOCK",
+    version="v3.2.0-FINAL-LOCKED",
     lifespan=lifespan
 )
 
