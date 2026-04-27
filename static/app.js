@@ -1,11 +1,16 @@
+// =========================
+// 🌐 CONFIG (LOCKED)
+// =========================
 const API_URL = "/rankings";
+const PREDICT_URL = "/predict";
+
 
 // =========================
-// 🌐 GLOBAL STATE (LOCKED)
+// 🌐 GLOBAL STATE
 // =========================
 let controller = null;
 let fullData = [];
-let currentViewData = []; // ✅ SINGLE SOURCE OF TRUTH
+let currentViewData = [];
 let chartInstance = null;
 let previousRanks = {};
 let geoData = null;
@@ -16,11 +21,11 @@ let path = null;
 let requestId = 0;
 let polling = false;
 let pollTimer = null;
-
 let simTimeout = null;
 
+
 // =========================
-// 🔢 SAFE NUMBER (HARDENED)
+// 🔢 SAFE UTILS
 // =========================
 const toNum = (v) => {
   const n = Number(v);
@@ -28,7 +33,8 @@ const toNum = (v) => {
 };
 
 const safeMul = (a, b) =>
-  Number((toNum(a) * toNum(b)).toFixed(2));
+  Number((toNum(a) * toNum(b)).toFixed(4));
+
 
 // =========================
 // 🧠 RANK ENGINE (DETERMINISTIC)
@@ -38,6 +44,7 @@ function recomputeRanks(data) {
     .sort((a, b) => toNum(b.Score) - toNum(a.Score))
     .map((d, i) => ({ ...d, Rank: i + 1 }));
 }
+
 
 // =========================
 // 🌍 GEO DATA (CACHED)
@@ -55,8 +62,43 @@ async function getGeoData() {
   return geoData;
 }
 
+
 // =========================
-// 🚀 LOAD DATA
+// 🔁 SAFE FETCH (FINAL HARDENED)
+// =========================
+async function safeFetch(url, options = {}, retries = 2) {
+  try {
+    const { signal, ...rest } = options || {};
+
+    const res = await fetch(url, {
+      cache: "no-store",
+      ...rest,
+      signal
+    });
+
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return await res.json();
+
+  } catch (err) {
+
+    // 🔒 CRITICAL: propagate abort (deterministic cancel)
+    if (err.name === "AbortError") {
+      throw err;
+    }
+
+    if (retries > 0) {
+      await new Promise(r => setTimeout(r, 400));
+      return safeFetch(url, {}, retries - 1);
+    }
+
+    console.error("Fetch failed:", url, err);
+    throw err;
+  }
+}
+
+
+// =========================
+// 🚀 LOAD DATA (RACE SAFE)
 // =========================
 async function loadData() {
   const currentId = ++requestId;
@@ -72,18 +114,13 @@ async function loadData() {
       loading.style.color = "#9ca3af";
     }
 
-    const res = await fetch(API_URL, {
-      cache: "no-store",
+    const json = await safeFetch(API_URL, {
       signal: controller.signal
     });
 
-    if (!res.ok) throw new Error();
-
-    const json = await res.json();
     if (currentId !== requestId) return;
 
-    // ✅ Immutable base data
-    fullData = Object.freeze((json.data || []).map(d => ({ ...d })));
+    fullData = Object.freeze((json?.data || []).map(d => ({ ...d })));
 
     await loadPrediction(currentId);
 
@@ -91,26 +128,31 @@ async function loadData() {
 
     renderAll(recomputeRanks(fullData));
 
-  } catch {
+  } catch (err) {
+
+    // 🔒 clean abort exit (no UI corruption)
+    if (err.name === "AbortError") return;
+
     if (loading) {
       loading.style.display = "flex";
       loading.innerText = "⚠️ Data load failed";
       loading.style.color = "red";
     }
+
   } finally {
     controller = null;
   }
 }
+
 
 // =========================
 // 🤖 PREDICTION
 // =========================
 async function loadPrediction(currentId) {
   try {
-    const res = await fetch("/predict");
-    const pred = await res.json();
+    const pred = await safeFetch(PREDICT_URL);
 
-    if (currentId !== requestId) return;
+    if (!pred || currentId !== requestId) return;
 
     const map = {};
     pred.forEach(p => {
@@ -122,11 +164,14 @@ async function loadPrediction(currentId) {
       predicted: map[d.Country] ?? null
     }));
 
-  } catch {}
+  } catch {
+    console.warn("Prediction skipped");
+  }
 }
 
+
 // =========================
-// 🔁 POLLING CONTROL
+// 🔁 POLLING CONTROL (LEAK SAFE)
 // =========================
 function startPolling() {
   if (polling) return;
@@ -146,30 +191,40 @@ function stopPolling() {
   if (pollTimer) clearTimeout(pollTimer);
 }
 
+
+// 🔒 visibility control
 document.addEventListener("visibilitychange", () => {
   document.hidden ? stopPolling() : startPolling();
 });
 
+// 🔒 HARD CLEANUP
+window.addEventListener("beforeunload", () => {
+  stopPolling();
+  if (controller) controller.abort();
+});
+
+
 // =========================
-// 🎯 RENDER PIPELINE (LOCK)
+// 🎯 RENDER PIPELINE
 // =========================
 function renderAll(data) {
-  currentViewData = data; // ✅ STATE LOCK
+  currentViewData = data;
   renderTable(data);
   renderChart(data);
   renderMap(data);
 }
 
+
 // =========================
-// 📊 TABLE (EVENT SAFE)
+// 📊 TABLE
 // =========================
 function renderTable(rows) {
   const table = document.getElementById("table");
   const leaderEl = document.getElementById("leader");
 
   if (!rows.length) {
-    table.innerHTML = "";
-    leaderEl.innerHTML = "No data";
+    if (table) table.innerHTML = "";
+    if (leaderEl) leaderEl.innerHTML = "No data";
     return;
   }
 
@@ -178,12 +233,14 @@ function renderTable(rows) {
 
   const leader = rows[0];
 
-  leaderEl.innerHTML = `
-    <div style="font-size:20px;font-weight:bold">${leader.Country}</div>
-    <div>Score: ${toNum(leader.Score)}</div>
-    <div>Predicted: ${toNum(leader.predicted ?? "-")}</div>
-    <div class="${tierClass(leader.Tier)}">${leader.Tier}</div>
-  `;
+  if (leaderEl) {
+    leaderEl.innerHTML = `
+      <div style="font-size:20px;font-weight:bold">${leader.Country}</div>
+      <div>Score: ${toNum(leader.Score)}</div>
+      <div>Predicted: ${toNum(leader.predicted ?? "-")}</div>
+      <div class="${tierClass(leader.Tier)}">${leader.Tier}</div>
+    `;
+  }
 
   rows.forEach(r => {
     const prev = previousRanks[r.Country];
@@ -206,13 +263,18 @@ function renderTable(rows) {
     newRanks[r.Country] = r.Rank;
   });
 
-  table.innerHTML = "";
-  table.appendChild(fragment);
+  if (table) {
+    table.innerHTML = "";
+    table.appendChild(fragment);
+  }
 
   previousRanks = newRanks;
 }
 
-// ✅ Delegated click (no memory churn)
+
+// =========================
+// 🖱️ ROW CLICK
+// =========================
 document.getElementById("table")?.addEventListener("click", (e) => {
   const row = e.target.closest("tr");
   if (!row) return;
@@ -221,7 +283,10 @@ document.getElementById("table")?.addEventListener("click", (e) => {
   const r = currentViewData.find(d => d.Country === country);
   if (!r) return;
 
-  document.getElementById("countryDetail").innerHTML = `
+  const detail = document.getElementById("countryDetail");
+  if (!detail) return;
+
+  detail.innerHTML = `
     <h3>${r.Country}</h3>
     <p>Rank: ${r.Rank}</p>
     <p>Score: ${r.Score}</p>
@@ -229,6 +294,7 @@ document.getElementById("table")?.addEventListener("click", (e) => {
     <p>Tier: ${r.Tier}</p>
   `;
 });
+
 
 // =========================
 // 🎨 TIER CLASS
@@ -241,8 +307,9 @@ function tierClass(t) {
   return "tier-d";
 }
 
+
 // =========================
-// 📈 CHART (SAFE)
+// 📈 CHART
 // =========================
 function renderChart(data) {
   const ctx = document.getElementById("chart");
@@ -250,10 +317,17 @@ function renderChart(data) {
 
   const top = data.slice(0, 10);
 
-  if (chartInstance && chartInstance.data.datasets.length > 1) {
+  if (chartInstance) {
     chartInstance.data.labels = top.map(d => d.Country);
-    chartInstance.data.datasets[0].data = top.map(d => toNum(d.Score));
-    chartInstance.data.datasets[1].data = top.map(d => toNum(d.predicted ?? 0));
+
+    if (chartInstance.data.datasets[0]) {
+      chartInstance.data.datasets[0].data = top.map(d => toNum(d.Score));
+    }
+
+    if (chartInstance.data.datasets[1]) {
+      chartInstance.data.datasets[1].data = top.map(d => toNum(d.predicted ?? 0));
+    }
+
     chartInstance.update();
     return;
   }
@@ -269,8 +343,9 @@ function renderChart(data) {
   });
 }
 
+
 // =========================
-// 🌍 MAP (OPTIMIZED + CONSISTENT)
+// 🌍 MAP
 // =========================
 async function renderMap(data) {
   const svg = d3.select("#worldMap");
@@ -301,8 +376,9 @@ async function renderMap(data) {
     });
 }
 
+
 // =========================
-// 🎚️ SIMULATION (LOCKED)
+// 🎚️ SIMULATION
 // =========================
 document.getElementById("adjust")?.addEventListener("input", (e) => {
   clearTimeout(simTimeout);
@@ -319,8 +395,9 @@ document.getElementById("adjust")?.addEventListener("input", (e) => {
   }, 100);
 });
 
+
 // =========================
-// ⚖️ POLICY ENGINE (SAFE)
+// ⚖️ POLICY ENGINE
 // =========================
 document.getElementById("risk")?.addEventListener("input", (e) => {
   const eps = Number(e.target.value);
@@ -333,12 +410,14 @@ document.getElementById("risk")?.addEventListener("input", (e) => {
   renderAll(recomputeRanks(updated));
 });
 
+
 // =========================
-// 🌡️ MAP INTENSITY (SYNCED)
+// 🌡️ MAP INTENSITY
 // =========================
 document.getElementById("intensity")?.addEventListener("input", () => {
   renderMap(currentViewData);
 });
+
 
 // =========================
 // INIT
