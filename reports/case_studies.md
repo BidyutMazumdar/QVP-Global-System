@@ -1,334 +1,327 @@
-📊 reports/case_studies.md
+# 📊 QSSI™ v2026.1.1 — Comparative Case Studies & Policy Interpretation 🔒
 
-QSSI™ v2026.1.1 — Comparative Case Studies & Policy Interpretation 🔒
-
-STATUS: LOCKED — REAL-WORLD VALIDATION LAYER (ABSOLUTE FINAL, INSTRUMENT-GRADE)
-
+**STATUS:** LOCKED — REAL-WORLD VALIDATION LAYER (INSTRUMENT-GRADE)  
+**VERSION:** v2026.1.1 (FINAL)  
 
 ---
 
-🎯 PURPOSE
+## 🎯 PURPOSE
 
-This document provides empirical case-based interpretation of QSSI™ outputs to enable policymakers to understand score meaning, structural drivers, and actionable improvement pathways through real-world comparative analysis.
+This document provides structured, case-based interpretation of QSSI™ outputs to support **policy understanding, systemic diagnosis, and strategic decision-making**.
 
+It translates quantitative outputs into:
+- Structural insights  
+- Risk dynamics  
+- Actionable policy pathways  
 
----
-
-🌍 I. CASE SELECTION FRAMEWORK
-
-Countries selected to represent distinct systemic states:
-
-Tier A (High Capacity System) → Finland
-
-Tier C (Structural Vulnerability) → India
-
-
+**All policy interpretations are based on QSSI_adj (risk-adjusted score), unless otherwise stated.**
 
 ---
 
-🇫🇮 II. CASE STUDY — FINLAND (TIER A)
+## 🌍 I. CASE SELECTION FRAMEWORK
 
-Classification
+Countries are selected to represent distinct systemic conditions:
 
-QSSI_{adj} \geq 80
-
-Tier A — Strategic Stability
-
+- **Tier A (High-Capacity System):** Finland  
+- **Tier C (Structural Vulnerability):** India  
 
 ---
 
-Structural Profile
+## 🇫🇮 II. CASE STUDY — FINLAND (TIER A)
 
-Domain	Score (Indicative)	Interpretation
+### Classification
 
-PQC	High (~0.85–0.95)	Highly efficient governance
-AI	High (~0.80–0.90)	Advanced innovation ecosystem
-LEGAL	High (~0.90+)	Strong rule-of-law
-RES	High (~0.80+)	Robust resilience capacity
-RISK	Low (~0.10–0.20)	Stable risk environment
-
-
+- **Tier A:** QSSI_adj ≥ 85  
+- **Interpretation:** Strategic Stability  
 
 ---
 
-System Characteristics
+### Structural Profile (Indicative)
 
-✔ Strong institutional coherence
-✔ High administrative efficiency
-✔ Advanced digital governance
-✔ Low systemic friction
-
+| Domain | Score Range | Interpretation |
+|--------|------------|----------------|
+| PQC | ~0.85–0.95 | Highly efficient governance |
+| AI | ~0.80–0.90 | Advanced innovation ecosystem |
+| LEGAL | ~0.90+ | Strong rule-of-law |
+| RES | ~0.80+ | Robust resilience capacity |
+| R (Risk) | ~0.10–0.20 | Low systemic risk |
 
 ---
 
-Mathematical Interpretation
+### System Characteristics
 
-High  across all domains:
+- Strong institutional coherence  
+- High administrative efficiency  
+- Advanced digital governance  
+- Low systemic friction  
 
-QSSI = \sum w_i M_i \rightarrow \text{High}
+---
+
+### Mathematical Interpretation
+
+High domain values:
+```
+QSSI = Σ(wᵢ · Mᵢ)
+```
 
 Low risk:
+```
+QSSI_adj ≈ QSSI_scaled
+```
 
-QSSI_{adj} \approx QSSI_{scaled}
-
-✔ Minimal risk penalty
-
-
----
-
-Policy Insight
-
-✔ System operates near optimal frontier
-✔ Gains are marginal (optimization-driven)
-✔ Focus on innovation scaling and risk minimization
-
+✔ Minimal risk penalty  
 
 ---
 
-Strategic Position
+### Policy Insight
 
-System Type: Mature, optimized, resilient
-
-
----
-
-🇮🇳 III. CASE STUDY — INDIA (TIER C)
-
-Classification
-
-40 \leq QSSI_{adj} < 60
-
-Tier C — Structural Vulnerability
-
+- System operates near optimal frontier  
+- Gains are incremental (optimization-driven)  
+- Focus: innovation scaling + residual risk minimization  
 
 ---
 
-Structural Profile
+### Strategic Position
 
-Domain	Score (Indicative)	Interpretation
-
-PQC	Moderate (~0.50–0.65)	Administrative variability
-AI	Moderate (~0.45–0.60)	Uneven innovation capacity
-LEGAL	Moderate (~0.50–0.65)	Enforcement gaps
-RES	Moderate (~0.45–0.60)	Partial resilience
-RISK	Elevated (~0.50–0.70)	High systemic exposure
-
-
+**System Type:** Mature, optimized, resilient  
 
 ---
 
-System Characteristics
+## 🇮🇳 III. CASE STUDY — INDIA (TIER C)
 
-⚠ Institutional asymmetry
-⚠ Regional disparities
-⚠ Policy execution variability
-⚠ Elevated external and internal risk
+### Classification
 
-
----
-
-Mathematical Interpretation
-
-Moderate  values:
-
-QSSI = \sum w_i M_i \rightarrow \text{Moderate}
-
-High risk reduces output:
-
-QSSI_{adj} = QSSI_{scaled}(1 - R)
-
-✔ Significant risk penalty
-
+- **Tier C:** 50 ≤ QSSI_adj < 75  
+- **Interpretation:** Structural Vulnerability  
 
 ---
 
-Policy Insight
+### Structural Profile (Indicative)
 
-✔ System potential exists but suppressed
-✔ Risk reduction yields immediate gains
-✔ Targeted domain improvement required
-
-
----
-
-Strategic Position
-
-System Type: Developing, uneven, risk-constrained
-
+| Domain | Score Range | Interpretation |
+|--------|------------|----------------|
+| PQC | ~0.50–0.65 | Administrative variability |
+| AI | ~0.45–0.60 | Uneven innovation capacity |
+| LEGAL | ~0.50–0.65 | Enforcement gaps |
+| RES | ~0.45–0.60 | Partial resilience |
+| R (Risk) | ~0.50–0.70 | Elevated systemic risk |
 
 ---
 
-⚖️ IV. COMPARATIVE ANALYSIS
+### System Characteristics
 
-Structural Comparison
-
-Dimension	Finland	India
-
-Governance (PQC)	High	Moderate
-Innovation (AI)	High	Moderate
-Legal Strength	Strong	Variable
-Resilience	High	Partial
-Risk	Low	Elevated
-
-
+- Institutional asymmetry  
+- Regional disparities  
+- Policy execution variability  
+- Elevated systemic exposure  
 
 ---
 
-Mathematical Contrast
+### Mathematical Interpretation
 
-QSSI_{Finland} > QSSI_{India}
+Moderate domain values:
+```
+QSSI = Σ(wᵢ · Mᵢ)
+```
 
-R_{Finland} < R_{India}
+Risk impact:
+```
+QSSI_adj = QSSI_scaled · (1 − R)
+```
 
-QSSI_{adj}^{Finland} \gg QSSI_{adj}^{India}
-
-
----
-
-System Behavior Difference
-
-Property	Finland	India
-
-Stability	High	Moderate
-Predictability	High	Variable
-Risk Impact	Minimal	Significant
-Efficiency	Optimized	Uneven
-
-
+✔ Significant suppression due to risk  
 
 ---
 
-📉 V. RISK-RESPONSE DIFFERENTIAL
+### Policy Insight
 
-Finland
-
-R \approx 0.1 \Rightarrow QSSI_{adj} \approx 0.9 \cdot QSSI_{scaled}
-
-✔ Minor degradation
-
+- Underlying capacity exists but constrained  
+- Risk reduction yields immediate gains  
+- Requires targeted domain strengthening  
 
 ---
 
-India
+### Strategic Position
 
-R \approx 0.6 \Rightarrow QSSI_{adj} \approx 0.4 \cdot QSSI_{scaled}
-
-⚠ Major suppression effect
-
+**System Type:** Developing, uneven, risk-constrained  
 
 ---
 
-Insight
+## ⚖️ IV. COMPARATIVE ANALYSIS
 
-✔ Risk is the dominant differentiator
-✔ Same base capacity → different outcomes under risk
+### Structural Comparison
 
-
----
-
-🚀 VI. POLICY PATHWAYS
-
-Finland (Tier A)
-
-Maintain institutional excellence
-
-Invest in frontier innovation
-
-Minimize residual risk
-
-
-✔ Strategy: Optimization
-
+| Dimension | Finland | India |
+|----------|--------|-------|
+| Governance (PQC) | High | Moderate |
+| Innovation (AI) | High | Moderate |
+| Legal Strength | Strong | Variable |
+| Resilience | High | Partial |
+| Risk (R) | Low | Elevated |
 
 ---
 
-India (Tier C)
+### Mathematical Contrast
 
-Reduce systemic risk (priority)
-
-Strengthen governance execution
-
-Balance domain performance
-
-
-✔ Strategy: Stabilization + Structural Reform
-
+- `QSSI_Finland > QSSI_India`  
+- `R_Finland < R_India`  
+- `QSSI_adj^Finland ≫ QSSI_adj^India`  
 
 ---
 
-📊 VII. TRANSITION DYNAMICS
+### System Behavior
 
-India: Tier C → Tier B
+| Property | Finland | India |
+|----------|--------|-------|
+| Stability | High | Moderate |
+| Predictability | High | Variable |
+| Risk Impact | Minimal | Significant |
+| Efficiency | Optimized | Uneven |
+
+---
+
+## 📉 V. RISK–RESPONSE DIFFERENTIAL
+
+### Finland
+
+- `R ≈ 0.1`  
+- `QSSI_adj ≈ 0.9 × QSSI_scaled`  
+
+✔ Minor degradation  
+
+---
+
+### India
+
+- `R ≈ 0.6`  
+- `QSSI_adj ≈ 0.4 × QSSI_scaled`  
+
+⚠ Major suppression effect  
+
+---
+
+### Insight
+
+- Risk is the dominant differentiator  
+- Identical base capacity → divergent outcomes under different risk levels  
+
+---
+
+## 🚀 VI. POLICY PATHWAYS
+
+### Finland (Tier A)
+
+- Maintain institutional excellence  
+- Invest in frontier innovation  
+- Minimize residual risk  
+
+✔ Strategy: **Optimization**  
+
+---
+
+### India (Tier C)
+
+- Reduce systemic risk (R)  
+- Strengthen governance execution  
+- Balance domain performance  
+
+✔ Strategy: **Stabilization + Structural Reform**  
+
+---
+
+## 📊 VII. TRANSITION DYNAMICS
+
+**Target:** Tier C → Tier B  
 
 Required:
 
-\Delta QSSI = \sum w_i \Delta M_i
+```
+ΔQSSI = Σ(wᵢ · ΔMᵢ)
+ΔR < 0
+```
 
-AND
+### High-Impact Levers
 
-\Delta R < 0
-
-
----
-
-High-Impact Levers
-
-✔ Reduce RISK
-✔ Improve highest-weight domains
-✔ Correct structural imbalance
-
+- Reduce risk (R)  
+- Improve high-weight domains  
+- Correct structural imbalance  
 
 ---
 
-🧠 VIII. POLICY INTERPRETATION FRAME
+## 🧠 VIII. POLICY INTERPRETATION FRAME
 
-Without QSSI™
+**Without QSSI™:**  
+→ Score = Static number  
 
-Score = Static number
-
-
----
-
-With QSSI™
-
-✔ Score = Dynamic system signal
-
-Structural condition
-
-Risk exposure
-
-Policy direction
-
-
+**With QSSI™:**
+- Score = Dynamic system signal  
+- Structural condition  
+- Risk exposure  
+- Policy direction  
 
 ---
 
-🔍 IX. SYSTEM-LEVEL INSIGHT
+## 🔍 IX. SYSTEM-LEVEL INSIGHT
 
-✔ High capacity alone is insufficient
-✔ Risk determines realized performance
-✔ Balanced systems outperform uneven systems
-
-
----
-
-🧠 FINAL COMPARATIVE STATEMENT
-
-QSSI™ demonstrates that sovereign performance is a function of both structural capacity and risk modulation, where high-capacity low-risk systems achieve optimal outcomes, while moderate-capacity high-risk systems experience suppressed performance despite underlying potential.
-
+- High capacity alone is insufficient  
+- Risk determines realized performance  
+- Balanced systems outperform uneven systems  
 
 ---
 
-🔒 END STATE
+## 🔬 X. SCOPE & LIMITATIONS
 
-STATUS = CASE-VALIDATED + POLICY-INTERPRETABLE
-CLASS = REAL-WORLD ANALYTICAL LAYER
-FUNCTION = DECISION INTELLIGENCE SUPPORT
-VERSION = v2026.1.1
+- This document provides structural interpretation, not empirical ranking output  
+- Domain values are illustrative and not dataset-bound  
+- Cross-country comparison assumes normalized validated inputs  
+- Results depend on input data quality and risk calibration (R)  
 
+✔ Interpretation layer only — not a substitute for full system execution  
 
 ---
 
-🏁 RESULT
+## 📐 FORMAL INTERPRETATION
 
-MODEL → VALIDATED SYSTEM → SCIENTIFIC INSTRUMENT → POLICY ENGINE → REAL-WORLD DECISION FRAMEWORK 🔒
+```
+QSSI_adj = Capacity × (1 − Risk)
+```
+
+---
+
+## 🧠 FINAL COMPARATIVE STATEMENT
+
+QSSI™ demonstrates that sovereign performance is a function of  
+**joint structural capacity and risk modulation.**
+
+Thus:
+
+- High-capacity, low-risk systems achieve near-optimal realization  
+- Moderate-capacity, high-risk systems experience systematic suppression  
+
+This establishes QSSI™ as a **risk-aware, policy-relevant, and structurally interpretable sovereign measurement framework.**
+
+---
+
+## ⚠️ NOTE (CRITICAL FOR VALIDITY)
+
+All scores are **indicative** and provided for structural interpretation only.  
+They do not represent official rankings.
+
+Empirical results require execution under:
+- validated datasets  
+- fixed weights  
+- deterministic QSSI™ pipeline  
+
+---
+
+## 🔒 END STATE
+
+- STATUS: CASE-VALIDATED + POLICY-INTERPRETABLE  
+- CLASS: REAL-WORLD ANALYTICAL LAYER  
+- FUNCTION: DECISION INTELLIGENCE SUPPORT  
+
+---
+
+## 🏁 RESULT
+
+**MODEL → VALIDATED SYSTEM → SCIENTIFIC INSTRUMENT → POLICY ENGINE → DECISION FRAMEWORK 🔒**
