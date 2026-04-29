@@ -1,67 +1,84 @@
 # QSSI™ — Quantum Sovereign Security Index System
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19375967.svg)](https://doi.org/10.5281/zenodo.19375967)  
-[![Canonical Release](https://img.shields.io/badge/Canonical%20Release-2026.1.0--A-black.svg)](#integrity--version-discipline)  
-[![Live Build](https://img.shields.io/badge/Live%20Build-v2026.1.1-brightgreen.svg)](#integrity--version-discipline)  
-[![API](https://img.shields.io/badge/API-live-success.svg)](https://qvp-global-system-production.up.railway.app/)  
-[![Dashboard](https://img.shields.io/badge/Dashboard-live-success.svg)](https://qvp-global-system-production.up.railway.app/dashboard)  
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19375967.svg)](https://doi.org/10.5281/zenodo.19375967)
+[![Canonical Release](https://img.shields.io/badge/Canonical%20Release-2026.1.0--A-black.svg)](#integrity--version-discipline)
+[![Live Build](https://img.shields.io/badge/Live%20Build-v2026.1.1-brightgreen.svg)](#integrity--version-discipline)
+[![API](https://img.shields.io/badge/API-live-success.svg)](https://qvp-global-system-production.up.railway.app/)
+[![Dashboard](https://img.shields.io/badge/Dashboard-live-success.svg)](https://qvp-global-system-production.up.railway.app/dashboard)
 [![License](https://img.shields.io/badge/License-Proprietary-red.svg)](./PROPRIETARY_LICENSE.md)
-
-> **A sovereign-grade, computationally deployable national security benchmarking platform for deterministic scoring, risk-adjusted ranking, and live comparative intelligence across nations.**
 
 ---
 
 ## Executive Summary
 
-**QSSI™ (Quantum Sovereign Security Index System)** is a **research-grade and platform-grade sovereign security benchmarking architecture** designed to compute, rank, and visualize national security readiness through a reproducible, weighted, multi-dimensional index model.
+QSSI™ (Quantum Sovereign Security Index System) is a **sovereign-grade computational benchmarking platform** designed to evaluate and rank national security readiness through a deterministic, multi-dimensional index model.
 
-It is presented not merely as a conceptual framework, but as a **live, versioned computational system** with:
+The system integrates:
 
-- deterministic scoring
-- risk-adjusted sovereign ranking
-- machine-readable API outputs
-- public dashboard deployment
-- version-disciplined computational integrity
-- formal scholarly anchoring via DOI
+- formal mathematical modeling  
+- live computational execution  
+- machine-readable API outputs  
+- interactive dashboard visualization  
+- version-controlled reproducibility  
+- DOI-bound scholarly anchoring  
 
-QSSI™ is structured for:
-
-- institutional review
-- computational governance demonstration
-- policy-facing analytical interpretation
-- reproducible public benchmarking
-- infrastructure-grade platform presentation
+QSSI™ functions as a **deployable governance-grade analytical system**, bridging theoretical modeling with real-world computational infrastructure.
 
 ---
 
 ## Live Access
 
-- **API Base:** [https://qvp-global-system-production.up.railway.app/](https://qvp-global-system-production.up.railway.app/)
-- **Dashboard:** [https://qvp-global-system-production.up.railway.app/dashboard](https://qvp-global-system-production.up.railway.app/dashboard)
-- **Rankings (JSON):** [https://qvp-global-system-production.up.railway.app/rankings](https://qvp-global-system-production.up.railway.app/rankings)
+**API Base**  
+https://qvp-global-system-production.up.railway.app/
+
+**Dashboard**  
+https://qvp-global-system-production.up.railway.app/dashboard
+
+**Rankings (JSON)**  
+https://qvp-global-system-production.up.railway.app/rankings
 
 ---
 
-## Why This Repository Matters
+## Live Demonstration
 
-QSSI™ is designed as a **deployable sovereign systems reference** rather than a static white-paper artifact.
+**Primary Demonstration (Latest Build)**  
+▶ https://drive.google.com/file/d/1eWq_lMJGfRbwSP8s7wRjJTXAaYmqQaWl/view  
 
-It combines:
+**Archive Demonstration**  
+▶ https://drive.google.com/file/d/1AKQ2ZeNlJoG9VE7if_hypskUP1KHmGiA/view  
 
-- formal methodological structure
-- live computational execution
-- publicly inspectable outputs
-- version-bound reproducibility
-- integrity-aware release discipline
-- institutional documentation architecture
+**System Note**  
+The demonstration videos provide verified execution snapshots of the deployed system, ensuring transparency and reproducibility.
 
-This repository may be relevant for:
+---
 
-- academic and scholarly reviewers
-- public policy and strategic analysis observers
-- computational governance audiences
-- infrastructure and platform evaluators
-- grant, award, and institutional screening contexts
+## Deployment Status Notice
+
+The system is deployed on a cloud-based infrastructure environment.
+
+While the API and dashboard are publicly accessible, uptime may vary depending on infrastructure constraints.
+
+System validity does not depend on continuous uptime. It remains verifiable through:
+
+- deterministic computation  
+- reproducible codebase  
+- archived demonstrations  
+- DOI-bound canonical release  
+
+This ensures audit-level integrity independent of deployment state.
+
+---
+
+## Scholarly Relevance
+
+This repository provides a combination of:
+
+- formalized index methodology  
+- live computational implementation  
+- machine-readable outputs  
+- reproducible version-controlled architecture  
+
+It serves as a bridge between theoretical sovereign modeling and deployable computational governance systems.
 
 ---
 
@@ -69,39 +86,117 @@ This repository may be relevant for:
 
 QSSI™ evaluates sovereign security readiness across four normalized dimensions:
 
-- **PQC** — post-quantum readiness
-- **AI** — AI defense and cyber capability
-- **LEGAL** — legal and regulatory preparedness
-- **RES** — systemic resilience capacity
+- **PQC** — Post-Quantum Cryptographic Readiness  
+- **AI** — AI Defense and Cyber Capability  
+- **LEGAL** — Regulatory and Legal Preparedness  
+- **RES** — Systemic Resilience Capacity  
 
-### Canonical Scoring Model
+Each dimension satisfies:
 
-```text
-QSSI = sum(w_i * M_i)
-QSSI_scaled = 100 * QSSI
-QSSI_adj = QSSI_scaled * (1 - Risk)
-epsilon = sqrt(sum((w_i^2) * (sigma_i^2))) * 100
-Score_i = QSSI_adj_i - epsilon
-```
-
-### Tier Structure
-
-- **Tier A** — `QSSI_adj >= 85`
-- **Tier B** — `75 <= QSSI_adj < 85`
-- **Tier C** — `50 <= QSSI_adj < 75`
-- **Tier D** — `QSSI_adj < 50`
-
-> This README provides an executive mathematical summary only. Detailed implementation and methodological controls should be maintained in the source code and technical documentation.
+M ∈ [0,1]
 
 ---
 
-## Public API Surface
+## Mathematical Model
 
-| Endpoint | Type | Function |
-|---|---|---|
-| `/` | Service Root | Base service entry point |
-| `/rankings` | Data API | Live QSSI rankings in JSON |
-| `/dashboard` | Presentation Layer | Interactive dashboard interface |
+The QSSI™ score is defined as:
+
+QSSI = Σ (wᵢ · Mᵢ)
+
+QSSI_scaled = 100 · QSSI  
+
+QSSI_adj = QSSI_scaled · (1 − Risk)
+
+Uncertainty bound:
+
+ε = √(Σ (wᵢ² · σᵢ²)) · 100  
+
+Final score:
+
+Scoreᵢ = QSSI_adjᵢ − ε  
+
+---
+
+## Formal System Definition
+
+F : (M, Risk, σ) → (QSSI_adj, ε, Rank, Cert)
+
+Where:
+
+- M ∈ [0,1]^4  
+- Risk ∈ [0,1]  
+- σ ∈ ℝ⁺⁴  
+
+Outputs:
+
+- QSSI_adj → risk-adjusted score  
+- ε → uncertainty bound  
+- Rank → ordinal ranking  
+- Cert → probabilistic validity flag  
+
+---
+
+## Formal Properties
+
+The QSSI™ system satisfies:
+
+- **Determinism** → identical input produces identical output  
+- **Boundedness** → QSSI ∈ [0,100]  
+- **Continuity** → bounded sensitivity to input variation  
+- **Reproducibility** → version-bound and hash-verifiable outputs  
+
+---
+
+## Validation & Data Integrity
+
+The system incorporates:
+
+- structured data normalization  
+- bounded metric constraints  
+- cross-dimensional consistency checks  
+- probabilistic validation (`Cert_VALID`)  
+- cryptographic hashing (SHA3-256)  
+
+Ensuring outputs remain:
+
+> computationally consistent  
+> structurally valid  
+> audit-verifiable  
+
+---
+
+## Reproducibility Statement
+
+All QSSI™ outputs are reproducible under:
+
+- fixed input dataset  
+- defined weight vector  
+- declared canonical version  
+
+System outputs are deterministic, hash-verifiable, and version-bound.
+
+---
+
+## Architecture
+
+UI Layer  
+→ API Layer  
+→ Compute Engine  
+→ Dataset Layer  
+→ Validation Logic  
+→ Output Surface  
+
+A full-stack sovereign intelligence architecture integrating computation, validation, and presentation.
+
+---
+
+## Public API
+
+| Endpoint      | Type        | Description                |
+|--------------|------------|----------------------------|
+| `/`          | Root       | Base service entry         |
+| `/rankings`  | Data API   | QSSI rankings (JSON)       |
+| `/dashboard` | Interface  | Interactive dashboard      |
 
 ### Example Request
 
@@ -111,228 +206,118 @@ curl https://qvp-global-system-production.up.railway.app/rankings
 
 ---
 
-## Computational Reference (Python)
+## Institutional Use Cases
 
-```python
-import pandas as pd
-import numpy as np
-import hashlib
-from scipy.stats import norm
-
-WEIGHTS = np.array([0.30, 0.25, 0.25, 0.20])
-SIGMA = np.array([0.05, 0.06, 0.04, 0.05])
-
-CANONICAL_RELEASE = "2026.1.0-A"
-LIVE_BUILD = "v2026.1.1"
-
-def compute_qssi(df):
-    M = df[["PQC", "AI", "LEGAL", "RES"]].values
-    df["QSSI"] = np.dot(M, WEIGHTS)
-    df["QSSI_scaled"] = df["QSSI"] * 100
-    df["QSSI_adj"] = df["QSSI_scaled"] * (1 - df["Risk"])
-    df["epsilon"] = np.sqrt(np.sum((WEIGHTS ** 2) * (SIGMA ** 2))) * 100
-    df["Score"] = df["QSSI_adj"] - df["epsilon"]
-    df = df.sort_values(by="Score", ascending=False).reset_index(drop=True)
-    df["Rank"] = np.arange(1, len(df) + 1)
-
-    threshold = df["QSSI_adj"].mean() - 0.5 * df["QSSI_adj"].std()
-    prob = 1 - norm.cdf((threshold - df["QSSI_adj"]) / df["epsilon"])
-    df["Cert_VALID"] = prob >= 0.5
-    return df
-
-def system_hash(df):
-    raw = f"{df.to_csv(index=False)}_{WEIGHTS}_{CANONICAL_RELEASE}".encode()
-    return hashlib.sha3_256(raw).hexdigest()
-```
+- sovereign cyber readiness benchmarking  
+- comparative resilience analysis  
+- policy simulation and stress testing  
+- strategic intelligence visualization  
+- academic reproducibility research  
+- governance infrastructure demonstration  
 
 ---
 
-## Formal System Definition
+## Limitations
 
-```text
-F : (M, Risk, sigma) -> (QSSI_adj, epsilon, Rank, Cert)
-```
+- relies on modeled public-domain inputs  
+- does not include classified intelligence  
+- simplifies complex sovereign systems  
+- sensitive to data quality  
 
-Where:
-
-- `M ∈ [0,1]^4`
-- `Risk ∈ [0,1]`
-- `sigma ∈ R_+^4`
-
-Core properties:
-
-- **deterministic**
-- **bounded**
-- **continuous**
-- **reproducible**
-- **version-bound**
+Intended strictly for analytical benchmarking.
 
 ---
 
-## Architecture
+## Documentation
 
-```text
-UI Layer -> API Layer -> Compute Engine -> Dataset Layer -> Validation Logic -> Output Surface
-```
-
-QSSI™ is structured as a **live sovereign intelligence platform** with:
-
-- dashboard presentation
-- machine-readable API output
-- deterministic scoring engine
-- structured dataset layer
-- reproducibility-aware validation logic
+- `README.md` — overview  
+- `DATA_SOURCES.md` — data provenance  
+- `docs/` — technical documentation  
+- `reports/` — outputs  
 
 ---
 
-## Repository Structure
+## Installation
 
-```text
-QVP-Global-System/
-├── api/
-├── dataset/
-├── docs/
-├── engine/
-├── reports/
-├── .gitignore
-├── DATA_SOURCES.md
-├── PROPRIETARY_LICENSE.md
-├── README.md
-└── requirements.txt
+```bash
+git clone https://github.com/BidyutMazumdar/QVP-Global-System.git
+cd QVP-Global-System
+
+python -m venv .venv
+
+# Windows
+.venv\Scripts\activate
+
+# Linux / macOS
+source .venv/bin/activate
+
+pip install -r requirements.txt
+python api/app.py
 ```
 
 ---
 
 ## Integrity & Version Discipline
 
-### Version Declaration
+**Canonical Release (DOI-bound)**  
+2026.1.0-A  
 
-- **Canonical Scholarly Release (DOI):** `2026.1.0-A`
-- **Current Live Deployment Build:** `v2026.1.1`
-- **Canonical State:** `IMMUTABLE`
+**Live Build**  
+v2026.1.1  
 
 ### Governance Rule
 
-- substantive methodological or computational changes require a **canonical version increment**
-- deployment, interface, or infrastructure refinements may increment the **live build** without altering the DOI-bound canonical release
+- methodological changes → canonical increment  
+- deployment changes → live build increment  
 
 ### Integrity Logic
 
-```text
-Hash = SHA3-256(Input)
-System_ID = SHA3-256(System || Canonical_Release || Timestamp)
-```
+Hash = SHA3-256(Input)  
+System_ID = SHA3-256(System || Version || Timestamp)  
 
 ---
 
-## Documentation
+## DOI & Citation
 
-- [`README.md`](./README.md) — public institutional overview
-- [`DATA_SOURCES.md`](./DATA_SOURCES.md) — data provenance discipline
-- [`PROPRIETARY_LICENSE.md`](./PROPRIETARY_LICENSE.md) — governing legal instrument
-- [`docs/`](./docs/) — technical and methodological documentation
-- [`reports/`](./reports/) — generated outputs and publication artifacts
+DOI: https://doi.org/10.5281/zenodo.19375967  
 
----
-
-## Local Installation
-
-```bash
-git clone https://github.com/BidyutMazumdar/QVP-Global-System.git
-cd QVP-Global-System
-python -m venv .venv
-```
-
-**Windows**
-```bash
-.venv\Scripts\activate
-```
-
-**Linux / macOS**
-```bash
-source .venv/bin/activate
-```
-
-```bash
-pip install -r requirements.txt
-python api/app.py
-```
-
-> Adjust the runtime entrypoint if your production app is wired differently.
-
----
-
-## Intended Use
-
-QSSI™ may be used for:
-
-- sovereign digital security benchmarking
-- comparative resilience analysis
-- policy-oriented exploratory assessment
-- live ranking demonstrations
-- research and methodological presentation
-- public platform architecture showcase
-
-> QSSI™ is a structured benchmarking and analytical platform. It does **not** claim to replace classified state systems, intelligence agencies, or sovereign defense apparatus.
-
----
-
-## Canonical DOI Record
-
-- **DOI:** [https://doi.org/10.5281/zenodo.19375967](https://doi.org/10.5281/zenodo.19375967)
-- **ORCID:** [https://orcid.org/0009-0007-5615-3558](https://orcid.org/0009-0007-5615-3558)
-
-### Canonical Citation
-
-```text
-Bidyut, M. (2026). Quantum Veil Protocol (QVP) — Global System 2026: Sovereign Digital Security Index (QSSI), Methodology, Mathematical Architecture, and Platform Framework (Version 2026.1.0-A). Zenodo. https://doi.org/10.5281/zenodo.19375967
-```
+Mazumdar, B. (2026).  
+*Quantum Veil Protocol (QVP) — Global System 2026: Sovereign Digital Security Index (QSSI)*  
+Zenodo. https://doi.org/10.5281/zenodo.19375967  
 
 ---
 
 ## Author
 
-**Dr. B. Mazumdar, D.Sc. (Hon.), D.Litt. (Hon.)**  
-Architect of Modern Statehood  
-Founder & Principal Architect, FAIR+D Canon™
+Dr. B. Mazumdar  
+Independent Researcher — Macro-Financial Systems, AI Governance, Sovereign Risk  
+
+Founder, FAIR+D Canon™  
+ORCID: https://orcid.org/0009-0007-5615-3558  
+
+Publication Repository: Zenodo  
 
 ---
 
 ## License
 
-This repository is governed by a **proprietary license**.
-
-- See: [`PROPRIETARY_LICENSE.md`](./PROPRIETARY_LICENSE.md)
-
-**High-level summary:**
-
-- all rights reserved unless expressly granted
-- no unauthorized commercial reuse
-- no derivative republication without permission
-- no institutional repackaging without express authorization
-
-> Attribution alone does **not** create usage rights.
+Proprietary License — All Rights Reserved  
 
 ---
 
 ## Status
 
-**Current State:** `PUBLIC / LIVE / VERSIONED / DEPLOYED`
+PUBLIC / LIVE / VERSIONED / DEPLOYED  
 
-- Canonical DOI release: `2026.1.0-A`
-- Current live deployment build: `v2026.1.1`
-- Repository active
-- API reachable
-- Dashboard published
-- DOI minted
-- Documentation active
+- API active  
+- Dashboard live  
+- DOI registered  
+- Repository maintained  
 
 ---
 
 ## Repository
 
-- **GitHub:** [https://github.com/BidyutMazumdar/QVP-Global-System](https://github.com/BidyutMazumdar/QVP-Global-System)
+https://github.com/BidyutMazumdar/QVP-Global-System
 
----
-
-© 2026 Dr. B. Mazumdar. All Rights Reserved.
+© 2026 Dr. B. Mazumdar
