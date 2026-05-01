@@ -12,7 +12,7 @@ const CONFIG = Object.freeze({
 
   ENDPOINTS: {
     rankings: "/rankings",
-    predict: null // 🔒 disabled (backend নেই)
+    predict: null
   },
 
   TIMEOUT: 8000,
@@ -34,6 +34,7 @@ const STATE = Object.seal({
 });
 
 let pollTimer = null;
+let loadingInProgress = false;
 
 // =========================
 // 🔢 SAFE UTILITIES
@@ -46,7 +47,7 @@ const toNum = (v) => {
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
 // =========================
-// 🌐 FETCH ENGINE (HARDENED)
+// 🌐 FETCH ENGINE
 // =========================
 async function fetchWithTimeout(url, externalSignal) {
   const controller = new AbortController();
@@ -77,7 +78,6 @@ async function safeFetch(url, signal) {
       return await fetchWithTimeout(url, signal);
     } catch (err) {
       if (err.name === "AbortError") throw err;
-
       if (i === CONFIG.RETRIES) throw err;
       await sleep(400);
     }
@@ -88,10 +88,12 @@ async function safeFetch(url, signal) {
 // 🚀 DATA LOADER (ATOMIC)
 // =========================
 async function loadData() {
+  if (loadingInProgress) return;
+  loadingInProgress = true;
+
   const loading = document.getElementById("loading");
   const id = ++STATE.requestId;
 
-  // cancel previous request
   if (STATE.controller) STATE.controller.abort();
   STATE.controller = new AbortController();
 
@@ -120,10 +122,9 @@ async function loadData() {
       );
     }
 
-    // stale request guard
     if (id !== STATE.requestId) return;
 
-    // defensive guard
+    // Defensive + immutable
     STATE.data = Object.freeze(
       (Array.isArray(data) ? data : []).map(d => ({ ...d }))
     );
@@ -145,6 +146,7 @@ async function loadData() {
     }
   } finally {
     STATE.controller = null;
+    loadingInProgress = false;
   }
 }
 
@@ -166,10 +168,13 @@ async function loadPrediction() {
       map[p.Country] = toNum(p.PredictedScore);
     });
 
-    STATE.data = STATE.data.map(d => ({
-      ...d,
-      predicted: map[d.Country] ?? null
-    }));
+    // 🔒 preserve immutability
+    STATE.data = Object.freeze(
+      STATE.data.map(d => ({
+        ...d,
+        predicted: map[d.Country] ?? null
+      }))
+    );
 
   } catch {
     console.warn("Prediction skipped");
@@ -212,7 +217,7 @@ function applyFilter(data, query) {
 }
 
 // =========================
-// 🎯 UI UPDATE PIPELINE
+// 🎯 UI UPDATE
 // =========================
 function updateUI() {
   const processed = recomputeRanks(
@@ -226,7 +231,7 @@ function updateUI() {
 }
 
 // =========================
-// 📊 TABLE RENDER
+// 📊 TABLE
 // =========================
 function renderTable(rows) {
   const table = document.getElementById("table");
@@ -262,7 +267,7 @@ function renderTable(rows) {
 }
 
 // =========================
-// 📈 CHART (SAFE)
+// 📈 CHART
 // =========================
 function renderChart(data) {
   const ctx = document.getElementById("chart");
@@ -287,7 +292,7 @@ function renderChart(data) {
 }
 
 // =========================
-// 🔁 POLLING ENGINE (SAFE)
+// 🔁 POLLING
 // =========================
 function startPolling() {
   if (STATE.polling) return;
@@ -314,7 +319,7 @@ function stopPolling() {
 }
 
 // =========================
-// 🔎 FILTER BIND
+// 🔎 FILTER INPUT
 // =========================
 document.getElementById("command")?.addEventListener("input", (e) => {
   STATE.filter = e.target.value;
@@ -322,7 +327,7 @@ document.getElementById("command")?.addEventListener("input", (e) => {
 });
 
 // =========================
-// 🟢 API HEALTH CHECK
+// 🟢 API CHECK
 // =========================
 async function checkAPI() {
   try {
@@ -334,7 +339,7 @@ async function checkAPI() {
 }
 
 // =========================
-// 🔒 LIFECYCLE CONTROL
+// 🔒 LIFECYCLE
 // =========================
 document.addEventListener("visibilitychange", () => {
   document.hidden ? stopPolling() : startPolling();
