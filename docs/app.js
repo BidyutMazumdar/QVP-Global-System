@@ -1,39 +1,180 @@
-// =========================
-// 🌐 CONFIG (LOCKED)
-// =========================
-const API_URL = "/rankings";
-const PREDICT_URL = "/predict";
+// ==========================================
+// 🌐 QSSI™ FRONTEND ENGINE — FINAL LOCK ∞
+// Deterministic | Race-Safe | Audit-Ready
+// ==========================================
 
 // =========================
-// 🌐 GLOBAL STATE
+// 🔧 CONFIGURATION (LOCKED)
 // =========================
-let controller = null;
-let fullData = [];
-let currentViewData = [];
-let chartInstance = null;
-let previousRanks = {};
-let geoData = null;
+const CONFIG = Object.freeze({
+  API_PRIMARY: "https://qvp-global-system-production.up.railway.app",
+  API_FALLBACK: "https://qvp-global-system-production.up.railway.app",
 
-let projection = null;
-let path = null;
+  ENDPOINTS: {
+    rankings: "/rankings",
+    predict: null // 🔒 disabled (backend নেই)
+  },
 
-let requestId = 0;
-let polling = false;
+  TIMEOUT: 8000,
+  RETRIES: 2,
+  POLL_INTERVAL: 15000
+});
+
+// =========================
+// 🌐 GLOBAL STATE (SEALED)
+// =========================
+const STATE = Object.seal({
+  data: [],
+  view: [],
+  chart: null,
+  controller: null,
+  polling: false,
+  filter: "",
+  requestId: 0
+});
+
 let pollTimer = null;
-let simTimeout = null;
-
-let currentFilter = "";
 
 // =========================
-// 🔢 SAFE UTILS
+// 🔢 SAFE UTILITIES
 // =========================
 const toNum = (v) => {
   const n = Number(v);
   return Number.isFinite(n) ? n : 0;
 };
 
-const safeMul = (a, b) =>
-  Number((toNum(a) * toNum(b)).toFixed(4));
+const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+
+// =========================
+// 🌐 FETCH ENGINE (HARDENED)
+// =========================
+async function fetchWithTimeout(url, externalSignal) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), CONFIG.TIMEOUT);
+
+  const signal = externalSignal || controller.signal;
+
+  try {
+    const res = await fetch(url, {
+      cache: "no-store",
+      signal
+    });
+
+    clearTimeout(timer);
+
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return await res.json();
+
+  } catch (err) {
+    clearTimeout(timer);
+    throw err;
+  }
+}
+
+async function safeFetch(url, signal) {
+  for (let i = 0; i <= CONFIG.RETRIES; i++) {
+    try {
+      return await fetchWithTimeout(url, signal);
+    } catch (err) {
+      if (err.name === "AbortError") throw err;
+
+      if (i === CONFIG.RETRIES) throw err;
+      await sleep(400);
+    }
+  }
+}
+
+// =========================
+// 🚀 DATA LOADER (ATOMIC)
+// =========================
+async function loadData() {
+  const loading = document.getElementById("loading");
+  const id = ++STATE.requestId;
+
+  // cancel previous request
+  if (STATE.controller) STATE.controller.abort();
+  STATE.controller = new AbortController();
+
+  try {
+    if (loading) {
+      loading.style.display = "flex";
+      loading.innerText = "Loading intelligence data...";
+      loading.style.color = "#9ca3af";
+    }
+
+    let data;
+
+    try {
+      data = await safeFetch(
+        CONFIG.API_PRIMARY + CONFIG.ENDPOINTS.rankings,
+        STATE.controller.signal
+      );
+    } catch (err) {
+      if (err.name === "AbortError") return;
+
+      console.warn("Primary API failed → fallback");
+
+      data = await safeFetch(
+        CONFIG.API_FALLBACK + CONFIG.ENDPOINTS.rankings,
+        STATE.controller.signal
+      );
+    }
+
+    // stale request guard
+    if (id !== STATE.requestId) return;
+
+    // defensive guard
+    STATE.data = Object.freeze(
+      (Array.isArray(data) ? data : []).map(d => ({ ...d }))
+    );
+
+    await loadPrediction();
+
+    if (loading) loading.style.display = "none";
+
+    updateUI();
+
+  } catch (err) {
+    if (err.name === "AbortError") return;
+
+    console.error("Data load failed:", err);
+
+    if (loading) {
+      loading.innerText = "⚠️ Data load failed";
+      loading.style.color = "red";
+    }
+  } finally {
+    STATE.controller = null;
+  }
+}
+
+// =========================
+// 🤖 PREDICTION (SAFE)
+// =========================
+async function loadPrediction() {
+  if (!CONFIG.ENDPOINTS.predict) return;
+
+  try {
+    const pred = await safeFetch(
+      CONFIG.API_PRIMARY + CONFIG.ENDPOINTS.predict
+    );
+
+    if (!Array.isArray(pred)) return;
+
+    const map = {};
+    pred.forEach(p => {
+      map[p.Country] = toNum(p.PredictedScore);
+    });
+
+    STATE.data = STATE.data.map(d => ({
+      ...d,
+      predicted: map[d.Country] ?? null
+    }));
+
+  } catch {
+    console.warn("Prediction skipped");
+  }
+}
 
 // =========================
 // 🧠 RANK ENGINE
@@ -53,9 +194,9 @@ function applyFilter(data, query) {
   query = query.toLowerCase();
 
   return data.filter(d => {
-    const tier = (d.TierRaw || "").toLowerCase();
     const score = toNum(d.Score);
     const country = (d.Country || "").toLowerCase();
+    const tier = (d.TierRaw || "").toLowerCase();
 
     if (query.includes("tier:a") && tier !== "a") return false;
     if (query.includes("tier:b") && tier !== "b") return false;
@@ -71,211 +212,53 @@ function applyFilter(data, query) {
 }
 
 // =========================
-// 🌍 GEO DATA
-// =========================
-async function getGeoData() {
-  if (!geoData) {
-    try {
-      geoData = await d3.json(
-        "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson"
-      );
-    } catch {
-      geoData = { features: [] };
-    }
-  }
-  return geoData;
-}
-
-// =========================
-// 🌍 COUNTRY NAME FIX
-// =========================
-const countryAlias = {
-  "United States": "United States of America",
-  "Russia": "Russian Federation",
-  "South Korea": "Korea, Republic of",
-  "North Korea": "Korea, Democratic People's Republic of"
-};
-
-// =========================
-// 🔁 SAFE FETCH
-// =========================
-async function safeFetch(url, options = {}, retries = 2) {
-  try {
-    const { signal, ...rest } = options || {};
-
-    const res = await fetch(url, {
-      cache: "no-store",
-      ...rest,
-      signal
-    });
-
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    return await res.json();
-
-  } catch (err) {
-    if (err.name === "AbortError") throw err;
-
-    if (retries > 0) {
-      await new Promise(r => setTimeout(r, 400));
-      return safeFetch(url, {}, retries - 1);
-    }
-
-    console.error("Fetch failed:", url, err);
-    throw err;
-  }
-}
-
-// =========================
-// 🚀 LOAD DATA
-// =========================
-async function loadData() {
-  const currentId = ++requestId;
-  const loading = document.getElementById("loading");
-
-  if (controller) controller.abort();
-  controller = new AbortController();
-
-  try {
-    if (loading) {
-      loading.style.display = "flex";
-      loading.innerText = "Loading intelligence data...";
-      loading.style.color = "#9ca3af";
-    }
-
-    const json = await safeFetch(API_URL, {
-      signal: controller.signal
-    });
-
-    if (currentId !== requestId) return;
-
-    fullData = Object.freeze((json || []).map(d => ({ ...d })));
-
-    await loadPrediction(currentId);
-
-    if (loading) loading.style.display = "none";
-
-    updateUI();
-
-  } catch (err) {
-    if (err.name === "AbortError") return;
-
-    if (loading) {
-      loading.innerText = "⚠️ Data load failed";
-      loading.style.color = "red";
-    }
-
-  } finally {
-    controller = null;
-  }
-}
-
-// =========================
-// 🤖 PREDICTION
-// =========================
-async function loadPrediction(currentId) {
-  if (!PREDICT_URL) return;
-
-  try {
-    const pred = await safeFetch(PREDICT_URL);
-
-    if (!pred || currentId !== requestId) return;
-
-    const map = {};
-    pred.forEach(p => {
-      map[p.Country] = toNum(p.PredictedScore);
-    });
-
-    fullData = fullData.map(d => ({
-      ...d,
-      predicted: map[d.Country] ?? null
-    }));
-
-  } catch {
-    console.warn("Prediction skipped");
-  }
-}
-
-// =========================
-// 🔁 POLLING
-// =========================
-function startPolling() {
-  if (polling) return;
-  polling = true;
-
-  const loop = async () => {
-    if (!polling) return;
-    await loadData();
-    pollTimer = setTimeout(loop, 15000);
-  };
-
-  loop();
-}
-
-function stopPolling() {
-  polling = false;
-  if (pollTimer) clearTimeout(pollTimer);
-}
-
-// =========================
 // 🎯 UI UPDATE PIPELINE
 // =========================
 function updateUI() {
   const processed = recomputeRanks(
-    applyFilter(fullData, currentFilter)
+    applyFilter(STATE.data, STATE.filter)
   );
 
-  currentViewData = processed;
+  STATE.view = processed;
 
   renderTable(processed);
   renderChart(processed);
-  renderMap(processed);
 }
 
 // =========================
-// 📊 TABLE
+// 📊 TABLE RENDER
 // =========================
 function renderTable(rows) {
   const table = document.getElementById("table");
-  const leaderEl = document.getElementById("leader");
+  const leader = document.getElementById("leader");
 
   if (!rows.length) {
-    if (table) table.innerHTML = "<tr><td colspan='5'>No matching data</td></tr>";
-    if (leaderEl) leaderEl.innerHTML = "No data";
+    if (table) table.innerHTML = "<tr><td colspan='5'>No data</td></tr>";
+    if (leader) leader.innerHTML = "No data";
     return;
   }
 
-  const fragment = document.createDocumentFragment();
-  const newRanks = {};
+  const top = rows[0];
 
-  const leader = rows[0];
-
-  if (leaderEl) {
-    leaderEl.innerHTML = `
-      <div><b>${leader.Country}</b></div>
-      <div>Score: ${toNum(leader.Score)}</div>
-      <div>Tier: ${leader.Tier}</div>
+  if (leader) {
+    leader.innerHTML = `
+      <b>${top.Country}</b><br>
+      Score: ${toNum(top.Score)}<br>
+      Tier: ${top.Tier}
     `;
   }
 
-  rows.forEach(r => {
-    const tr = document.createElement("tr");
-
-    tr.innerHTML = `
-      <td>${r.Rank}</td>
-      <td>${r.Country}</td>
-      <td>${toNum(r.Score)}</td>
-      <td>${toNum(r.predicted ?? "-")}</td>
-      <td>${r.Tier}</td>
-    `;
-
-    fragment.appendChild(tr);
-    newRanks[r.Country] = r.Rank;
-  });
-
-  table.innerHTML = "";
-  table.appendChild(fragment);
-
-  previousRanks = newRanks;
+  if (table) {
+    table.innerHTML = rows.map(r => `
+      <tr>
+        <td>${r.Rank}</td>
+        <td>${r.Country}</td>
+        <td>${toNum(r.Score)}</td>
+        <td>${toNum(r.predicted ?? "-")}</td>
+        <td>${r.Tier}</td>
+      </tr>
+    `).join("");
+  }
 }
 
 // =========================
@@ -283,68 +266,75 @@ function renderTable(rows) {
 // =========================
 function renderChart(data) {
   const ctx = document.getElementById("chart");
-  if (!ctx) return;
+  if (!ctx || typeof Chart === "undefined") return;
 
   const top = data.slice(0, 10);
 
-  if (chartInstance) {
-    chartInstance.destroy();
+  if (STATE.chart && typeof STATE.chart.destroy === "function") {
+    STATE.chart.destroy();
   }
 
-  chartInstance = new Chart(ctx, {
+  STATE.chart = new Chart(ctx, {
     type: "bar",
     data: {
       labels: top.map(d => d.Country),
-      datasets: [
-        { label: "Score", data: top.map(d => toNum(d.Score)) }
-      ]
+      datasets: [{
+        label: "Score",
+        data: top.map(d => toNum(d.Score))
+      }]
     }
   });
 }
 
 // =========================
-// 🌍 MAP
+// 🔁 POLLING ENGINE (SAFE)
 // =========================
-async function renderMap(data) {
-  const svg = d3.select("#worldMap");
-  const geo = await getGeoData();
-  if (!geo.features.length) return;
+function startPolling() {
+  if (STATE.polling) return;
 
-  if (!projection) {
-    projection = d3.geoMercator().fitSize([1000, 500], geo);
-    path = d3.geoPath().projection(projection);
+  STATE.polling = true;
+
+  const loop = async () => {
+    if (!STATE.polling) return;
+
+    await loadData();
+    pollTimer = setTimeout(loop, CONFIG.POLL_INTERVAL);
+  };
+
+  loop();
+}
+
+function stopPolling() {
+  STATE.polling = false;
+
+  if (pollTimer) {
+    clearTimeout(pollTimer);
+    pollTimer = null;
   }
-
-  const scoreMap = {};
-  data.forEach(d => {
-    const name = countryAlias[d.Country] || d.Country;
-    scoreMap[name] = toNum(d.Score);
-  });
-
-  const color = d3.scaleSequential(d3.interpolateYlGnBu)
-    .domain([0, 100]);
-
-  svg.selectAll("path")
-    .data(geo.features)
-    .join("path")
-    .attr("d", path)
-    .attr("stroke", "#222")
-    .attr("fill", d => {
-      const s = scoreMap[d.properties.name];
-      return s ? color(s) : "#111";
-    });
 }
 
 // =========================
-// 🔎 FILTER INPUT BIND
+// 🔎 FILTER BIND
 // =========================
-document.getElementById("filterInput")?.addEventListener("input", (e) => {
-  currentFilter = e.target.value;
+document.getElementById("command")?.addEventListener("input", (e) => {
+  STATE.filter = e.target.value;
   updateUI();
 });
 
 // =========================
-// 🔒 VISIBILITY CONTROL
+// 🟢 API HEALTH CHECK
+// =========================
+async function checkAPI() {
+  try {
+    await fetch(CONFIG.API_PRIMARY, { method: "HEAD" });
+    console.log("API: ONLINE");
+  } catch {
+    console.warn("API: OFFLINE");
+  }
+}
+
+// =========================
+// 🔒 LIFECYCLE CONTROL
 // =========================
 document.addEventListener("visibilitychange", () => {
   document.hidden ? stopPolling() : startPolling();
@@ -352,13 +342,14 @@ document.addEventListener("visibilitychange", () => {
 
 window.addEventListener("beforeunload", () => {
   stopPolling();
-  if (controller) controller.abort();
+  if (STATE.controller) STATE.controller.abort();
 });
 
 // =========================
 // 🚀 INIT
 // =========================
 document.addEventListener("DOMContentLoaded", () => {
+  checkAPI();
   loadData();
   startPolling();
 });
