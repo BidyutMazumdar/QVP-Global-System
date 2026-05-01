@@ -1,6 +1,6 @@
 // ==========================================
 // 🌐 QSSI™ FRONTEND ENGINE — FINAL LOCK ∞
-// Deterministic | Race-Safe | Audit-Ready
+// Deterministic | Race-Safe | Audit-Grade | Hardened
 // ==========================================
 
 // =========================
@@ -10,10 +10,10 @@ const CONFIG = Object.freeze({
   API_PRIMARY: "https://qvp-global-system-production.up.railway.app",
   API_FALLBACK: "https://qvp-global-system-production.up.railway.app",
 
-  ENDPOINTS: {
+  ENDPOINTS: Object.freeze({
     rankings: "/rankings",
     predict: null
-  },
+  }),
 
   TIMEOUT: 8000,
   RETRIES: 2,
@@ -47,13 +47,35 @@ const toNum = (v) => {
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
 // =========================
-// 🌐 FETCH ENGINE
+// 🔗 SIGNAL MERGE (CRITICAL)
+// =========================
+function mergeSignals(externalSignal, timeoutSignal) {
+  if (!externalSignal) return timeoutSignal;
+
+  if (typeof AbortSignal !== "undefined" && AbortSignal.any) {
+    return AbortSignal.any([externalSignal, timeoutSignal]);
+  }
+
+  // Fallback
+  const controller = new AbortController();
+  const abort = () => controller.abort();
+
+  externalSignal.addEventListener("abort", abort);
+  timeoutSignal.addEventListener("abort", abort);
+
+  return controller.signal;
+}
+
+// =========================
+// 🌐 FETCH ENGINE (HARDENED)
 // =========================
 async function fetchWithTimeout(url, externalSignal) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), CONFIG.TIMEOUT);
+  const timeoutController = new AbortController();
+  const timeout = setTimeout(() => {
+    timeoutController.abort();
+  }, CONFIG.TIMEOUT);
 
-  const signal = externalSignal || controller.signal;
+  const signal = mergeSignals(externalSignal, timeoutController.signal);
 
   try {
     const res = await fetch(url, {
@@ -61,13 +83,13 @@ async function fetchWithTimeout(url, externalSignal) {
       signal
     });
 
-    clearTimeout(timer);
+    clearTimeout(timeout);
 
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return await res.json();
 
   } catch (err) {
-    clearTimeout(timer);
+    clearTimeout(timeout);
     throw err;
   }
 }
@@ -124,7 +146,6 @@ async function loadData() {
 
     if (id !== STATE.requestId) return;
 
-    // Defensive + immutable
     STATE.data = Object.freeze(
       (Array.isArray(data) ? data : []).map(d => ({ ...d }))
     );
@@ -168,7 +189,6 @@ async function loadPrediction() {
       map[p.Country] = toNum(p.PredictedScore);
     });
 
-    // 🔒 preserve immutability
     STATE.data = Object.freeze(
       STATE.data.map(d => ({
         ...d,
@@ -217,12 +237,20 @@ function applyFilter(data, query) {
 }
 
 // =========================
-// 🎯 UI UPDATE
+// 🎯 UI UPDATE (OPTIMIZED)
 // =========================
 function updateUI() {
   const processed = recomputeRanks(
     applyFilter(STATE.data, STATE.filter)
   );
+
+  // avoid unnecessary re-render
+  if (
+    STATE.view.length === processed.length &&
+    STATE.view[0]?.Country === processed[0]?.Country
+  ) {
+    return;
+  }
 
   STATE.view = processed;
 
@@ -319,24 +347,32 @@ function stopPolling() {
 }
 
 // =========================
+// 🟢 API STATUS (VISIBLE)
+// =========================
+function setAPIStatus(status) {
+  const el = document.getElementById("api-status");
+  if (!el) return;
+
+  el.innerText = status ? "● ONLINE" : "● OFFLINE";
+  el.style.color = status ? "#10b981" : "#ef4444";
+}
+
+async function checkAPI() {
+  try {
+    await fetch(CONFIG.API_PRIMARY, { method: "HEAD" });
+    setAPIStatus(true);
+  } catch {
+    setAPIStatus(false);
+  }
+}
+
+// =========================
 // 🔎 FILTER INPUT
 // =========================
 document.getElementById("command")?.addEventListener("input", (e) => {
   STATE.filter = e.target.value;
   updateUI();
 });
-
-// =========================
-// 🟢 API CHECK
-// =========================
-async function checkAPI() {
-  try {
-    await fetch(CONFIG.API_PRIMARY, { method: "HEAD" });
-    console.log("API: ONLINE");
-  } catch {
-    console.warn("API: OFFLINE");
-  }
-}
 
 // =========================
 // 🔒 LIFECYCLE
