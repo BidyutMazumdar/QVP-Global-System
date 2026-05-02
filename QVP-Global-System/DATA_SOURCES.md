@@ -72,7 +72,7 @@ QSSI™ integrates four major sovereign capability layers:
 ├── RES_IMF_2026.csv
 ├── RES_NDGAIN_2026_FINAL.csv
 ├── RES_GLOBAL_RESILIENCE_INDEX_v1.0_STRICT.csv
-└── qssi_resilience_institutional_2026_FAIR+D_Canon.csv
+└── QSSI_RESILIENCE_INSTITUTIONAL_2026_FAIRD_CANON_v2026.1.0.csv
 ```
 
 ---
@@ -241,7 +241,7 @@ This layer evaluates sovereign stability under conditions of institutional, econ
 
 ---
 
-# Integrated IMF Indicators
+# INTEGRATED IMF INDICATORS
 
 | Indicator | Functional Purpose |
 |---|---|
@@ -253,7 +253,7 @@ This layer evaluates sovereign stability under conditions of institutional, econ
 
 ---
 
-# Institutional Pipeline Output
+# INSTITUTIONAL PIPELINE OUTPUT
 
 ```text
 QSSI_RESILIENCE_INSTITUTIONAL_2026_FAIRD_CANON_v2026.1.0.csv
@@ -261,7 +261,7 @@ QSSI_RESILIENCE_INSTITUTIONAL_2026_FAIRD_CANON_v2026.1.0.csv
 
 ---
 
-# IMF Pipeline Methodology
+# IMF PIPELINE METHODOLOGY
 
 Indicators are:
 
@@ -289,7 +289,7 @@ Negative indicators include:
 
 ---
 
-# Coverage Includes
+# COVERAGE INCLUDES
 
 - adaptive capacity
 - infrastructure resilience
@@ -309,7 +309,7 @@ Negative indicators include:
 
 ---
 
-# Functional Purpose
+# FUNCTIONAL PURPOSE
 
 Provides systemic robustness calibration across:
 
@@ -327,7 +327,9 @@ QSSI™ employs bounded min-max normalization.
 
 Canonical transformation:
 
-0
+```math
+M_i = \frac{X_i - X_{min}}{X_{max} - X_{min}}
+```
 
 Where:
 
@@ -351,7 +353,9 @@ Examples include:
 
 Canonical reverse transformation:
 
-1
+```math
+M_i^{rev} = 1 - M_i
+```
 
 ---
 
@@ -368,7 +372,9 @@ Canonical QSSI™ layer weights:
 
 Constraint:
 
-2
+```math
+\sum w_i = 1
+```
 
 ---
 
@@ -376,11 +382,15 @@ Constraint:
 
 Canonical QSSI™ formulation:
 
-3
+```math
+QSSI = \sum (w_i \cdot M_i)
+```
 
 Scaled score:
 
-4
+```math
+QSSI_{scaled} = 100 \times QSSI
+```
 
 ---
 
@@ -388,7 +398,9 @@ Scaled score:
 
 Risk-adjusted sovereign score:
 
-5
+```math
+QSSI_{adj} = QSSI_{scaled} \times (1 - Risk)
+```
 
 Where:
 
@@ -406,7 +418,9 @@ Purpose:
 
 Uncertainty estimation:
 
-6
+```math
+\varepsilon = \sqrt{\sum (w_i^2 \cdot \sigma_i^2)} \times 100
+```
 
 Purpose:
 
@@ -421,7 +435,9 @@ Purpose:
 
 Canonical system representation:
 
-7
+```math
+F : (M, Risk, \sigma) \rightarrow (QSSI_{adj}, \varepsilon, Rank, Cert)
+```
 
 Outputs include:
 
@@ -438,19 +454,23 @@ QSSI™ incorporates cryptographic integrity verification.
 
 ---
 
-# Dataset Hash
+# DATASET HASH
 
-8
-
----
-
-# System Hash
-
-9
+```math
+SHA3\text{-}256(Dataset)
+```
 
 ---
 
-# Integrity Objectives
+# SYSTEM HASH
+
+```math
+SHA3\text{-}256(System \parallel Version \parallel Timestamp)
+```
+
+---
+
+# INTEGRITY OBJECTIVES
 
 - tamper detection
 - reproducibility assurance
