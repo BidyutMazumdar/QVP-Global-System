@@ -1,0 +1,205 @@
+RANK,COUNTRY,RES_SCORE,RES_TIER
+1,"Iran, Islamic Republic of",64.98399853507617,Stable
+2,Other Advanced Economies (Advanced Economies excluding G7 and Euro Area countries),35.186045303480505,Fragile
+3,"China, People's Republic of",34.89318476151371,Fragile
+4,Vietnam,33.115495012550376,Fragile
+5,Japan,32.87513791615426,Fragile
+6,Singapore,32.79538502121589,Fragile
+7,"Korea, Republic of",32.76106001208596,Fragile
+8,Taiwan Province of China,32.705367329803494,Fragile
+9,Germany,32.636282367332896,Fragile
+10,"Andorra, Principality of",32.51786356880883,Fragile
+11,"Macao Special Administrative Region, People's Republic of China",32.51539287858857,Fragile
+12,Thailand,32.490203520201206,Fragile
+13,Russian Federation,32.43603639302913,Fragile
+14,Switzerland,32.24484933387116,Fragile
+15,Denmark,32.22163469443523,Fragile
+16,"Netherlands, The",32.16128738292728,Fragile
+17,"Hong Kong Special Administrative Region, People's Republic of China",32.078887965800654,Fragile
+18,Euro Area (EA),32.053918848364866,Fragile
+19,Nicaragua,31.943829493883598,Fragile
+20,Norway,31.927673332177843,Fragile
+21,Belize,31.9091886776197,Fragile
+22,Seychelles,31.908412351032624,Fragile
+23,Malta,31.84865932443931,Fragile
+24,Malaysia,31.845635602262977,Fragile
+25,Mexico,31.844171641135706,Fragile
+26,Ecuador,31.832005680498177,Fragile
+27,Indonesia,31.81899675528378,Fragile
+28,Israel,31.818486390273243,Fragile
+29,"Belarus, Republic of",31.809347042940182,Fragile
+30,Czech Republic,31.762909906933185,Fragile
+31,"Uzbekistan, Republic of",31.68056602597854,Fragile
+32,Bulgaria,31.617117726263,Fragile
+33,"Poland, Republic of",31.607525708891437,Fragile
+34,"Liechtenstein, Principality of",31.592195361743492,Fragile
+35,Ireland,31.560101009777817,Fragile
+36,"Slovenia, Republic of",31.52262971923161,Fragile
+37,Iceland,31.468228827972165,Fragile
+38,Hungary,31.444366552163892,Fragile
+39,Trinidad and Tobago,31.435477302087385,Fragile
+40,Kyrgyz Republic,31.43058981017321,Fragile
+41,"Moldova, Republic of",31.414502948072272,Fragile
+42,"San Marino, Republic of",31.41410872965613,Fragile
+43,"Aruba, Kingdom of the Netherlands",31.390480497494323,Fragile
+44,Paraguay,31.368473874600678,Fragile
+45,El Salvador,31.33946128777515,Fragile
+46,Bolivia,31.31524007434021,Fragile
+47,Brunei Darussalam,31.30951061800966,Fragile
+48,"Kazakhstan, Republic of",31.302546799167636,Fragile
+49,Mongolia,31.232143064025436,Fragile
+50,"Croatia, Republic of",31.22728505648259,Fragile
+51,Cyprus,31.187681509176947,Fragile
+52,"Azerbaijan, Republic of",31.138722365101824,Fragile
+53,Australia,31.13201990702723,Fragile
+54,Philippines,31.09443214712679,Fragile
+55,"Fiji, Republic of",31.068582085687602,Fragile
+56,Dominican Republic,31.023452250324024,Fragile
+57,New Zealand,30.92297458074854,Fragile
+58,Austria,30.916388517909034,Fragile
+59,Italy,30.88546204429841,Fragile
+60,Luxembourg,30.87603538458734,Fragile
+61,Portugal,30.84823799262327,Fragile
+62,Slovak Republic,30.84390893799458,Fragile
+63,Peru,30.80875335159949,Fragile
+64,Mauritius,30.800842068345567,Fragile
+65,Advanced Economies,30.76488559579194,Fragile
+66,India,30.713966348405776,Fragile
+67,Belgium,30.649273861689796,Fragile
+68,"Lithuania, Republic of",30.64281348423219,Fragile
+69,Romania,30.619323399290966,Fragile
+70,Canada,30.60500032744638,Fragile
+71,"Latvia, Republic of",30.560323447903453,Fragile
+72,Honduras,30.52244868196144,Fragile
+73,Costa Rica,30.510165695665766,Fragile
+74,Argentina,30.50340391364224,Fragile
+75,Barbados,30.491763992941422,Fragile
+76,"Estonia, Republic of",30.381389109247024,Fragile
+77,"Egypt, Arab Republic of",30.23935424989444,Fragile
+78,Greece,30.19768532463906,Fragile
+79,Chile,30.192353197228478,Fragile
+80,United Kingdom,30.18117107377941,Fragile
+81,Sweden,30.176164987617693,Fragile
+82,Brazil,30.147124461347985,Fragile
+83,Uruguay,30.140765852205988,Fragile
+84,France,30.09863223829501,Fragile
+85,Cabo Verde,29.978385203002567,Fragile
+86,Colombia,29.941167361858028,Fragile
+87,Albania,29.89715193630731,Fragile
+88,"Serbia, Republic of",29.8301705310368,Fragile
+89,"Türkiye, Republic of",29.800239331214467,Fragile
+90,Spain,29.797864191801082,Fragile
+91,"Bahamas, The",29.623964957709596,Fragile
+92,Finland,29.61725942810923,Fragile
+93,Suriname,29.566808388250344,Fragile
+94,Panama,29.332593706020887,Fragile
+95,Ukraine,29.100282899343444,Fragile
+96,"North Macedonia, Republic of",28.95489060472241,Fragile
+97,Morocco,28.703429962944416,Fragile
+98,Bosnia and Herzegovina,28.58544251312508,Fragile
+99,"Armenia, Republic of",28.531967803401148,Fragile
+100,Georgia,28.15046256872288,Fragile
+101,G7,26.235806259117194,Fragile
+102,Jordan,25.673109748173434,Fragile
+103,United States,25.095060842029177,Fragile
+104,Pakistan,24.27770526347899,Fragile
+105,South Africa,22.010396077477605,Fragile
+106,Puerto Rico,18.348945210292666,Fragile
+107,Emerging and Developing Asia,15.79374424561463,Fragile
+108,Emerging Market and Developing Economies,15.221872907950123,Fragile
+109,European Union (EU),14.861856501164574,Fragile
+110,ASEAN-5,12.900654631418979,Fragile
+111,United Arab Emirates,12.892703731510208,Fragile
+112,Kuwait,12.833066094085227,Fragile
+113,Middle East and Central Asia,12.782112034536782,Fragile
+114,Lao People's Democratic Republic,12.752922684784487,Fragile
+115,Guyana,12.648662613827494,Fragile
+116,Qatar,12.647334000672043,Fragile
+117,Nigeria,12.624244387494759,Fragile
+118,Ghana,12.578007621776743,Fragile
+119,"Venezuela, República Bolivariana de",12.559243726787116,Fragile
+120,Papua New Guinea,12.559096509711098,Fragile
+121,Sierra Leone,12.557103411885146,Fragile
+122,Oman,12.5484056344357,Fragile
+123,Burkina Faso,12.526660130652628,Fragile
+124,Guinea,12.525864823774931,Fragile
+125,Djibouti,12.522577911193538,Fragile
+126,Nepal,12.517083048296751,Fragile
+127,Angola,12.512085433405199,Fragile
+128,"Tajikistan, Republic of",12.503332713967325,Fragile
+129,Guatemala,12.50191918614073,Fragile
+130,Turkmenistan,12.499326404061845,Fragile
+131,Libya,12.496765010129408,Fragile
+132,"South Sudan, Republic of",12.495076107518573,Fragile
+133,Zimbabwe,12.494515088874296,Fragile
+134,"Bahrain, Kingdom of",12.494162947725373,Fragile
+135,"Equatorial Guinea, Republic of",12.477156002246694,Fragile
+136,Cambodia,12.476918846088573,Fragile
+137,"Marshall Islands, Republic of the",12.47613760323423,Fragile
+138,"Nauru, Republic of",12.475930020538458,Fragile
+139,Chad,12.472899586972698,Fragile
+140,Myanmar,12.472868872500062,Fragile
+141,Zambia,12.47056188662726,Fragile
+142,"Micronesia, Federated States of",12.469352790217773,Fragile
+143,Haiti,12.466913208569723,Fragile
+144,Gabon,12.464603278008205,Fragile
+145,Côte d'Ivoire,12.461989694511752,Fragile
+146,"Tanzania, United Republic of",12.46178872983402,Fragile
+147,Uganda,12.45849783768281,Fragile
+148,Tuvalu,12.458397990624302,Fragile
+149,Mali,12.457105397097532,Fragile
+150,"Congo, Democratic Republic of the",12.456364181036317,Fragile
+151,Samoa,12.455406847106707,Fragile
+152,"Eswatini, Kingdom of",12.45423849702102,Fragile
+153,Sudan,12.453524707141192,Fragile
+154,Botswana,12.45206510118301,Fragile
+155,Togo,12.448735355089156,Fragile
+156,Central African Republic,12.44702428821722,Fragile
+157,Bangladesh,12.446554534155174,Fragile
+158,"Comoros, Union of the",12.445651324833227,Fragile
+159,"Lesotho, Kingdom of",12.445626482851283,Fragile
+160,Algeria,12.442812560672463,Fragile
+161,Burundi,12.441326157758745,Fragile
+162,Solomon Islands,12.439427851775397,Fragile
+163,St. Lucia,12.439393542910148,Fragile
+164,"São Tomé and Príncipe, Democratic Republic of",12.439235317308988,Fragile
+165,"Ethiopia, The Federal Democratic Republic of",12.4372884888305,Fragile
+166,"Gambia, The",12.436860120045925,Fragile
+167,Benin,12.435961176041891,Fragile
+168,"Congo, Republic of",12.434273958699633,Fragile
+169,Guinea-Bissau,12.433908169362017,Fragile
+170,Jamaica,12.432336055298359,Fragile
+171,"Madagascar, Republic of",12.430175212617348,Fragile
+172,Tunisia,12.42901015227005,Fragile
+173,Cameroon,12.42642713244106,Fragile
+174,Niger,12.42625736919443,Fragile
+175,"Mauritania, Islamic Republic of",12.4254687552785,Fragile
+176,Tonga,12.424974936688264,Fragile
+177,Senegal,12.424301887565623,Fragile
+178,"Yemen, Republic of",12.423555298942698,Fragile
+179,Vanuatu,12.42113937714807,Fragile
+180,Kenya,12.413345454940464,Fragile
+181,Somalia,12.412089653501068,Fragile
+182,Iraq,12.403519602189872,Fragile
+183,"Kosovo, Republic of",12.401424132971,Fragile
+184,Antigua and Barbuda,12.401400401549974,Fragile
+185,Liberia,12.397520887959255,Fragile
+186,Rwanda,12.391471670077259,Fragile
+187,St. Kitts and Nevis,12.382830147880995,Fragile
+188,Sub-Saharan Africa (SSA),12.380480261655286,Fragile
+189,Malawi,12.375985290882902,Fragile
+190,"Palau, Republic of",12.374035061883848,Fragile
+191,Kiribati,12.371504342558145,Fragile
+192,Namibia,12.368665561669978,Fragile
+193,Grenada,12.367281191442645,Fragile
+194,Maldives,12.366598355897473,Fragile
+195,Bhutan,12.36146265262293,Fragile
+196,St. Vincent and the Grenadines,12.35940766271335,Fragile
+197,Montenegro,12.35257405018037,Fragile
+198,Saudi Arabia,12.340182879760306,Fragile
+199,"Timor-Leste, Democratic Republic of",12.293650498550655,Fragile
+200,Dominica,12.289817634103912,Fragile
+201,"Mozambique, Republic of",12.188164689338961,Fragile
+202,Latin America and the Caribbean (LAC),12.066073795716061,Fragile
+203,Emerging and Developing Europe,12.050998528082427,Fragile
+204,World,8.534166735554315,Fragile
