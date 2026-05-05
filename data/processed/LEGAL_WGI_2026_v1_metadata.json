@@ -1,0 +1,57 @@
+{
+    "title": "Legal Governance Index 2026",
+    "description": "Deterministic composite index measuring national legal-institutional governance quality using WGI components.",
+    "version": "v1",
+    "status": "stable_frozen",
+    "created_utc": "2026-05-05T15:52:54Z",
+
+    "author": {
+        "name": "Dr. B. Mazumdar",
+        "role": "Independent Researcher",
+        "affiliation": "FAIR+D Canon"
+    },
+
+    "execution_environment": {
+        "python": "3.12",
+        "platform": "Linux"
+    },
+
+    "dataset": {
+        "row_count": 213,
+        "columns": [
+            "country",
+            "rule_of_law",
+            "regulatory_quality",
+            "government_effectiveness",
+            "control_of_corruption",
+            "LEGAL_WGI_SCORE",
+            "rank"
+        ]
+    },
+
+    "statistics": {
+        "min": 0.0201261421088243,
+        "max": 0.9663234009914472,
+        "mean": 0.4966778763697411,
+        "std": 0.2218427631659775
+    },
+
+    "methodology": "LEGAL_WGI_SCORE = (rule_of_law + regulatory_quality + government_effectiveness + control_of_corruption) / 4",
+
+    "normalization": {
+        "range": "0–1",
+        "method": "min-max normalized inputs"
+    },
+
+    "validation": {
+        "null_check": "passed",
+        "range_check": "passed",
+        "duplicate_country_check": "passed"
+    },
+
+    "integrity": {
+        "dataset_hash_sha256": "13e5310373fc4104b70b0eb410ccb1628099336f21fe705545b472290cc7b4e7"
+    },
+
+    "license": "CC-BY-NC-ND"
+}
