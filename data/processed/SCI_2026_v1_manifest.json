@@ -1,0 +1,58 @@
+SCI_2026_v1_manifest.json
+/data/processed/SCI_2026_v1_manifest.json
+
+{
+    "manifest_version": "1.1",
+    "created_utc": "2026-05-05T15:52:54Z",
+
+    "files": {
+        "data": {
+            "file_name": "SCI_2026_v1.csv",
+            "path": "/data/processed/SCI_2026_v1.csv",
+            "format": "CSV",
+            "encoding": "UTF-8",
+            "line_ending": "LF",
+            "hash_sha256": "d7e3893bc2a639c4d8dea872e934e53ddec11a284d5cfa35908dbc3e36c770ae"
+        },
+        "metadata": {
+            "file_name": "SCI_2026_v1_metadata.json",
+            "path": "/data/processed/SCI_2026_v1_metadata.json",
+            "format": "JSON",
+            "encoding": "UTF-8",
+            "hash_sha256": "7aa8783761491cfa5b45fea77f6dbed006c64a0b392226ae657b648f56a5a0d1"
+        }
+    },
+
+    "integrity": {
+        "dataset_hash_sha256": "d7e3893bc2a639c4d8dea872e934e53ddec11a284d5cfa35908dbc3e36c770ae",
+        "metadata_hash_sha256": "7aa8783761491cfa5b45fea77f6dbed006c64a0b392226ae657b648f56a5a0d1",
+        "hash_algorithm": "SHA-256"
+    },
+
+    "provenance": {
+        "generated_by": "SCI_2026_pipeline_v1",
+
+        "execution_environment": {
+            "python": "3.12",
+            "platform": "Linux"
+        },
+
+        "processing_steps": [
+            "data_ingestion",
+            "schema_normalization",
+            "deterministic_merge",
+            "composite_index_computation",
+            "deterministic_sorting",
+            "ranking_assignment",
+            "validation_checks",
+            "hash_generation"
+        ],
+
+        "manual_intervention": false
+    },
+
+    "consistency_checks": {
+        "dataset_equals_hash": true,
+        "metadata_equals_hash": true
+    }
+}
