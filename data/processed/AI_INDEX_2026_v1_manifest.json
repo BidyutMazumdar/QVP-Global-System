@@ -1,0 +1,44 @@
+{
+    "manifest_version": "1.1",
+    "created_utc": "2026-05-05T15:52:54Z",
+
+    "files": {
+        "data": {
+            "file_name": "AI_INDEX_2026_v1.csv",
+            "path": "/data/processed/AI_INDEX_2026_v1.csv",
+            "format": "CSV",
+            "encoding": "UTF-8",
+            "line_ending": "LF",
+            "hash_sha256": "16656947ff8486b896640a00d05deccee086e52358f6614472ad38929af0b776"
+        },
+        "metadata": {
+            "file_name": "AI_INDEX_2026_v1_metadata.json",
+            "path": "/data/processed/AI_INDEX_2026_v1_metadata.json",
+            "format": "JSON",
+            "encoding": "UTF-8",
+            "hash_sha256": "9709e9973b4ef12bec4c3e9c6c9d1a75f3c49ca9403380486d87e9a989904791"
+        }
+    },
+
+    "integrity": {
+        "hash_algorithm": "SHA-256"
+    },
+
+    "provenance": {
+        "generated_by": "AI_INDEX_2026_pipeline_v1",
+        "execution_environment": {
+            "python": "3.12.13",
+            "platform": "Linux-6.6.113+-x86_64-with-glibc2.35"
+        },
+        "processing_steps": [
+            "data_ingestion",
+            "schema_normalization",
+            "string_cleaning",
+            "inner_join_merge",
+            "validation_checks",
+            "mean_index_computation",
+            "deterministic_sorting",
+            "hash_generation"
+        ]
+    }
+}
