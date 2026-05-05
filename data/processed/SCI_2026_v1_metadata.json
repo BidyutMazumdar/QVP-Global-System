@@ -1,0 +1,62 @@
+SCI_2026_v1_metadata.json
+/data/processed/SCI_2026_v1_metadata.json
+
+{
+    "title": "Sovereign Capability Index 2026",
+    "description": "Deterministic composite index integrating AI capability and legal-institutional governance capacity at the national level.",
+    "version": "v1",
+    "status": "stable_frozen",
+    "created_utc": "2026-05-05T15:52:54Z",
+
+    "author": {
+        "name": "Dr. B. Mazumdar",
+        "role": "Independent Researcher",
+        "affiliation": "FAIR+D Canon"
+    },
+
+    "execution_environment": {
+        "python": "3.12",
+        "platform": "Linux"
+    },
+
+    "dataset": {
+        "row_count": 213,
+        "columns": [
+            "country",
+            "AI_INDEX",
+            "rule_of_law",
+            "regulatory_quality",
+            "government_effectiveness",
+            "control_of_corruption",
+            "LEGAL_WGI_SCORE",
+            "SCI_SCORE",
+            "rank"
+        ]
+    },
+
+    "statistics": {
+        "min": 0.0201261421088243,
+        "max": 0.9663234009914472,
+        "mean": 0.4966778763697411,
+        "std": 0.2218427631659775
+    },
+
+    "methodology": "SCI = (AI_INDEX + LEGAL_WGI_SCORE) / 2",
+
+    "normalization": {
+        "range": "0–1",
+        "method": "mean composite of normalized indices"
+    },
+
+    "validation": {
+        "null_check": "passed",
+        "range_check": "passed",
+        "duplicate_country_check": "passed"
+    },
+
+    "integrity": {
+        "dataset_hash_sha256": "d7e3893bc2a639c4d8dea872e934e53ddec11a284d5cfa35908dbc3e36c770ae"
+    },
+
+    "license": "CC-BY-NC-ND"
+}
