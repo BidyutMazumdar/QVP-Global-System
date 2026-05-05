@@ -1,0 +1,67 @@
+{
+    "title": "Sovereign Capability Index Plus 2026 (SCI+)",
+    "description": "Next-generation composite index measuring national sovereign capability by integrating artificial intelligence capacity, legal-institutional governance quality, and post-quantum cybersecurity readiness into a unified deterministic framework.",
+    "version": "v1.0",
+    "status": "stable_frozen",
+    "created_utc": "2026-05-05T00:00:00Z",
+
+    "author": {
+        "name": "Dr. B. Mazumdar",
+        "role": "Independent Researcher–Scholar",
+        "affiliation": "FAIR+D Canon"
+    },
+
+    "execution_environment": {
+        "python": "3.12",
+        "platform": "Linux"
+    },
+
+    "dataset": {
+        "row_count": 213,
+        "columns": [
+            "country",
+            "AI_INDEX",
+            "LEGAL_WGI_SCORE",
+            "PQC",
+            "SCI_PLUS_SCORE",
+            "rank"
+        ]
+    },
+
+    "statistics": {
+        "min": 0.0,
+        "max": 1.0,
+        "mean": null,
+        "std": null
+    },
+
+    "methodology": "SCI_PLUS_SCORE = (AI_INDEX + LEGAL_WGI_SCORE + PQC) / 3",
+
+    "normalization": {
+        "range": "0–1",
+        "method": "min-max normalization applied to all component indices prior to aggregation"
+    },
+
+    "validation": {
+        "null_check": "passed",
+        "range_check": "passed",
+        "duplicate_country_check": "passed",
+        "schema_alignment_check": "passed"
+    },
+
+    "integrity": {
+        "dataset_hash_sha256": "f63729ec7d5e88090b059d751499982226cd1aabcde6f5f85e83c92c5b12765a"
+    },
+
+    "license": "CC-BY-NC-ND",
+
+    "classification": {
+        "type": "Composite Sovereign Index",
+        "domain": [
+            "Artificial Intelligence Capacity",
+            "Legal Governance",
+            "Post-Quantum Cybersecurity"
+        ],
+        "use_case": "Global ranking, policy benchmarking, strategic capability assessment"
+    }
+}
