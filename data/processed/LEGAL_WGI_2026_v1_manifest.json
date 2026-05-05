@@ -1,0 +1,55 @@
+{
+    "manifest_version": "1.1",
+    "created_utc": "2026-05-05T15:52:54Z",
+
+    "files": {
+        "data": {
+            "file_name": "LEGAL_WGI_2026_v1.csv",
+            "path": "/data/processed/LEGAL_WGI_2026_v1.csv",
+            "format": "CSV",
+            "encoding": "UTF-8",
+            "line_ending": "LF",
+            "hash_sha256": "13e5310373fc4104b70b0eb410ccb1628099336f21fe705545b472290cc7b4e7"
+        },
+        "metadata": {
+            "file_name": "LEGAL_WGI_2026_v1_metadata.json",
+            "path": "/data/processed/LEGAL_WGI_2026_v1_metadata.json",
+            "format": "JSON",
+            "encoding": "UTF-8",
+            "hash_sha256": "997498e47f908c859631e09f7b12c61b8a85297ceae6092a743b45f440460b5f"
+        }
+    },
+
+    "integrity": {
+        "dataset_hash_sha256": "13e5310373fc4104b70b0eb410ccb1628099336f21fe705545b472290cc7b4e7",
+        "metadata_hash_sha256": "997498e47f908c859631e09f7b12c61b8a85297ceae6092a743b45f440460b5f",
+        "hash_algorithm": "SHA-256"
+    },
+
+    "provenance": {
+        "generated_by": "LEGAL_WGI_2026_pipeline_v1",
+
+        "execution_environment": {
+            "python": "3.12",
+            "platform": "Linux"
+        },
+
+        "processing_steps": [
+            "data_ingestion",
+            "schema_normalization",
+            "indicator_scaling",
+            "composite_score_computation",
+            "deterministic_sorting",
+            "ranking_assignment",
+            "validation_checks",
+            "hash_generation"
+        ],
+
+        "manual_intervention": false
+    },
+
+    "consistency_checks": {
+        "dataset_equals_hash": true,
+        "metadata_equals_hash": true
+    }
+}
