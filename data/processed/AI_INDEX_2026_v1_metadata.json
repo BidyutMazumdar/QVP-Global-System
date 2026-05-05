@@ -1,13 +1,14 @@
-metadata = {
+{
     "title": "AI Index 2026",
     "description": "Deterministic composite index measuring national AI readiness using OECD and Oxford indicators.",
     "version": "v1",
+    "schema_version": "1.0",
     "status": "stable_frozen",
 
     "identifiers": {
         "dataset_id": "AI_INDEX_2026_v1",
-        "created_utc": timestamp,
-        "hash_sha256": dataset_hash
+        "created_utc": "2026-05-05T15:23:19Z",
+        "hash_sha256": "16656947ff8486b896640a00d05deccee086e52358f6614472ad38929af0b776"
     },
 
     "author": {
@@ -18,15 +19,15 @@ metadata = {
 
     "files": {
         "data": {
-            "file_name": data_file,
+            "file_name": "AI_INDEX_2026_v1.csv",
             "path": "/data/processed/AI_INDEX_2026_v1.csv",
             "format": "CSV",
             "encoding": "UTF-8",
             "line_ending": "LF",
-            "hash_sha256": dataset_hash
+            "hash_sha256": "16656947ff8486b896640a00d05deccee086e52358f6614472ad38929af0b776"
         },
         "metadata": {
-            "file_name": meta_file,
+            "file_name": "AI_INDEX_2026_v1_metadata.json",
             "path": "/data/processed/AI_INDEX_2026_v1_metadata.json",
             "format": "JSON",
             "encoding": "UTF-8"
@@ -42,19 +43,25 @@ metadata = {
     },
 
     "dataset": {
-        "row_count": int(len(df)),
-        "column_count": int(len(df.columns)),
-        "columns": list(df.columns),
-        "coverage": f"{len(df)} countries",
-        "missing_values": False,
-        "duplicates": False
+        "row_count": 195,
+        "column_count": 5,
+        "columns": [
+            "country",
+            "oecd_ai",
+            "oxford_ai",
+            "AI_INDEX",
+            "rank"
+        ],
+        "coverage": "195 countries",
+        "missing_values": false,
+        "duplicates": false
     },
 
     "statistics": {
-        "min": float(df["AI_INDEX"].min()),
-        "max": float(df["AI_INDEX"].max()),
-        "mean": float(df["AI_INDEX"].mean()),
-        "std": float(df["AI_INDEX"].std())
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.44086499277682256,
+        "std": 0.27023704622789096
     },
 
     "data_lineage": {
@@ -70,16 +77,22 @@ metadata = {
             "mean_aggregation",
             "deterministic_sorting"
         ],
-        "manual_intervention": False
+        "manual_intervention": false
     },
 
     "reproducibility": {
-        "deterministic": True,
+        "deterministic": true,
         "hash_scope": "full CSV content (UTF-8, LF normalized)",
         "environment": {
-            "python": sys.version,
-            "platform": platform.platform()
+            "python": "3.12.13",
+            "platform": "Linux-6.6.113+-x86_64-with-glibc2.35"
         }
+    },
+
+    "validation": {
+        "schema_compliant": true,
+        "integrity_verified": true,
+        "last_validated_utc": "2026-05-05T15:23:19Z"
     },
 
     "license": {
@@ -87,6 +100,3 @@ metadata = {
         "name": "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International"
     }
 }
-
-with open(meta_file, "w", encoding="utf-8") as f:
-    json.dump(metadata, f, indent=4, ensure_ascii=False)
