@@ -1,0 +1,92 @@
+metadata = {
+    "title": "AI Index 2026",
+    "description": "Deterministic composite index measuring national AI readiness using OECD and Oxford indicators.",
+    "version": "v1",
+    "status": "stable_frozen",
+
+    "identifiers": {
+        "dataset_id": "AI_INDEX_2026_v1",
+        "created_utc": timestamp,
+        "hash_sha256": dataset_hash
+    },
+
+    "author": {
+        "name": "Dr. B. Mazumdar",
+        "role": "Independent Researcher",
+        "affiliation": "FAIR+D Canon"
+    },
+
+    "files": {
+        "data": {
+            "file_name": data_file,
+            "path": "/data/processed/AI_INDEX_2026_v1.csv",
+            "format": "CSV",
+            "encoding": "UTF-8",
+            "line_ending": "LF",
+            "hash_sha256": dataset_hash
+        },
+        "metadata": {
+            "file_name": meta_file,
+            "path": "/data/processed/AI_INDEX_2026_v1_metadata.json",
+            "format": "JSON",
+            "encoding": "UTF-8"
+        }
+    },
+
+    "methodology": {
+        "formula": "AI_INDEX = (oecd_ai + oxford_ai) / 2",
+        "model_type": "deterministic_linear_index",
+        "input_domain": "[0,1]",
+        "aggregation": "arithmetic_mean",
+        "ranking_rule": "descending AI_INDEX, tie-breaker country ASC"
+    },
+
+    "dataset": {
+        "row_count": int(len(df)),
+        "column_count": int(len(df.columns)),
+        "columns": list(df.columns),
+        "coverage": f"{len(df)} countries",
+        "missing_values": False,
+        "duplicates": False
+    },
+
+    "statistics": {
+        "min": float(df["AI_INDEX"].min()),
+        "max": float(df["AI_INDEX"].max()),
+        "mean": float(df["AI_INDEX"].mean()),
+        "std": float(df["AI_INDEX"].std())
+    },
+
+    "data_lineage": {
+        "sources": [
+            "AI_OECD_2026.csv",
+            "AI_OXFORD_2026.csv"
+        ],
+        "pipeline": [
+            "schema_standardization",
+            "string_normalization",
+            "inner_join_merge",
+            "validation_checks",
+            "mean_aggregation",
+            "deterministic_sorting"
+        ],
+        "manual_intervention": False
+    },
+
+    "reproducibility": {
+        "deterministic": True,
+        "hash_scope": "full CSV content (UTF-8, LF normalized)",
+        "environment": {
+            "python": sys.version,
+            "platform": platform.platform()
+        }
+    },
+
+    "license": {
+        "id": "CC-BY-NC-ND",
+        "name": "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International"
+    }
+}
+
+with open(meta_file, "w", encoding="utf-8") as f:
+    json.dump(metadata, f, indent=4, ensure_ascii=False)
