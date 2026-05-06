@@ -1,0 +1,88 @@
+{
+  "file_name": "SCI_ULTRA_metadata_v1_2026.json",
+  "file_path": "./SCI_ULTRA_2026/v1/SCI_ULTRA_metadata_v1_2026.json",
+
+  "title": "Sovereign Capability Intelligence Index with Uncertainty and Risk Modeling",
+  "short_name": "SCI_ULTRA 2026",
+  "version": "v1",
+  "release_type": "initial_publication",
+  "year": 2026,
+  "rows": 195,
+
+  "overview": "A deterministic, composite sovereign capability intelligence index integrating artificial intelligence capacity, governance quality, post-quantum cybersecurity readiness, and systemic resilience. The framework incorporates explicit uncertainty adjustment, confidence-weighted ranking, and risk signaling for decision-grade analysis.",
+
+  "methodology": {
+    "type": "weighted composite index",
+    "design_principle": "multi-domain sovereign capability aggregation",
+    "normalization": "pre-normalized source indicators",
+    "weights": {
+      "AI_INDEX": 0.30,
+      "LEGAL_WGI_SCORE": 0.25,
+      "PQC": 0.20,
+      "RES_INDEX": 0.25
+    },
+    "confidence_model": "weighted missingness (pre-imputation)",
+    "imputation_method": "median imputation",
+    "determinism": "no stochastic processes; fully reproducible pipeline"
+  },
+
+  "data_characteristics": {
+    "structure": "hybrid (observed + imputed)",
+    "unit_of_analysis": "sovereign state",
+    "coverage_summary": {
+      "LEGAL_WGI_SCORE_missing": 0.1436,
+      "PQC_missing": 0.4051,
+      "RES_INDEX_missing": 0.3641
+    }
+  },
+
+  "scoring_system": {
+    "score_scale": {
+      "range": "0–1 normalized composite",
+      "interpretation": "Higher values indicate stronger sovereign capability across AI, governance, cybersecurity readiness, and systemic resilience"
+    },
+    "ranking_framework": {
+      "raw_ranking": "score-based",
+      "adjusted_ranking": "confidence-weighted (uncertainty-adjusted)"
+    }
+  },
+
+  "decision_framework": {
+    "high_capability_high_confidence": "Reliable strategic powers with strong institutional, technological, and systemic foundations",
+    "high_capability_low_confidence": "Modeled or uncertain powers; outcomes sensitive to missing or imputed data",
+    "mid_capability_high_confidence": "Stable emerging systems with consistent structural capacity",
+    "low_capability_high_confidence": "Structurally constrained or fragile systems"
+  },
+
+  "derived_metrics": {
+    "rank_gap_interpretation": {
+      "positive": "Confidence penalty; raw capability likely overestimated",
+      "negative": "Under-recognized capability; adjusted ranking improves",
+      "zero": "Stable ranking with consistent confidence"
+    },
+    "risk_flag_definition": "Entities with high capability (>0.7) but low confidence (<0.6), indicating potential instability, model sensitivity, or data sparsity"
+  },
+
+  "analytical_notes": {
+    "statistical_note": "Median imputation introduces central tendency bias, reducing variance and potentially inflating mid-tier rankings",
+    "comparability_note": "Indicators are normalized for cross-country comparison; underlying source methodologies may differ"
+  },
+
+  "classification": {
+    "methodological_class": "Composite Index with Explicit Uncertainty Adjustment",
+    "analytical_domain": "Sovereign capability intelligence",
+    "audit_level": "Independent reproducible computational audit with cryptographic integrity chaining"
+  },
+
+  "reproducibility": {
+    "pipeline_type": "deterministic",
+    "execution_environment": "Python (pandas-based pipeline)",
+    "reproducibility_note": "All outputs are fully reproducible given identical input datasets and execution conditions"
+  },
+
+  "integrity_chain": {
+    "data_hash": "32c6a4d232450654f75b623297d4fdb08ee725f0bf784a20d0d720983d8c23dd",
+    "metadata_hash_pre": "696d75cbedf9daa603586b10c18288fb786b0acb764aea883a9a1fb65ec1f131",
+    "manifest_hash": "c5be4aa0796603d0127fb40d5ace544c2897e49e3c75e1cca1d40cdd07dd79f5"
+  }
+}
