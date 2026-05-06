@@ -1,0 +1,57 @@
+{
+  "file_name": "SCI_ULTRA_manifest_v1_2026.json",
+  "file_path": "./SCI_ULTRA_2026/v1/SCI_ULTRA_manifest_v1_2026.json",
+
+  "manifest_version": "1.0",
+  "index_name": "SCI_ULTRA 2026",
+  "edition": "INITIAL_RELEASE",
+
+  "files": {
+    "data_file": "SCI_ULTRA_2026_v1.csv",
+    "metadata_file": "SCI_ULTRA_metadata_v1_2026.json"
+  },
+
+  "hashes": {
+    "data_hash": "32c6a4d232450654f75b623297d4fdb08ee725f0bf784a20d0d720983d8c23dd",
+    "metadata_hash": "dd583404e04d023fd4895935e6baa6579b302a5813cc8b7064ab87357e96f101"
+  },
+
+  "pipeline": {
+    "name": "SCI_ULTRA_v1",
+    "type": "deterministic composite pipeline",
+    "features": [
+      "dual_ranking",
+      "uncertainty_modeling",
+      "confidence_weighting",
+      "risk_flagging",
+      "rank_divergence_analysis"
+    ]
+  },
+
+  "validation": {
+    "deterministic": true,
+    "structure_valid": true,
+    "hash_verified": true,
+    "audit_ready": true
+  },
+
+  "audit_framework": {
+    "integrity_model": "cryptographic hash chaining",
+    "verification_logic": "data → metadata_pre_hash → manifest → metadata_final_hash",
+    "tamper_evidence": true
+  },
+
+  "usage_context": {
+    "intended_use": [
+      "policy analysis",
+      "sovereign risk assessment",
+      "strategic intelligence modeling",
+      "academic research"
+    ],
+    "limitations": [
+      "partial data imputation present",
+      "cross-source comparability assumptions apply",
+      "mid-tier compression bias possible"
+    ]
+  }
+}
