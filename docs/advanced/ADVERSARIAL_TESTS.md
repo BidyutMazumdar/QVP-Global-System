@@ -1,5 +1,5 @@
 # QSSI™ Adversarial Testing Framework  
-## Version: v2026.1.2  
+## Version: v1.0  
 ## Layer: Extreme-State Validation & Boundary Condition Analysis  
 
 ---
@@ -455,4 +455,4 @@ under both standard and adversarial analytical conditions.
 
 ## CLASS = ADVERSARIAL VALIDATION LAYER  
 ## STATUS = STRUCTURALLY STABLE UNDER EXTREME CONDITIONS  
-## VERSION = v2026.1.2
+## VERSION = v1.0
