@@ -6,7 +6,7 @@ import statistics
 from typing import List, Dict, Any
 
 # ============================================================
-# QSSI™ Engine v2026.2.3
+# QSSI™ Engine V1.0
 # FINAL LOCKED • Deterministic • Audit-Ready • Crash-Safe
 # ============================================================
 
