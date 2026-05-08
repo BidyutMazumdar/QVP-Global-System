@@ -1,5 +1,5 @@
 # QSSI™ Sensitivity Analysis  
-Version: v2026.1.2  
+Version: v1.0  
 Layer: Robustness & Stability Evaluation  
 
 ---
@@ -195,4 +195,4 @@ Variations in output remain proportional to input changes, and ranking structure
 
 STATUS = Evaluated under local perturbation  
 LAYER = Robustness Analysis  
-VERSION = v2026.1.2
+VERSION = v1.0
