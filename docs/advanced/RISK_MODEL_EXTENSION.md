@@ -1,5 +1,5 @@
 # QSSI™ Risk Model Extension  
-Version: v2026.1.2  
+Version: v1.0  
 Layer: Risk Dynamics & Theoretical Expansion Framework  
 
 ---
@@ -264,4 +264,4 @@ This approach preserves methodological transparency in the present system while 
 END STATE  
 CLASS = THEORETICAL RISK EXTENSION LAYER  
 STATUS = FRAMEWORK DEFINED (NOT IMPLEMENTED)  
-VERSION = v2026.1.2
+VERSION = v1.0
