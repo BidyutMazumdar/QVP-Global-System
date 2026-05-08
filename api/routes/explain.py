@@ -67,7 +67,7 @@ async def explain(
     explanation = explain_country(record)
 
     # =========================
-    # 📊 METADATA LAYER (UTC FIX)
+    # 📊 METADATA LAYER 
     # =========================
     response = {
         "meta": {
