@@ -1,6 +1,6 @@
 """
 QVP™ Global System — AI Prediction Layer
-Version: 2026.10 (Absolute Final Lock 🔒)
+Version: 1.0 
 
 Features:
 ✔ Deterministic predictions
