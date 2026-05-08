@@ -1,5 +1,5 @@
 # QSSI™ Empirical Validation Framework  
-Version: v2026.1.2  
+Version: v1.0  
 Layer: External Validity & Outcome Consistency  
 
 ---
@@ -201,4 +201,4 @@ By combining cross-sectional, temporal, and regression-based approaches, the fra
 END STATE  
 CLASS = EMPIRICAL VALIDATION LAYER  
 STATUS = FRAMEWORK DEFINED (IMPLEMENTATION PENDING)  
-VERSION = v2026.1.2
+VERSION = v1.0
