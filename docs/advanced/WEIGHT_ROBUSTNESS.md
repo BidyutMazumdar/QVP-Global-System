@@ -1,5 +1,5 @@
 # QSSI™ Weight Robustness Analysis  
-Version: v2026.1.2  
+Version: v1.0  
 Layer: Structural Stability & Parameter Sensitivity  
 
 ---
@@ -219,4 +219,4 @@ This supports the interpretation of QSSI™ as a robust comparative measurement 
 END STATE  
 CLASS = PARAMETER ROBUSTNESS VALIDATION  
 STATUS = STABLE UNDER WEIGHT PERTURBATION  
-VERSION = v2026.1.2
+VERSION = v1.0
