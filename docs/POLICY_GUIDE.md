@@ -1,6 +1,6 @@
 📄 docs/POLICY_GUIDE.md
 
-QSSI™ v2026.1.1 — Policy Interpretation & Real-World Application Guide 🔒
+QSSI™ v1.0 — Policy Interpretation & Real-World Application Guide 🔒
 
 STATUS: LOCKED — POLICY-GRADE IMPLEMENTATION LAYER (ABSOLUTE FINAL)
 
@@ -373,7 +373,7 @@ QSSI™ converts quantitative measurement into actionable governance intelligenc
 STATUS = POLICY-GRADE READY
 CLASS = DECISION-SUPPORT SYSTEM
 APPLICATION = GOVERNANCE + STRATEGY + RISK MANAGEMENT
-VERSION = v2026.1.1
+VERSION = v1.0
 
 
 ---
