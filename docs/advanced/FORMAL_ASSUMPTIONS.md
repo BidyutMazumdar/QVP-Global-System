@@ -1,5 +1,5 @@
 # QSSI™ Formal Assumptions Framework  
-## Version: v2026.1.2  
+## Version: v1.0  
 ## Layer: Foundational Assumptions, Operational Constraints & Theoretical Boundary Conditions  
 
 ---
@@ -479,6 +479,6 @@ This layer defines the valid operational envelope of QSSI™ and provides the fo
 
 ## CLASS = FOUNDATIONAL ASSUMPTION LAYER  
 ## STATUS = FORMALLY SPECIFIED  
-## VERSION = v2026.1.2  
+## VERSION = v1.0  
 
 The canonical architecture preserves deterministic execution, bounded interpretability, computational auditability, and methodological traceability across all formally valid operational states.
