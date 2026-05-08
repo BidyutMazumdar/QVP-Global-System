@@ -1,8 +1,8 @@
 📄 docs/DATA_VALIDATION_REPORT.md
 
-QSSI™ v2026.1.1 — Data Validation Report & Audit Transparency 🔒
+QSSI™ v1.0 — Data Validation Report & Audit Transparency 🔒
 
-STATUS: LOCKED — TRANSPARENCY & AUDIT LAYER (ABSOLUTE FINAL, AUDIT-GRADE)
+STATUS: LOCKED — TRANSPARENCY & AUDIT LAYER 
 
 
 ---
@@ -269,7 +269,7 @@ All QSSI™ datasets are fully validated, transparently documented, and cryptogr
 STATUS = AUDIT-READY + TRANSPARENT + TRACEABLE
 CLASS = DATA INTEGRITY LAYER
 COMPLIANCE = FULL VALIDATION + FULL DISCLOSURE
-VERSION = v2026.1.1
+VERSION = v2026.1.0
 
 
 ---
