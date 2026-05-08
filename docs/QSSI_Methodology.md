@@ -1,4 +1,4 @@
-# QSSI™ Methodology (v1.0) — Canonical Edition)
+# QSSI™ Methodology (v1.0) — Canonical Edition
 
 This document defines the formal mathematical, probabilistic, and computational framework of the Quantum Veil Protocol (QVP) — Sovereign Digital Security Index (QSSI).
 
