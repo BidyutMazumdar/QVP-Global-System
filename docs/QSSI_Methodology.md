@@ -1,4 +1,4 @@
-# QSSI™ Methodology (v2026.1.0-CX — Canonical Locked Edition)
+# QSSI™ Methodology (v1.0) — Canonical Edition)
 
 This document defines the formal mathematical, probabilistic, and computational framework of the Quantum Veil Protocol (QVP) — Sovereign Digital Security Index (QSSI).
 
@@ -194,7 +194,7 @@ QSSI is continuous over domain [0,1]^4
 
 ## 16. Version Lock Condition
 
-Version = v2026.1.0-CX  
+Version = v1.0 
 State = IMMUTABLE  
 
 Any modification ⇒ Version increment required  
