@@ -1,0 +1,58 @@
+{
+    "data/final/QVP_GLOBAL_MASTER_2026.csv": {
+        "sha256": "827706e80eca2940843433a59f314bcd4fda9121282535fd2da9fddcf2359d7d",
+        "size_bytes": 21943
+    },
+    "data/final/QVP_GLOBAL_MASTER_2026.json": {
+        "sha256": "ceca664247023be54551feb246c18e2c1e207b4c704795e59cc23ac24a7a1b6d",
+        "size_bytes": 52740
+    },
+    "audit/missing_iso_1778323642.851867.csv": {
+        "sha256": "4cc2fdfe54906163e62ab95978841bdb1a4498a6df788b4b94d6363b3fa73227",
+        "size_bytes": 4618
+    },
+    "audit/correlation_matrix.csv": {
+        "sha256": "63c66c552f2e4b10a06df9a1fc83eb51e3c1de9d4b182bd1918a05c9a471598d",
+        "size_bytes": 339
+    },
+    "audit/validation_report.json": {
+        "sha256": "2a85c09673e81d105693470fef12f9692af4a7a8d59fbe0deb5d7e81edd8edbd",
+        "size_bytes": 270
+    },
+    "audit/missing_iso_1778323642.846754.csv": {
+        "sha256": "0a2e99e508bc54c53d387e1e0f05c78767760c449ca981e7cc2392973c66e784",
+        "size_bytes": 99
+    },
+    "audit/missing_iso_1778323642.841951.csv": {
+        "sha256": "ec34c108d3484cce61735c386a39b3becc209e29ddf6fe7a44f2432fcc7ccf26",
+        "size_bytes": 3258
+    },
+    "audit/variance_report.json": {
+        "sha256": "ef143740fd870bf10a4ad4074e29c5c19cae49a57e7ca16e02dca6e0c1539034",
+        "size_bytes": 99
+    },
+    "audit/missing_iso_1778323642.82937.csv": {
+        "sha256": "fabff4c78b9178a627fc2dce23b0fc0f922c64cf8439f21413cc44d9b03bd9b6",
+        "size_bytes": 1125
+    },
+    "audit/PCA_RESULTS.csv": {
+        "sha256": "9bdd30edfaf4c6bc8a1f1d7df72c5d01c778aa77ff005aa61c2a02f43d003ea1",
+        "size_bytes": 8741
+    },
+    "audit/merge_audit.json": {
+        "sha256": "2ae1db9a1cff723a0f7814c537d25ffcd128843d04d2625f6bdf21dbf86c3eda",
+        "size_bytes": 95
+    },
+    "metadata/environment.json": {
+        "sha256": "04c18ca07f0cece66b160c017b51af76e8c59610155e73bbb85dd5a4d3247d03",
+        "size_bytes": 96
+    },
+    "metadata/manifest.json": {
+        "sha256": "2fb691b107a3225335bc72310376f07962ca948f8d6bbe93b7b54df6f1df9fdf",
+        "size_bytes": 184
+    },
+    "metadata/metadata.json": {
+        "sha256": "906f9309c5ee9a12a569ba2572d7c3312cc412dad91aee4efd3b08271e9c5b5e",
+        "size_bytes": 570
+    }
+}
