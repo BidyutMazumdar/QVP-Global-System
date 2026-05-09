@@ -1,0 +1,13 @@
+{
+    "null_counts": {
+        "iso3": 1,
+        "country": 78,
+        "PQC_SCORE": 78,
+        "AI_INDEX": 17,
+        "LEGAL_WGI_SCORE": 14,
+        "RES_INDEX": 64
+    },
+    "duplicate_iso3": 0,
+    "row_count": 201,
+    "timestamp": "2026-05-09 10:47:22.888508"
+}
