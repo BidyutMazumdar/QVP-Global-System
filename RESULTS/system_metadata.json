@@ -1,0 +1,7 @@
+{
+  "pipeline": "QSSI_FINAL_INSTITUTIONAL_PIPELINE_v2",
+  "execution_mode": "Google Colab",
+  "framework_type": "Institutional Sovereign Intelligence",
+  "reproducible": true,
+  "audit_ready": true
+}

@@ -1,0 +1,11 @@
+{
+  "framework": "Quantum Sovereign Security Index (QSSI)",
+  "version": "QSSI_FINAL_INSTITUTIONAL_PIPELINE_v2",
+  "doi": "10.5281/zenodo.20127955",
+  "orcid": "https://orcid.org/0009-0007-5615-3558",
+  "generated_utc": "2026-05-12T12:27:28.638510",
+  "countries": 201,
+  "cronbach_alpha": 0.802555371615675,
+  "dataset_hash_sha256": "4d4549c906ce64ed300af3766d5245ec0784dccff163692a6eeb3f1e2cadc10e",
+  "random_seed": 42
+}
