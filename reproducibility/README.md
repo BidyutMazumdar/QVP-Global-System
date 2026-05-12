@@ -1,6 +1,6 @@
 📄 reproducibility/README.md
 
-QSSI™ v2026.1.1 — Reproducibility Protocol & Execution Guide 🔒
+QSSI™ v1 — Reproducibility Protocol & Execution Guide 🔒
 
 STATUS: LOCKED — FULL REPRODUCIBILITY LAYER (ABSOLUTE FINAL, EXECUTION-GRADE)
 
@@ -301,7 +301,7 @@ All QSSI™ results are fully reproducible under identical data, weights, and co
 STATUS = REPRODUCIBLE + VERIFIED + EXECUTABLE
 CLASS = COMPUTATIONAL REPRODUCIBILITY STANDARD
 INTEGRITY = DETERMINISTIC + HASH-VERIFIED
-VERSION = v2026.1.1
+VERSION = v1
 
 
 ---
