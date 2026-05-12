@@ -1,23 +1,24 @@
-# QSSI™ — Quantum Sovereign Security Index System  
-## A Sovereign-Grade Computational Architecture for Deterministic Security Scoring, Risk-Adjusted Ranking, and Reproducible Global Benchmarking
+# Quantum Veil Protocol (QVP) — Global System 2026
+## QSSI™ — Quantum Sovereign Security Index System
+### A Sovereign-Grade Computational Architecture for Deterministic Security Scoring, Risk-Adjusted Ranking, and Reproducible Global Benchmarking
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20127955.svg)](https://doi.org/10.5281/zenodo.20127955)
-[![Canonical Release](https://img.shields.io/badge/Canonical%20Release-2026.2.0--A-black)](#integrity--version-discipline)
-[![Live Build](https://img.shields.io/badge/Live%20Build-v2026.2.0-blue)](#integrity--version-discipline)
+[![Canonical Release](https://img.shields.io/badge/Canonical%20Release-1.0--A-black)](#integrity--version-discipline)
+[![Live Build](https://img.shields.io/badge/Live%20Build-v1.0-blue)](#integrity--version-discipline)
 [![License](https://img.shields.io/badge/License-Proprietary-red)](PROPRIETARY_LICENSE.md)
 
 ---
 
 # Executive Summary
 
-**QSSI™ (Quantum Sovereign Security Index System)** is a sovereign-grade computational benchmarking architecture engineered for deterministic evaluation, risk-adjusted ranking, and reproducible comparative analysis of national security readiness across global jurisdictions.
+**QSSI™ (Quantum Sovereign Security Index System)** is a sovereign-grade computational architecture engineered for deterministic evaluation, risk-adjusted ranking, and reproducible comparative benchmarking of sovereign digital security readiness across global jurisdictions.
 
-The system integrates formal mathematical modeling, machine-learning assisted interpretability, structured validation logic, deterministic computational execution, and deployable public infrastructure into a unified governance-grade analytical framework.
+Developed within the broader **Quantum Veil Protocol (QVP) — Global System 2026**, QSSI™ integrates formal mathematical modeling, deterministic computational execution, bounded uncertainty propagation, structured validation logic, machine-learning interpretability, and deployable public infrastructure into a unified governance-grade analytical framework.
 
 QSSI™ functions simultaneously as:
 
 - a formal computational index system  
-- a deployable sovereign analytics platform  
+- a sovereign analytics platform  
 - a machine-readable public API  
 - an interactive strategic intelligence dashboard  
 - a DOI-bound scholarly artifact  
@@ -27,31 +28,43 @@ QSSI™ functions simultaneously as:
 
 # Live Access
 
-### API Base
+## API Base
 
 https://qvp-global-system-production.up.railway.app/
 
-### Interactive Dashboard
+## Interactive Dashboard
 
 https://qvp-global-system-production.up.railway.app/dashboard
 
-### Rankings (JSON)
+## Rankings (JSON)
 
 https://qvp-global-system-production.up.railway.app/rankings
 
-### GitHub Repository
+## GitHub Repository
 
 https://github.com/BidyutMazumdar/QVP-Global-System
 
 ---
 
+# Live Demonstration
+
+## Latest Demonstration
+
+https://drive.google.com/file/d/1eWq_lMJGfRbwSP8s7wRjJTXAaYmqQaWl/view
+
+## Archive Demonstration
+
+https://drive.google.com/file/d/1AKQ2ZeNlJoG9VE7if_hypskUP1KHmGiA/view
+
+---
+
 # Canonical DOI
 
-**Primary DOI**
+## Primary DOI
 
 https://doi.org/10.5281/zenodo.20127955
 
-**Versioned Scholarly Archive**
+## Versioned Scholarly Archive
 
 Zenodo Canon Release — Immutable and DOI-bound
 
@@ -59,7 +72,7 @@ Zenodo Canon Release — Immutable and DOI-bound
 
 # System Purpose
 
-QSSI™ was developed to provide a formalized computational framework for evaluating sovereign digital security preparedness using deterministic multi-factor scoring and bounded uncertainty estimation.
+QSSI™ provides a formalized computational framework for evaluating sovereign digital security preparedness through deterministic multi-factor scoring and bounded uncertainty estimation.
 
 The architecture enables:
 
@@ -67,7 +80,7 @@ The architecture enables:
 - post-quantum readiness assessment  
 - AI defense capability evaluation  
 - legal-regulatory preparedness measurement  
-- resilience capacity analysis  
+- systemic resilience analysis  
 - comparative strategic intelligence modeling  
 - policy stress-testing and scenario simulation  
 
@@ -97,7 +110,7 @@ M_i \in [0,1]
 ## Base Index
 
 ```math
-QSSI = \sum_{i=1}^{n} (w_i \cdot M_i)
+QSSI = \sum_{i=1}^{n}(w_i \cdot M_i)
 ```
 
 ---
@@ -105,7 +118,7 @@ QSSI = \sum_{i=1}^{n} (w_i \cdot M_i)
 ## Scaled Score
 
 ```math
-QSSI_{scaled}=100\cdot QSSI
+QSSI_{scaled}=100 \cdot QSSI
 ```
 
 ---
@@ -228,7 +241,7 @@ QSSI™ incorporates:
 - min-max scaling  
 - deterministic weight application  
 - bounded metric validation  
-- consistency verification  
+- cross-dimensional consistency verification  
 - uncertainty propagation  
 - probabilistic certification (`Cert_VALID`)  
 - SHA3-256 cryptographic hashing  
@@ -245,15 +258,15 @@ Ensuring outputs remain:
 
 # Explainability Layer
 
-The system includes machine-learning interpretability modules:
+The architecture includes machine-learning interpretability modules:
 
-- **Feature Importance Analysis**
-- **SHAP Value Attribution**
-- **Principal Component Analysis**
-- **Correlation Matrix Diagnostics**
-- **Prediction Validation Engine**
+- Feature Importance Analysis  
+- SHAP Value Attribution  
+- Principal Component Analysis  
+- Correlation Matrix Diagnostics  
+- Prediction Validation Engine  
 
-Artifacts generated:
+Generated artifacts:
 
 - `feature_importance.csv`
 - `feature_importance.png`
@@ -272,7 +285,7 @@ Artifacts generated:
 | `/rankings` | JSON API | QSSI rankings |
 | `/dashboard` | Interface | Interactive dashboard |
 
-### Example Request
+## Example Request
 
 ```bash
 curl https://qvp-global-system-production.up.railway.app/rankings
@@ -338,7 +351,7 @@ System outputs remain:
 
 # Deployment Status
 
-**PUBLIC / LIVE / VERSIONED / DEPLOYED**
+**PUBLIC / LIVE / VERSIONED / DEPLOYED / DOI-BOUND / REPRODUCIBLE**
 
 Current status:
 
@@ -387,13 +400,19 @@ python api/app.py
 ## Canonical Release (DOI-Bound)
 
 ```text
-2026.2.0-A
+V1
+```
+
+## Git Tag
+
+```text
+V1
 ```
 
 ## Live Build
 
 ```text
-v2026.2.0
+V1
 ```
 
 ### Governance Rule
@@ -419,7 +438,7 @@ SHA3\text{-}256(System||Version||Timestamp)
 # Citation
 
 Mazumdar, B. (2026).  
-**Quantum Veil Protocol (QVP) — Global System 2026: Sovereign Digital Security Index (QSSI).**  
+**Quantum Veil Protocol (QVP) — Global System 2026: QSSI™ (Quantum Sovereign Security Index System).**  
 Zenodo.
 
 DOI:
@@ -437,17 +456,18 @@ https://doi.org/10.5281/zenodo.20127955
 **Proprietary Sovereign Systems Architecture & Governance Framework**
 
 Independent Researcher  
-Macro-Financial Systems  
+Mathematical Modeling of Governance Systems  
+Nonlinear Dynamics  
+Computational Policy Optimization  
+Global Systems Architecture  
 AI Governance  
 Sovereign Risk Modeling  
-Computational Policy Optimization  
-Global Systems Architecture
 
-ORCID:
+## ORCID
 
 https://orcid.org/0009-0007-5615-3558
 
-Publication Repository:
+## Publication Repository
 
 Zenodo
 
@@ -457,7 +477,7 @@ Zenodo
 
 **Proprietary License — All Rights Reserved**
 
-Unauthorized reproduction, derivative deployment, or institutional redistribution prohibited without explicit permission.
+Unauthorized reproduction, derivative deployment, institutional redistribution, or external commercial utilization prohibited without explicit written permission.
 
 ---
 
@@ -474,5 +494,5 @@ REPRODUCIBLE
 
 ---
 
-© 2026 Dr. B. Mazumdar
+© 2026 Dr. B. Mazumdar  
 All Rights Reserved.
