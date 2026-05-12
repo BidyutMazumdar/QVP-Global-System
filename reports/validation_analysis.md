@@ -1,6 +1,6 @@
 # 📊 reports/validation_analysis.md
 
-# QSSI™ v2026.1.1 — Validation Analysis & Scientific Verification
+# QSSI™ v1 — Validation Analysis & Scientific Verification
 
 **STATUS: LOCKED — ANALYTICAL COMPLETENESS LAYER (INSTRUMENT-GRADE)**  
 
@@ -294,7 +294,7 @@ System = Model
 
 **STATUS = VALIDATED + VERIFIED + INSTRUMENT-GRADE**  
 **CLASS = SCIENTIFIC MEASUREMENT SYSTEM**  
-**VERSION = v2026.1.1**  
+**VERSION = v1**  
 
 ---  
 
