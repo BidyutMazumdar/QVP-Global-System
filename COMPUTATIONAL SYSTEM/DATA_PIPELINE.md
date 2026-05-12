@@ -1,4 +1,4 @@
-## QSSI™ v2026.1.0 — End-to-End Computational Pipeline 🔒
+## QSSI™ v1 — End-to-End Computational Pipeline 
 
 ---
 
@@ -195,4 +195,4 @@ This pipeline transforms heterogeneous global governance signals into:
 
 DATA PIPELINE = CLOSED COMPUTATIONAL SYSTEM  
 STATE = FULLY DETERMINISTIC  
-VERSION = v2026.1.0 🔒
+VERSION = v1
