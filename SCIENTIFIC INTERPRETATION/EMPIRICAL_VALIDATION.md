@@ -116,14 +116,7 @@ All outputs are interpreted strictly within deterministic analytical assumptions
 The canonical QSSI™ sovereign-security architecture is operationalized through the following deterministic normalized aggregation framework:
 
 \[
-QSSI =
-w_1(PQC_{norm})
-+
-w_2(AI_{norm})
-+
-w_3(LEGAL_{norm})
-+
-w_4(RES_{norm})
+QSSI = w_1(PQC_{norm}) + w_2(AI_{norm}) + w_3(LEGAL_{norm}) + w_4(RES_{norm})
 \]
 
 Where:
@@ -138,6 +131,15 @@ And:
 - \(w_1, w_2, w_3, w_4\) represent deterministic governance weights,
 - all variables are normalized within bounded computational ranges,
 - and all transformations preserve traceable methodological lineage.
+
+### Deterministic Weight Configuration
+
+| Variable | Weight |
+|----------|--------|
+| PQC_NORM | 0.30 |
+| AI_NORM | 0.25 |
+| LEGAL_NORM | 0.25 |
+| RES_NORM | 0.20 |
 
 ---
 
@@ -226,6 +228,16 @@ The execution pipeline preserves:
 | AI_INDEX | 17 |
 | LEGAL_WGI_SCORE | 14 |
 | RES_INDEX | 64 |
+
+## 4.3 Missing-Value Handling Policy
+
+Missing values are explicitly disclosed and remain computationally traceable throughout the canonical preprocessing pipeline.
+
+The framework preserves transparent missing-value governance and prohibits undocumented data transformation procedures.
+
+Composite analytical outputs are generated under deterministic preprocessing rules designed to preserve reproducibility, auditability, and methodological traceability.
+
+No hidden or non-traceable missing-value modifications are permitted within the institutional computational architecture.
 
 ---
 
@@ -364,6 +376,7 @@ The result supports the interpretability of the integrated sovereign-security ar
 ---
 
 ## 8.2 Scientific Interpretation
+## 8.2 Scientific Interpretation
 
 The machine-learning validation layer demonstrates:
 
@@ -381,6 +394,12 @@ R^2 = 0.996884
 \]
 
 The low RMSE value confirms that reconstructed sovereign-security outputs remain closely aligned with deterministic target structures.
+
+### Validation Scope Clarification
+
+The machine-learning layer is employed exclusively for internal reconstruction validation and feature interpretability.
+
+It does not constitute an independent predictive validation framework and should not be interpreted as geopolitical forecasting capability.
 
 ---
 
@@ -436,13 +455,20 @@ Ultra-low p-values confirm that the observed ordering relationships are statisti
 
 ## 10.1 Random Forest Feature Importance
 
+The observed feature-contribution hierarchy is:
+
+\[
+AI_{NORM} > LEGAL_{NORM} > PQC_{NORM} > RES_{NORM}
+\]
+
+Empirical feature importance values:
+
 | Feature | Importance |
-|---|---|
+|---------|------------|
 | AI_NORM | 0.6202 |
 | LEGAL_NORM | 0.1996 |
 | PQC_NORM | 0.1542 |
 | RES_NORM | 0.0163 |
-
 ---
 
 ## 10.2 Scientific Interpretation
@@ -544,6 +570,14 @@ LEGAL_NORM also demonstrates exceptionally strong association strength, reinforc
 
 The PCA framework decomposes sovereign-system variance into orthogonal strategic dimensions.
 
+### Explained Variance Ratios
+
+| Principal Component | Explained Variance |
+|--------------------|-------------------|
+| PC1 | 63.33% |
+| PC2 | 18.77% |
+| Cumulative | 82.09% |
+
 The first principal component (PC1) captures dominant systemic variance associated with:
 
 - digital governance,
@@ -558,7 +592,6 @@ The second principal component (PC2) captures divergence patterns associated wit
 - sovereign specialization,
 - institutional variance,
 - and strategic structural differentiation.
-
 ---
 
 ## 13.2 PCA Interpretation
