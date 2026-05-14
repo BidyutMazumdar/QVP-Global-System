@@ -376,7 +376,6 @@ The result supports the interpretability of the integrated sovereign-security ar
 ---
 
 ## 8.2 Scientific Interpretation
-## 8.2 Scientific Interpretation
 
 The machine-learning validation layer demonstrates:
 
@@ -566,9 +565,25 @@ LEGAL_NORM also demonstrates exceptionally strong association strength, reinforc
 
 # 13. Principal Component Architecture
 
+## 13.0 PCA Methodological Basis
+
+Principal Component Analysis (PCA) was performed on standardized normalized sovereign indicators using correlation-based dimensional decomposition.
+
+The PCA layer preserves:
+
+- centered feature scaling,
+- orthogonal dimensional extraction,
+- deterministic eigenvalue decomposition,
+- reproducible component ordering,
+- and transparent dimensional interpretability.
+
+Execution utilized deterministic sklearn PCA implementation under fixed computational conditions.
+
+Rows containing unavailable indicator values were excluded or deterministically handled according to the canonical preprocessing policy prior to PCA computation.
+
 ## 13.1 PCA Structural Layer
 
-The PCA framework decomposes sovereign-system variance into orthogonal strategic dimensions.
+The PCA framework decomposes sovereign-system variance into orthogonal latent analytical dimensions.
 
 ### Explained Variance Ratios
 
@@ -578,7 +593,7 @@ The PCA framework decomposes sovereign-system variance into orthogonal strategic
 | PC2 | 18.77% |
 | Cumulative | 82.09% |
 
-The first principal component (PC1) captures dominant systemic variance associated with:
+The first principal component (PC1) captures the dominant latent structural dimension underlying sovereign-system variation, strongly associated with:
 
 - digital governance,
 - institutional capacity,
@@ -592,6 +607,8 @@ The second principal component (PC2) captures divergence patterns associated wit
 - sovereign specialization,
 - institutional variance,
 - and strategic structural differentiation.
+
+Component directionality (positive/negative sign) should not be interpreted normatively, as PCA axis orientation is mathematically arbitrary and does not imply favorable or unfavorable sovereign status.
 ---
 
 ## 13.2 PCA Interpretation
