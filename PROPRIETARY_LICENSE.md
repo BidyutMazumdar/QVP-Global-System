@@ -1,92 +1,315 @@
-QSSI™ Proprietary License Agreement
+# QSSI™ Licensing Architecture — Version 1 International Institutional Edition
 
-© 2026 BidyutMazumdar — All Rights Reserved
+## Official Repository-Wide Licensing Framework
 
----
-
-1. Ownership
-
-This software, including all source code, models, architecture, datasets, algorithms, and documentation, is the exclusive intellectual property of the author.
-
-No rights are granted except as explicitly stated in this license.
+**Framework:** QSSI™ / QVP™ Global System  
+**Version:** v1.0 Institutional Licensing Architecture  
+**Status:** OFFICIAL REPOSITORY LICENSING STRUCTURE  
+**Classification:** Hybrid Academic–Commercial Licensing Framework  
+**Year:** 2026  
 
 ---
 
-2. Academic Use (Permitted)
+# OVERVIEW
 
-Free use is granted strictly for:
+This repository adopts a structured dual-layer institutional licensing architecture designed to balance:
 
-- Academic research
-- Educational purposes
-- Personal study
+- Open academic accessibility
+- Non-commercial methodological dissemination
+- Research transparency
+- Scholarly reproducibility
+- Intellectual property preservation
+- Enterprise operational protection
+- Institutional deployment governance
+- Commercial infrastructure reservation
 
-Conditions:
+The licensing architecture separates repository usage into two distinct layers:
 
-- Proper attribution to the author is required
-- Use must remain strictly non-commercial in nature
-- The software may NOT be used, directly or indirectly, for any revenue-generating activity
-- Academic use cannot be converted into commercial use under any circumstance
+1. Public Research Access Layer  
+2. Commercial & Enterprise Protection Layer  
 
----
-
-3. Commercial Use (Strictly Restricted)
-
-Any commercial, governmental, institutional, or organizational use is strictly prohibited without prior written permission from the author.
-
-This includes (but is not limited to):
-
-- SaaS platforms
-- Government or defense deployment
-- Paid dashboards, analytics, or reporting systems
-- API monetization or subscription services
-- Integration into commercial or enterprise systems
-- Any form of revenue-generating activity
+This structure reflects a hybrid licensing approach commonly adopted within research, analytical, institutional, and enterprise-oriented ecosystems.
 
 ---
 
-4. Commercial Licensing
+# REPOSITORY-WIDE SCOPE
 
-A paid commercial license is mandatory for any non-academic use.
-
-License terms, pricing, scope of use, and deployment rights will be defined in a separate legally binding commercial agreement.
-
-Contact:
-bumbamazumdar2017@gmail.com
+This licensing structure applies repository-wide unless explicitly superseded by file-specific licensing notices.
 
 ---
 
-5. Prohibited Actions
+# LICENSE STRUCTURE
 
-Without explicit written authorization, users may NOT:
-
-- Sell, sublicense, distribute, or commercially exploit the software
-- Use the system in production or live operational environments
-- Offer paid or monetized services based on this system
-- Repackage, rebrand, or resell the system in any form
-- Circumvent licensing requirements in any manner
+| Layer | Scope | License |
+|---|---|---|
+| Public Research Materials | Papers, methodology, validation reports, academic documentation | CC BY-NC-ND 4.0 |
+| Commercial / Operational Systems | SaaS, enterprise deployment, institutional integration, monetized systems | Proprietary Commercial Addendum |
 
 ---
 
-6. Enforcement
+# PUBLIC RESEARCH LICENSE
 
-Any unauthorized use, especially for commercial purposes, constitutes a violation of intellectual property rights and may result in legal action under applicable laws.
+Unless otherwise stated, public research papers, documentation, methodological frameworks, validation reports, academic materials, datasets designated for public dissemination, and non-commercial research artifacts contained within this repository are distributed under:
 
----
+## Creative Commons Attribution–NonCommercial–NoDerivatives 4.0 International
 
-7. Disclaimer
+(CC BY-NC-ND 4.0)
 
-This software is provided "as is", without warranty of any kind, express or implied, including but not limited to:
-
-- Merchantability
-- Fitness for a particular purpose
-- Non-infringement
+Official CC BY-NC-ND 4.0 License:  
+https://creativecommons.org/licenses/by-nc-nd/4.0/
 
 ---
 
-8. Governing Law
+# PERMITTED NON-COMMERCIAL USES
 
-This license shall be governed and interpreted in accordance with applicable intellectual property laws.
+Public research licensing applies exclusively to:
+
+- Non-commercial academic research
+- Educational dissemination
+- Scholarly citation
+- Methodological review
+- Personal non-commercial study
+- Academic discussion and critique
+- Research reproducibility review
+- Institutional academic analysis
+- Non-commercial analytical comparison
+- Citation within scholarly publications
 
 ---
 
-All rights reserved.
+# IMPORTANT LIMITATIONS
+
+Public research licensing DOES NOT grant rights for:
+
+- Commercial deployment
+- SaaS implementation
+- Enterprise operationalization
+- Government production integration
+- Monetized infrastructure
+- Paid analytical systems
+- Commercial API services
+- Subscription infrastructure
+- Operational strategic deployment
+- Production-grade integration
+- Commercial cloud deployment
+- Revenue-generating implementations
+- Institutional operational systems
+- Enterprise-grade deployment environments
+- Real-time monetized reporting systems
+
+All such rights remain exclusively reserved under the proprietary commercial licensing framework.
+
+---
+
+# COMMERCIAL & ENTERPRISE RIGHTS
+
+Commercial, operational, institutional, governmental, enterprise, monetized, strategic, and production-grade implementations are governed exclusively under:
+
+# PROPRIETARY_LICENSE.md
+
+This includes but is not limited to:
+
+- SaaS systems
+- Enterprise deployment
+- Monetized APIs
+- Commercial dashboards
+- Institutional analytics platforms
+- Operational infrastructure
+- Government integration
+- Strategic analytical systems
+- Subscription platforms
+- Production-grade cloud deployment
+- Real-time institutional implementation
+- Commercial reporting systems
+- Enterprise infrastructure integration
+- Commercial intelligence environments
+- Institutional operational deployment
+- Revenue-generating analytical systems
+
+---
+
+# THIRD-PARTY DATA NOTICE
+
+Third-party datasets, indicators, source materials, and externally sourced analytical components remain subject to their respective original licensing terms and source governance conditions.
+
+---
+
+# INTELLECTUAL PROPERTY STATUS
+
+All proprietary components of QSSI™ remain protected intellectual property assets of the author, including but not limited to:
+
+- Computational methodologies
+- Mathematical architectures
+- Composite scoring systems
+- Validation structures
+- Sovereign analytical frameworks
+- Tier classification methodologies
+- Data processing architectures
+- Risk-adjustment frameworks
+- Strategic intelligence models
+- Infrastructure integration methodologies
+- Institutional operational logic
+- Governance-oriented computational structures
+- Analytical system engineering methodologies
+- Composite index architectures
+- Institutional scoring frameworks
+- Reproducibility structures
+- Pipeline integration methodologies
+
+No provision within this licensing structure shall be interpreted as transferring ownership, assignment, exclusivity, or proprietary rights relating to QSSI™ intellectual property assets.
+
+---
+
+# NO IMPLIED COMMERCIAL RIGHTS
+
+No commercial rights shall be interpreted as implied unless explicitly granted through separate written authorization.
+
+---
+
+# LEGAL INTERPRETATION PRINCIPLE
+
+In the event of ambiguity:
+
+- Public research usage defaults to CC BY-NC-ND 4.0 restrictions
+- Commercial, operational, institutional, SaaS, enterprise, monetized, governmental, and production-level usage defaults to the proprietary commercial licensing framework
+
+Commercial authorization must be explicitly granted through separate written agreement.
+
+---
+
+# JURISDICTIONAL NEUTRALITY
+
+Nothing within this licensing structure shall be interpreted as superseding applicable domestic or international intellectual property laws, copyright laws, licensing regulations, or institutional governance standards.
+
+---
+
+# ACADEMIC & METHODOLOGICAL POSITIONING
+
+QSSI™ is presented as a research-oriented analytical and methodological framework intended primarily for:
+
+- Comparative analytical research
+- Institutional methodological discussion
+- Computational governance research
+- Strategic systems analysis
+- Public-domain indicator synthesis
+- Non-commercial academic evaluation
+- Reproducibility-oriented computational review
+
+The framework does not claim to represent classified sovereign capabilities, confidential governmental infrastructure, or undisclosed national strategic systems.
+
+---
+
+# DISCLAIMER
+
+QSSI™ methodologies, datasets, frameworks, analytical systems, computational structures, scoring architectures, validation systems, and associated materials are provided:
+
+# “AS IS”
+
+without warranties of any kind, express or implied.
+
+No representation is made regarding:
+
+- Operational suitability
+- Institutional deployment readiness
+- Strategic applicability
+- Infrastructure reliability
+- Production integration compatibility
+- Policy outcomes
+- Sovereign assessments
+- Forecasting accuracy
+- Enterprise deployment suitability
+- Government operational integration viability
+- Strategic decision-making outcomes
+- Commercial implementation performance
+
+Users assume all responsibility for interpretation and usage.
+
+---
+
+# RESEARCH TRANSPARENCY PRINCIPLE
+
+The repository emphasizes:
+
+- Methodological transparency
+- Public reproducibility
+- Analytical traceability
+- Computational consistency
+- Structured validation practices
+- Source provenance awareness
+- Audit-oriented documentation standards
+
+Repository users are encouraged to independently evaluate methodologies, assumptions, limitations, and analytical outputs.
+
+---
+
+# LIMITATION OF INTERPRETATION
+
+QSSI™ outputs, rankings, and analytical structures should not be interpreted as:
+
+- Official governmental evaluations
+- Classified strategic assessments
+- Intelligence-grade determinations
+- Sovereign capability certifications
+- Operational readiness certifications
+- National security determinations
+- Formal geopolitical endorsements
+
+All outputs represent research-oriented analytical synthesis derived from publicly accessible indicators and computational methodologies.
+
+---
+
+# COMMERCIAL LICENSING CONTACT
+
+**Author:** BidyutMazumdar  
+**Commercial Licensing Contact:** bumbamazumdar2017@gmail.com
+
+---
+
+# FINAL STATUS
+
+| Category | Status |
+|---|---|
+| Academic Research | Permitted |
+| Scholarly Citation | Permitted |
+| Educational Dissemination | Permitted |
+| Non-Commercial Methodological Review | Permitted |
+| Research Transparency Review | Permitted |
+| SaaS Commercialization | Reserved |
+| Enterprise Deployment | Reserved |
+| Government Operational Integration | Reserved |
+| Strategic Infrastructure Deployment | Reserved |
+| Monetized Systems | Reserved |
+| Production-Level Integration | Reserved |
+| Commercial API Deployment | Reserved |
+| Subscription Infrastructure | Reserved |
+| Institutional Operationalization | Reserved |
+
+---
+
+# FINAL DECLARATION
+
+QSSI™ public research materials may be accessed, cited, reviewed, and discussed for legitimate non-commercial academic and methodological purposes under CC BY-NC-ND 4.0 licensing terms.
+
+However, all enterprise-grade, production-grade, monetized, SaaS, institutional, governmental, strategic, and operational implementations remain proprietary and require explicit written commercial authorization from the author.
+
+---
+
+# RIGHTS NOTICE
+
+© 2026 BidyutMazumdar
+
+Certain rights reserved under CC BY-NC-ND 4.0 for designated public research materials.
+
+Commercial and operational rights reserved under the proprietary commercial licensing framework.
+
+---
+
+# END STATE
+
+QSSI™ = PUBLIC RESEARCH ACCESS + PROPRIETARY COMMERCIAL PROTECTION
+
+STATUS = OFFICIAL INSTITUTIONAL LICENSING FRAMEWORK  
+VERSION = v1.0 INTERNATIONAL INSTITUTIONAL EDITION  
+CLASSIFICATION = HYBRID ACADEMIC–COMMERCIAL LICENSING ARCHITECTURE
+
+---
