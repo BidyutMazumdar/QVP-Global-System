@@ -1,4 +1,4 @@
-## QSSI™ Processed Dataset (v2026.1.0 — Canonical Locked Edition)
+## QSSI™ Processed Dataset (v1 — Canonical Edition)
 
 ## File Path
 dataset/processed/processed_data.csv
