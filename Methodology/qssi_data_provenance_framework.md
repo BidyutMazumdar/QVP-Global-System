@@ -627,7 +627,7 @@ QSSI_{adj}=QSSI_{scaled}(1-R)
 
 | Component | Version |
 |---|---|
-| Canonical Release | v2026.1.0 |
+| Canonical Release | v1.0 |
 | Dataset Layer | 2026 Stable |
 | Integrity Status | Hash-Verified |
 
