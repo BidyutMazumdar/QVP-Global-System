@@ -1,8 +1,6 @@
-📄 docs/VALIDATION.md
+QSSI™ v1.0 — Data Validation & Scientific Integrity Protocol 
 
-QSSI™ v1.0 — Data Validation & Scientific Integrity Protocol 🔒
-
-STATUS: LOCKED — V1 EDITION (FORMALLY CLOSED)
+STATUS: V1 EDITION 
 
 
 ---
@@ -522,5 +520,5 @@ Violation → ❌ REJECT
 
 VALIDATION LAYER = FORMAL INTEGRITY SYSTEM
 STATE = VERIFIED + AUDITABLE + REPRODUCIBLE
-STATUS = LOCKED — ABSOLUTE FINAL EDITION
+STATUS = V1 EDITION
 VERSION = v1.0
