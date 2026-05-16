@@ -1,9 +1,7 @@
 # 📄 DATA_VALIDATION_REPORT.md
-
 # QSSI™ v1.0 — Institutional Data Validation, Transparency, Reproducibility & Computational Audit Framework
 
 ## STATUS
-
 LOCKED — INSTITUTIONAL TRANSPARENCY + CRYPTOGRAPHIC AUDIT + REPRODUCIBLE GOVERNANCE LAYER
 
 ---
@@ -18,6 +16,7 @@ LOCKED — INSTITUTIONAL TRANSPARENCY + CRYPTOGRAPHIC AUDIT + REPRODUCIBLE GOVER
 | Dataset Version | v2026.1.0 |
 | DOI | 10.5281/zenodo.20127955 |
 | ORCID | https://orcid.org/0009-0007-5615-3558 |
+| Repository | https://github.com/BidyutMazumdar/QVP-Global-System |
 | Execution Environment | Google Colab |
 | Reproducibility Status | VERIFIED |
 | Audit Readiness | VERIFIED |
@@ -59,7 +58,7 @@ This document functions as:
 
 ---
 
-# 🏛 INFRASTRUCTURE CLASSIFICATION
+# 🏛 I. INFRASTRUCTURE CLASSIFICATION
 
 QSSI™ is classified as:
 
@@ -75,7 +74,7 @@ QSSI™ is classified as:
 
 ---
 
-# 📊 I. DATASET SUMMARY
+# 📊 II. DATASET SUMMARY
 
 | Attribute | Value |
 |---|---|
@@ -91,7 +90,7 @@ QSSI™ is classified as:
 
 ---
 
-# 🧾 II. DATA COMPLETENESS & MISSING DATA ANALYSIS
+# 🧾 III. DATA COMPLETENESS & MISSING DATA ANALYSIS
 
 ## Missing Value Distribution
 
@@ -112,7 +111,7 @@ QSSI™ is classified as:
 ✔ Missing structure reproducible across executions  
 ✔ Cross-domain integrity consistency maintained  
 ✔ Computational disclosure transparency enforced  
-✔ Full missing-data audit visibility preserved  
+✔ Full missing-data audit visibility preserved
 
 ## Missing Data Governance Interpretation
 
@@ -120,7 +119,7 @@ The missing-data structure reflects heterogeneous institutional source availabil
 
 ---
 
-# 🔧 III. IMPUTATION & DATA GOVERNANCE POLICY
+# 🔧 IV. IMPUTATION & DATA GOVERNANCE POLICY
 
 ## Imputation Governance Architecture
 
@@ -143,7 +142,7 @@ The QSSI™ framework applies controlled deterministic preprocessing procedures 
 ✔ All transformations computationally reproducible  
 ✔ Institutional audit consistency maintained  
 ✔ Deterministic preprocessing enforcement active  
-✔ Reproducible execution guarantees preserved  
+✔ Reproducible execution guarantees preserved
 
 ## Governance Interpretation
 
@@ -151,7 +150,7 @@ All preprocessing procedures are explicitly constrained by deterministic governa
 
 ---
 
-# 🔍 IV. VALIDATION PIPELINE STATUS
+# 🔍 V. VALIDATION PIPELINE STATUS
 
 | Validation Stage | Status |
 |---|---|
@@ -174,7 +173,7 @@ The QSSI™ validation system operates as a deterministic institutional audit fr
 
 ---
 
-# ⚙️ V. STATISTICAL RELIABILITY & MODEL VALIDATION
+# ⚙️ VI. STATISTICAL RELIABILITY & MODEL VALIDATION
 
 ## Predictive Reliability Metrics
 
@@ -191,6 +190,31 @@ The QSSI™ validation system operates as a deterministic institutional audit fr
 | AI_NORM | 0.8762 | 0.6859 |
 | LEGAL_NORM | 0.8332 | 0.6494 |
 | RES_NORM | 0.5297 | 0.3891 |
+
+## Validation Procedure
+
+Model reliability was assessed using deterministic holdout validation under fixed random-state conditions.
+
+```python
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X,
+    y,
+    test_size=0.20,
+    random_state=42
+)
+```
+
+Cross-validation consistency was additionally evaluated to assess predictive stability and minimize overfitting risk under deterministic execution constraints.
+
+### Validation Guarantees
+
+- deterministic train–test reproducibility
+- model generalization assessment
+- overfitting risk control
+- stable predictive benchmarking
+- institutional audit transparency
 
 ## Statistical Interpretation
 
@@ -217,7 +241,7 @@ The observed reliability profile supports:
 
 ---
 
-# 🧠 VI. EXPLAINABLE AI (XAI) TRANSPARENCY LAYER
+# 🧠 VII. EXPLAINABLE AI (XAI) TRANSPARENCY LAYER
 
 ## Feature Importance Distribution
 
@@ -241,7 +265,7 @@ The QSSI™ framework integrates SHAP-based explainable AI infrastructure to pre
 ✔ Computational reasoning traceable  
 ✔ Model contribution hierarchy auditable  
 ✔ Explainability reproducibility verified  
-✔ Governance attribution consistency maintained  
+✔ Governance attribution consistency maintained
 
 ## Explainability Interpretation
 
@@ -249,7 +273,7 @@ The explainability layer enables transparent decomposition of institutional gove
 
 ---
 
-# 📉 VII. DIMENSIONAL STABILITY & VARIANCE STRUCTURE
+# 📉 VIII. DIMENSIONAL STABILITY & VARIANCE STRUCTURE
 
 ## PCA Explained Variance Ratio
 
@@ -260,13 +284,13 @@ The explainability layer enables transparent decomposition of institutional gove
 
 ## Combined Variance Preservation
 
-```text
+```math
 0.6332525903 + 0.1876649402 = 0.8209175305
 ```
 
 ## Interpretation
 
-The first two principal components preserve approximately 82.09% of total system variance, indicating strong structural coherence, dimensional stability, and institutional consistency.
+The first two principal components preserve approximately **82.09%** of total system variance, indicating strong structural coherence, dimensional stability, and institutional consistency.
 
 The retained variance profile demonstrates effective dimensional compression while preserving governance signal integrity and computational interpretability.
 
@@ -281,14 +305,14 @@ The retained variance profile demonstrates effective dimensional compression whi
 
 ---
 
-# 🔐 VIII. CRYPTOGRAPHIC TRACEABILITY & HASH INTEGRITY
+# 🔐 IX. CRYPTOGRAPHIC TRACEABILITY & HASH INTEGRITY
 
 ## Dataset Integrity Layer
 
 | Component | SHA-256 Hash |
 |---|---|
-| Master Dataset | 827706e80eca2940843433a59f314bcd4fda9121282535fd2da9fddcf2359d7d |
-| Institutional Dataset Hash | 4d4549c906ce64ed300af3766d5245ec0784dccff163692a6eeb3f1e2cadc10e |
+| Master Dataset | `827706e80eca2940843433a59f314bcd4fda9121282535fd2da9fddcf2359d7d` |
+| Institutional Dataset Hash | `4d4549c906ce64ed300af3766d5245ec0784dccff163692a6eeb3f1e2cadc10e` |
 
 ## Integrity Conditions
 
@@ -298,7 +322,7 @@ The retained variance profile demonstrates effective dimensional compression whi
 ✔ Full audit-chain reproducibility maintained  
 ✔ Deterministic state verification active  
 ✔ Cryptographic lineage consistency enforced  
-✔ Integrity traceability preserved  
+✔ Integrity traceability preserved
 
 ## Integrity Constraint
 
@@ -310,7 +334,7 @@ The cryptographic integrity layer functions as a deterministic verification mech
 
 ---
 
-# 🧬 IX. COMPUTATIONAL ENVIRONMENT REPRODUCIBILITY
+# 🧬 X. COMPUTATIONAL ENVIRONMENT REPRODUCIBILITY
 
 ## Runtime Environment
 
@@ -345,15 +369,11 @@ The cryptographic integrity layer functions as a deterministic verification mech
 ✔ Pipeline consistency preserved  
 ✔ Cross-execution reproducibility maintained  
 ✔ Deterministic package integrity verified  
-✔ Stable runtime configuration preserved  
-
-## Computational Environment Interpretation
-
-The execution environment is intentionally constrained to preserve deterministic reproducibility, computational consistency, and institutional replication stability.
+✔ Stable runtime configuration preserved
 
 ---
 
-# 🧾 X. SOURCE RELIABILITY & GOVERNANCE PROVENANCE
+# 🧾 XI. SOURCE RELIABILITY & GOVERNANCE PROVENANCE
 
 ## Institutional Source Architecture
 
@@ -373,22 +393,9 @@ The execution environment is intentionally constrained to preserve deterministic
 | Governance Indicators | HIGH |
 | Composite Risk Systems | MODERATE–HIGH |
 
-## Governance Conditions
-
-✔ Institutionally recognized sources  
-✔ Cross-domain consistency preserved  
-✔ Source provenance traceable  
-✔ Computational lineage auditable  
-✔ Governance transparency maintained  
-✔ Institutional comparability enforced  
-
-## Provenance Interpretation
-
-The QSSI™ framework integrates internationally recognized governance and institutional datasets to preserve cross-domain consistency, methodological legitimacy, and reproducible analytical comparability.
-
 ---
 
-# 🔎 XI. MERGE AUDIT & DATA LINEAGE
+# 🔎 XII. MERGE AUDIT & DATA LINEAGE
 
 ## Merge Audit Summary
 
@@ -405,53 +412,25 @@ The QSSI™ framework integrates internationally recognized governance and insti
 RAW DATA → NORMALIZATION → VALIDATION → PCA REDUCTION → RANDOM FOREST MODELING → SHAP EXPLAINABILITY → FINAL EXPORT SYSTEM
 ```
 
-## Lineage Conditions
-
-✔ Source merge traceability preserved  
-✔ Transformation order reproducible  
-✔ Deterministic execution lineage active  
-✔ Computational provenance auditable  
-✔ Pipeline sequencing verified  
-✔ Cross-stage integrity preserved  
-
-## Lineage Interpretation
-
-The computational lineage framework preserves end-to-end traceability from raw institutional source ingestion to final explainable governance outputs.
-
 ---
 
-# ⚖️ XII. UNCERTAINTY CONTROL FRAMEWORK
+# ⚖️ XIII. UNCERTAINTY CONTROL FRAMEWORK
 
 ## Deterministic Uncertainty Definition
 
-```text
-ε = √Σ(wᵢ² · σᵢ²) × 100
+```math
+\varepsilon = \sqrt{\sum_{i=1}^{n} w_i^{2}\sigma_i^{2}} \times 100
 ```
 
 ## Constraint Bound
 
-```text
-0 ≤ ε ≤ 5
+```math
+0 \leq \varepsilon \leq 5
 ```
-
-## Institutional Interpretation
-
-The QSSI™ framework enforces bounded deterministic uncertainty conditions to preserve statistical robustness, governance interpretability, and institutional reliability.
-
-The uncertainty architecture minimizes stochastic instability while maintaining reproducible analytical consistency and computational comparability.
-
-## Uncertainty Governance Status
-
-| Layer | Status |
-|---|---|
-| Uncertainty Constraint | VERIFIED |
-| Deterministic Stability | VERIFIED |
-| Statistical Robustness | VERIFIED |
-| Institutional Reliability | VERIFIED |
 
 ---
 
-# 🏛 XIII. INSTITUTIONAL COMPLIANCE ALIGNMENT
+# 🏛 XIV. INSTITUTIONAL COMPLIANCE ALIGNMENT
 
 ## Alignment Layers
 
@@ -464,34 +443,9 @@ The uncertainty architecture minimizes stochastic instability while maintaining 
 - Deterministic Governance Infrastructure Standards
 - Institutional Traceability Principles
 
-## FAIR Governance Alignment
-
-| Principle | Status |
-|---|---|
-| Findable | PASS |
-| Accessible | PASS |
-| Interoperable | PASS |
-| Reusable | PASS |
-
-## Compliance Status
-
-| Standard | Status |
-|---|---|
-| Audit Transparency | PASS |
-| Reproducibility | PASS |
-| Explainability | PASS |
-| Traceability | PASS |
-| Deterministic Governance | PASS |
-| Institutional Consistency | PASS |
-| Cryptographic Integrity | PASS |
-
-## Compliance Interpretation
-
-The QSSI™ framework satisfies deterministic institutional transparency, explainable AI accountability, reproducible computational governance, and cryptographic auditability requirements.
-
 ---
 
-# 🧪 XIV. REPRODUCIBILITY CERTIFICATION
+# 🧪 XV. REPRODUCIBILITY CERTIFICATION
 
 ## Deterministic Execution Conditions
 
@@ -507,34 +461,91 @@ The QSSI™ framework operates under deterministic computational constraints des
 ✔ Consistent Random Forest execution  
 ✔ SHAP interpretability reproducibility  
 ✔ Cross-platform execution consistency  
-✔ Stable explainability attribution logic  
-
-## Replication Status
-
-| Layer | Status |
-|---|---|
-| Dataset Reproducibility | VERIFIED |
-| Statistical Reproducibility | VERIFIED |
-| Computational Reproducibility | VERIFIED |
-| Model Reproducibility | VERIFIED |
-| Explainability Reproducibility | VERIFIED |
-| Institutional Replication Stability | VERIFIED |
-
-## Institutional Replication Condition
-
-Independent institutional replication using identical computational environments and equivalent source datasets should produce materially equivalent outputs within deterministic tolerance bounds.
-
-## Reproducibility Interpretation
-
-The reproducibility framework ensures stable institutional replication while preserving deterministic computational governance consistency.
+✔ Stable explainability attribution logic
 
 ---
 
-# 📚 XV. PUBLICATION & IP INFRASTRUCTURE
+# ⚠️ XVI. LIMITATIONS & BOUNDED INTERPRETATION
+
+## Analytical Scope Constraints
+
+Primary limitations include:
+
+- dependency on publicly accessible institutional indicators
+- heterogeneous source update cycles
+- incomplete source coverage across governance dimensions
+- bounded proxy representation of sovereign capability
+- partial sensitivity to indicator revision events
+- model dependence on selected weighting structures
+- uncertainty propagation from source-level reporting gaps
+
+## Interpretive Boundaries
+
+QSSI™ outputs should **not** be interpreted as:
+
+- official governmental security certifications
+- intelligence-grade sovereign capability assessments
+- military readiness evaluations
+- classified strategic determinations
+- geopolitical forecasting guarantees
+- legal or diplomatic advisories
+- sovereign accreditation judgments
+
+## Institutional Limitation Principle
+
+The framework provides a reproducible computational representation of selected governance and resilience indicators under explicitly documented methodological assumptions.
+
+All analytical conclusions must be interpreted within these bounded scientific constraints.
+
+---
+
+# 📜 XVII. LICENSING & RIGHTS FRAMEWORK
+
+## Dual-Layer Licensing Architecture
+
+### Public Research Materials
+
+**Creative Commons Attribution–NonCommercial–NoDerivatives 4.0 International (CC BY-NC-ND 4.0)**
+
+Official Public License:  
+https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+### Proprietary Commercial Rights
+
+Commercial, enterprise, SaaS, governmental, strategic, and operational deployment rights remain exclusively reserved under the proprietary licensing framework.
+
+Repository License Files:
+
+- LICENSE.md
+- PROPRIETARY_LICENSE.md
+
+## Licensing Permissions
+
+### Permitted
+
+- non-commercial academic use
+- scholarly citation
+- methodological review
+- reproducibility evaluation
+- institutional transparency analysis
+- peer-review assessment
+- archival preservation
+
+### Restricted Without Explicit Authorization
+
+- commercial deployment
+- enterprise operationalization
+- SaaS monetization
+- production integration
+- institutional operational use
+- governmental deployment
+- strategic infrastructure implementation
+
+---
+
+# 📚 XVIII. PUBLICATION & IP INFRASTRUCTURE
 
 ## Publication Classification
-
-This document qualifies as:
 
 - Institutional Research Infrastructure
 - Computational Governance Artifact
@@ -559,30 +570,17 @@ Protected Components Include:
 - cryptographic audit layer
 - institutional traceability architecture
 
-## Licensing Architecture
+---
 
-The framework constitutes a protected computational research infrastructure with reproducible scientific provenance, institutional auditability, and cryptographic integrity guarantees.
+# 📚 XIX. RECOMMENDED CITATION
 
-## Intellectual Property Notice
+Mazumdar, B. (2026). *QSSI™ v1.0: Quantum Sovereign Security Index — Institutional Data Validation, Transparency, Reproducibility & Computational Audit Framework* (Version 1.0). Zenodo. https://doi.org/10.5281/zenodo.20127955
 
-QSSI™, its computational governance architecture, validation framework, scoring methodology, reproducibility infrastructure, and institutional audit system constitute protected intellectual and scientific infrastructure.
+Repository:  
+https://github.com/BidyutMazumdar/QVP-Global-System
 
-Unauthorized falsification, institutional misrepresentation, or derivative replication without attribution may violate applicable intellectual property and academic integrity standards.
-
-## Attribution Requirement
-
-All academic, institutional, or derivative use of the QSSI™ framework should include:
-
-- DOI citation
-- Repository attribution
-- Framework version disclosure
-- Methodological acknowledgment
-- Reproducibility disclosure
-- Audit-layer attribution
-
-## Publication Interpretation
-
-The framework is structured as a reproducible institutional computational governance artifact suitable for supplementary scientific documentation, audit transparency, explainable AI reporting, and institutional reproducibility analysis.
+ORCID:  
+https://orcid.org/0009-0007-5615-3558
 
 ---
 
@@ -617,7 +615,7 @@ The framework satisfies deterministic transparency, institutional reproducibilit
 
 This framework is designed for academic research, institutional analytics, sovereign risk assessment, computational governance research, explainable AI transparency analysis, and reproducible policy intelligence applications.
 
-The framework does not constitute legal, geopolitical, financial, or sovereign advisory determination and should be interpreted strictly within the methodological boundaries documented in the institutional audit architecture.
+The framework does **not** constitute legal, geopolitical, financial, or sovereign advisory determination and should be interpreted strictly within the methodological boundaries documented in the institutional audit architecture.
 
 ---
 
@@ -629,13 +627,13 @@ DATA → VALIDATED DATASET → TRACEABLE PIPELINE → REPRODUCIBLE COMPUTATION �
 
 ---
 
-© QSSI™ Institutional Sovereign Intelligence Framework
+© **QSSI™ Institutional Sovereign Intelligence Framework**
 
-DOI: 10.5281/zenodo.20127955
+**DOI:** 10.5281/zenodo.20127955  
+**ORCID:** https://orcid.org/0009-0007-5615-3558  
+**Repository:** https://github.com/BidyutMazumdar/QVP-Global-System  
 
-ORCID: https://orcid.org/0009-0007-5615-3558
-
-REPRODUCIBILITY STATUS: VERIFIED  
-AUDIT STATUS: VERIFIED  
-CRYPTOGRAPHIC TRACEABILITY: ACTIVE  
-INSTITUTIONAL VALIDATION: COMPLETE
+**REPRODUCIBILITY STATUS:** VERIFIED  
+**AUDIT STATUS:** VERIFIED  
+**CRYPTOGRAPHIC TRACEABILITY:** ACTIVE  
+**INSTITUTIONAL VALIDATION:** COMPLETE
