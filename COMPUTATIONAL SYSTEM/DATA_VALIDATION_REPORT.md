@@ -14,7 +14,7 @@ LOCKED — INSTITUTIONAL TRANSPARENCY + CRYPTOGRAPHIC AUDIT + REPRODUCIBLE GOVER
 |---|---|
 | Framework | Quantum Sovereign Security Index (QSSI™) |
 | Framework Class | Institutional Sovereign Intelligence Infrastructure |
-| Pipeline Version | QSSI_FINAL_INSTITUTIONAL_PIPELINE_v2 |
+| Pipeline Version | QSSI_FINAL_INSTITUTIONAL_PIPELINE_v1 |
 | Dataset Version | v2026.1.0 |
 | DOI | 10.5281/zenodo.20127955 |
 | ORCID | https://orcid.org/0009-0007-5615-3558 |
