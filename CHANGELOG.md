@@ -1,184 +1,335 @@
-# 📜 CHANGELOG.md
+# CHANGELOG.md
+# QVP-Global-System™ / QSSI™
+## Version History, Release Governance, and Audit Traceability Log
 
-# QSSI™ — Version History & Audit Traceability Log 🔒
-
-**STATUS: LOCKED — CHANGE CONTROL & VERSION INTEGRITY LAYER (ABSOLUTE FINAL)**  
-
----
-
-## 🎯 PURPOSE
-
-This document provides a complete, transparent, and audit-grade record of all system versions, including structural changes, methodological updates, and justification for each revision.
-
-✔ Ensures traceability  
-✔ Enables reproducibility across versions  
-✔ Establishes audit-proof credibility  
+**Repository Status:** ACTIVE  
+**Governance Layer:** VERSION-CONTROLLED  
+**Auditability:** ENABLED  
+**Reproducibility Alignment:** VERIFIED  
+**Archival Classification:** DOI-BOUND INSTITUTIONAL RESEARCH INFRASTRUCTURE  
 
 ---
 
-## 🔐 VERSIONING PRINCIPLES
+# VERSIONING PRINCIPLES
 
-- Semantic versioning applied: **MAJOR.MINOR.PATCH**
-- Any structural or mathematical change → new version
-- Any modification → new cryptographic hash
-- Historical versions remain immutable
+The QVP-Global-System™ repository follows structured semantic versioning and audit-oriented release governance principles.
 
----
+Version Structure:
 
-## 📊 VERSION HISTORY
+MAJOR.MINOR.PATCH
 
----
+Versioning rules:
 
-## 🟢 v2026.1.1 — ABSOLUTE FINAL EDITION (LOCKED)
-
-**Status:** Finalized, Closed, Immutable  
-**Class:** Scientific Instrument (Audit-Grade)
-
-### Additions
-
-- Full **Validation Protocol (docs/VALIDATION.md)**
-- Complete **Validation Analysis Layer (reports/validation_analysis.md)**
-- **Peer Review Readiness Framework (docs/PEER_REVIEW_READY.md)**
-- **Policy Guide & Interpretation Layer (docs/POLICY_GUIDE.md)**
-- **Comparative Case Studies (reports/case_studies.md)**
-- **Data Validation Report (docs/DATA_VALIDATION_REPORT.md)**
-- **Reproducibility Protocol (reproducibility/README.md)**
-- **Journal Paper (paper/QSSI_paper_v1.md)**
-
-### Enhancements
-
-- Formalization of **deterministic computation**
-- Mathematical proofs of:
-  - Boundedness
-  - Monotonicity
-  - Risk response linearity
-- Integration of **uncertainty propagation (ε)**
-- Enforcement of **multi-layer validation architecture**
-- Introduction of **tier classification system (A–D)**
-- Full **policy translation layer**
-- **Cross-domain consistency constraints**
-- **Correlation control (|ρ| < 0.85)**
-
-### Integrity Upgrades
-
-- Cryptographic validation:
-  - `dataset_hash`
-  - `system_hash`
-  - `validation_hash`
-- Full audit traceability
-- Machine-readable validation contract
-- Deterministic reproducibility guarantee
-
-### Reason
-
-Transition from:
-
-**Composite Index → Scientific Measurement System**
+- methodological changes → MAJOR or MINOR increment
+- computational modifications → MINOR increment
+- repository hygiene/documentation refinements → PATCH increment
+- all canonical releases remain cryptographically traceable
+- historical DOI lineage remains preserved
+- reproducibility continuity is maintained across archival releases
 
 ---
 
-## 🟡 v2026.1.0 — STABLE SYSTEM RELEASE
+# CURRENT RELEASE
 
-**Status:** Stable, Pre-Final  
-**Class:** Validated Model
+# v1.0.1 — Institutional Repository Hygiene & Archival Consistency Edition
 
-### Features
-
-- Core QSSI formulation
-- Linear aggregation model
-- Risk-adjusted transformation
-- Basic validation checks
-
-### Limitations
-
-- No audit layer
-- No reproducibility protocol
-- No peer-review disclosure
-- No policy translation
-
-### Reason
-
-Initial stabilization of computational structure
+**Release Status:** Active  
+**Release Classification:** Non-Methodological Repository Refinement Release  
+**Scientific Status:** Methodologically Unchanged  
+**Canonical Scientific Release:** v1.0.0  
+**Current Release DOI:** https://doi.org/10.5281/zenodo.20257025  
+**Canonical Scientific DOI:** https://doi.org/10.5281/zenodo.20127955  
+**Canonical Concept DOI:** https://doi.org/10.5281/zenodo.17302169  
 
 ---
 
-## 🟠 v2026.0.x — DEVELOPMENT PHASE
+## Release Scope
 
-**Status:** Experimental  
-**Class:** Prototype Model
+Version v1.0.1 introduces repository hygiene improvements, archival consistency refinements, metadata clarification updates, reproducibility documentation enhancements, validation-output clarification, and institutional repository organization improvements.
 
-### Features
+This release does NOT modify:
 
-- Preliminary indicator selection
-- Initial weighting schemes
-- Early normalization methods
-
-### Issues
-
-- Incomplete validation
-- No formal mathematical guarantees
-- No deterministic enforcement
-- Limited documentation
-
-### Reason
-
-Exploratory model construction and structural testing
+- sovereign scoring methodology
+- mathematical architecture
+- deterministic computational framework
+- normalization procedures
+- weighting systems
+- sovereign ranking outputs
+- interpretability framework
+- validation architecture
+- reproducibility guarantees
+- dataset lineage
+- cryptographic integrity structures
 
 ---
 
-## 🔵 VERSION DIFFERENTIATION SUMMARY
+## Key Improvements
 
-| Feature | v2026.0.x | v2026.1.0 | v2026.1.1 |
-|--------|-----------|-----------|-----------|
-| Mathematical Rigor | Low | Medium | High |
-| Validation | Partial | Basic | Full |
-| Reproducibility | None | Limited | Complete |
-| Auditability | None | None | Full |
-| Policy Layer | None | None | Complete |
-| Peer Review Readiness | No | Partial | Yes |
-| System Classification | Model | Validated Model | Scientific Instrument |
+The following non-methodological refinements were implemented:
 
----
-
-## 🔐 CHANGE CONTROL RULES
-
-- No modification allowed in **v2026.1.1**
-- Any future change requires:
-  - New version increment
-  - Full validation re-execution
-  - New cryptographic hash
-- Backward compatibility must be documented
+- repository structure refinement
+- archival consistency improvements
+- metadata clarification updates
+- reproducibility transparency enhancements
+- documentation refinement
+- validation-output clarification
+- repository hygiene cleanup
+- DOI lineage clarification
+- release-note standardization
+- institutional archival presentation improvements
+- organizational cleanup of auxiliary assets
+- removal of unrelated sample dataset artifacts
+- consistency improvements across repository references
+- improved long-term archival readability
+- refinement of institutional reproducibility presentation
 
 ---
 
-## 🧾 TRACEABILITY GUARANTEE
+## Reproducibility Clarification
 
-Each version is associated with:
+The repository contains multiple validation outputs, repeated execution artifacts, archived reports, integrity manifests, and reproducibility-stage exports generated during deterministic verification and robustness-testing workflows.
 
-- Dataset snapshot
-- Validation report
-- Computational logic
-- Cryptographic hash
+As part of reproducibility and consistency-assurance procedures:
 
-✔ Full lineage preserved  
-✔ No undocumented changes  
+- multiple execution cycles were performed
+- repeated deterministic verification runs were conducted
+- independent validation outputs were generated
+- repeated ranking-validation procedures were executed
+- several archival exports were preserved
+- multiple integrity snapshots were retained
+- alternative diagnostic outputs were archived
+- repeated computational consistency checks were executed
+
+Accordingly, certain repository artifacts may appear structurally similar while representing distinct:
+
+- validation cycles
+- execution environments
+- reproducibility workflows
+- integrity-verification stages
+- archival snapshots
+- computational audit states
+
+These materials are intentionally preserved for:
+
+- deterministic reproducibility verification
+- computational traceability
+- audit-oriented validation
+- archival continuity
+- integrity auditing
+- execution lineage preservation
+- reproducibility transparency
+- institutional-grade research traceability
+
+The presence of repeated outputs, structurally similar reports, multiple PDF artifacts, or multiple hash manifests does NOT indicate duplicate publication, improper reuse, or archival inconsistency.
 
 ---
 
-## 🧠 FINAL CHANGELOG STATEMENT
+## Hash and Integrity Governance
 
-All transformations from prototype to final system are fully documented, justified, and cryptographically traceable. The evolution of QSSI™ reflects a controlled transition from exploratory modeling to a deterministic, validated, and audit-grade scientific instrument.
+The repository may contain multiple:
+
+- integrity manifests
+- checksum registries
+- cryptographic verification outputs
+- reproducibility manifests
+- validation-state hashes
+- archival integrity records
+
+These materials correspond to separate validation environments, execution cycles, reproducibility stages, and archival states.
+
+Hash verification remains part of the repository’s deterministic audit-oriented preservation framework.
+
+Integrity Governance Status:
+
+- cryptographic traceability → ENABLED
+- auditability → VERIFIED
+- reproducibility continuity → PRESERVED
+- archival lineage → VERIFIED
+- deterministic consistency → MAINTAINED
 
 ---
 
-## 🔒 END STATE
+## Scientific Integrity Statement
 
-**STATUS = VERSION-CONTROLLED + AUDITABLE + IMMUTABLE**  
-**INTEGRITY = FULL TRACEABILITY + CRYPTOGRAPHIC LOCK**  
-**VERSION = v2026.1.1 (ABSOLUTE FINAL)**  
+Version v1.0.1 introduces NO:
+
+- methodological recalibration
+- ranking recomputation
+- dataset restructuring
+- mathematical reinterpretation
+- computational redesign
+- weighting modification
+- normalization alteration
+- scientific architecture modification
+
+Canonical scientific authority remains associated with:
+
+# v1.0.0 — International Scientific Institutional Master Edition
+
+DOI:
+https://doi.org/10.5281/zenodo.20127955
 
 ---
 
-## 🏁 RESULT
+## Archival Continuity Statement
 
-**PROTOTYPE → VALIDATED MODEL → SCIENTIFIC SYSTEM → AUDIT-LOCKED STANDARD 🔒**
+Version v1.0.1 functions exclusively as a:
+
+- repository hygiene release
+- documentation refinement release
+- archival consistency release
+- metadata clarification release
+- reproducibility transparency release
+
+while preserving full methodological continuity with the canonical scientific release.
+
+The repository remains:
+
+- DOI-bound
+- reproducibility-oriented
+- cryptographically traceable
+- institutionally archivable
+- audit-compatible
+- computationally deterministic
+
+---
+
+# CANONICAL SCIENTIFIC RELEASE
+
+# v1.0.0 — International Scientific Institutional Master Edition
+
+**Status:** Canonical Scientific Release  
+**Classification:** Institutional Computational Governance Framework  
+**Scientific Authority:** ACTIVE  
+**Methodological Status:** AUTHORITATIVE  
+**DOI:** https://doi.org/10.5281/zenodo.20127955  
+
+---
+
+## Scientific Contributions
+
+The canonical v1.0.0 release established:
+
+- QSSI™ sovereign computational framework
+- deterministic sovereign scoring architecture
+- post-quantum governance modeling
+- sovereign AI governance benchmarking
+- reproducibility-oriented computational infrastructure
+- bounded uncertainty propagation architecture
+- audit-oriented validation systems
+- explainability and interpretability layers
+- cryptographic integrity verification
+- institutional archival packaging framework
+
+---
+
+## Core Mathematical Architecture
+
+The canonical framework operationalizes sovereign capability evaluation through:
+
+- PQC (Post-Quantum Cryptographic Readiness)
+- AI (AI Governance Capacity)
+- LEGAL (Institutional-Legal Stability)
+- RES (National Resilience Infrastructure)
+
+Core deterministic structure:
+
+QSSI = Σ(wᵢ · Mᵢ)
+
+Risk-adjusted structure:
+
+QSSI_adj = QSSI_scaled · (1 − Risk)
+
+Uncertainty propagation:
+
+ε = √(Σ(wᵢ² · σᵢ²)) · 100
+
+---
+
+# LEGACY DEVELOPMENT LINEAGE
+
+# v0.9.0 — International Scientific Pre-Release Edition
+
+**Status:** Restricted Pre-Release  
+**Classification:** Transitional Institutional Framework  
+**DOI:** https://doi.org/10.5281/zenodo.20007621  
+
+---
+
+## Characteristics
+
+- preliminary institutional release structure
+- foundational sovereign scoring system
+- deterministic modeling architecture
+- initial reproducibility infrastructure
+- early institutional packaging framework
+- pre-canonical validation environment
+
+---
+
+# VERSION GOVERNANCE RULES
+
+All future methodological modifications require:
+
+- new version increment
+- updated DOI archival release
+- reproducibility re-validation
+- integrity verification regeneration
+- archival lineage documentation
+- updated release governance records
+
+---
+
+# DOI AND VERSION LINEAGE
+
+## Current Repository Release
+
+v1.0.1  
+https://doi.org/10.5281/zenodo.20257025
+
+## Canonical Scientific Release
+
+v1.0.0  
+https://doi.org/10.5281/zenodo.20127955
+
+## Canonical All-Version DOI
+
+https://doi.org/10.5281/zenodo.17302169
+
+The canonical concept DOI resolves to the latest authoritative repository release while preserving historical version continuity and DOI-bound archival traceability.
+
+---
+
+# REPOSITORY GOVERNANCE STATUS
+
+STATUS:
+- ACTIVE
+- VERSION-CONTROLLED
+- AUDITABLE
+- DOI-BOUND
+- REPRODUCIBILITY-ALIGNED
+- TRACEABLE
+- ARCHIVALLY CONSISTENT
+
+---
+
+# FINAL CHANGELOG DECLARATION
+
+The QVP-Global-System™ repository maintains a structured computational governance and reproducibility architecture emphasizing:
+
+- deterministic execution
+- methodological transparency
+- institutional traceability
+- archival continuity
+- audit-oriented validation
+- cryptographic integrity
+- reproducibility preservation
+- long-term scholarly accessibility
+
+All repository transitions remain documented, version-controlled, DOI-traceable, and institutionally archivable.
+
+---
+
+© 2026 Dr. B. Mazumdar  
+QVP-Global-System™ / QSSI™  
+FAIR+D Canon™
