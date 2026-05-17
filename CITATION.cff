@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+
+title: "Quantum Veil Protocol (QVP) — Global System 2026"
+
+message: "If you use this framework, dataset, or methodology, please cite the repository and Zenodo archive."
+
+type: software
+
+authors:
+  - family-names: "Mazumdar"
+    given-names: "Bidyut"
+    orcid: "https://orcid.org/0009-0007-5615-3558"
+
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.20127955"
+
+repository-code: "https://github.com/BidyutMazumdar/QVP-Global-System"
+
+url: "https://github.com/BidyutMazumdar/QVP-Global-System"
+
+abstract: >
+  QVP-Global-System establishes a deterministic and reproducible
+  sovereign intelligence framework for cybersecurity benchmarking,
+  AI governance evaluation, post-quantum resilience assessment,
+  and computational governance research through the QSSI model.
+
+keywords:
+  - Post-Quantum Cryptography
+  - AI Governance
+  - Cybersecurity
+  - Digital Sovereignty
+  - Sovereign Intelligence
+  - QSSI
+  - Computational Governance
+  - Risk Assessment
+  - Governance Analytics
+
+license: "CC-BY-NC-ND-4.0"
+
+version: "v1.0.0-ISE"
+
+date-released: "2026-05-17"
