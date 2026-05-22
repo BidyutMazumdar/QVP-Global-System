@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 """
 QVP GLOBAL SYSTEM™ v9.0
 Canonical International Sovereign Analytics Edition
