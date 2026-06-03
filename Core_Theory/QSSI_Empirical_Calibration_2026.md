@@ -404,3 +404,5 @@ ORCID:
 0009-0007-5615-3558
 
 © 2026 Dr. B. Mazumdar. All Rights Reserved.
+
+The empirical calibration was conducted on the 87-country harmonized sovereign intersection sample derived from four underlying datasets covering between 124 and 213 countries. Consequently, the reported rankings represent the calibrated sample rather than the complete global population of sovereign states.
