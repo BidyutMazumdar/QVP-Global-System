@@ -344,6 +344,14 @@ QSSI is not intended to provide deterministic judgments regarding national super
 
 ---
 
+# Relationship to the Definitive Methodology
+
+The assumptions defined herein provide the theoretical and methodological foundations supporting the implementation procedures described in:
+
+- QSSI_2026_Definitive_World_Edition.md
+
+The methodology document specifies operational procedures, whereas the present document specifies the underlying assumptions required for interpretation and application.
+
 # Conclusion
 
 The assumptions presented herein establish the formal theoretical, methodological, statistical, and computational foundations of the Quantum-Veil Sovereignty Security Index (QSSI) 2026 Definitive World Edition.
