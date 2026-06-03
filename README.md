@@ -1,6 +1,11 @@
-# QVP GLOBAL SYSTEM™ v9.0  
-## International Framework for Sovereign Analytics, Computational Governance, Reproducible Policy Intelligence, Explainable Institutional Benchmarking, and Probabilistic Governance Intelligence
+# QVP GLOBAL SYSTEM™
 
+## International Framework for Sovereign Analytics, Computational Governance, Reproducible Policy Intelligence, Explainable Institutional Benchmarking, and Probabilistic Capability Assessment
+
+### Institutional-Grade Sovereign Intelligence
+### Explainable AI • Governance Analytics • QSSI™ • FAIR+D Canon™
+### Post-Quantum Security • Reproducible Global Benchmarking
+ 
 <div align="center">
 
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20257025-blue?style=for-the-badge)](https://doi.org/10.5281/zenodo.20257025)
