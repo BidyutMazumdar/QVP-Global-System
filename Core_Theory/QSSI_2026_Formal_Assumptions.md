@@ -1,84 +1,92 @@
-QSSI 2026 Formal Assumptions
+# QSSI 2026 Formal Assumptions
 
-Quantum-Veil Sovereignty Security Index (QSSI)
+## Quantum-Veil Sovereignty Security Index (QSSI)
 
-FAIR+D Canon™ Global Framework
+### FAIR+D Canon™ Global Framework
 
-Current Definitive Edition DOI
+#### Current Definitive Edition DOI
 
 10.5281/zenodo.20385492
 
-All Versions DOI
+#### All Versions DOI
 
 10.5281/zenodo.17302169
 
-Author
+#### Author
 
 Dr. B. Mazumdar, D.Sc. (Hon.), D.Litt. (Hon.)
 
-ORCID
+#### ORCID
 
 https://orcid.org/0009-0007-5615-3558
 
-Founder
+#### Founder
 
-FAIR+D Canon (India, 2025)
+FAIR+D Canon™ (India, 2025)
 
----
+#### Document Classification
 
-Abstract
+Formal Theoretical and Methodological Assumptions
 
-This document defines the formal assumptions underlying the Quantum-Veil Sovereignty Security Index (QSSI) 2026 Definitive World Edition.
+#### Framework Status
 
-The assumptions establish the theoretical, statistical, computational, and epistemological foundations required for reproducible sovereign-capability measurement across Artificial Intelligence capability, Governance and Legal Quality, National Resilience Capacity, and Post-Quantum Cybersecurity Readiness.
-
-The assumptions are intended to ensure methodological transparency, longitudinal consistency, analytical defensibility, and policy-grade interpretability.
+Definitive World Edition (2026)
 
 ---
 
-1. Purpose of Formal Assumptions
+# Abstract
 
-The QSSI framework integrates heterogeneous international datasets into a unified sovereign capability index.
+This document presents the formal theoretical, statistical, computational, methodological, and epistemological assumptions underlying the Quantum-Veil Sovereignty Security Index (QSSI) 2026 Definitive World Edition.
 
-Because the framework combines multiple dimensions, normalization procedures, harmonized country entities, and composite aggregation mechanisms, explicit assumptions are required to ensure methodological consistency.
+The assumptions establish the foundational conditions required for the rigorous measurement of sovereign capability across Artificial Intelligence Capacity, Governance and Legal Quality, National Resilience Capacity, and Post-Quantum Cybersecurity Readiness.
 
-These assumptions define the conditions under which QSSI scores and rankings should be interpreted.
-
----
-
-2. Sovereign Entity Assumption
-
-QSSI assumes that sovereign entities constitute the appropriate analytical unit for comparative capability assessment.
-
-Each country is treated as a distinct sovereign observation.
-
-Subnational entities, provinces, municipalities, corporations, alliances, and non-state actors are excluded from the analytical framework.
+Together, these assumptions support methodological transparency, analytical defensibility, reproducibility, longitudinal comparability, and policy-grade interpretation under the FAIR+D Canon™ Global Framework.
 
 ---
 
-3. Dataset Validity Assumption
+# 1. Sovereign Entity Assumption
 
-QSSI assumes that the underlying source datasets provide valid measurements of the strategic dimensions they represent.
+QSSI assumes that sovereign nation-states constitute the appropriate analytical unit for comparative capability assessment.
 
-The framework incorporates:
+Each country is treated as an independent sovereign observation.
 
-Dimension| Dataset
-Artificial Intelligence Capability| AI_INDEX_2026
-Governance and Legal Quality| LEGAL_WGI_2026
-National Resilience Capacity| RES_INDEX_2026
-Post-Quantum Cybersecurity Readiness| PQC_NCSI_2026
+The framework excludes:
 
-Each dataset is assumed to contain sufficient informational value to represent its respective capability domain.
+- Subnational jurisdictions
+- Municipal entities
+- Corporate organizations
+- International alliances
+- Non-state actors
+- Private institutions
+
+The sovereign state remains the sole unit of analysis.
 
 ---
 
-4. Country Harmonization Assumption
+# 2. Dataset Validity Assumption
 
-Country names originating from different international sources may vary.
+QSSI assumes that all incorporated datasets provide valid empirical representations of their intended strategic capability domains.
 
-QSSI assumes that standardized country harmonization procedures correctly identify equivalent sovereign entities across datasets.
+### Source Datasets
 
-Examples include:
+| Dimension | Dataset | Coverage |
+|------------|------------|------------|
+| Artificial Intelligence Capability | AI_INDEX_2026 | 195 Countries |
+| Governance & Legal Quality | LEGAL_WGI_2026 | 213 Countries |
+| National Resilience Capacity | RES_INDEX_2026 | 181 Countries |
+| Post-Quantum Cybersecurity Readiness | PQC_NCSI_2026 | 124 Countries |
+
+Each dataset is assumed to possess sufficient informational validity, institutional credibility, and measurement consistency for sovereign capability assessment.
+
+---
+
+# 3. Country Harmonization Assumption
+
+Country identifiers originating from heterogeneous international sources may differ in naming conventions.
+
+QSSI assumes that harmonization procedures correctly identify equivalent sovereign entities across all datasets.
+
+### Examples
 
 - United States of America → United States
 - United Kingdom of Great Britain and Northern Ireland → United Kingdom
@@ -90,62 +98,64 @@ Following harmonization:
 - Initial Common Countries = 87
 - Final Common Countries = 91
 
-The framework assumes that harmonization preserves analytical validity.
+The framework assumes that harmonization preserves analytical validity and cross-source consistency.
 
 ---
 
-5. Completeness Assumption
+# 4. Completeness Assumption
 
-Only countries possessing valid observations across all four dimensions are retained.
+Only sovereign entities possessing valid observations across all four strategic dimensions are retained.
 
-The analytical sample therefore consists exclusively of countries satisfying complete-data requirements.
+Countries with incomplete observations are excluded from composite index construction.
 
-Dataset coverage:
+### Dataset Coverage
 
-- AI = 195 countries
-- LEGAL = 213 countries
-- RES = 181 countries
-- PQC = 124 countries
+- AI = 195 Countries
+- LEGAL = 213 Countries
+- RES = 181 Countries
+- PQC = 124 Countries
 
-Final analytical sample:
+### Final Analytical Sample
 
-N = 91 sovereign entities
+**N = 91 Sovereign Entities**
 
-The framework assumes that the retained sample remains sufficiently representative for comparative sovereign assessment.
-
----
-
-6. Indicator Independence Assumption
-
-QSSI assumes that individual dimensions measure related but non-identical aspects of sovereign capability.
-
-The framework therefore permits moderate correlation among dimensions while assuming that each indicator contributes unique informational value.
-
-Observed correlations demonstrate substantial association without complete redundancy.
+The retained sample is assumed to remain sufficiently representative for comparative sovereign assessment.
 
 ---
 
-7. Normalization Assumption
+# 5. Indicator Independence Assumption
 
-Indicators originate from heterogeneous scales and measurement systems.
+QSSI assumes that individual dimensions measure related yet non-identical aspects of sovereign capability.
 
-To ensure comparability, all indicators are transformed using Min-Max normalization.
+Indicators may exhibit moderate correlation while maintaining distinct informational contributions.
 
-For indicator X:
+The framework therefore assumes:
+
+- Partial dependence is acceptable.
+- Complete redundancy is absent.
+- Each dimension contributes unique analytical value.
+
+---
+
+# 6. Normalization Assumption
+
+Because indicators originate from heterogeneous scales, units, and measurement systems, QSSI applies Min-Max normalization.
+
+### Transformation
 
 X_norm = (X − X_min) / (X_max − X_min)
 
-The resulting scale satisfies:
+### Constraint
 
 0 ≤ X ≤ 1
 
-The framework assumes that Min-Max normalization preserves ordinal relationships among observations.
+The framework assumes that Min-Max normalization preserves ordinal relationships and relative positioning among sovereign entities.
 
 ---
 
-8. Monotonicity Assumption
+# 7. Monotonicity Assumption
 
-QSSI assumes that higher values represent higher sovereign capability.
+QSSI assumes that increasing indicator values correspond to increasing sovereign capability.
 
 Accordingly:
 
@@ -154,15 +164,15 @@ Accordingly:
 - Higher RES_INDEX values indicate stronger resilience capacity.
 - Higher PQC values indicate stronger post-quantum readiness.
 
-No indicator is treated as inversely related to capability.
+No incorporated indicator is interpreted inversely.
 
 ---
 
-9. Composite Aggregation Assumption
+# 8. Composite Aggregation Assumption
 
-The framework assumes that sovereign capability can be represented through multidimensional aggregation.
+QSSI assumes that sovereign capability may be represented through multidimensional aggregation.
 
-QSSI is therefore defined as:
+The composite structure is defined as:
 
 QSSI = Σ(wᵢXᵢ)
 
@@ -177,107 +187,108 @@ where:
 - Xᵢ represents normalized indicators.
 - wᵢ represents indicator weights.
 
-The aggregation process assumes additive contribution across dimensions.
+The framework assumes additive contribution across dimensions.
 
 ---
 
-10. Weight Validation Assumption
+# 9. Weight Validation Assumption
 
-The framework assumes that weighting structures should be empirically examined rather than arbitrarily selected.
+QSSI assumes that weighting structures should be empirically evaluated rather than arbitrarily assigned.
 
-Accordingly, four weighting frameworks were evaluated:
+Four weighting frameworks were examined:
 
 1. Equal Weight
 2. PCA Weight
 3. Entropy Weight
 4. CRITIC Weight
 
-Observed PCA Weights:
+### PCA Weights
 
 - AI_INDEX = 0.277213
 - LEGAL_WGI_SCORE = 0.281636
 - RES_INDEX = 0.160179
 - PQC = 0.280972
 
-Observed Entropy Weights:
+### Entropy Weights
 
 - AI_INDEX = 0.244018
 - LEGAL_WGI_SCORE = 0.261042
 - RES_INDEX = 0.281391
 - PQC = 0.213550
 
-Observed CRITIC Weights:
+### CRITIC Weights
 
 - AI_INDEX = 0.218814
 - LEGAL_WGI_SCORE = 0.201191
 - RES_INDEX = 0.289561
 - PQC = 0.290434
 
-The framework assumes that comparison across multiple weighting systems improves methodological robustness.
+Cross-method comparison is assumed to improve robustness and methodological defensibility.
 
 ---
 
-11. Latent Structure Assumption
+# 10. Latent Structure Assumption
 
-Principal Component Analysis identified a dominant common capability structure.
+Principal Component Analysis (PCA) identified a dominant common capability structure.
 
-Observed explained variance:
+### Explained Variance
 
 - PC1 = 0.779325
 - PC2 = 0.142224
 - PC3 = 0.041180
 - PC4 = 0.037271
 
-The framework assumes that sovereign capability exhibits an underlying latent multidimensional structure.
+The framework assumes that sovereign capability possesses an underlying latent multidimensional structure.
 
 ---
 
-12. Ranking Assumption
+# 11. Ranking Assumption
 
 Countries are ranked according to descending QSSI scores.
 
 The framework assumes that ordinal ranking provides meaningful comparative interpretation of sovereign capability.
 
-Differences in rank should be interpreted as relative rather than absolute measures of superiority.
+Rank differences should be interpreted as relative rather than absolute measures of superiority.
 
 ---
 
-13. Temporal Comparability Assumption
+# 12. Temporal Comparability Assumption
 
-QSSI is designed for longitudinal comparison across future editions.
+QSSI is designed for future longitudinal comparison.
 
-To reduce methodological drift, the framework assumes that:
+To minimize methodological drift, the framework assumes stability in:
 
-- indicator definitions remain stable,
-- normalization procedures remain stable,
-- aggregation procedures remain stable,
-- canonical methodological architecture remains stable.
+- Indicator definitions
+- Harmonization procedures
+- Normalization procedures
+- Aggregation mechanisms
+- Canonical methodological architecture
 
-This assumption supports cross-year comparability.
+This assumption supports cross-edition comparability.
 
 ---
 
-14. Reproducibility Assumption
+# 13. Reproducibility Assumption
 
-QSSI assumes that all reported results must be computationally reproducible.
+All reported outputs are assumed computationally reproducible.
 
 Accordingly:
 
-- datasets are archived,
-- manifests are preserved,
-- metadata are documented,
-- methodology files are version controlled,
-- publication artifacts are permanently referenced.
+- Source datasets are archived.
+- Metadata are preserved.
+- Manifests are documented.
+- Methodological artifacts are version-controlled.
+- Publication records are permanently referenced.
 
-The framework is designed to permit independent replication.
+Independent replication should yield equivalent results.
 
 ---
 
-15. FAIR+D Canon Assumption
+# 14. FAIR+D Canon Assumption
 
-The framework assumes that sovereign capability assessment should satisfy FAIR+D Canon principles.
+QSSI assumes that sovereign capability assessment should satisfy FAIR+D Canon™ principles.
 
-These principles are:
+### FAIR+D Principles
 
 - Findable
 - Accessible
@@ -289,46 +300,63 @@ All methodological decisions are evaluated against these principles.
 
 ---
 
-16. Scope Limitation Assumption
+# 15. Scope Limitation Assumption
 
 QSSI measures sovereign capability readiness.
 
 The framework does not directly measure:
 
-- geopolitical influence,
-- military power,
-- economic output,
-- national wealth,
-- ideological orientation,
-- political legitimacy.
+- Military power
+- Economic output
+- Gross Domestic Product (GDP)
+- National wealth
+- Geopolitical influence
+- Ideological orientation
+- Political legitimacy
+- Cultural influence
 
 Interpretations outside the defined capability scope should be avoided.
 
 ---
 
-17. Interpretation Assumption
+# 16. Uncertainty Assumption
 
-QSSI scores represent comparative capability estimates rather than deterministic truths.
+QSSI assumes that all empirical measurements contain uncertainty.
 
-The framework assumes that all empirical measurements contain uncertainty.
+Observed values represent estimates derived from available information rather than absolute truths.
 
-Accordingly, QSSI should be interpreted as a structured analytical decision-support instrument rather than a definitive statement of national superiority.
+Accordingly:
 
----
-
-Conclusion
-
-The formal assumptions defined in this document establish the theoretical and statistical foundations of the Quantum-Veil Sovereignty Security Index (QSSI) 2026 Definitive World Edition.
-
-Together, these assumptions support methodological transparency, reproducibility, comparability, and policy-grade sovereign capability assessment under the FAIR+D Canon™ framework.
+- Measurement uncertainty exists.
+- Data limitations may exist.
+- Temporal variation may occur.
+- Rankings should be interpreted probabilistically.
 
 ---
 
-Citation
+# 17. Interpretation Assumption
+
+QSSI scores represent comparative sovereign capability estimates.
+
+They should be interpreted as structured analytical indicators designed to support evidence-informed decision making.
+
+QSSI is not intended to provide deterministic judgments regarding national superiority.
+
+---
+
+# Conclusion
+
+The assumptions presented herein establish the formal theoretical, methodological, statistical, and computational foundations of the Quantum-Veil Sovereignty Security Index (QSSI) 2026 Definitive World Edition.
+
+Collectively, these assumptions support methodological rigor, analytical transparency, computational reproducibility, longitudinal consistency, and policy-grade sovereign capability assessment under the FAIR+D Canon™ Global Framework.
+
+---
+
+# Citation
 
 Mazumdar, B. (2026).
 
-Quantum-Veil Sovereignty Security Index (QSSI) 2026 Definitive World Edition.
+*Quantum-Veil Sovereignty Security Index (QSSI) 2026 Definitive World Edition.*
 
 Zenodo.
 
@@ -337,3 +365,7 @@ Current DOI: 10.5281/zenodo.20385492
 All Versions DOI: 10.5281/zenodo.17302169
 
 ORCID: 0009-0007-5615-3558
+
+---
+
+###### END OF FILE
