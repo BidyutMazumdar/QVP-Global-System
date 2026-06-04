@@ -1,0 +1,82 @@
+cff-version: 1.2.0
+
+title: "QVP GLOBAL SYSTEM™"
+
+message: >
+  If you use QVP GLOBAL SYSTEM™, QSSI™, FAIR+D Canon™,
+  associated datasets, methodologies, validation frameworks,
+  computational pipelines, or derived analytical outputs,
+  please cite this work using the metadata provided below.
+
+type: software
+
+authors:
+  - family-names: "Mazumdar"
+    given-names: "Bidyut"
+    orcid: "https://orcid.org/0009-0007-5615-3558"
+
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.20385492"
+    description: "Current Definitive Edition DOI"
+
+  - type: doi
+    value: "10.5281/zenodo.17302169"
+    description: "All Versions DOI"
+
+repository-code: "https://github.com/BidyutMazumdar/QVP-Global-System"
+
+url: "https://github.com/BidyutMazumdar/QVP-Global-System"
+
+license: "MIT"
+
+version: "10.0.0"
+
+date-released: "2026-01-01"
+
+keywords:
+  - Sovereign Intelligence
+  - Computational Governance
+  - Explainable Artificial Intelligence
+  - Policy Intelligence
+  - QSSI
+  - QVP Global System
+  - FAIR+D Canon
+  - Sovereign Benchmarking
+  - Governance Analytics
+  - Resilience Analytics
+  - Post-Quantum Cybersecurity
+  - Reproducible Research
+  - Institutional Analytics
+  - Computational Social Science
+  - Public Policy
+  - Data Governance
+
+abstract: >
+  QVP GLOBAL SYSTEM™ is an institutional-grade computational
+  governance and sovereign capability evaluation framework
+  integrating explainable artificial intelligence, probabilistic
+  policy intelligence, governance analytics, resilience
+  assessment, post-quantum cybersecurity evaluation,
+  reproducible benchmarking methodologies, and sovereign
+  decision intelligence through the Quantum-Veil Sovereignty
+  Security Index (QSSI™) under the FAIR+D Canon™ Global
+  Framework.
+
+preferred-citation:
+  type: article
+
+  authors:
+    - family-names: "Mazumdar"
+      given-names: "Bidyut"
+      orcid: "https://orcid.org/0009-0007-5615-3558"
+
+  title: >
+    Quantum-Veil Sovereignty Security Index (QSSI) 2026
+    Definitive World Edition
+
+  year: 2026
+
+  doi: "10.5281/zenodo.20385492"
+
+  publisher: "Zenodo"
