@@ -1,456 +1,354 @@
-# QSSI™ 2026 — Sovereign Digital Security Index  
-## Integrated Computational Validation, Statistical Architecture, and Reproducibility Framework
+Comparative Analysis
+
+FAIR+D Canon™ Composite Indices (2026 Edition)
+
+Executive Summary
+
+This report compares the performance, structure, and empirical characteristics of the FAIR+D Canon™ index family, including SCI 2026, SCI+ 2026, SCI ULTRA 2026, AI Index 2026, Legal Governance Index (LEGAL-WGI), Resilience Index (RES), and PQC-NCSI.
+
+The analysis evaluates differences in coverage, dimensionality, statistical behavior, ranking outcomes, and methodological robustness.
 
 ---
 
-## DOI
+1. Dataset Coverage Comparison
 
-10.5281/zenodo.20127955
+Index| Countries| Variables
+SCI 2026| 167| 11
+SCI+ 2026| 112| 12
+AI Index 2026| 195| 5
+LEGAL-WGI| 213| 7
+PQC-NCSI| 124| 2
+RES Index| 181| 5
+SCI ULTRA| 195| 10
 
----
+Key observations:
 
-## ORCID
-
-0009-0007-5615-3558
-
----
-
-# Author
-
-Dr. B. Mazumdar, D.Sc. (Hon.), D.Litt. (Hon.)  
-Architect of Modern Statehood  
-Founder & Principal Architect, FAIR+D Canon™  
-Proprietary Sovereign Systems Architecture & Governance Framework
-
----
-
-# Abstract
-
-QSSI™ 2026 establishes a deterministic sovereign digital security evaluation framework integrating post-quantum cybersecurity preparedness, artificial intelligence governance readiness, institutional legal resilience, and systemic economic robustness into a unified computational architecture.
-
-The framework operationalizes four normalized sovereign pillars:
-
-- PQC_NORM
-- AI_NORM
-- LEGAL_NORM
-- RES_NORM
-
-through weighted aggregation, validation analytics, explainable machine learning, dimensional reduction analysis, and reproducibility assurance mechanisms.
-
-The architecture combines:
-
-- deterministic weighting systems,
-- normalization pipelines,
-- correlation diagnostics,
-- PCA decomposition,
-- rank consistency validation,
-- SHAP interpretability analysis,
-- feature importance estimation,
-- cryptographic manifest verification,
-- reproducibility governance,
-- and sovereign classification modeling.
-
-The resulting system produces globally comparable sovereign digital security rankings designed for institutional benchmarking, longitudinal monitoring, strategic governance evaluation, and computational policy analysis.
+- LEGAL-WGI has the broadest country coverage.
+- SCI ULTRA and AI Index achieve near-global coverage.
+- SCI+ has narrower coverage because PQC availability is limited.
+- All datasets exhibit complete data integrity with no missing values and no duplicate records.
 
 ---
 
-# Core Mathematical Architecture
+2. Conceptual Comparison
 
-## Weighted Sovereign Aggregation Model
+AI Index
 
-\[
-QSSI = (0.30 \times PQC) + (0.25 \times AI) + (0.25 \times LEGAL) + (0.20 \times RES)
-\]
+Components:
 
----
+- OECD AI Readiness
+- Oxford AI Readiness
 
-# Variable Definitions
+Purpose:
 
-| Variable | Description |
-|---|---|
-| PQC | Post-Quantum Cybersecurity Preparedness |
-| AI | Artificial Intelligence Governance Readiness |
-| LEGAL | Institutional Rule-of-Law and Regulatory Stability |
-| RES | Sovereign Financial and Systemic Resilience |
+Measures national AI preparedness and capability.
 
----
+Strength:
 
-# Deterministic Weight Structure
+Direct assessment of AI ecosystems.
 
-| Pillar | Weight |
-|---|---|
-| PQC | 0.30 |
-| AI | 0.25 |
-| LEGAL | 0.25 |
-| RES | 0.20 |
+Limitation:
+
+Does not incorporate governance quality or resilience capacity.
 
 ---
 
-# Normalization Architecture
+LEGAL-WGI
 
-All sovereign indicators are normalized into bounded interval space:
+Components:
 
-\[
-X_{norm} = \frac{X - X_{min}}{X_{max} - X_{min}}
-\]
+- Rule of Law
+- Regulatory Quality
+- Government Effectiveness
+- Control of Corruption
 
-ensuring deterministic comparability across heterogeneous institutional datasets.
+Purpose:
 
----
+Measures institutional and governance quality.
 
-# Statistical Validation Framework
+Strength:
 
-## Correlation Matrix
+Captures regulatory and legal foundations.
 
-| Variable | PQC | AI | LEGAL | RES | QSSI |
-|---|---|---|---|---|---|
-| PQC | 1.0000 | 0.5786 | 0.5442 | 0.2536 | 0.8041 |
-| AI | 0.5786 | 1.0000 | 0.6542 | 0.4918 | 0.8781 |
-| LEGAL | 0.5442 | 0.6542 | 1.0000 | 0.5033 | 0.8499 |
-| RES | 0.2536 | 0.4918 | 0.5033 | 1.0000 | 0.6089 |
-| QSSI | 0.8041 | 0.8781 | 0.8499 | 0.6089 | 1.0000 |
+Limitation:
+
+Does not directly measure technological readiness.
 
 ---
 
-# Correlation Interpretation
+RES Index
 
-The correlation structure demonstrates:
+Components:
 
-- strong positive coherence between AI governance and sovereign security outcomes,
-- significant institutional dependency between legal resilience and digital sovereignty,
-- moderate financial-system influence,
-- high multidimensional stability across normalized indicators.
+- IMF Resilience
+- ND-GAIN Resilience
+- Global Resilience Indicators
 
-AI_NORM exhibits the strongest relationship with QSSI_GLOBAL_SCORE:
+Purpose:
 
-\[
-r = 0.8781
-\]
+Measures adaptive and recovery capacity.
 
-indicating that institutional AI governance capacity functions as a dominant sovereign-level explanatory variable.
+Strength:
 
----
+Captures systemic resilience.
 
-# Rank Consistency Validation
+Limitation:
 
-## Spearman Rank Correlation
-
-| Metric | Spearman Rho | P-value |
-|---|---|---|
-| PQC_NORM | 0.7707 | 8.14e-41 |
-| AI_NORM | 0.8762 | 5.23e-65 |
-| LEGAL_NORM | 0.8332 | 4.14e-53 |
-| RES_NORM | 0.5297 | 6.19e-16 |
+Weak direct relationship with technological development.
 
 ---
 
-## Kendall Tau Validation
+PQC-NCSI
 
-| Metric | Kendall Tau | P-value |
-|---|---|---|
-| PQC_NORM | 0.6074 | 6.89e-34 |
-| AI_NORM | 0.6859 | 4.08e-47 |
-| LEGAL_NORM | 0.6494 | 1.79e-42 |
-| RES_NORM | 0.3891 | 2.68e-15 |
+Purpose:
 
----
+Measures post-quantum cybersecurity preparedness.
 
-# Validation Interpretation
+Strength:
 
-The validation architecture demonstrates statistically significant monotonic consistency across all sovereign pillars.
+Introduces future-security readiness.
 
-AI_NORM exhibits the strongest ordinal stability across sovereign rankings:
+Limitation:
 
-\[
-\rho = 0.8762
-\]
-
-with ultra-low probability dispersion.
-
-This confirms that sovereign AI governance maturity functions as a highly stable ordering mechanism within the QSSI computational framework.
+Limited country coverage.
 
 ---
 
-# Machine Learning Validation
+SCI 2026
 
-## Predictive Accuracy Metrics
+Formula:
 
-| Metric | Value |
-|---|---|
-| R² Score | 0.9968840551757326 |
-| RMSE | 0.00987582444075802 |
+SCI = 0.50(AI_INDEX) + 0.50(LEGAL_WGI_SCORE)
 
----
+Purpose:
 
-# Predictive Interpretation
-
-The machine learning architecture demonstrates:
-
-- extremely high explanatory power,
-- low residual dispersion,
-- strong deterministic consistency,
-- robust predictive stability,
-- and minimal systemic reconstruction error.
-
-The low RMSE value confirms high fidelity between modeled and reconstructed sovereign security scores.
+Balances technological capability and governance quality.
 
 ---
 
-# Feature Importance Architecture
+SCI+ 2026
 
-| Feature | Importance |
-|---|---|
-| AI_NORM | 0.6202 |
-| LEGAL_NORM | 0.1996 |
-| PQC_NORM | 0.1542 |
-| RES_NORM | 0.0163 |
+Formula:
 
----
+SCI+ = f(AI, Governance, PQC)
 
-# Feature Importance Interpretation
+Purpose:
 
-AI governance capacity constitutes the dominant predictive driver within the computational system.
-
-The architecture demonstrates:
-
-\[
-AI > LEGAL > PQC > RES
-\]
-
-in sovereign explanatory hierarchy.
-
-This indicates that governance intelligence and institutional algorithmic readiness increasingly define strategic sovereign capability under digital-state conditions.
+Adds cybersecurity readiness to SCI.
 
 ---
 
-# Explainable AI Layer
+SCI ULTRA 2026
 
-## SHAP Analytical Architecture
+Purpose:
 
-The SHAP explainability layer operationalizes local contribution decomposition for sovereign score generation.
+Confidence-adjusted global capability index.
 
-The analysis demonstrates:
+Components:
 
-- strong positive SHAP influence for AI_NORM,
-- stable institutional reinforcement effects for LEGAL_NORM,
-- moderate cyber-sovereignty amplification through PQC_NORM,
-- and lower marginal contribution from RES_NORM.
+- SCI foundation
+- Resilience adjustment
+- Confidence weighting
+- Rank correction framework
 
-The explainability framework ensures:
-
-- transparent sovereign scoring,
-- interpretable model behavior,
-- auditability,
-- and computational traceability.
+SCI ULTRA represents the most comprehensive framework within the FAIR+D Canon™ family.
 
 ---
 
-# Principal Component Architecture
+3. Statistical Comparison
 
-## PCA Structural Decomposition
+Mean Scores
 
-The PCA framework decomposes sovereign variance into orthogonal strategic dimensions.
+Dataset| Mean
+AI Index| 0.441
+LEGAL-WGI| 0.497
+SCI| 0.474
+SCI+| 0.553
+RES Index| 0.370
+SCI ULTRA| 0.465
 
-The first principal component captures dominant systemic variance across:
+Interpretation:
 
-- digital governance,
-- institutional resilience,
-- AI readiness,
-- and cybersecurity maturity.
+SCI scores lie between AI readiness and governance performance, confirming its integrative nature.
 
-The second component captures divergence patterns associated with:
-
-- geopolitical asymmetry,
-- economic structure,
-- institutional variance,
-- and sovereign strategic specialization.
+SCI+ demonstrates higher average values due to inclusion of countries with available PQC readiness data.
 
 ---
 
-# Sovereign Tier Architecture
+4. Correlation Analysis
 
-## Tier Classification Structure
+SCI 2026 correlation matrix reveals:
 
-| Tier | Description |
-|---|---|
-| Tier I | Elite Sovereign Digital Power |
-| Tier II | Advanced Strategic System |
-| Tier III | Emerging Sovereign Digital Power |
+Relationship| Correlation
+SCI vs AI Index| 0.935
+SCI vs LEGAL-WGI| 0.902
+AI Index vs LEGAL-WGI| 0.690
 
----
+Interpretation:
 
-# Top Sovereign Rankings
+SCI is strongly associated with both technological and governance dimensions.
 
-| Rank | Country | QSSI Score |
-|---|---|---|
-| 1 | Denmark | 0.9081 |
-| 2 | Norway | 0.9033 |
-| 3 | United States | 0.8592 |
-| 4 | Singapore | 0.8488 |
-| 5 | Ireland | 0.8477 |
-| 6 | Germany | 0.8468 |
-| 7 | Australia | 0.8453 |
-| 8 | Finland | 0.8331 |
-| 9 | Canada | 0.8313 |
-| 10 | Luxembourg | 0.8298 |
+The moderate AI–Governance relationship indicates that the two domains contribute distinct information rather than measuring the same phenomenon.
 
 ---
 
-# India Sovereign Assessment
+5. Governance–Technology Relationship
 
-| Variable | Value |
-|---|---|
-| Rank | 35 |
-| Tier | Emerging Sovereign Digital Power |
-| QSSI Score | 0.6692 |
-| PQC_NORM | 0.7610 |
-| AI_NORM | 0.7964 |
-| LEGAL_NORM | 0.4975 |
-| RES_NORM | 0.5870 |
+OLS Regression:
 
----
+Dependent Variable:
 
-# India Structural Interpretation
+LEGAL_WGI_SCORE
 
-India demonstrates:
+Independent Variable:
 
-- strong AI governance expansion,
-- high digital-state scaling potential,
-- significant post-quantum security advancement,
-- and expanding sovereign technological capacity.
+AI_INDEX
 
-Institutional legal normalization remains the primary constraint limiting higher sovereign-tier transition.
+Results:
 
----
+- R² = 0.476
+- β = 0.5695
+- p < 0.001
 
-# Cryptographic Integrity Layer
+Interpretation:
 
-## Dataset Manifest
+Nearly 48% of governance variation is associated with AI readiness variation.
 
-```json
-{
-  "file": "data/final/QVP_GLOBAL_MASTER_2026.csv",
-  "sha256": "827706e80eca2940843433a59f314bcd4fda9121282535fd2da9fddcf2359d7d",
-  "timestamp": "2026-05-09 10:47:22.941367"
-}
-```
+Countries with stronger AI ecosystems tend to exhibit stronger governance structures.
 
 ---
 
-# Integrity Interpretation
+6. SCI ULTRA Performance
 
-The SHA-256 manifest architecture ensures:
+Coverage:
 
-- deterministic dataset integrity,
-- reproducibility assurance,
-- tamper detection capability,
-- audit traceability,
-- and publication-grade computational verification.
+195 countries
 
----
+Summary statistics:
 
-# Computational Reproducibility Framework
+Metric| Value
+Mean| 0.4646
+Median| 0.4306
+Minimum| 0.1088
+Maximum| 0.8754
 
-The framework integrates:
+95% Confidence Interval:
 
-- deterministic normalization,
-- fixed weighting architecture,
-- transparent statistical diagnostics,
-- reproducible machine learning outputs,
-- explainable AI decomposition,
-- cryptographic manifest verification,
-- and traceable sovereign ranking pipelines.
+0.4420 – 0.4875
 
-The architecture supports:
+Interpretation:
 
-- institutional replication,
-- longitudinal monitoring,
-- sovereign simulation,
-- comparative governance analytics,
-- and strategic policy benchmarking.
+SCI ULTRA preserves global comparability while incorporating confidence-based adjustments.
 
 ---
 
-# System Characteristics
+7. Capability Tier Comparison
 
-## Computational Properties
+SCI ULTRA classification:
 
-| Property | Status |
-|---|---|
-| Deterministic | Yes |
-| Reproducible | Yes |
-| Explainable | Yes |
-| Auditable | Yes |
-| Scalable | Yes |
-| Traceable | Yes |
-| Modular | Yes |
-| Sovereign-Compatible | Yes |
+Tier| Countries| Percentage
+High Capability| 13| 6.67%
+Upper-Mid| 31| 15.90%
+Mid| 49| 25.13%
+Emerging / Fragile| 102| 52.31%
 
----
+Interpretation:
 
-# Methodological Characteristics
-
-| Component | Status |
-|---|---|
-| Statistical Validation | Integrated |
-| Explainable AI | Integrated |
-| PCA Diagnostics | Integrated |
-| Correlation Validation | Integrated |
-| Rank Stability Validation | Integrated |
-| Cryptographic Verification | Integrated |
-| Sovereign Tier Modeling | Integrated |
+A majority of countries remain in the Emerging/Fragile category, highlighting persistent global capability gaps.
 
 ---
 
-# Institutional Applications
+8. Confidence Framework Assessment
 
-The framework supports:
+Confidence distribution:
 
-- sovereign digital readiness assessment,
-- national cybersecurity benchmarking,
-- AI governance evaluation,
-- strategic resilience analysis,
-- policy prioritization,
-- comparative governance research,
-- computational statecraft analysis,
-- and sovereign systems simulation.
+Level| Countries
+High Confidence| 87
+Moderate Confidence| 59
+Low Confidence| 49
 
----
+Mean confidence score:
 
-# Formal Conclusion
+0.792
 
-QSSI™ 2026 establishes an integrated sovereign digital security evaluation architecture combining:
-
-- deterministic computational governance,
-- institutional statistical validation,
-- explainable machine learning,
-- cryptographic reproducibility assurance,
-- and multidimensional sovereign systems analysis.
-
-The framework operationalizes a reproducible institutional methodology capable of supporting advanced comparative evaluation across sovereign digital ecosystems under contemporary post-quantum and AI-governance conditions.
-
-The resulting architecture provides a computational foundation for future sovereign digital-state analytics, strategic governance modeling, and institutional resilience assessment within evolving global technological systems.
+Confidence-adjusted rankings provide an uncertainty-aware interpretation of country performance.
 
 ---
 
-# Citation
+9. Ranking Comparison
 
-```bibtex
-@misc{mazumdar2026qssi,
-  title={QSSI™ 2026: Sovereign Digital Security Index},
-  author={Mazumdar, B.},
-  year={2026},
-  doi={10.5281/zenodo.20127955},
-  url={https://doi.org/10.5281/zenodo.20127955}
-}
-```
+SCI 2026 Leaders
+
+1. Denmark
+2. Singapore
+3. Netherlands
+4. Norway
+5. Australia
+
+SCI ULTRA Leaders
+
+1. Denmark
+2. Norway
+3. Singapore
+4. Australia
+5. Germany
+
+Interpretation:
+
+Top-performing countries remain broadly consistent across methodologies, demonstrating ranking stability.
 
 ---
 
-# License
+10. Rank Adjustment Effects
 
-All rights reserved under applicable intellectual property and computational systems governance protections.
+Largest positive rank gaps:
+
+- United States (+126)
+- United Kingdom (+120)
+- Republic of Korea (+119)
+- Taiwan (+118)
+
+Largest negative rank gaps:
+
+- Uganda (-59)
+- Maldives (-58)
+- Bosnia and Herzegovina (-57)
+- Cambodia (-57)
+
+Interpretation:
+
+Confidence weighting significantly alters some country positions while preserving overall system structure.
 
 ---
 
-# End of Document
+11. Robustness Evidence
+
+Spearman Rank Correlation:
+
+ρ = 0.7897
+
+p < 0.001
+
+Interpretation:
+
+Strong rank preservation indicates methodological robustness.
+
+The confidence-adjustment mechanism modifies rankings without destabilizing the underlying capability structure.
+
+---
+
+12. Comparative Conclusions
+
+The FAIR+D Canon™ framework demonstrates a clear methodological progression:
+
+AI Index → Technology readiness
+
+LEGAL-WGI → Governance quality
+
+SCI → Technology + Governance
+
+SCI+ → Technology + Governance + Cybersecurity
+
+SCI ULTRA → Technology + Governance + Cybersecurity + Resilience + Confidence Adjustment
+
+Among all evaluated frameworks, SCI ULTRA provides the most comprehensive representation of national capability by integrating readiness, governance, resilience, security preparedness, and uncertainty-aware ranking mechanisms within a single analytical architecture.
