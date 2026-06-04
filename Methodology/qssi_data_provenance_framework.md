@@ -1,668 +1,513 @@
-# QSSI™ — DATA PROVENANCE & SOURCE GOVERNANCE FRAMEWORK
-## Quantum Sovereign Security Index (QSSI™)
-### FAIR+D Canon™ Sovereign Computational Governance Architecture
+QSSI 2026 Data Provenance Framework
+
+Quantum-Veil Sovereignty Security Index (QSSI)
+
+FAIR+D Canon™ Global Framework
+
+Current Definitive Edition DOI
+
+10.5281/zenodo.20385492
+
+All Versions DOI
+
+10.5281/zenodo.17302169
+
+Author
+
+Dr. B. Mazumdar, D.Sc. (Hon.), D.Litt. (Hon.)
+
+ORCID
+
+https://orcid.org/0009-0007-5615-3558
+
+Founder
+
+FAIR+D Canon™ (India, 2025)
+
+Document Classification
+
+Data Provenance, Data Lineage, Traceability, Reproducibility, and Computational Governance Framework
+
+Framework Status
+
+Definitive World Edition (2026)
 
 ---
 
-# OFFICIAL STATUS
+Abstract
 
-| Field | Value |
-|---|---|
-| Framework | Quantum Sovereign Security Index (QSSI™) |
-| Document | Data Provenance & Source Governance Framework |
-| File Path | `methodology/qssi_data_provenance_framework.md` |
-| Version | v1.0 |
-| Status | OFFICIAL |
-| Classification | Research-Grade Sovereign Computational Governance Documentation |
-| Architecture | Deterministic Data Provenance & Reproducibility Framework |
-| DOI | 10.5281/zenodo.20127955 |
-| ORCID | https://orcid.org/0009-0007-5615-3558 |
-| Execution State | Deterministic |
-| Integrity Status | Hash-Verified |
-| License | CC BY-NC-ND 4.0 + Reserved Proprietary Rights |
+This document establishes the formal provenance architecture governing all datasets, transformations, analytical procedures, computational artifacts, validation outputs, and publication records associated with the Quantum-Veil Sovereignty Security Index (QSSI) 2026 Definitive World Edition.
+
+The framework defines the complete lifecycle of sovereign capability data from source acquisition through validation, harmonization, integration, statistical processing, composite index construction, ranking generation, archival preservation, and DOI-linked publication.
+
+The objective is to provide an auditable, transparent, reproducible, and institutionally defensible record of data lineage under the FAIR+D Canon™ Global Framework.
 
 ---
 
-# AUTHORSHIP
+1. Purpose
 
-## Dr. B. Mazumdar, D.Sc. (Hon.), D.Litt. (Hon.)
+The QSSI Data Provenance Framework establishes a comprehensive governance structure for documenting the origin, transformation, movement, preservation, and utilization of all data assets incorporated into sovereign capability assessment.
 
-**Architect of Modern Statehood**  
-**Founder & Principal Architect, FAIR+D Canon™**  
-**Proprietary Sovereign Systems Architecture & Governance Framework**
+The framework supports:
 
----
+- End-to-end data traceability
+- Computational transparency
+- Source accountability
+- Reproducible analytics
+- Institutional auditability
+- Long-term preservation
+- Methodological defensibility
+- FAIR+D Canon compliance
 
-# ABSTRACT
-
-This document defines the official data provenance, source governance, methodological sourcing architecture, normalization framework, integration logic, integrity discipline, and reproducibility standards governing the **Quantum Sovereign Security Index (QSSI™)**.
-
-QSSI™ is a deterministic, reproducible, sovereign computational governance framework designed to evaluate sovereign digital capability, institutional resilience, governance stability, artificial intelligence ecosystem capacity, and systemic vulnerability through structured multi-source integration.
-
-The framework integrates internationally recognized institutional datasets, bounded normalization logic, deterministic weighting structures, uncertainty propagation systems, and cryptographic integrity verification within a unified analytical governance architecture.
-
-QSSI™ operates as a computational governance system rather than a static descriptive index.
+Every published output within QSSI maintains a documented lineage linking analytical results to originating empirical observations.
 
 ---
 
-# STRATEGIC OBJECTIVES
+2. Provenance Principles
 
-The QSSI™ framework is designed to support:
+The framework is founded upon five core provenance principles.
 
-- Sovereign digital capability benchmarking
-- Artificial intelligence governance assessment
-- Institutional resilience evaluation
-- Systemic macro-structural stability analysis
-- Strategic governance simulation
-- Comparative sovereign analytical modeling
-- Computational policy research
-- Deterministic analytical reproducibility
+Source Authenticity
 
----
+All incorporated datasets originate from documented and publicly identifiable institutional sources.
 
-# FOUNDATIONAL DESIGN PRINCIPLES
+Transformation Transparency
 
-The QSSI™ data governance architecture follows six foundational principles.
+All computational procedures, harmonization operations, validation processes, and analytical transformations are explicitly documented and reproducible.
 
-| Principle | Description |
-|---|---|
-| Determinism | Identical inputs produce identical outputs |
-| Transparency | All data sources and transformations remain publicly declared |
-| Reproducibility | Outputs remain version-bound and computationally reproducible |
-| Auditability | Inputs, transformations, and outputs remain traceable |
-| Cross-Domain Integration | Sovereign capability modeled across multiple institutional domains |
-| Institutional Neutrality | No geopolitical weighting or ideological preference applied |
+Traceability
+
+Every intermediate and final output preserves verifiable links to preceding processing stages.
+
+Reproducibility
+
+Independent execution using identical datasets, metadata, and computational procedures should generate equivalent analytical outcomes.
+
+Preservation
+
+Data artifacts, metadata, manifests, validation records, and publication materials are permanently archived through version-controlled repositories and DOI-linked preservation systems.
 
 ---
 
-# SYSTEM ARCHITECTURE
+3. Provenance Architecture
 
-QSSI™ integrates four major sovereign analytical layers.
+The QSSI provenance model adopts a multi-layer architecture.
 
-| Layer | Domain | Purpose |
-|---|---|---|
-| PQC | Post-Quantum & Cybersecurity Readiness | Digital security capability |
-| AI | Artificial Intelligence Governance | AI strategic readiness |
-| LEGAL | Institutional & Regulatory Integrity | Governance resilience |
-| RES | Economic & Systemic Resilience | Structural stability |
+Source Layer
 
----
+Original sovereign capability datasets.
 
-# DATA DIRECTORY STRUCTURE
+Processing Layer
 
-```text
-/data/
-├── raw/
-│   ├── qssi_raw_sources_v2026.1.csv
-│   ├── 2025-Government-AI-Readiness-Index-Report_01_26.pdf
-│   ├── 2025_wjp_rule_of_law_index_HISTORICAL_DATA_FILE.xlsx
-│   ├── dataset_2026-04-29T12_08_28.599500883Z_DEFAULT_INTEGRATION_IMF.STA_NDGAIN_1.0.1.csv
-│   └── wgicalculator-2025.xlsx
-│
-├── processed/
-│   ├── AI_INDEX_2026_v1.csv
-│   ├── AI_INDEX_2026_v1_manifest.json
-│   ├── AI_INDEX_2026_v1_metadata.json
-│   ├── LEGAL_WGI_2026_v1.csv
-│   ├── LEGAL_WGI_2026_v1_manifest.json
-│   ├── LEGAL_WGI_2026_v1_metadata.json
-│   ├── SCI_2026_v1.csv
-│   ├── SCI_2026_v1_manifest.json
-│   ├── SCI_2026_v1_metadata.json
-│   ├── SCI_PLUS_2026_v1.csv
-│   ├── SCI_PLUS_2026_v1_manifest.json
-│   ├── SCI_PLUS_2026_v1_metadata.json
-│   ├── SCI_ULTRA_2026_v1.csv
-│   ├── SCI_ULTRA_manifest_v1_2026.json
-│   └── SCI_ULTRA_metadata_v1_2026.json
-│
-└── final/
-```
+Standardization, harmonization, validation, and integration procedures.
+
+Analytical Layer
+
+Statistical diagnostics, weighting estimation, and composite aggregation.
+
+Publication Layer
+
+Reports, rankings, documentation, repositories, and DOI-linked archives.
+
+Preservation Layer
+
+Metadata, manifests, computational records, and reproducibility artifacts.
+
+Together, these layers establish a continuous and auditable provenance chain.
 
 ---
 
-# DATA GOVERNANCE MODEL
+4. Source Data Architecture
 
-The QSSI™ data governance model enforces:
+QSSI integrates four independent strategic capability dimensions.
 
-- Source traceability
-- Deterministic transformation
-- Bounded normalization
-- Integrity preservation
-- Reproducible computation
-- Version discipline
-- Institutional transparency
+Dimension| Dataset
+Artificial Intelligence Capability| AI_INDEX_2026
+Governance and Legal Quality| LEGAL_WGI_2026
+National Resilience Capacity| RES_INDEX_2026
+Post-Quantum Cybersecurity Readiness| PQC_NCSI_2026
 
-Every dataset integrated into QSSI™ must satisfy:
-
-1. Identifiable provenance
-2. Institutional credibility
-3. Public accessibility
-4. Stable schema structure
-5. Reproducible transformation capability
+Each dataset constitutes an independent provenance stream contributing to the integrated sovereign capability framework.
 
 ---
 
-# DATA SOURCE CLASSIFICATION
+5. Provenance Lifecycle
 
-QSSI™ uses **real public-domain institutional data**.
+Stage 1 — Data Acquisition
 
-Permitted source classes include:
+Original datasets are acquired from documented institutional sources.
 
-- International institutional indicators
-- Public governance metrics
-- Open analytical datasets
-- Public computational references
-- Non-classified sovereign indicators
+Outputs
 
-Excluded source classes include:
-
-- Classified intelligence systems
-- Restricted sovereign infrastructure records
-- Confidential governmental systems
-- Undisclosed strategic architectures
-
-QSSI™ does **not** use classified data.
+- Raw datasets
+- Acquisition records
+- Source references
+- Metadata records
 
 ---
 
-# PQC LAYER — POST-QUANTUM & CYBERSECURITY READINESS
+Stage 2 — Source Verification
 
-## Primary Dataset
+Datasets undergo integrity and accessibility assessment.
 
-### National Cyber Security Index (NCSI)
+Verification Procedures
 
-| Attribute | Description |
-|---|---|
-| File | `PQC_NCSI_2026.csv` |
-| Source | National Cyber Security Index |
-| Domain | National cybersecurity capability |
-| Coverage | Multi-country sovereign benchmarking |
-| Type | Composite cybersecurity readiness dataset |
+- File integrity checks
+- Structural verification
+- Variable inspection
+- Metadata review
+- Coverage assessment
 
-## Functional Role
+Outputs
 
-The PQC layer functions as a bounded proxy representation of:
-
-- Sovereign cybersecurity maturity
-- Digital infrastructure preparedness
-- National incident response capability
-- Operational cyber governance
-- Post-quantum transition preparedness proxy
-
-## Methodological Justification
-
-Direct internationally standardized datasets for sovereign post-quantum readiness remain limited.
-
-QSSI™ therefore employs structured cybersecurity maturity indicators as bounded proxy variables for sovereign PQC preparedness estimation.
-
-This preserves:
-
-- International comparability
-- Reproducibility
-- Deterministic integration
-- Cross-country scalability
+- Verified datasets
+- Verification logs
+- Integrity records
 
 ---
 
-# AI LAYER — ARTIFICIAL INTELLIGENCE GOVERNANCE
+Stage 3 — Standardization
 
-## OECD AI Policy Observatory
+Heterogeneous source structures are transformed into a common analytical format.
 
-| Attribute | Description |
-|---|---|
-| File | `AI_OECD_2026.csv` |
-| Source | OECD AI Policy Observatory |
-| Domain | AI governance and policy readiness |
-| Coverage | International AI policy benchmarking |
+Procedures
 
-Coverage includes:
+- Variable normalization
+- Naming standardization
+- Structural alignment
+- Data-type verification
 
-- AI policy maturity
-- Institutional AI coordination
-- Ethical AI governance
-- Public-sector AI strategy
-- Regulatory preparedness
+Outputs
+
+- Standardized datasets
+- Schema records
 
 ---
 
-## Oxford Government AI Readiness Index
+Stage 4 — Country Harmonization
 
-| Attribute | Description |
-|---|---|
-| File | `AI_OXFORD_2026.csv` |
-| Source | Oxford Insights |
-| Domain | Government AI readiness |
-| Coverage | Sovereign AI institutional readiness |
+Sovereign identifiers are normalized across all source systems.
 
-Coverage includes:
+Examples
 
-- Digital governance maturity
-- Public-sector AI deployment readiness
-- Infrastructure preparedness
-- Data governance capability
-- Institutional implementation readiness
+- United States of America → United States
+- Republic of Korea → South Korea
+- China, People's Republic of → China
+- United Kingdom of Great Britain and Northern Ireland → United Kingdom
+- Liechtenstein, Principality of → Liechtenstein
 
----
+Outputs
 
-# LEGAL LAYER — RULE OF LAW & INSTITUTIONAL QUALITY
-
-## World Justice Project (WJP)
-
-| Attribute | Description |
-|---|---|
-| File | `wjp_clean.csv` |
-| Source | World Justice Project |
-| Domain | Rule of law and institutional integrity |
-| Coverage | Cross-national institutional benchmarking |
-
-Coverage includes:
-
-- Judicial effectiveness
-- Regulatory enforcement
-- Corruption constraints
-- Institutional accountability
-- Governance stability
-- Procedural transparency
+- Harmonized country identifiers
+- Country matching diagnostics
+- Harmonization logs
 
 ---
 
-# RES LAYER — SYSTEMIC RESILIENCE
+Stage 5 — Validation
 
-The RES layer integrates macroeconomic, structural, and resilience-oriented datasets.
+Datasets undergo systematic quality assurance evaluation.
 
----
+Validation Procedures
 
-## IMF WORLD ECONOMIC OUTLOOK (WEO)
+- Missing-value assessment
+- Duplicate detection
+- Coverage verification
+- Schema validation
+- Interoperability testing
+- Consistency evaluation
 
-| Attribute | Description |
-|---|---|
-| File | `RES_IMF_2026.csv` |
-| Source | International Monetary Fund (IMF) |
-| Domain | Macroeconomic resilience |
-| Coverage | Global macroeconomic indicators |
+Outputs
 
-### Integrated IMF Indicators
-
-| Indicator | Functional Purpose |
-|---|---|
-| GDP (Current Prices) | Economic scale |
-| GDP Per Capita | Economic capacity |
-| Unemployment Rate | Labor market stress |
-| Inflation | Monetary stability |
-| Current Account Balance | External resilience |
+- Validation reports
+- Quality diagnostics
+- Integrity assessments
 
 ---
 
-## ND-GAIN RESILIENCE DATASET
+Stage 6 — Integration
 
-| Attribute | Description |
-|---|---|
-| File | `RES_NDGAIN_2026_FINAL.csv` |
-| Source | Notre Dame Global Adaptation Initiative |
-| Domain | Climate and structural resilience |
+Validated datasets are merged through sovereign intersection procedures.
 
-Coverage includes:
+QSSI 2026 Integration Results
 
-- Adaptive capacity
-- Infrastructure resilience
-- Climate vulnerability
-- Institutional preparedness
-- Long-term sustainability
+Metric| Value
+AI Coverage| 195
+LEGAL Coverage| 213
+RES Coverage| 181
+PQC Coverage| 124
+Final Harmonized Countries| 91
 
----
+Outputs
 
-## GLOBAL RESILIENCE INDEX
-
-| Attribute | Description |
-|---|---|
-| File | `RES_GLOBAL_RESILIENCE_INDEX_v1.0_STRICT.csv` |
-| Domain | Composite sovereign resilience |
-
-Functional coverage:
-
-- Governance continuity
-- Institutional adaptability
-- Infrastructure stability
-- Macroeconomic resilience
-- Long-term systemic survivability
+- Integrated analytical dataset
+- Sovereign intersection records
+- Coverage diagnostics
 
 ---
 
-# DATA NORMALIZATION FRAMEWORK
+Stage 7 — Analytical Processing
 
-QSSI™ employs bounded min-max normalization.
+Integrated datasets undergo computational analysis.
 
-Canonical transformation:
+Procedures
 
-\[
-M_i=
-\frac{
-X_i-X_{min}
-}{
-X_{max}-X_{min}
-}
-\]
+- Min-Max normalization
+- Correlation analysis
+- Principal Component Analysis
+- Entropy weighting
+- CRITIC weighting
+- Composite aggregation
+- Ranking generation
 
-Subject to:
+Outputs
 
-\[
-0 \leq M_i \leq 1
-\]
-
----
-
-# REVERSE NORMALIZATION
-
-Negative indicators are reverse-normalized.
-
-Examples include:
-
-- Unemployment
-- Inflation
-- Instability-sensitive variables
-
-Canonical reverse transformation:
-
-\[
-M_i^{rev}=1-M_i
-\]
+- Statistical diagnostics
+- Weight structures
+- Composite scores
+- Sovereign rankings
 
 ---
 
-# WEIGHTING FRAMEWORK
+Stage 8 — Publication
 
-Canonical QSSI™ layer weights:
+Validated outputs are prepared for dissemination and archival preservation.
 
-| Layer | Weight |
-|---|---|
-| PQC | 0.30 |
-| AI | 0.25 |
-| LEGAL | 0.25 |
-| RES | 0.20 |
+Publication Artifacts
 
-Constraint:
+- Methodology documents
+- Validation reports
+- Computational records
+- Ranking outputs
+- Reproducibility artifacts
+- DOI-linked archives
 
-\[
-\sum_{i=1}^{n} w_i = 1
-\]
+Outputs
 
----
-
-# CORE COMPUTATIONAL MODEL
-
-Canonical formulation:
-
-\[
-QSSI=
-\sum_{i=1}^{n}
-(w_i \cdot M_i)
-\]
-
-Scaled score:
-
-\[
-QSSI_{scaled}=100 \times QSSI
-\]
+- Definitive World Edition
+- Repository releases
+- Archival publications
 
 ---
 
-# RISK-ADJUSTED FRAMEWORK
+6. Data Lineage Framework
 
-\[
-QSSI_{adj}=QSSI_{scaled}(1-R)
-\]
+The formal QSSI lineage structure is defined as:
 
-Subject to:
+Raw Source Data
 
-\[
-0 \leq R \leq 1
-\]
+↓
 
-Purpose:
+Verified Source Datasets
 
-- Systemic vulnerability adjustment
-- Sovereign instability correction
-- Stress-aware scoring
+↓
 
----
+Standardized Datasets
 
-# UNCERTAINTY MODEL
+↓
 
-Canonical uncertainty propagation:
+Country Harmonization
 
-\[
-\varepsilon=
-\sqrt{
-\sum_{i=1}^{n}
-(w_i^2 \cdot \sigma_i^2)
-}
-\cdot100
-\]
+↓
 
-Purpose:
+Validated Datasets
 
-- Bounded probabilistic confidence
-- Ranking robustness estimation
-- Deterministic consistency checks
-- Comparative stability analysis
+↓
 
----
+Integrated Analytical Dataset
 
-# FORMAL SYSTEM DEFINITION
+↓
 
-\[
-F:(M,R,\sigma)\rightarrow(QSSI_{adj},\varepsilon,Rank)
-\]
+Statistical Diagnostics
 
-Outputs include:
+↓
 
-- Adjusted sovereign score
-- Uncertainty bound
-- Ranking position
+Weight Estimation
 
----
+↓
 
-# DATA INTEGRITY FRAMEWORK
+Composite Aggregation
 
-QSSI™ incorporates cryptographic integrity verification.
+↓
 
-## Dataset Hash
+QSSI Scores
 
-\[
-SHA3\text{-}256(Dataset)
-\]
+↓
 
-## System Hash
+Sovereign Rankings
 
-\[
-SHA3\text{-}256(System \parallel Version \parallel Timestamp)
-\]
+↓
 
-Integrity objectives:
+Publication Artifacts
 
-- Tamper detection
-- Reproducibility assurance
-- Audit verification
-- Canonical consistency
-- Version authentication
+↓
+
+Permanent Archives
+
+Each stage preserves complete traceability to all preceding stages.
 
 ---
 
-# REPRODUCIBILITY PRINCIPLES
+7. Metadata Architecture
 
-QSSI™ outputs remain reproducible under:
+Each dataset maintains associated metadata records.
 
-- Fixed datasets
-- Declared canonical versions
-- Deterministic execution logic
-- Fixed weight vectors
-- Version-controlled source files
-- Stable normalization procedures
+Metadata Components
 
----
+- Dataset identifier
+- Dataset version
+- Source description
+- Coverage information
+- Variable definitions
+- Processing history
+- Validation status
+- Manifest references
+- Publication linkage
 
-# VALIDATION CHARACTERISTICS
-
-The framework incorporates:
-
-- Bounded metric constraints
-- Deterministic ranking logic
-- Normalized comparability
-- Uncertainty estimation
-- Integrity verification
-- Cross-layer consistency checks
+Metadata preservation supports interpretability, auditability, and long-term reproducibility.
 
 ---
 
-# LIMITATIONS
+8. Manifest Framework
 
-The framework includes several limitations:
+Machine-readable manifests provide automated provenance tracking.
 
-- Reliance on proxy indicators
-- Non-causal modeling assumptions
-- Public-domain data dependency
-- Cross-country comparability assumptions
-- Source revision sensitivity
-- Incomplete representation of classified capabilities
+Manifest Components
 
-QSSI™ is intended strictly for:
+- Dataset inventory
+- File references
+- Processing history
+- Validation status
+- Version identifiers
+- Output relationships
+- Preservation records
 
-- Analytical benchmarking
-- Governance research
-- Sovereign capability comparison
-- Strategic modeling
-- Simulation-oriented analysis
-
-It is not intended as classified intelligence assessment.
+The manifest architecture enables systematic monitoring of data lineage throughout the computational workflow.
 
 ---
 
-# PYTHON REFERENCE IMPLEMENTATION
+9. Traceability Model
 
-```python
-import numpy as np
+The provenance framework supports bidirectional traceability.
 
-weights = {
-    "PQC": 0.30,
-    "AI": 0.25,
-    "LEGAL": 0.25,
-    "RES": 0.20
-}
+Output-to-Source Traceability
 
-M = {
-    "PQC": 0.88,
-    "AI": 0.91,
-    "LEGAL": 0.84,
-    "RES": 0.79
-}
+Analytical outputs can be traced back to originating datasets and variables.
 
-risk = 0.14
+Source-to-Output Traceability
 
-qssi = sum(
-    weights[k] * M[k]
-    for k in weights
-)
+Original observations can be linked to all derived analytical outputs.
 
-qssi_scaled = 100 * qssi
-qssi_adj = qssi_scaled * (1 - risk)
+Transformation Traceability
 
-sigma = {
-    "PQC": 0.05,
-    "AI": 0.04,
-    "LEGAL": 0.03,
-    "RES": 0.02
-}
+All processing operations maintain documented computational histories.
 
-epsilon = (
-    np.sqrt(
-        sum(
-            (weights[k] ** 2) *
-            (sigma[k] ** 2)
-            for k in weights
-        )
-    )
-    * 100
-)
+Version Traceability
 
-print("QSSI:", qssi)
-print("QSSI_scaled:", qssi_scaled)
-print("QSSI_adj:", qssi_adj)
-print("epsilon:", epsilon)
-print("Final Score:", qssi_adj - epsilon)
-```
+Changes across framework releases remain identifiable and reconstructable.
+
+This structure supports complete computational reconstruction.
 
 ---
 
-# LATEX REFERENCE IMPLEMENTATION
+10. Reproducibility Architecture
 
-```latex
-\[
-QSSI=
-\sum_{i=1}^{n}
-(w_i \cdot M_i)
-\]
+QSSI adopts a reproducibility-first design philosophy.
 
-\[
-QSSI_{scaled}=100 \times QSSI
-\]
+Reproducibility Components
 
-\[
-QSSI_{adj}=QSSI_{scaled}(1-R)
-\]
+- Version-controlled datasets
+- Archived metadata
+- Machine-readable manifests
+- Computational pipeline records
+- Validation documentation
+- DOI-based preservation
+- Repository version control
 
-\[
-\varepsilon=
-\sqrt{
-\sum_{i=1}^{n}
-(w_i^2 \cdot \sigma_i^2)
-}
-\cdot100
-\]
-```
+Independent execution using identical inputs should reproduce equivalent outputs within accepted computational tolerance.
 
 ---
 
-# VERSION DISCIPLINE
+11. Governance and Accountability
 
-| Component | Version |
-|---|---|
-| Canonical Release | v1.0 |
-| Dataset Layer | 2026 Stable |
-| Integrity Status | Hash-Verified |
+The provenance framework establishes governance responsibilities for:
 
----
+- Data stewardship
+- Provenance preservation
+- Version management
+- Documentation maintenance
+- Validation oversight
+- Archival integrity
+- Publication consistency
 
-# REPOSITORY
-
-[QVP-Global-System](https://github.com/BidyutMazumdar/QVP-Global-System?utm_source=chatgpt.com)
-
----
-
-# LICENSE
-
-Creative Commons Attribution–NonCommercial–NoDerivatives 4.0 International (CC BY-NC-ND 4.0)
+Governance procedures strengthen institutional accountability and analytical reliability.
 
 ---
 
-# END STATE
+12. FAIR+D Canon Compliance
 
-## QSSI™
+The provenance architecture is fully aligned with FAIR+D Canon™ principles.
 
-**DETERMINISTIC DATA PROVENANCE GOVERNANCE**  
-**STRUCTURED SOURCE TRANSPARENCY**  
-**REPRODUCIBLE COMPUTATIONAL ARCHITECTURE**  
-**FORMALIZED INTEGRITY VERIFICATION**  
-**INSTITUTIONAL COMPUTATIONAL TRACEABILITY**
+Findable
+
+Persistent identifiers and archival references support discoverability.
+
+Accessible
+
+Documentation and metadata remain publicly available.
+
+Interoperable
+
+Standardized structures facilitate cross-system integration.
+
+Reusable
+
+Artifacts maintain sufficient documentation for future application.
+
+Defensible
+
+All transformations remain transparent, auditable, and reproducible.
 
 ---
 
-| Field | Status |
-|---|---|
-| STATUS | OFFICIAL |
-| VERSION | v1.0 |
-| CLASSIFICATION | RESEARCH-GRADE SOVEREIGN COMPUTATIONAL GOVERNANCE DOCUMENTATION |
+13. Institutional Reproducibility Standard
+
+The provenance framework is designed to satisfy institutional-grade requirements for:
+
+- Computational governance research
+- Sovereign capability analytics
+- Explainable policy intelligence
+- Reproducible benchmarking
+- Longitudinal comparative assessment
+- International methodological transparency
+- Evidence-based decision support
+
+The framework provides a defensible foundation for sovereign capability intelligence under rigorous computational governance standards.
 
 ---
 
-© 2026 Bidyut Mazumdar
+Conclusion
+
+The QSSI Data Provenance Framework establishes a comprehensive architecture for data lineage, traceability, reproducibility, preservation, and computational accountability across all stages of sovereign capability assessment.
+
+By maintaining transparent provenance pathways from source acquisition through final ranking generation and archival publication, the framework strengthens methodological rigor, institutional transparency, analytical defensibility, and long-term reproducibility under the FAIR+D Canon™ Global Framework.
+
+The resulting provenance structure provides a robust foundation for reproducible sovereign analytics, explainable policy intelligence, and institutional-grade computational governance research.
+
+---
+
+Citation
+
+Mazumdar, B. (2026).
+
+Quantum-Veil Sovereignty Security Index (QSSI) 2026 Definitive World Edition.
+
+Zenodo.
+
+Current DOI: 10.5281/zenodo.20385492
+
+All Versions DOI: 10.5281/zenodo.17302169
+
+ORCID: 0009-0007-5615-3558
+
+END OF FILE
