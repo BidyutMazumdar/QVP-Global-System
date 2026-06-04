@@ -1,0 +1,186 @@
+Methodology
+
+Research Design
+
+This study develops and validates the FAIR+D Canon™ Strategic Capability Index (SCI) framework as a multidimensional composite indicator for assessing national strategic capability. The framework integrates artificial intelligence readiness, governance quality, resilience capacity, and post-quantum preparedness into a unified analytical architecture.
+
+The methodological approach follows established composite-index construction principles emphasizing indicator normalization, aggregation, robustness testing, sensitivity analysis, and ranking validation. Composite-index methodology literature highlights the importance of weighting transparency, aggregation logic, and robustness assessment for policy-oriented indices.
+
+Data Sources
+
+Seven harmonized datasets were utilized:
+
+1. SCI_2026_v1_MC_Canon (167 countries)
+2. SCI_PLUS_2026_v1_MC_Canon (112 countries)
+3. AI_INDEX_2026_v1_MC_Canon (195 countries)
+4. LEGAL_WGI_2026_v1_MC_Canon (213 countries)
+5. PQC_NCSI_2026_MC_Canon (124 countries)
+6. RES_INDEX_2026_MC_Canon (181 countries)
+7. SCI_ULTRA_2026_v1_Fair+DCanon (195 countries)
+
+No missing values or duplicate observations were detected across any dataset, ensuring complete analytical coverage and internal consistency.
+
+Construction of SCI
+
+The baseline Strategic Capability Index (SCI) was constructed from two principal dimensions:
+
+- AI Capability (AI_INDEX)
+- Governance Capacity (LEGAL_WGI_SCORE)
+
+The resulting SCI score demonstrated strong convergence with both technological and institutional indicators.
+
+For the 167-country SCI dataset:
+
+- Mean SCI Score = 0.474
+- Standard Deviation = 0.223
+- Maximum Score = 0.940
+- Minimum Score = 0.014
+
+The highest-ranked countries were Denmark, Singapore, Netherlands, Norway, and Australia, while the lowest-ranked countries included South Sudan, Eritrea, Sudan, Afghanistan, and Haiti.
+
+Governance–Technology Relationship
+
+A central hypothesis of the framework is that strategic capability emerges through interaction between technological readiness and institutional quality.
+
+Pearson correlation analysis produced:
+
+- r = 0.9023
+- p < 0.001
+
+This extremely strong positive relationship indicates that countries with higher AI readiness tend also to possess stronger governance systems.
+
+A simple OLS model was estimated:
+
+LEGAL_WGI_SCORE = α + β(AI_INDEX)
+
+Results:
+
+- β = 0.5695
+- p < 0.001
+- R² = 0.476
+
+Approximately 47.6% of variation in governance performance is associated with AI readiness, indicating substantial structural linkage between technological capacity and institutional effectiveness.
+
+Extended Strategic Capability Model
+
+An expanded model was developed using the intersection of available datasets (n = 87 countries):
+
+SCI_SCORE ~ AI_INDEX + LEGAL_WGI_SCORE + RES_INDEX + PQC
+
+Variables included:
+
+- AI readiness (AI_INDEX)
+- Governance quality (LEGAL_WGI_SCORE)
+- National resilience (RES_INDEX)
+- Post-Quantum Capability (PQC)
+
+Variance Inflation Factor (VIF) diagnostics indicated acceptable multicollinearity:
+
+- AI_INDEX = 4.49
+- LEGAL_WGI_SCORE = 4.47
+- RES_INDEX = 2.18
+- PQC = 3.83
+
+All VIF values remained below the commonly accepted threshold of 5.
+
+Robustness and Validation Procedures
+
+Normality Assessment
+
+Shapiro–Wilk tests were performed.
+
+SCI_ULTRA variables showed:
+
+- SCI_ULTRA_SCORE: p = 0.0029
+- SCI_ADJUSTED_SCORE: p < 0.001
+- confidence_score: p < 0.001
+
+These results indicate departures from strict normality, which is common in cross-national development indicators.
+
+Bootstrap Validation
+
+To evaluate score stability, bootstrap confidence intervals were estimated.
+
+For SCI_ULTRA_SCORE:
+
+- Mean = 0.4646
+- 95% Bootstrap CI = [0.4420, 0.4875]
+
+The relatively narrow interval demonstrates strong aggregate stability.
+
+Bootstrap methods are widely recognized as effective approaches for assessing uncertainty and robustness in composite indicators.
+
+Sensitivity Analysis
+
+Confidence scores were perturbed using ±10% scenarios.
+
+Results showed:
+
+- Mean confidence = 0.792
+- +10% scenario mean = 0.871
+- −10% scenario mean = 0.713
+
+Ranking structures remained broadly stable, indicating resilience to moderate parameter variation.
+
+Rank Robustness
+
+Spearman rank correlation analysis produced:
+
+- ρ = 0.7897
+- p < 0.001
+
+This indicates strong ordinal consistency between adjusted and unadjusted ranking systems.
+
+Rank robustness is considered a key validation criterion in composite-index research.
+
+Outlier Diagnostics
+
+Cook’s Distance was used to identify influential observations.
+
+The most influential countries were:
+
+- Denmark (0.0560)
+- Albania (0.0511)
+- Norway (0.0471)
+
+All values remained below commonly used concern thresholds, suggesting that no single country unduly dominated model estimation.
+
+SCI_ULTRA Framework
+
+SCI_ULTRA expands the baseline framework by integrating confidence-adjusted capability measurement across 195 countries.
+
+Summary statistics:
+
+- Mean SCI_ULTRA_SCORE = 0.465
+- Mean SCI_ADJUSTED_SCORE = 0.376
+- Mean Confidence Score = 0.792
+
+Capability distribution:
+
+- High Capability: 13 countries (6.67%)
+- Upper-Mid: 31 countries (15.90%)
+- Mid: 49 countries (25.13%)
+- Emerging / Fragile: 102 countries (52.31%)
+
+Top performers included Denmark, Norway, Singapore, Australia, and Germany.
+
+Reliability Assessment
+
+Correlation analysis demonstrated:
+
+- SCI_ULTRA_SCORE vs SCI_ADJUSTED_SCORE = 0.847
+- SCI_ADJUSTED_SCORE vs confidence_score = 0.681
+- SCI_ULTRA_SCORE vs confidence_score = 0.216
+
+These results suggest that confidence adjustment meaningfully influences rankings while preserving the underlying strategic-capability structure.
+
+Reproducibility
+
+All analyses were conducted using reproducible computational workflows in Python within Google Colab. Data validation confirmed:
+
+- 0% missing values
+- 0% duplicate observations
+- Complete rank reproducibility
+- Fully documented metadata and manifest files
+
+This methodology provides a transparent, statistically validated, and reproducible framework for measuring strategic national capability across technology, governance, resilience, and future-readiness dimensions.
