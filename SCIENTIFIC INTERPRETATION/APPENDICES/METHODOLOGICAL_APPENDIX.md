@@ -1,687 +1,408 @@
-# APPENDICES/METHODOLOGICAL_APPENDIX.md
+METHODOLOGICAL_APPENDIX.md
 
-# QSSI™ Methodological Appendix & Mathematical Formalization Framework
+QSSI™ / SCI™ Methodological Appendix
 
-## Canonical Institutional Research Supplement — 2026
-## Version v1.0 — Immutable Canonical Release
+Institutional Computational Governance Framework
 
----
+Canonical Research Edition — 2026
 
-# FRAMEWORK REFERENCE METADATA
-
-| Field | Specification |
-|---|---|
-| Framework | QSSI™ / QVP™ Global System |
-| Full Framework Name | Quantum Sovereign Security Index |
-| Supplement Type | Methodological Appendix + Mathematical Formalization Layer |
-| Version | v1.0 |
-| Classification | Canonical Institutional Research Supplement |
-| DOI Reference | 10.5281/zenodo.20127955 |
-| ORCID | 0009-0007-5615-3558 |
-| Computational Paradigm | Deterministic Sovereign Computational Architecture |
-| Methodological Orientation | Explainable + Traceable + Reproducible + Audit-Compatible |
-| Repository Compatibility | GitHub + Zenodo + Institutional Archives |
-| Reproducibility Status | Deterministic |
-| Explainability Layer | SHAP-Compatible |
-| Integrity Layer | SHA-256 Traceable |
-| Execution Environment | Google Colab |
-| Scientific Position | Computational Governance Research Framework |
-| Publication Orientation | Peer-Review + Institutional Benchmarking |
-| Governance Alignment | Reproducibility-Oriented Scientific Governance |
-| Auditability Status | ACTIVE |
-| Mathematical Formalization | ENABLED |
-| Statistical Disclosure Status | FULLY DISCLOSED |
-| Institutional Licensing Layer | ACTIVE |
-| Computational Transparency | TRACEABLE |
-| Analytical Governance State | BOUNDED + DETERMINISTIC |
-| Scientific Scope | Sovereign Governance Evaluation |
-| Peer-Review Readiness | ENABLED |
-| Canonical Release State | IMMUTABLE |
-| Analytical Integrity State | VERIFIED |
+Version: 10.0
+Current Edition DOI: 10.5281/zenodo.20385492
+Canonical Version DOI: 10.5281/zenodo.17302169
+ORCID: 0009-0007-5615-3558
 
 ---
 
-# ABSTRACT
+ABSTRACT
 
-This appendix establishes the formal methodological, mathematical, statistical, computational, explainability, reproducibility, and institutional governance specification layer for the QSSI™ (Quantum Sovereign Security Index) framework.
+This methodological appendix formalizes the computational, statistical, mathematical, reproducibility, explainability, and validation architecture underlying the QSSI™ / SCI™ sovereign benchmarking framework.
 
 The appendix operationalizes:
 
-- deterministic preprocessing governance,
-- normalization formalism,
-- bounded weighting architecture,
-- covariance assumptions,
-- statistical validation methodologies,
-- rank-stability interpretation,
+- rule-based preprocessing governance,
+- reproducible normalization procedures,
+- bounded weighted aggregation,
+- statistical validation protocols,
+- rank-stability verification,
 - principal component decomposition,
-- machine-learning reconstruction architecture,
-- SHAP explainability formalization,
-- reproducibility governance,
-- dependency-version traceability,
-- computational environment specification,
-- cryptographic integrity verification,
-- institutional methodological disclosure,
-- and audit-oriented analytical transparency.
+- Monte Carlo robustness analysis,
+- Random Forest reconstruction validation,
+- explainable analytical governance,
+- audit-oriented reproducibility,
+- cryptographic traceability,
+- and institutional methodological transparency.
 
-The methodological architecture is specifically designed to strengthen:
+The framework is positioned as a reproducibility-oriented computational governance architecture for sovereign benchmarking and institutional analytical evaluation.
 
-- peer-review defensibility,
-- methodological accountability,
-- reproducibility-oriented governance,
-- institutional transparency,
-- explainable sovereign benchmarking,
-- computational auditability,
-- scientific interpretability,
-- and governance-oriented analytical traceability.
+The framework is not intended as:
 
-The framework is scientifically positioned as a deterministic computational governance architecture and NOT as:
-
-- a geopolitical forecasting engine,
-- an intelligence-classification infrastructure,
-- a military analytical system,
-- an autonomous sovereign decision engine,
-- or an unrestricted probabilistic simulation platform.
+- geopolitical forecasting,
+- military intelligence analysis,
+- autonomous sovereign classification,
+- unrestricted predictive inference,
+- or operational strategic decision infrastructure.
 
 ---
 
-# 1. FULL METHODOLOGICAL EXECUTION PIPELINE
+1. FRAMEWORK GOVERNANCE ARCHITECTURE
 
-The QSSI™ computational architecture follows the deterministic institutional execution pipeline below.
-
-```text
-RAW SOVEREIGN INDICATORS
-        ↓
-DATASET INGESTION
-        ↓
-SCHEMA VALIDATION
-        ↓
-ISO3 UNIQUENESS VALIDATION
-        ↓
-MISSING-VALUE GOVERNANCE
-        ↓
-PREPROCESSING CONSISTENCY CHECKS
-        ↓
-VARIABLE NORMALIZATION
-        ↓
-DETERMINISTIC WEIGHT APPLICATION
-        ↓
-COMPOSITE QSSI AGGREGATION
-        ↓
-RANDOM FOREST VALIDATION
-        ↓
-SHAP EXPLAINABILITY ANALYSIS
-        ↓
-PCA DIMENSIONAL DECOMPOSITION
-        ↓
-SPEARMAN RANK VALIDATION
-        ↓
-KENDALL TAU VALIDATION
-        ↓
-CORRELATION STRUCTURE ANALYSIS
-        ↓
-STATISTICAL SIGNIFICANCE VALIDATION
-        ↓
-REPRODUCIBILITY CONSISTENCY CHECKS
-        ↓
-CRYPTOGRAPHIC HASH VALIDATION
-        ↓
-FINAL SOVEREIGN QSSI OUTPUT
-```
+Field| Specification
+Framework| QSSI™ / SCI™
+Version| v10.0
+Classification| Institutional Research Framework
+Methodological Orientation| Reproducible + Explainable + Traceable
+Computational Governance| Audit-Oriented
+Execution Environment| Google Colab
+Reproducibility Status| Documented
+Explainability Layer| Enabled
+Integrity Layer| SHA-256 Traceable
+Publication Orientation| Peer-Review Aligned
+Statistical Disclosure| Full Disclosure
+Canonical Status| Version-Controlled Release
 
 ---
 
-# 2. ANALYTICAL ASSUMPTION SET
+2. DATA SOURCING ARCHITECTURE
 
-| Assumption ID | Formal Assumption |
-|---|---|
-| A1 | Sovereign indicators preserve bounded comparability. |
-| A2 | Normalized variables maintain monotonic ordering consistency. |
-| A3 | Composite aggregation preserves deterministic boundedness. |
-| A4 | Validation procedures remain non-causal. |
-| A5 | Reproducibility conditions assume fixed computational environments. |
-| A6 | Statistical interpretation remains governance-oriented and bounded. |
-| A7 | Explainability layers preserve traceable feature attribution. |
+2.1 Canonical Variables
 
----
-
-# 3. VARIABLE SOURCING APPENDIX
-
-## 3.1 Canonical Core Variables
-
-| Variable | Description | Conceptual Domain |
-|---|---|---|
-| PQC_SCORE | Post-Quantum Cybersecurity Preparedness | Cybersecurity Governance |
-| AI_INDEX | Artificial Intelligence Governance Capability | AI Governance |
-| LEGAL_WGI_SCORE | Institutional Legal Governance Strength | Rule-of-Law Governance |
-| RES_INDEX | Sovereign Resilience Capacity | Institutional Resilience |
+Variable| Description
+AI_INDEX| AI governance capability
+LEGAL_WGI_SCORE| Institutional governance strength
+PQC| Post-quantum cybersecurity preparedness
+RES_INDEX| Sovereign resilience capacity
+SCI_SCORE| Sovereign computational integrity score
+SCI_PLUS_SCORE| Enhanced sovereign capability score
+SCI_ULTRA_SCORE| Composite governance score
 
 ---
 
-## 3.2 Variable Domain Bounds
-
-| Variable | Lower Bound | Upper Bound |
-|---|---|---|
-| PQC_SCORE | 0 | 100 |
-| AI_INDEX | 0 | 100 |
-| LEGAL_WGI_SCORE | -2.5 | 2.5 |
-| RES_INDEX | 0 | 100 |
-
----
-
-## 3.3 Source Governance Principles
+2.2 Source Governance Principles
 
 The framework prioritizes:
 
-- institutional governance indicators,
-- publicly accessible sovereign metrics,
-- reproducibility-oriented datasets,
-- transparent analytical sourcing,
-- audit-compatible sovereign-level data structures,
-- traceable methodological provenance,
-- and institutional comparability integrity.
+- publicly available institutional datasets,
+- transparent sovereign indicators,
+- reproducibility-oriented data governance,
+- rule-based preprocessing compatibility,
+- institutional traceability,
+- and audit-compatible analytical disclosure.
 
-The framework explicitly avoids:
+The framework excludes:
 
-- classified intelligence inputs,
-- opaque proprietary geopolitical scoring,
+- classified intelligence datasets,
+- opaque geopolitical scoring systems,
+- undocumented transformations,
 - unverifiable sovereign estimates,
-- undocumented analytical reconstruction,
-- non-traceable strategic datasets,
-- and autonomous inference generation mechanisms.
+- and black-box analytical reconstruction.
 
 ---
 
-## 3.4 Data Governance Constraints
+3. PREPROCESSING GOVERNANCE
 
-The architecture preserves:
+3.1 Schema Validation
 
-- sovereign-entry traceability,
-- deterministic sourcing governance,
-- transparent dataset lineage,
-- reproducibility-oriented disclosure integrity,
-- and audit-compatible methodological transparency.
+The preprocessing layer validates:
 
-No undocumented external transformations are permitted within the canonical institutional architecture.
-
----
-
-# 4. PREPROCESSING GOVERNANCE APPENDIX
-
-## 4.1 Schema Validation Architecture
-
-The preprocessing governance layer validates:
-
-- ISO3 uniqueness,
 - schema consistency,
 - datatype integrity,
-- sovereign-entry compatibility,
-- variable alignment,
-- structural dataset traceability,
-- and deterministic preprocessing consistency.
+- sovereign identifier uniqueness,
+- missing-value traceability,
+- duplicate detection,
+- and structural compatibility.
 
 ---
 
-## 4.2 Missing-Value Governance
-
-Missing values are explicitly disclosed and remain computationally traceable throughout the preprocessing architecture.
+3.2 Missing Value Governance
 
 The framework prohibits:
 
 - undocumented imputation,
 - hidden interpolation,
-- opaque statistical substitution,
-- non-traceable synthetic reconstruction,
-- and autonomous missing-value generation procedures.
+- synthetic reconstruction,
+- opaque replacement logic,
+- and autonomous data generation.
+
+All preprocessing operations remain computationally traceable.
 
 ---
 
-## 4.3 Deterministic Transformation Governance
+3.3 Processing Constraints
 
-The preprocessing architecture preserves:
+The architecture preserves:
 
-- deterministic transformations,
-- fixed preprocessing rules,
-- bounded normalization behavior,
-- transparent lineage tracking,
-- reproducibility-oriented execution integrity,
-- and analytical traceability consistency.
-
-No autonomous preprocessing adaptation mechanisms are permitted.
+- fixed-rule preprocessing,
+- reproducible normalization,
+- bounded transformations,
+- transparent execution logic,
+- and analytical traceability.
 
 ---
 
-## 4.4 Data Integrity Validation
+4. MATHEMATICAL FORMALIZATION
 
-The preprocessing layer additionally validates:
+4.1 Canonical Composite Equation
 
-- duplicate sovereign identifiers,
-- malformed entries,
-- schema anomalies,
-- variable-range inconsistencies,
-- structural integrity compatibility,
-- and sovereign-level dataset coherence.
+The SCI/QSSI architecture is operationalized through weighted normalized aggregation:
 
----
+[
+SCI =
+w_1 X_{AI}^{norm}
 
-# 5. MATHEMATICAL FORMALIZATION LAYER
++ w_2 X_{LEGAL}^{norm}
++ w_3 X_{PQC}^{norm}
++ w_4 X_{RES}^{norm}
+  ]
 
-## 5.1 Canonical Composite Aggregation Equation
+Subject to:
 
-The QSSI™ framework is operationalized through the deterministic normalized aggregation equation:
-
-```math
-QSSI = w_1(X_{PQC}^{norm}) + w_2(X_{AI}^{norm}) + w_3(X_{LEGAL}^{norm}) + w_4(X_{RES}^{norm}) \tag{1}
-```
+[
+\sum_{i=1}^{4} w_i = 1
+]
 
 Where:
 
-- \(X_{PQC}^{norm}\) = normalized post-quantum cybersecurity preparedness,
-- \(X_{AI}^{norm}\) = normalized AI governance capability,
-- \(X_{LEGAL}^{norm}\) = normalized institutional legal-governance strength,
-- \(X_{RES}^{norm}\) = normalized sovereign resilience capacity.
-
-Subject to deterministic weighting constraints:
-
-```math
-\sum_{i=1}^{4} w_i = 1 \tag{2}
-```
+- X_{AI}^{norm} = normalized AI governance score
+- X_{LEGAL}^{norm} = normalized legal governance score
+- X_{PQC}^{norm} = normalized cybersecurity preparedness
+- X_{RES}^{norm} = normalized resilience score
 
 ---
 
-## 5.2 Normalization Formalism
+4.2 Normalization Function
 
-Variables are normalized using bounded min-max normalization:
+The framework applies bounded min-max normalization:
 
-```math
-X_i^{norm} = \frac{X_i - X_i^{min}}{X_i^{max} - X_i^{min}} \tag{3}
-```
+[
+X_i^{norm} =
+\frac{X_i - X_i^{min}}
+{X_i^{max} - X_i^{min}}
+]
 
-Subject to deterministic bounded constraints:
+Subject to:
 
-```math
-0 \leq X_i^{norm} \leq 1 \tag{4}
-```
+[
+0 \le X_i^{norm} \le 1
+]
 
 The normalization architecture preserves:
 
-- monotonic ordering consistency,
-- bounded computational behavior,
-- deterministic comparability,
-- and transparent analytical scaling.
+- monotonic ordering,
+- bounded comparability,
+- reproducible scaling,
+- and sovereign-order stability.
 
 ---
 
-## 5.3 Weighting Derivation Framework
+5. STATISTICAL VALIDATION FRAMEWORK
 
-The weighting architecture operationalizes:
+5.1 Spearman Rank Stability
 
-- governance-oriented analytical proportionality,
-- deterministic interpretability,
-- bounded weighting behavior,
-- transparent aggregation logic,
-- reproducibility-oriented stability,
-- and institutional methodological transparency.
+Rank-order robustness is evaluated using Spearman rank correlation:
 
-The framework explicitly avoids:
+[
+\rho =
+1 -
+\frac{6\sum d_i^2}
+{n(n^2 - 1)}
+]
 
-- adaptive reinforcement weighting,
-- autonomous optimization,
-- black-box parameter evolution,
-- opaque probabilistic calibration,
-- and non-deterministic inferential weighting systems.
+Empirical Results
 
----
+Dataset| Spearman Stability
+SCI_2026| 1.000000
+SCI_PLUS_2026| 1.000000
+AI_INDEX_2026| 1.000000
+LEGAL_WGI_2026| 1.000000
+RES_INDEX_2026| 0.992876
+SCI_ULTRA_2026| 1.000000
 
-## 5.4 Monotonicity Preservation
+Interpretation
 
-The architecture preserves monotonic ordering consistency such that:
-
-```math
-X_a > X_b \Rightarrow X_a^{norm} > X_b^{norm} \tag{5}
-```
-
-This preserves sovereign-ordering stability throughout deterministic analytical transformations.
+The framework demonstrates strong rank-order consistency across sovereign observations under reproducible preprocessing conditions.
 
 ---
 
-## 5.5 Bounded Composite Constraint
+5.2 Kendall Tau Validation
 
-The final sovereign index output preserves bounded score behavior:
+Ordinal consistency is evaluated using Kendall Tau:
 
-```math
-0 \leq QSSI \leq 1 \tag{6}
-```
+[
+\tau =
+\frac{C - D}
+{\frac{1}{2}n(n-1)}
+]
 
-This ensures deterministic comparability across sovereign entities.
+Empirical Results
 
----
-
-# 6. COVARIANCE & STATISTICAL ASSUMPTIONS
-
-## 6.1 Core Statistical Assumptions
-
-The framework assumes:
-
-- bounded statistical dependence,
-- sovereign-indicator comparability,
-- monotonic structural relationships,
-- deterministic analytical consistency,
-- and bounded variance interpretability.
+Dataset| Kendall Tau
+SCI_2026| 1.000000
+SCI_PLUS_2026| 1.000000
+AI_INDEX_2026| 1.000000
+LEGAL_WGI_2026| 1.000000
+RES_INDEX_2026| 0.920442
+SCI_ULTRA_2026| 1.000000
 
 ---
 
-## 6.2 Non-Assumed Conditions
+5.3 Monte Carlo Robustness Analysis
 
-The framework does NOT assume:
+Monte Carlo robustness analysis evaluates perturbation sensitivity under bounded stochastic noise conditions.
 
-- causal linearity,
-- geopolitical determinism,
-- unrestricted probabilistic independence,
-- intelligence-grade predictive certainty,
-- unrestricted simulation validity,
-- or autonomous strategic inference capability.
+Empirical Results
 
----
+Dataset| Mean Spearman| Standard Deviation
+SCI_2026| 1.000000| 5.61e-07
+SCI_PLUS_2026| 0.999988| 9.07e-06
+AI_INDEX_2026| 1.000000| 0
+LEGAL_WGI_2026| 1.000000| 0
+RES_INDEX_2026| 0.990348| 0.001308
+SCI_ULTRA_2026| 1.000000| 0
 
-## 6.3 Analytical Boundary Conditions
+Interpretation
 
-All outputs are interpreted within:
-
-- bounded deterministic assumptions,
-- disclosed uncertainty constraints,
-- governance-oriented interpretive limitations,
-- reproducibility-aligned transparency conditions,
-- and non-causal analytical positioning.
+The framework demonstrates strong structural robustness under controlled perturbation simulations.
 
 ---
 
-# 7. STATISTICAL VALIDATION METHODOLOGY
+6. SENSITIVITY ANALYSIS
 
-## 7.1 Reliability Formalization
+Sensitivity analysis was conducted using controlled perturbation simulations under bounded stochastic conditions.
 
-Internal consistency is evaluated through Cronbach Alpha:
+Rank-order stability remained consistently high across perturbation iterations, indicating structural robustness of the aggregation architecture.
 
-```math
-\alpha = \frac{k}{k-1}\left(1-\frac{\sum \sigma_i^2}{\sigma_T^2}\right) \tag{7}
-```
+---
+
+7. PRINCIPAL COMPONENT ANALYSIS
+
+7.1 Covariance Matrix
+
+Principal Component Analysis (PCA) is operationalized through covariance decomposition:
+
+[
+\Sigma =
+\frac{1}{n-1}X^TX
+]
+
+---
+
+7.2 Eigenvalue Decomposition
+
+[
+\Sigma v = \lambda v
+]
 
 Where:
 
-- \(k\) = number of variables,
-- \(\sigma_i^2\) = individual variable variance,
-- \(\sigma_T^2\) = total variance.
+- \lambda = eigenvalue
+- v = eigenvector
 
 ---
 
-## 7.2 Spearman Rank Correlation
+7.3 Empirical PCA Results
 
-Rank-order stability is evaluated using Spearman rank correlation:
+Dataset| PC1 Variance| PC2 Variance
+SCI_2026| 0.859847| 0.124099
+SCI_PLUS_2026| 0.876367| 0.086187
+AI_INDEX_2026| 0.998117| 0.001883
+LEGAL_WGI_2026| 0.959707| 0.020860
+RES_INDEX_2026| 0.753925| 0.246075
+SCI_ULTRA_2026| 0.686324| 0.297947
 
-```math
-\rho = 1 - \frac{6\sum d_i^2}{n(n^2-1)} \tag{8}
-```
+Interpretation
 
-Where:
-
-- \(d_i\) = rank difference,
-- \(n\) = sample size.
-
----
-
-## 7.3 Kendall Tau Validation
-
-Ordinal consistency is additionally evaluated through Kendall Tau:
-
-```math
-\tau = \frac{C-D}{\frac{1}{2}n(n-1)} \tag{9}
-```
-
-Where:
-
-- \(C\) = concordant pairs,
-- \(D\) = discordant pairs.
+The first principal component captures a substantial proportion of structured sovereign variance across datasets.
 
 ---
 
-## 7.4 Statistical Significance Methodology
+8. INTERNAL CONSISTENCY ANALYSIS
 
-Statistical significance is interpreted through deterministic p-value governance.
+8.1 Cronbach Alpha
 
-| P-Value Threshold | Interpretation |
-|---|---|
-| < 0.05 | Significant |
-| < 0.01 | Highly Significant |
-| < 0.001 | Extremely Significant |
+Internal consistency is evaluated using Cronbach Alpha:
 
-The framework preserves:
+[
+\alpha =
+\frac{k}{k-1}
+\left(
+1 -
+\frac{\sum \sigma_i^2}{\sigma_T^2}
+\right)
+]
 
-- bounded inferential interpretation,
-- deterministic statistical transparency,
-- reproducibility-oriented significance governance,
-- and non-causal analytical positioning.
+Empirical Results
 
----
+Dataset| Cronbach Alpha
+SCI_2026| -0.094647
+SCI_PLUS_2026| -0.162679
+AI_INDEX_2026| -0.039067
+LEGAL_WGI_2026| -0.044078
+RES_INDEX_2026| 0.836788
+SCI_ULTRA_2026| 0.467394
 
-## 7.5 Correlation Interpretation Constraints
+Interpretation
 
-Observed correlations are interpreted strictly as:
+Negative Cronbach Alpha values should not be interpreted as analytical failure.
 
-- structural association indicators,
-- non-causal relational measurements,
-- governance-oriented comparative metrics,
-- and bounded analytical dependencies.
+The framework aggregates structurally heterogeneous sovereign governance dimensions rather than psychometric latent traits.
 
-No correlation output is interpreted as deterministic causation.
-
----
-
-# 8. PCA MATHEMATICAL SPECIFICATION
-
-## 8.1 Covariance Matrix Formalization
-
-Principal Component Analysis is operationalized using covariance decomposition:
-
-```math
-\Sigma = \frac{1}{n-1}X^TX \tag{10}
-```
+Accordingly, internal consistency metrics are reported for methodological disclosure transparency rather than unidimensional scale validation.
 
 ---
 
-## 8.2 Eigenvalue Decomposition
+9. RANDOM FOREST VALIDATION
 
-PCA eigenvectors are derived through:
+9.1 Model Governance
 
-```math
-\Sigma v = \lambda v \tag{11}
-```
-
-Where:
-
-- \(\lambda\) = eigenvalue,
-- \(v\) = eigenvector.
-
----
-
-## 8.3 PCA Explained Variance Governance
-
-Principal components are interpreted according to explained variance ratios under bounded dimensional decomposition governance.
+Parameter| Value
+Model| Random Forest Regressor
+Random Seed| 42
+Trees| 500
+Bootstrap| True
+Criterion| squared_error
+Explainability| SHAP-Compatible
 
 ---
 
-## 8.4 PCA Interpretation Governance
+9.2 Reconstruction Results
 
-The PCA architecture preserves:
+Dataset| R²| MAE
+SCI_2026| 0.999813| 0.001914
+SCI_PLUS_2026| 0.999523| 0.003116
+AI_INDEX_2026| 0.999966| 0.289949
+LEGAL_WGI_2026| 0.999945| 0.383592
+RES_INDEX_2026| 0.995014| 0.005430
+SCI_ULTRA_2026| 0.998033| 0.732744
 
-- orthogonal variance decomposition,
-- sovereign clustering interpretability,
-- dimensional transparency,
-- bounded analytical organization,
-- reproducibility-oriented dimensional governance,
-- and explainable variance separation.
+Interpretation
 
----
-
-## 8.5 Dimensional Boundary Constraints
-
-PCA outputs are interpreted as:
-
-- structural dimensional representations,
-- bounded analytical abstractions,
-- and non-causal governance-oriented variance decompositions.
+The Random Forest reconstruction analysis indicates strong structural recoverability of the composite architecture under reproducible preprocessing conditions.
 
 ---
 
-# 9. MACHINE LEARNING SPECIFICATION
+10. REPRODUCIBLE RESEARCH STATEMENT
 
-## 9.1 Model Architecture
-
-The validation framework operationalizes:
-
-- Random Forest Regression,
-- deterministic seed governance,
-- bounded reconstruction validation,
-- explainability-oriented evaluation,
-- and reproducibility-aligned analytical execution.
+All preprocessing logic, normalization operations, statistical analyses, validation procedures, and reconstruction outputs are reproducible under fixed dependency conditions and fixed-seed governance.
 
 ---
 
-## 9.2 Model Training Configuration
+11. REPRODUCIBILITY GOVERNANCE
 
-| Parameter | Value |
-|---|---|
-| Model Type | Random Forest Regressor |
-| Random Seed | 42 |
-| Execution Mode | Deterministic |
-| Validation Orientation | Reconstruction Stability |
-| Explainability Layer | SHAP |
-| Optimization Mode | Fixed Governance Configuration |
+11.1 Execution Environment
 
----
-
-## 9.3 Random Forest Hyperparameter Disclosure
-
-| Hyperparameter | Value |
-|---|---|
-| n_estimators | 500 |
-| random_state | 42 |
-| bootstrap | True |
-| criterion | squared_error |
-| max_depth | Fixed Governance Configuration |
-| min_samples_split | Default Stable |
-| min_samples_leaf | Default Stable |
+Component| Configuration
+Python| 3.x
+pandas| Stable
+numpy| Stable
+scipy| Stable
+scikit-learn| Stable
+matplotlib| Stable
+shap| Stable
 
 ---
 
-## 9.4 Model Objective
+11.2 Fixed-Seed Governance
 
-The model is designed exclusively for:
-
-- validation-oriented reconstruction,
-- bounded score approximation,
-- feature-contribution analysis,
-- deterministic interpretability,
-- governance-oriented analytical transparency,
-- and explainability-aligned evaluation.
-
-The model is NOT designed for:
-
-- geopolitical prediction,
-- intelligence forecasting,
-- military inference,
-- autonomous strategic simulation,
-- unrestricted probabilistic extrapolation,
-- or operational sovereign classification.
-
----
-
-## 9.5 Residual Error Interpretation
-
-Residual behavior is interpreted as bounded reconstruction dispersion within deterministic computational assumptions and NOT as unrestricted probabilistic uncertainty estimation.
-
----
-
-## 9.6 Reconstruction Stability Constraints
-
-The machine-learning architecture preserves:
-
-- deterministic reconstruction consistency,
-- bounded residual volatility,
-- reproducibility-oriented validation integrity,
-- and transparent explainability compatibility.
-
----
-
-# 10. SHAP EXPLAINABILITY METHODOLOGY
-
-## 10.1 SHAP Mathematical Formalization
-
-SHAP values operationalize additive local interpretability:
-
-```math
-f(x) = \phi_0 + \sum_{i=1}^{M}\phi_i \tag{12}
-```
-
-Where:
-
-- \(\phi_i\) = feature contribution,
-- \(f(x)\) = model output,
-- \(\phi_0\) = baseline expectation value.
-
----
-
-## 10.2 SHAP Explainer Specification
-
-The explainability architecture operationalizes:
-
-- TreeExplainer compatibility,
-- Random Forest explainability alignment,
-- deterministic feature-attribution governance,
-- and bounded interpretability tracing.
-
----
-
-## 10.3 Explainability Governance
-
-The SHAP architecture preserves:
-
-- local interpretability,
-- transparent contribution tracing,
-- audit-compatible explainability,
-- reproducibility-oriented analytical transparency,
-- bounded explainability governance,
-- and institutional analytical accountability.
-
----
-
-## 10.4 Black-Box Risk Mitigation
-
-The explainability layer reduces:
-
-- opaque model behavior,
-- interpretability asymmetry,
-- non-traceable contribution generation,
-- institutional analytical opacity,
-- and governance-oriented transparency risk.
-
----
-
-# 11. REPRODUCIBILITY INSTRUCTIONS
-
-## 11.1 Execution Requirements
-
-Required execution environment:
-
-- Python 3.x,
-- Google Colab,
-- deterministic seed governance,
-- fixed dependency versions,
-- and reproducibility-oriented computational configuration.
-
----
-
-## 11.2 Deterministic Seed Governance
-
-```python
 import random
 import numpy as np
 
@@ -689,437 +410,131 @@ SEED = 42
 
 random.seed(SEED)
 np.random.seed(SEED)
-```
 
 ---
 
-## 11.3 Reproducibility Conditions
+12. COMPUTATIONAL TRACEABILITY
 
-The framework requires:
+The framework preserves:
 
-- deterministic execution,
-- immutable preprocessing logic,
-- fixed-weight governance,
-- version-controlled dependencies,
-- transparent methodological disclosure,
-- traceable computational lineage,
-- and bounded analytical reproducibility.
-
----
-
-## 11.4 Cryptographic Integrity Governance
-
-The architecture additionally preserves:
-
-- SHA-256 dataset verification,
-- tamper-evidence capability,
-- audit-compatible integrity validation,
-- reproducibility-oriented traceability assurance,
-- and publication-grade computational lineage governance.
+- reproducible execution,
+- cryptographic traceability,
+- transparent preprocessing,
+- audit-oriented lineage,
+- version-controlled computation,
+- and institutional analytical accountability.
 
 ---
 
-# 12. DEPENDENCY VERSION GOVERNANCE
-
-## 12.1 Core Dependency Architecture
-
-| Dependency | Version Governance |
-|---|---|
-| Python | 3.x |
-| pandas | Stable |
-| numpy | Stable |
-| scikit-learn | Stable |
-| scipy | Stable |
-| shap | Stable |
-| matplotlib | Stable |
-
----
-
-## 12.2 Dependency Governance Principles
-
-The dependency architecture preserves:
-
-- version traceability,
-- deterministic execution compatibility,
-- reproducibility-oriented dependency governance,
-- computational stability assurance,
-- and analytical environment consistency.
-
----
-
-# 13. COMPUTATIONAL ENVIRONMENT LOCKFILE
-
-```yaml
-ENVIRONMENT:
-  EXECUTION_PLATFORM: GOOGLE_COLAB
-
-PYTHON:
-  VERSION: 3.x
-
-RANDOMNESS_CONTROL:
-  SEED: 42
-  DETERMINISTIC: true
-
-FRAMEWORK_PROPERTIES:
-  TRACEABLE: true
-  REPRODUCIBLE: true
-  AUDIT_READY: true
-  EXPLAINABLE: true
-
-DEPENDENCIES:
-  pandas: stable
-  numpy: stable
-  scikit-learn: stable
-  scipy: stable
-  shap: stable
-  matplotlib: stable
-
-COMPUTATIONAL_GOVERNANCE:
-  FIXED_WEIGHT_ARCHITECTURE: true
-  BOUNDED_NORMALIZATION: true
-  TRACEABLE_PREPROCESSING: true
-  AUDIT_COMPATIBLE: true
-```
-
----
-
-# 14. HASH GOVERNANCE FORMALIZATION
-
-```yaml
-HASH_ALGORITHM:
-  TYPE: SHA-256
-  STATUS: ACTIVE
-
-HASH_GOVERNANCE:
-  DATASET_VERIFICATION: ENABLED
-  RELEASE_TRACEABILITY: ENABLED
-  TAMPER_EVIDENCE: ENABLED
-  REPRODUCIBILITY_ALIGNMENT: VERIFIED
-```
-
----
-
-# 15. VERSION GOVERNANCE ARCHITECTURE
-
-```yaml
-VERSION_CONTROL:
-  CURRENT_VERSION: v1.0
-  RELEASE_STATE: STABLE
-  MUTABILITY: IMMUTABLE_CANONICAL_RELEASE
-
-CHANGE_POLICY:
-  - VERSION_INCREMENT_REQUIRED
-  - DOI_UPDATE_REQUIRED
-  - HASH_REGENERATION_REQUIRED
-  - REPRODUCIBILITY_REVALIDATION_REQUIRED
-
-GOVERNANCE_STATUS:
-  TRACEABLE: true
-  AUDITABLE: true
-  REPRODUCIBLE: true
-```
-
----
-
-# 16. REPRODUCIBILITY CERTIFICATION
-
-```yaml
-REPRODUCIBILITY_CERTIFICATION:
-  DETERMINISTIC_EXECUTION: VERIFIED
-  TRACEABILITY: VERIFIED
-  AUDITABILITY: VERIFIED
-  EXPLAINABILITY: VERIFIED
-  GOVERNANCE_ALIGNMENT: VERIFIED
-```
-
----
-
-# 17. INSTITUTIONAL METHODOLOGICAL POSITION
-
-The appendix positions QSSI™ as:
-
-- a deterministic computational governance framework,
-- a reproducibility-oriented sovereign analytical architecture,
-- an explainable institutional benchmarking system,
-- a validation-oriented governance evaluation framework,
-- and an audit-compatible computational research architecture.
-
-The appendix does NOT position QSSI™ as:
-
-- an intelligence platform,
-- a geopolitical prediction engine,
-- a military analytical system,
-- an autonomous sovereign decision architecture,
-- or an unrestricted simulation infrastructure.
-
----
-
-# 18. ETHICAL COMPUTATIONAL GOVERNANCE
-
-The methodological architecture operationally preserves:
-
-- transparency,
-- explainability,
-- reproducibility,
-- auditability,
-- bounded interpretability,
-- non-autonomous governance usage,
-- institutional analytical accountability,
-- and governance-oriented proportionality.
-
-The framework explicitly prohibits:
-
-- autonomous geopolitical targeting,
-- intelligence automation,
-- predictive policing,
-- military operationalization,
-- unrestricted strategic inference,
-- and opaque governance automation.
-
----
-
-# 19. VALIDATION LIMITATIONS
-
-## 19.1 Methodological Limitation Disclosure
+13. VALIDATION LIMITATIONS
 
 The framework explicitly recognizes:
 
-- cross-sectional analytical dependence,
+- cross-sectional dependency,
 - sovereign reporting asymmetry,
-- absence of longitudinal causal validation,
 - bounded variable availability,
-- normalization dependency effects,
-- synthetic aggregation constraints,
-- institutional open-source data limitations,
-- and temporal governance drift sensitivity.
+- normalization sensitivity,
+- temporal governance drift,
+- and synthetic aggregation constraints.
+
+The framework does not claim:
+
+- causal inference,
+- predictive geopolitical certainty,
+- intelligence-grade classification,
+- or unrestricted probabilistic forecasting.
 
 ---
 
-## 19.2 Limitation Severity Disclosure
+14. ETHICAL GOVERNANCE
 
-| Limitation | Severity |
-|---|---|
-| Temporal Governance Drift | Moderate |
-| Open-Source Dependency Constraints | Moderate |
-| Cross-Sectional Scope Dependence | High |
-| Synthetic Aggregation Sensitivity | Moderate |
-| Variable Availability Constraints | Moderate |
+The architecture preserves:
 
----
+- explainability,
+- proportionality,
+- auditability,
+- transparency,
+- bounded interpretability,
+- and institutional accountability.
 
-# 20. FUTURE RESEARCH DIRECTIONS
+The framework explicitly prohibits:
 
-Potential future research extensions include:
-
-- longitudinal sovereign-governance analysis,
-- temporal governance-drift modeling,
-- post-quantum preparedness evolution analysis,
-- explainable sovereign forecasting constraints,
-- dynamic institutional benchmarking,
-- multi-layer computational governance architectures,
-- reproducibility-oriented temporal analytics,
-- and explainable institutional resilience modeling.
+- autonomous military targeting,
+- predictive policing,
+- intelligence automation,
+- and opaque sovereign scoring.
 
 ---
 
-# 21. PEER-REVIEW DISCLOSURE
+15. PEER-REVIEW POSITIONING
 
-This methodological appendix is designed to support:
+The appendix is designed to support:
 
-- computational transparency,
-- reproducibility-oriented verification,
-- independent methodological validation,
-- institutional analytical review,
-- audit-compatible scientific disclosure,
-- and governance-oriented methodological accountability.
-
-All methodological assumptions are explicitly disclosed within bounded analytical constraints.
-
----
-
-# 22. INTERPRETIVE LIMITATION NOTICE
-
-QSSI™ outputs represent bounded computational governance indicators and should not be interpreted as:
-
-- definitive sovereign capability measurements,
-- geopolitical certainty estimates,
-- intelligence-grade classifications,
-- operational national-security assessments,
-- or unrestricted predictive governance outputs.
-
----
-
-# 23. FORMAL GLOSSARY
-
-| Term | Definition |
-|---|---|
-| Deterministic Governance | Fixed-rule analytical execution architecture |
-| Bounded Interpretability | Restricted analytical inference scope |
-| Explainable Analytics | Traceable feature-contribution interpretation |
-| Reproducibility Governance | Deterministic execution verification framework |
-| Audit-Compatible Architecture | Traceable institutional analytical structure |
-| Sovereign Benchmarking | Comparative governance-oriented evaluation methodology |
-
----
-
-# 24. INSTITUTIONAL DISCLAIMER
-
-This framework is intended exclusively for:
-
-- institutional analytical applications,
-- sovereign benchmarking,
-- governance-oriented computational research,
-- reproducibility-oriented policy analytics,
-- explainable computational governance evaluation,
-- and institutional methodological benchmarking.
-
-The framework does NOT constitute:
-
-- legal advice,
-- geopolitical intelligence assessment,
-- sovereign classification authority,
-- military analysis,
-- operational national-security recommendation,
-- or autonomous strategic governance infrastructure.
-
-All outputs require bounded institutional interpretation within explicitly disclosed methodological constraints.
-
----
-
-# 25. FORMAL METHODOLOGICAL CONCLUSION
-
-The methodological appendix establishes:
-
-- deterministic computational governance,
-- formal analytical traceability,
-- reproducibility-oriented execution,
-- explainable validation architecture,
-- mathematical transparency,
-- statistical defensibility,
-- institutional audit compatibility,
-- and governance-oriented analytical disclosure integrity.
-
-The framework therefore preserves:
-
+- reproducibility-oriented review,
+- institutional transparency,
 - methodological accountability,
-- scientific interpretability,
-- peer-review-oriented disclosure integrity,
-- reproducibility governance,
-- computational traceability,
-- and institutional analytical transparency.
+- computational governance research,
+- and audit-compatible scientific disclosure.
 
-The architecture consequently functions as:
+---
 
-- a deterministic computational governance framework,
+16. DATA GOVERNANCE AND VERSION CONTROL
+
+All datasets, preprocessing configurations, analytical outputs, and validation artifacts are maintained under version-controlled research governance procedures.
+
+Canonical releases are archived using DOI-linked repositories to support reproducibility, traceability, and institutional transparency across computational revisions.
+
+---
+
+17. FORMAL CONCLUSION
+
+The methodological architecture establishes:
+
+- reproducible governance analytics,
+- explainable sovereign benchmarking,
+- computational transparency,
+- institutional auditability,
+- statistical disclosure integrity,
+- and peer-review-oriented methodological governance.
+
+The framework therefore functions as:
+
 - an explainable sovereign benchmarking architecture,
-- a validation-oriented analytical system,
-- a reproducibility-aligned institutional research framework,
-- and an audit-compatible methodological governance infrastructure.
+- a reproducibility-oriented governance framework,
+- a structured computational research system,
+- and an institutional analytical infrastructure.
 
 ---
 
-# SYMBOLS & NOTATION
+CITATION
 
-| Symbol | Definition |
-|---|---|
-| \(QSSI\) | Quantum Sovereign Security Index |
-| \(w_i\) | Deterministic variable weight |
-| \(X_i^{norm}\) | Normalized variable |
-| \(\Sigma\) | Covariance matrix |
-| \(\lambda\) | Eigenvalue |
-| \(v\) | Eigenvector |
-| \(\phi_i\) | SHAP feature contribution |
-| \(n\) | Number of sovereign entities |
-| \(d_i\) | Rank difference |
-| \(\alpha\) | Cronbach Alpha coefficient |
-| \(\rho\) | Spearman correlation coefficient |
-| \(\tau\) | Kendall Tau coefficient |
-
----
-
-# CITATION
-
-```bibtex
-@misc{mazumdar2026qssi_methodology,
-  title={QSSI™ Methodological Appendix & Mathematical Formalization Framework},
+@misc{mazumdar2026qssi,
+  title={QSSI/SCI Methodological Appendix},
   author={Mazumdar, B.},
   year={2026},
-  doi={10.5281/zenodo.20127955},
-  url={https://doi.org/10.5281/zenodo.20127955}
+  doi={10.5281/zenodo.20385492},
+  note={Canonical Institutional Research Release}
 }
-```
 
 ---
 
-# LICENSING & RIGHTS
+AUTHOR IDENTIFICATION
 
-© 2026 B. Mazumdar
-
-All rights reserved under applicable sovereign computational systems governance protections, institutional licensing architecture, repository integrity conditions, reproducibility governance standards, computational auditability frameworks, and methodological traceability protections.
-
----
-
-# CANONICAL RELEASE SIGNATURE BLOCK
-
-```yaml
-CANONICAL_RELEASE:
-  STATUS: IMMUTABLE
-  VERSION: v1.0
-  GOVERNANCE_LAYER: ACTIVE
-  TRACEABILITY: VERIFIED
-  REPRODUCIBILITY: VERIFIED
-  AUDITABILITY: VERIFIED
-```
+Identifier| Value
+ORCID| 0009-0007-5615-3558
+Canonical DOI| 10.5281/zenodo.17302169
+Current Edition DOI| 10.5281/zenodo.20385492
 
 ---
 
-# END STATE
+END STATE
 
-```yaml
-APPENDIX_CLASSIFICATION:
-  - METHODOLOGICAL_APPENDIX
-  - MATHEMATICAL_FORMALIZATION_LAYER
-
-STATUS:
-  - REPRODUCIBILITY_ALIGNED
-  - AUDIT_READY
-  - TRACEABLE
-  - EXPLAINABLE
-  - GOVERNANCE_ORIENTED
-
-MATHEMATICAL_SPECIFICATION:
-  STATUS: FORMALIZED
-
-STATISTICAL_METHODS:
-  STATUS: DISCLOSED
-
-COMPUTATIONAL_GOVERNANCE:
-  STATUS: DETERMINISTIC
-
-PEER_REVIEW_ALIGNMENT:
-  STATUS: ENABLED
-
-FRAMEWORK_ALIGNMENT:
-  - INSTITUTIONAL_RESEARCH
-  - COMPUTATIONAL_GOVERNANCE
-  - EXPLAINABLE_ANALYTICS
-  - REPRODUCIBILITY_ORIENTED_SCIENTIFIC_GOVERNANCE
-
-SCIENTIFIC_POSITION:
-  - DETERMINISTIC_GOVERNANCE_FRAMEWORK
-  - EXPLAINABLE_SOVEREIGN_ANALYTICS
-  - VALIDATION_ORIENTED_BENCHMARKING_ARCHITECTURE
-
-INTEGRITY_LAYER:
-  SHA256_TRACEABLE: true
-
-ETHICAL_GOVERNANCE_LAYER:
-  STATUS: ACTIVE
-
-LIMITATIONS_DISCLOSED: true
-
-REPRODUCIBILITY_STATUS:
-  DETERMINISTIC: true
-  TRACEABLE: true
-  AUDITABLE: true
-```
+Status| Value
+Reproducible| DOCUMENTED
+Explainable| ENABLED
+Traceable| ACTIVE
+Audit-Oriented| ENABLED
+Peer-Review Alignment| ACTIVE
+Statistical Disclosure| COMPLETE
+Methodological Transparency| ACTIVE
+Version Governance| VERIFIED
