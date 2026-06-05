@@ -1,377 +1,452 @@
-QSSI 2026 Computational Data Pipeline
+DATA_PIPELINE.md
 
-Quantum-Veil Sovereignty Security Index (QSSI)
+Quantum-Veil Sovereignty Security Index (QSSI) 2026
 
 FAIR+D Canon™ Global Framework
+
+Computational Data Pipeline
+
+---
 
 Current Definitive Edition DOI
 
 10.5281/zenodo.20385492
 
-All Versions DOI
+Canonical DOI (All Versions)
 
 10.5281/zenodo.17302169
 
 Author
 
-Dr. B. Mazumdar, D.Sc. (Hon.), D.Litt. (Hon.)
+Dr. B. Mazumdar
 
 ORCID
 
 https://orcid.org/0009-0007-5615-3558
 
-Founder
+---
 
-FAIR+D Canon™ (India, 2025)
+Overview
 
-Document Classification
+This document describes the complete computational workflow underlying the Quantum-Veil Sovereignty Security Index (QSSI) 2026 Definitive World Edition.
 
-Computational Data Engineering and Reproducible Pipeline Architecture
+The pipeline integrates heterogeneous international datasets through deterministic preprocessing, sovereign-country harmonization, statistical validation, dimensionality assessment, weighting derivation, robustness evaluation, ranking generation, integrity verification, and reproducible archival publication.
 
-Framework Status
-
-Definitive World Edition (2026)
+All procedures are fully deterministic and designed to support transparency, auditability, reproducibility, and long-term preservation.
 
 ---
 
-Abstract
+Pipeline Architecture
 
-This document defines the computational architecture, execution workflow, dataset integration procedures, harmonization mechanisms, statistical transformation stages, and reproducible processing pipeline underlying the Quantum-Veil Sovereignty Security Index (QSSI) 2026 Definitive World Edition.
-
-The pipeline transforms heterogeneous sovereign capability datasets into a unified analytical framework through systematic validation, harmonization, normalization, dimensional assessment, weighting estimation, composite index generation, and ranking construction.
-
-All reported outputs are derived from execution of the definitive QVP GLOBAL SYSTEM™ computational workflow.
-
----
-
-1. Pipeline Overview
-
-The QSSI computational pipeline follows a deterministic and reproducible multi-stage architecture.
-
-Processing Stages
-
-1. Dataset Acquisition
-2. Schema Validation
-3. Country Harmonization
-4. Dataset Intersection
-5. Data Integrity Verification
-6. Statistical Normalization
-7. Correlation Assessment
-8. Principal Component Analysis
-9. Weight Estimation
-10. Composite Score Generation
-11. Ranking Construction
-12. Export Generation
-13. Validation Reporting
-
-The pipeline is designed to ensure reproducibility, transparency, and analytical consistency.
-
----
-
-2. Source Data Architecture
-
-Input Datasets
-
-Dataset| Strategic Dimension| Coverage
-AI_INDEX_2026| Artificial Intelligence Capability| 195
-LEGAL_WGI_2026| Governance and Legal Quality| 213
-RES_INDEX_2026| National Resilience Capacity| 181
-PQC_NCSI_2026| Post-Quantum Cybersecurity Readiness| 124
-
-Input Coverage Summary
-
-- AI Countries = 195
-- LEGAL Countries = 213
-- RES Countries = 181
-- PQC Countries = 124
-
-Total source coverage spans multiple sovereign capability domains.
-
----
-
-3. Dataset Loading Stage
-
-The pipeline loads all source datasets into the computational environment.
-
-Loaded Variables
-
-AI Dataset
-
-- country
-- oecd_ai
-- oxford_ai
-- AI_INDEX
-- rank
-
-LEGAL Dataset
-
-- country
-- rule_of_law
-- regulatory_quality
-- government_effectiveness
-- control_of_corruption
-- LEGAL_WGI_SCORE
-- rank
-
-RES Dataset
-
-- country
-- imf_res
-- ndgain_res
-- global_resilience
-- RES_INDEX
-
-PQC Dataset
-
-- Country
-- PQC
+Source Datasets
+       │
+       ▼
+Data Validation
+       │
+       ▼
+Country Harmonization
+       │
+       ▼
+Coverage Verification
+       │
+       ▼
+Complete-Case Validation
+       │
+       ▼
+Min-Max Normalization
+       │
+       ▼
+Descriptive Statistics
+       │
+       ▼
+Correlation Analysis
+       │
+       ▼
+Distribution Diagnostics
+       │
+       ▼
+KMO Assessment
+       │
+       ▼
+Bartlett's Test
+       │
+       ▼
+Reliability Diagnostics
+       │
+       ▼
+Principal Component Analysis
+       │
+       ▼
+Weight Derivation
+       │
+       ▼
+QSSI Score Construction
+       │
+       ▼
+Ranking Generation
+       │
+       ▼
+Robustness Benchmarking
+       │
+       ▼
+Integrity Verification
+       │
+       ▼
+Audit Artifact Generation
+       │
+       ▼
+Archival Publication
 
 ---
 
-4. Country Harmonization Layer
+Stage 1 — Source Dataset Acquisition
 
-Country identifiers originating from heterogeneous international datasets are standardized through sovereign-state harmonization procedures.
+Canonical Input Datasets
 
-Representative Harmonization Examples
-
-- United States of America → United States
-- United Kingdom of Great Britain and Northern Ireland → United Kingdom
-- Republic of Korea → South Korea
-- China, People's Republic of → China
-- Liechtenstein, Principality of → Liechtenstein
-
-The harmonization layer ensures cross-dataset interoperability and sovereign entity consistency.
+Dimension| Dataset| Coverage
+Artificial Intelligence Capability| AI_INDEX_2026| 195
+Governance and Legal Quality| LEGAL_WGI_2026| 213
+National Resilience Capacity| RES_INDEX_2026| 181
+Post-Quantum Cybersecurity Readiness| PQC_NCSI_2026| 124
 
 ---
 
-5. Intersection Construction
+Stage 2 — Country Harmonization
 
-Countries are retained only when valid observations exist across all strategic dimensions.
+Country names are standardized using deterministic sovereign-name harmonization procedures.
 
-Country Coverage
+Validation operations include:
 
-Dataset| Countries
-AI| 195
-LEGAL| 213
-RES| 181
-PQC| 124
+- Country normalization
+- Canonical naming
+- Duplicate detection
+- Sovereign matching
+- Merge validation
+- Coverage verification
 
-Intersection Results
+Output:
 
-- Initial Common Countries = 87
-- Final Common Countries After Harmonization = 91
-
-Final Analytical Sample
-
-N = 91 Sovereign Entities
-
-The final sample constitutes the definitive analytical universe for QSSI 2026.
+Country Harmonization Status = PASSED
 
 ---
 
-6. Feature Extraction Layer
+Stage 3 — Coverage Verification
 
-The pipeline extracts validated composite indicators.
+Cross-Domain Coverage Matrix
 
-Extracted Variables
-
-Variable| Description
-AI_INDEX| Artificial Intelligence Capability
-LEGAL_WGI_SCORE| Governance and Legal Quality
-RES_INDEX| National Resilience Capacity
-PQC| Post-Quantum Cybersecurity Readiness
-
-These variables form the canonical sovereign capability feature space.
+Dataset| AI| LEGAL| RES| PQC
+AI| 195| 172| 128| 118
+LEGAL| 172| 213| 136| 117
+RES| 128| 136| 181| 94
+PQC| 118| 117| 94| 124
 
 ---
 
-7. Analytical Dataset Generation
+Stage 4 — Final Analytical Universe Construction
 
-Following harmonization and intersection procedures, the definitive analytical dataset is generated.
+Countries possessing complete observations across all four constituent dimensions are retained within the final analytical universe.
 
-Final Dataset Structure
+Final Universe
 
 Metric| Value
-Countries| 91
-Indicators| 4
-Dataset Shape| (91, 5)
+Countries Included| 90
+Countries Excluded| 36
+Final Analytical Sample| 90
+Missing Values| 0
 
-Included Fields
+Dataset Shape:
 
-- country
-- AI_INDEX
-- LEGAL_WGI_SCORE
-- RES_INDEX
-- PQC
+(90, 5)
+
+Variables:
+
+country
+AI_INDEX
+LEGAL_WGI_SCORE
+RES_INDEX
+PQC
 
 ---
 
-8. Statistical Transformation Layer
+Stage 5 — Data Normalization
 
-All indicators are transformed into a common analytical space.
+All constituent variables are transformed to a common scale using Min-Max normalization.
 
-Normalization Procedure
+Normalization Formula:
 
-Min-Max Transformation:
+X_norm = (X - X_min) / (X_max - X_min)
 
-X_norm = (X − X_min) / (X_max − X_min)
-
-Resulting Constraints
+Resulting scale:
 
 0 ≤ X ≤ 1
 
-Normalization preserves ordinal relationships while ensuring scale comparability.
+---
+
+Stage 6 — Descriptive Statistical Analysis
+
+For each variable the pipeline computes:
+
+- Count
+- Mean
+- Standard Deviation
+- Minimum
+- First Quartile
+- Median
+- Third Quartile
+- Maximum
+
+Variables analyzed:
+
+- AI_INDEX
+- LEGAL_WGI_SCORE
+- RES_INDEX
+- PQC
 
 ---
 
-9. Correlation Diagnostics Layer
+Stage 7 — Correlation Analysis
 
-Pairwise relationships among indicators are evaluated using Pearson correlation coefficients.
+Pairwise Pearson correlation coefficients are calculated across all constituent dimensions.
+
+Purpose:
+
+- Dependency assessment
+- Structural consistency validation
+- Multivariate suitability evaluation
+
+Output:
 
 Correlation Matrix
 
-Variable| AI_INDEX| LEGAL_WGI_SCORE| RES_INDEX| PQC
-AI_INDEX| 1.000000| 0.785084| 0.512430| 0.840101
-LEGAL_WGI_SCORE| 0.785084| 1.000000| 0.657575| 0.733118
-RES_INDEX| 0.512430| 0.657575| 1.000000| 0.370282
-PQC| 0.840101| 0.733118| 0.370282| 1.000000
+---
 
-The observed structure supports multidimensional capability aggregation.
+Stage 8 — Distribution Diagnostics
+
+For every constituent dimension the following diagnostics are calculated:
+
+- Skewness
+- Kurtosis
+
+Purpose:
+
+- Distribution assessment
+- Shape diagnostics
+- Outlier sensitivity evaluation
 
 ---
 
-10. Principal Component Layer
+Stage 9 — Sampling Adequacy Assessment
 
-Principal Component Analysis evaluates latent sovereign capability structure.
+Kaiser-Meyer-Olkin Test
 
-Explained Variance
+Result:
 
-Component| Explained Variance
-PC1| 0.810219
-PC2| 0.108636
-PC3| 0.047291
-PC4| 0.033854
+KMO = 0.7355868518654463
+
+Interpretation:
+
+Good Sampling Adequacy
+
+---
+
+Stage 10 — Correlation Structure Validation
+
+Bartlett's Test of Sphericity
+
+Result:
+
+Chi-Square = 249.83379389196242
+P-Value    = 4.450885068086372e-51
+
+Interpretation:
+
+Highly Significant Correlation Structure
+
+---
+
+Stage 11 — Reliability Diagnostics
+
+Cronbach's Alpha
+
+Result:
+
+Alpha = 0.8785685555594794
+
+95% Confidence Interval:
+
+[0.832, 0.915]
+
+Interpretation:
+
+Excellent Internal Consistency
+
+---
+
+Stage 12 — Principal Component Analysis
+
+Principal Component Analysis is applied to identify the dominant latent structure underlying sovereign capability dimensions.
 
 Eigenvalues
 
-Component| Eigenvalue
-PC1| 0.169639
-PC2| 0.022746
-PC3| 0.009901
-PC4| 0.007088
+[0.74561879, 0.17028181, 0.04806765, 0.03603175]
 
-The dominant principal component explains approximately 81.02% of total variance.
+Eigenvalue Sum:
+
+1.000000
 
 ---
 
-11. Weight Estimation Layer
+Stage 13 — PCA Loading Estimation
 
-Independent weighting methodologies are executed for robustness evaluation.
+Variable| PC1| PC2| PC3| PC4
+AI_INDEX| 0.534197| -0.272778| -0.351497| 0.718802
+LEGAL_WGI_SCORE| 0.536276| 0.105185| 0.835959| 0.050156
+RES_INDEX| 0.416053| 0.816887| -0.359197| -0.174850
+PQC| 0.503926| -0.497216| -0.220453| -0.670996
+
+---
+
+Stage 14 — Weight Derivation
+
+PCA-Derived Canonical Weights
+
+Variable| Weight
+AI_INDEX| 0.26837950
+LEGAL_WGI_SCORE| 0.26942446
+RES_INDEX| 0.20902441
+PQC| 0.25317163
+
+Weight Sum:
+
+1.000000
+
+---
+
+Stage 15 — QSSI Score Construction
+
+QSSI scores are generated through weighted aggregation of normalized dimensions using PCA-derived canonical weights.
+
+Framework:
+
+QSSI =
+(AI × w1)
++
+(LEGAL × w2)
++
+(RES × w3)
++
+(PQC × w4)
+
+Output:
+
+QSSI Score
+
+Range:
+
+0 ≤ QSSI ≤ 1
+
+---
+
+Stage 16 — Ranking Generation
+
+Countries are ranked according to final QSSI scores.
+
+Outputs:
+
+- QSSI_RANKINGS_2026.csv
+- Top 20 Sovereign Performers
+- Bottom 20 Sovereign Performers
+
+---
+
+Stage 17 — Robustness Benchmarking
+
+Three independent weighting architectures are compared.
 
 PCA Weights
 
-Indicator| Weight
-AI_INDEX| 0.304565
-LEGAL_WGI_SCORE| 0.262368
-RES_INDEX| 0.104359
-PQC| 0.328708
-
-Entropy Weights
-
-Indicator| Weight
-AI_INDEX| 0.289706
-LEGAL_WGI_SCORE| 0.234342
-RES_INDEX| 0.155217
-PQC| 0.320736
+Canonical framework.
 
 CRITIC Weights
 
-Indicator| Weight
-AI_INDEX| 0.240465
-LEGAL_WGI_SCORE| 0.209189
-RES_INDEX| 0.227763
-PQC| 0.322583
+Objective information-content weighting.
+
+Entropy Weights
+
+Information-diversity weighting.
 
 ---
 
-12. Composite Index Construction
+Stage 18 — Rank Stability Validation
 
-The definitive sovereign capability score is generated through weighted aggregation.
+Spearman Rank Correlations
 
-Canonical Structure
+Equal Weight vs PCA
 
-QSSI = Σ(wᵢXᵢ)
+ρ = 0.9992427048606825
+p = 7.153803172038685e-126
 
-Subject to:
+PCA vs Entropy
 
-- Σwᵢ = 1
-- wᵢ ≥ 0
+ρ = 0.9972671523233321
+p = 2.290322902718063e-101
 
-The aggregation process produces a unified sovereign capability score for each country.
+PCA vs CRITIC
 
----
+ρ = 0.998304317405441
+p = 1.776061187692281e-110
 
-13. Ranking Engine
+Interpretation:
 
-Countries are ranked according to descending QSSI scores.
-
-Top Ranked Sovereign Entities
-
-Rank| Country
-1| Denmark
-2| Singapore
-3| Finland
-4| Germany
-5| Australia
-6| Norway
-7| Canada
-8| United States
-9| France
-10| Ireland
-
-The ranking engine generates the definitive QSSI 2026 ordering.
+Extremely High Ranking Stability
 
 ---
 
-14. Export Layer
+Stage 19 — Integrity Verification
 
-The pipeline automatically generates reproducible analytical outputs.
+Cryptographic integrity validation is performed using SHA256 hashing.
 
-Generated Artifacts
+Generated Registry:
 
-- QSSI_REAL_RESULTS.csv
-- QSSI_REAL_WEIGHTS.csv
-- QSSI_PCA_LOADINGS.csv
-- Validation Outputs
-- Ranking Outputs
-- Correlation Diagnostics
-- PCA Diagnostics
+- QSSI_SHA256_AUDIT.csv
 
-All artifacts are reproducible through re-execution of the pipeline.
+Purpose:
+
+- File authenticity verification
+- Reproducibility validation
+- Archival preservation
 
 ---
 
-15. Computational Reproducibility
+Stage 20 — Audit Artifact Generation
 
-The pipeline is deterministic under identical inputs and configuration.
+Generated Artifacts:
 
-Reproduction requires:
-
-- Identical source datasets
-- Identical harmonization rules
-- Identical preprocessing procedures
-- Identical computational environment
-- Identical weighting architecture
-
-Equivalent execution produces equivalent outputs.
+- QSSI_MASTER_DATASET.csv
+- QSSI_RANKINGS_2026.csv
+- QSSI_FINAL_AUDIT.json
+- QSSI_SHA256_AUDIT.csv
+- QSSI_CRITIC_WEIGHTS.csv
+- QSSI_ENTROPY_WEIGHTS.csv
 
 ---
 
-16. FAIR+D Canon Compliance
+Stage 21 — Computational Environment Documentation
 
-The computational architecture satisfies FAIR+D Canon™ principles.
+Audit Metadata
 
-Compliance Framework
+Variable| Value
+Countries| 90
+Final N| 90
+Missing Values| 0
+Python Version| 3.12.13
+Platform| Linux-6.6.122+-x86_64-with-glibc2.35
+
+---
+
+Stage 22 — FAIR+D Compliance
+
+The computational architecture is aligned with:
 
 - Findable
 - Accessible
@@ -379,15 +454,61 @@ Compliance Framework
 - Reusable
 - Defensible
 
-The pipeline is designed to maximize transparency, traceability, reproducibility, and analytical defensibility.
+principles.
 
 ---
 
-Conclusion
+Stage 23 — Reproducibility Architecture
 
-The QSSI 2026 computational pipeline provides a reproducible, transparent, and institutionally rigorous framework for sovereign capability assessment.
+The framework incorporates:
 
-Through harmonized dataset integration, statistical validation, latent structure analysis, weighting verification, and composite index generation, the pipeline produces policy-grade sovereign capability measurements suitable for comparative international analysis under the FAIR+D Canon™ Global Framework.
+- Deterministic preprocessing
+- Canonical harmonization
+- Complete-case validation
+- Statistical diagnostics
+- Reliability assessment
+- PCA-based weighting
+- Robustness benchmarking
+- Cryptographic integrity verification
+- Audit-trail preservation
+- Computational environment documentation
+- Reproducible publication workflow
+
+---
+
+Pipeline Status
+
+Data Validation:
+
+PASSED
+
+Country Harmonization:
+
+PASSED
+
+Statistical Validation:
+
+PASSED
+
+Reliability Diagnostics:
+
+PASSED
+
+Robustness Validation:
+
+PASSED
+
+Integrity Verification:
+
+PASSED
+
+Reproducibility Validation:
+
+PASSED
+
+Final Analytical Universe:
+
+N = 90 Countries
 
 ---
 
@@ -399,10 +520,16 @@ Quantum-Veil Sovereignty Security Index (QSSI) 2026 Definitive World Edition.
 
 Zenodo.
 
-Current DOI: 10.5281/zenodo.20385492
+Current Definitive Edition DOI:
 
-All Versions DOI: 10.5281/zenodo.17302169
+10.5281/zenodo.20385492
 
-ORCID: 0009-0007-5615-3558
+Canonical DOI (All Versions):
+
+10.5281/zenodo.17302169
+
+ORCID:
+
+https://orcid.org/0009-0007-5615-3558
 
 END OF FILE
