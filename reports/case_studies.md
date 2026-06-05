@@ -1,330 +1,337 @@
-# QSSI 2026: Case Studies and Empirical Validation
+# Case Studies
 
-## FAIR+D Canon™ Global Framework
+## Executive Comparative Assessment
 
-### Current Edition DOI
-10.5281/zenodo.20385492
+The 2026 Quantum Sovereignty and Strategic Preparedness Index (QSSI) identifies substantial cross-national variation in sovereign preparedness across four integrated dimensions: Artificial Intelligence Readiness, Institutional and Regulatory Quality, National Resilience Capacity, and Post-Quantum Cybersecurity Preparedness.
 
-### All Versions DOI
-10.5281/zenodo.17302169
-
-### Author
-Dr. B. Mazumdar
-
-### ORCID
-https://orcid.org/0009-0007-5615-3558
+The comparative evidence indicates that countries achieving consistently high performance across all four dimensions occupy the highest positions in the ranking hierarchy, while countries exhibiting simultaneous deficits across multiple dimensions experience substantially lower preparedness outcomes. The results demonstrate that sovereign preparedness functions as an integrated systems phenomenon rather than a collection of isolated policy domains.
 
 ---
 
-# Executive Summary
+# Leadership Cluster
 
-The Quantum Sovereign Security Index (QSSI) 2026 provides a multidimensional assessment of sovereign digital security capacity across artificial intelligence readiness, institutional quality, resilience capability, and cyber preparedness.
+## Denmark (Rank 1 | QSSI = 0.883898)
 
-The final harmonized dataset integrates four independent international indicators and applies a reproducible PCA-based weighting framework under the FAIR+D Canon™ methodology.
-
----
-
-# Dataset Architecture
-
-| Variable | Coverage |
-|----------|----------|
-| AI_INDEX | 90 |
-| LEGAL_WGI_SCORE | 90 |
-| RES_INDEX | 90 |
-| PQC | 90 |
-
-## Source Coverage
-
-| Source Indicator | Original Coverage |
-|------------------|------------------|
-| AI Readiness | 195 |
-| Legal Governance | 213 |
-| Resilience | 181 |
-| PQC / Cyber Security | 124 |
-
-## Final Harmonized Sample
-
-| Metric | Value |
-|---------|---------|
-| Countries Included | 90 |
-| Countries Excluded Due to PQC Coverage | 36 |
-| Final N | 90 |
-| Variables | 4 |
-| Missing Values | 0 |
+Denmark demonstrates the strongest overall preparedness profile within the 2026 assessment. High institutional effectiveness, advanced digital governance, strong AI readiness, mature cybersecurity capacity, and extensive societal trust contribute to sustained strategic resilience. The Danish profile illustrates how governance quality, technological capability, and long-term policy continuity mutually reinforce sovereign preparedness.
 
 ---
 
-# Data Integrity Verification
+## Norway (Rank 2 | QSSI = 0.854815)
 
-```text
-Dataset Shape
-(90, 5)
-
-Missing Values
-
-country             0
-AI_INDEX            0
-LEGAL_WGI_SCORE     0
-RES_INDEX           0
-PQC                 0
-dtype: int64
-```
-
-No missing observations remained after harmonization and canonical filtering.
+Norway exhibits exceptional performance across governance, resilience, cybersecurity preparedness, and technological modernization. Strong public-sector capacity and strategic investment in digital infrastructure support a highly balanced preparedness architecture. The Norwegian case highlights the role of institutional stability in sustaining adaptive national capability.
 
 ---
 
-# Statistical Diagnostics
+## Singapore (Rank 3 | QSSI = 0.846803)
 
-## Kaiser–Meyer–Olkin Measure
-
-| Statistic | Value |
-|-----------|---------|
-| KMO | 0.735587 |
-
-## Bartlett Test of Sphericity
-
-| Statistic | Value |
-|-----------|---------|
-| Chi-Square | 249.833794 |
-| p-value | 4.450885e-51 |
-
-The diagnostic results support the suitability of dimensionality reduction and latent-factor extraction.
+Singapore combines advanced technological capability with highly effective institutional coordination. Strong regulatory capacity, cybersecurity readiness, and innovation-oriented governance enable rapid technological adaptation while maintaining systemic stability. The Singaporean model illustrates the advantages of coordinated state capacity in emerging technological environments.
 
 ---
 
-# Explained Variance
+## United States (Rank 4 | QSSI = 0.826602)
 
-| Principal Component | Variance Share |
-|--------------------|----------------|
-| PC1 | 0.745619 |
-| PC2 | 0.170282 |
-| PC3 | 0.048068 |
-| PC4 | 0.036032 |
-
-Total Explained Variance = 1.000000
+The United States benefits from extensive innovation ecosystems, advanced research infrastructure, strong AI capability, and substantial cyber capacity. Its preparedness profile reflects the contribution of technological leadership, research intensity, and institutional depth to sovereign strategic capability.
 
 ---
 
-# PCA Loadings
+## Australia (Rank 5 | QSSI = 0.822180)
 
-| Variable | PC1 | PC2 | PC3 | PC4 |
-|----------|----------|----------|----------|----------|
-| AI_INDEX | 0.534197 | -0.272778 | -0.351497 | 0.718802 |
-| LEGAL_WGI_SCORE | 0.536276 | 0.105185 | 0.835959 | 0.050156 |
-| RES_INDEX | 0.416053 | 0.816887 | -0.359197 | -0.174850 |
-| PQC | 0.503926 | -0.497216 | -0.220453 | -0.670996 |
+Australia demonstrates strong performance across governance effectiveness, resilience planning, cybersecurity development, and digital modernization. The country's preparedness architecture reflects effective integration of institutional quality with long-term strategic planning.
 
 ---
 
-# PCA Weights
+## Germany (Rank 6 | QSSI = 0.819843)
 
-| Variable | Weight |
-|-----------|-----------|
-| AI_INDEX | 0.268380 |
-| LEGAL_WGI_SCORE | 0.269424 |
-| RES_INDEX | 0.209024 |
-| PQC | 0.253172 |
+Germany’s performance reflects industrial innovation capacity, strong institutional foundations, cybersecurity maturity, and extensive research infrastructure. The German profile demonstrates the strategic advantages of combining technological modernization with institutional continuity.
 
 ---
 
-# Correlation Structure
+## Finland (Rank 7 | QSSI = 0.814612)
 
-| Variable | AI | LEGAL | RES | PQC |
-|----------|----------|----------|----------|----------|
-| AI_INDEX | 1.000000 | 0.783568 | 0.517254 | 0.840634 |
-| LEGAL_WGI_SCORE | 0.783568 | 1.000000 | 0.664976 | 0.730088 |
-| RES_INDEX | 0.517254 | 0.664976 | 1.000000 | 0.380787 |
-| PQC | 0.840634 | 0.730088 | 0.380787 | 1.000000 |
+Finland exhibits strong preparedness through digital governance excellence, educational capacity, cybersecurity maturity, and societal trust. The Finnish case highlights the importance of coordinated governance systems in supporting national resilience.
 
 ---
 
-# Distribution Diagnostics
+## Ireland (Rank 8 | QSSI = 0.805977)
 
-## AI_INDEX
-
-| Metric | Value |
-|---------|---------|
-| Skewness | -0.395939 |
-| Kurtosis | -0.913245 |
-
-## LEGAL_WGI_SCORE
-
-| Metric | Value |
-|---------|---------|
-| Skewness | 0.183835 |
-| Kurtosis | -0.892587 |
-
-## RES_INDEX
-
-| Metric | Value |
-|---------|---------|
-| Skewness | 0.780795 |
-| Kurtosis | 0.498641 |
-
-## PQC
-
-| Metric | Value |
-|---------|---------|
-| Skewness | -0.443125 |
-| Kurtosis | -1.006802 |
+Ireland’s preparedness profile reflects strong institutional performance, technological integration, innovation capacity, and international connectivity. The case demonstrates how smaller economies can achieve high preparedness through strategic policy alignment and digital transformation.
 
 ---
 
-# Reliability Assessment
+## Canada (Rank 9 | QSSI = 0.804139)
 
-| Metric | Value |
-|---------|---------|
-| Reliability Estimate | 0.878569 |
-| 95% Confidence Interval | [0.832, 0.915] |
+Canada combines institutional robustness, research capacity, resilience planning, and technological readiness. Long-term investments in innovation and governance stability contribute to a balanced preparedness profile.
 
 ---
 
-# Alternative Weighting Validation
+## Luxembourg (Rank 10 | QSSI = 0.798930)
 
-## CRITIC Weights
-
-| Variable | Weight |
-|----------|----------|
-| AI_INDEX | 0.241936 |
-| LEGAL_WGI_SCORE | 0.210281 |
-| RES_INDEX | 0.227146 |
-| PQC | 0.320637 |
-
-## Entropy Weights
-
-| Variable | Weight |
-|----------|----------|
-| AI_INDEX | 0.290727 |
-| LEGAL_WGI_SCORE | 0.234477 |
-| RES_INDEX | 0.155500 |
-| PQC | 0.319295 |
+Luxembourg achieves high preparedness through effective governance, advanced digitalization, strong cybersecurity capability, and targeted technological investment. The case illustrates how strategic specialization can generate strong sovereign preparedness outcomes.
 
 ---
 
-# Rank Robustness
+# Advanced Preparedness Cluster
 
-| Comparison | Spearman ρ | p-value |
-|------------|------------|------------|
-| Equal Weight vs PCA | 0.999243 | 7.153803e-126 |
-| PCA vs Entropy | 0.997267 | 2.290323e-101 |
-| PCA vs CRITIC | 0.998304 | 1.776061e-110 |
+## Sweden (Rank 12 | QSSI = 0.775481)
 
-The ranking structure remains highly stable across alternative weighting methodologies.
+Sweden demonstrates strong institutional performance, cybersecurity capability, technological sophistication, and societal resilience. The country reflects the benefits of sustained investment in innovation and public-sector modernization.
 
 ---
 
-# Country Coverage
+## Japan (Rank 13 | QSSI = 0.769431)
 
-## Included Countries (N = 90)
-
-Albania, Algeria, Angola, Antigua and Barbuda, Argentina, Australia, Austria, Belgium, Bosnia and Herzegovina, Burkina Faso, Burundi, Cambodia, Canada, Chad, Denmark, Finland, France, Germany, Guatemala, Guinea, Haiti, Honduras, Iceland, Iraq, Ireland, Japan, Liberia, Libya, Luxembourg, Mali, Maldives, Myanmar, Nicaragua, Norway, Singapore, Spain, Sweden, Switzerland, Uganda, United Arab Emirates, United Kingdom, United States, Uruguay, Zimbabwe, and additional harmonized sovereign observations included in the final canonical sample.
+Japan combines advanced technological capability with institutional continuity and significant resilience planning. The Japanese profile demonstrates the importance of technological depth within long-term preparedness strategies.
 
 ---
 
-# Top 20 QSSI 2026 Rankings
+## Switzerland (Rank 15 | QSSI = 0.761517)
 
-| Rank | Country | QSSI |
-|-------|---------|---------|
-| 1 | Denmark | 0.883898 |
-| 2 | Norway | 0.854815 |
-| 3 | Singapore | 0.846803 |
-| 4 | United States | 0.826602 |
-| 5 | Australia | 0.822180 |
-| 6 | Germany | 0.819843 |
-| 7 | Finland | 0.814612 |
-| 8 | Ireland | 0.805977 |
-| 9 | Canada | 0.804139 |
-| 10 | Luxembourg | 0.798930 |
-| 11 | France | 0.779162 |
-| 12 | Sweden | 0.775481 |
-| 13 | Japan | 0.769431 |
-| 14 | Belgium | 0.762393 |
-| 15 | Switzerland | 0.761517 |
-| 16 | Austria | 0.755492 |
-| 17 | United Kingdom | 0.749018 |
-| 18 | United Arab Emirates | 0.747201 |
-| 19 | Spain | 0.745928 |
-| 20 | Iceland | 0.728642 |
+Switzerland exhibits strong governance performance, digital capability, regulatory quality, and cybersecurity readiness. The country’s preparedness profile benefits from institutional stability and high levels of administrative effectiveness.
 
 ---
 
-# Bottom 20 QSSI 2026 Rankings
+## United Kingdom (Rank 17 | QSSI = 0.749018)
 
-| Rank | Country | QSSI |
-|-------|---------|---------|
-| 71 | Antigua and Barbuda | 0.351695 |
-| 72 | Bosnia and Herzegovina | 0.342012 |
-| 73 | Maldives | 0.339315 |
-| 74 | Uganda | 0.332203 |
-| 75 | Burkina Faso | 0.315858 |
-| 76 | Cambodia | 0.303576 |
-| 77 | Angola | 0.278110 |
-| 78 | Guatemala | 0.255819 |
-| 79 | Myanmar | 0.247054 |
-| 80 | Chad | 0.239890 |
-| 81 | Honduras | 0.230823 |
-| 82 | Nicaragua | 0.220457 |
-| 83 | Iraq | 0.220278 |
-| 84 | Guinea | 0.219293 |
-| 85 | Libya | 0.213475 |
-| 86 | Zimbabwe | 0.213106 |
-| 87 | Mali | 0.192921 |
-| 88 | Burundi | 0.150303 |
-| 89 | Liberia | 0.141950 |
-| 90 | Haiti | 0.098629 |
+The United Kingdom maintains strong preparedness through advanced research capacity, regulatory institutions, cybersecurity capability, and innovation ecosystems. Performance reflects the strategic value of integrated technological and institutional development.
 
 ---
 
-# Reproducibility Audit
+## United Arab Emirates (Rank 18 | QSSI = 0.747201)
 
-## Computational Environment
-
-| Metric | Value |
-|---------|---------|
-| Final Countries | 90 |
-| Final N | 90 |
-| Missing Values | 0 |
-| Platform | Linux |
-| Python Version | 3.12.13 |
-| Audit Timestamp | 2026-06-05T16:11:24 |
+The United Arab Emirates demonstrates rapid advancement in digital transformation, AI adoption, cybersecurity modernization, and institutional development. The case highlights the role of strategic investment in accelerating preparedness capacity.
 
 ---
 
-# Cryptographic Verification
+## Spain (Rank 19 | QSSI = 0.745928)
 
-| File | SHA256 |
-|--------|--------|
-| AI_INDEX_2026_v1_MC_Canon.csv | 16656947ff8486b896640a00d05deccee086e52358f6614472ad38929af0b776 |
-| LEGAL_WGI_2026_v1_MC_Canon.csv | 13e5310373fc4104b70b0eb410ccb1628099336f21fe705545b472290cc7b4e7 |
-| RES_INDEX_2026_MC_Canon.csv | 4e936fa81a2fa2d491b897313ac136d38af431cb72f55b3adb85006bded88c9d |
-| PQC_NCSI_2026_MC_Canon.csv | a421685fedadd3fb3b0b9ffbdb3822401ea4ab98098853b104f54397631cda8d |
-| QSSI_MASTER_DATASET.csv | 6ac531236999faa3680978cbe09eb8c93e9ebc85e1881f937d257f873b727931 |
-| QSSI_RANKINGS_2026.csv | 56681c6fcc4c89a89982b9e117beedde76f02ef4c1c473bd86079e66542d8215 |
+Spain exhibits balanced performance across governance quality, resilience planning, technological readiness, and cybersecurity development. The country demonstrates the benefits of coordinated modernization strategies.
 
 ---
 
-# Data Sources
+## Iceland (Rank 20 | QSSI = 0.728642)
 
-- Government AI Readiness Index
-- Worldwide Governance Indicators
-- Rule of Law and Institutional Governance Data
-- National Cyber Security and PQC Readiness Data
-- Climate and Resilience Indicators
-- IMF and International Development Statistics
-- Harmonized FAIR+D Canon™ Integration Pipeline
+Iceland’s preparedness profile reflects strong governance capacity, institutional trust, and resilience-oriented development. National preparedness benefits from integrated public-sector capability and strategic planning.
 
 ---
 
-# Citation
+# Emerging Transition Cluster
 
-Mazumdar, B. (2026). *Quantum Sovereign Security Index (QSSI) 2026: Adversarial Testing, Robustness Assessment, and Sovereign Digital Security Measurement Framework*. Zenodo.
+## Poland
 
-Current Edition DOI:
-10.5281/zenodo.20385492
+Poland demonstrates continued progress in institutional modernization, technological development, and cybersecurity capability. The country represents a transition pathway toward higher preparedness through sustained policy reform.
 
-All Versions DOI:
-10.5281/zenodo.17302169
+---
 
-ORCID:
-https://orcid.org/0009-0007-5615-3558
+## Malaysia
+
+Malaysia combines expanding technological capability with ongoing institutional development and digital transformation initiatives. The case illustrates the importance of coordinated modernization strategies within emerging economies.
+
+---
+
+## Chile
+
+Chile exhibits relatively strong institutional performance and growing technological readiness. The country demonstrates how governance quality can support resilience-oriented development.
+
+---
+
+## Portugal
+
+Portugal reflects steady advancement in digital governance, institutional quality, and technological adaptation. Continued modernization contributes to improved preparedness outcomes.
+
+---
+
+## Saudi Arabia
+
+Saudi Arabia demonstrates significant investment in technological transformation, digital infrastructure, and strategic modernization initiatives. The country illustrates the role of large-scale transformation programs in preparedness development.
+
+---
+
+## Czech Republic
+
+The Czech Republic combines institutional stability with growing technological capability and resilience planning. The case reflects gradual advancement toward higher preparedness capacity.
+
+---
+
+# Vulnerability Cluster
+
+## Uganda
+
+Uganda faces challenges across governance effectiveness, technological readiness, and cybersecurity preparedness. Preparedness outcomes remain influenced by structural capacity constraints.
+
+---
+
+## Cambodia
+
+Cambodia experiences limitations in institutional development, digital infrastructure, and resilience capacity. Continued modernization efforts remain important for preparedness improvement.
+
+---
+
+## Angola
+
+Angola faces constraints associated with institutional effectiveness, resilience development, and technological readiness. The case illustrates the cumulative effects of capacity limitations across multiple dimensions.
+
+---
+
+## Guatemala
+
+Guatemala demonstrates uneven performance across preparedness dimensions. Institutional strengthening and technological modernization remain central development priorities.
+
+---
+
+## Myanmar
+
+Myanmar faces significant challenges affecting governance continuity, resilience systems, and technological development. Preparedness outcomes reflect broader structural constraints.
+
+---
+
+## Chad
+
+Chad’s preparedness profile remains constrained by institutional limitations, infrastructure deficits, and limited technological capacity. The case highlights the importance of foundational state capability.
+
+---
+
+## Honduras
+
+Honduras faces persistent challenges in resilience planning, governance effectiveness, and digital preparedness. Structural development remains central to future progress.
+
+---
+
+## Nicaragua
+
+Nicaragua demonstrates relatively low preparedness capacity across multiple dimensions. Institutional development and technological modernization remain key strategic priorities.
+
+---
+
+## Iraq
+
+Iraq faces significant governance and resilience challenges affecting preparedness outcomes. Long-term institutional strengthening remains essential for future advancement.
+
+---
+
+## Guinea
+
+Guinea’s preparedness profile reflects constraints in governance quality, resilience capacity, and technological readiness. Development progress remains linked to institutional improvement.
+
+---
+
+# Critical Preparedness Gap Cluster
+
+## Libya (Rank 85 | QSSI = 0.213475)
+
+Libya exhibits substantial preparedness challenges across governance effectiveness, resilience systems, technological readiness, and cybersecurity development. The case illustrates the consequences of prolonged institutional fragility.
+
+---
+
+## Zimbabwe (Rank 86 | QSSI = 0.213106)
+
+Zimbabwe faces constraints across institutional quality, resilience capacity, and digital readiness. Improvements in governance effectiveness remain central to preparedness enhancement.
+
+---
+
+## Mali (Rank 87 | QSSI = 0.192921)
+
+Mali experiences structural limitations affecting governance, resilience systems, and cybersecurity development. Preparedness outcomes remain linked to foundational institutional capacity.
+
+---
+
+## Burundi (Rank 88 | QSSI = 0.150303)
+
+Burundi faces significant challenges associated with governance effectiveness, digital infrastructure, and resilience planning. The case demonstrates the importance of institutional capacity-building.
+
+---
+
+## Liberia (Rank 89 | QSSI = 0.141950)
+
+Liberia’s preparedness profile reflects constraints in technological readiness, institutional effectiveness, and resilience systems. Sustained development remains necessary for preparedness improvement.
+
+---
+
+## Haiti (Rank 90 | QSSI = 0.098629)
+
+Haiti records the lowest preparedness score in the 2026 assessment. Simultaneous challenges across governance, resilience, technology readiness, and cybersecurity preparedness contribute to the observed outcome. The case illustrates how cumulative institutional and technological constraints can significantly affect sovereign preparedness.
+
+---
+
+# Cross-Case Comparative Analysis
+
+## Institutional Capacity Pattern
+
+Countries occupying the highest positions consistently demonstrate stronger institutional effectiveness, regulatory quality, governance stability, and administrative capability. Institutional quality functions as a foundational enabler of preparedness across all dimensions.
+
+---
+
+## Technological Readiness Pattern
+
+Higher-ranked countries exhibit stronger AI readiness, research ecosystems, digital infrastructure, and innovation capacity. Technological capability contributes directly to adaptive national performance.
+
+---
+
+## Cybersecurity Preparedness Pattern
+
+Post-quantum cybersecurity readiness emerges as a major differentiating factor among countries with otherwise similar institutional and technological characteristics. Cyber preparedness increasingly functions as a strategic determinant of sovereign resilience.
+
+---
+
+## Resilience Capacity Pattern
+
+Countries demonstrating stronger resilience capacity generally exhibit greater adaptability to systemic shocks, environmental challenges, and technological disruptions. Resilience contributes significantly to long-term preparedness stability.
+
+---
+
+# Leadership Archetypes
+
+## Integrated Leaders
+
+Denmark, Norway, Singapore, Australia, Finland, and Canada demonstrate consistently strong performance across all dimensions.
+
+---
+
+## Innovation-Centered Leaders
+
+United States, Japan, Germany, and Ireland derive substantial preparedness advantages from research intensity, innovation ecosystems, and technological capability.
+
+---
+
+## Strategic Transformation Leaders
+
+United Arab Emirates and Saudi Arabia illustrate the potential impact of coordinated modernization initiatives on preparedness outcomes.
+
+---
+
+# Policy Lessons
+
+1. Institutional quality remains a foundational determinant of preparedness performance.
+
+2. Technological capability and governance effectiveness reinforce one another.
+
+3. Cybersecurity modernization increasingly influences national strategic resilience.
+
+4. Balanced development across multiple preparedness dimensions produces stronger outcomes than isolated policy interventions.
+
+5. Long-term policy continuity contributes significantly to sustained preparedness performance.
+
+---
+
+# Strategic Implications
+
+The 2026 assessment indicates that sovereign preparedness is multidimensional, cumulative, and highly dependent upon institutional capacity. Countries achieving sustained performance gains generally combine governance quality, technological readiness, resilience planning, and cybersecurity modernization within an integrated strategic framework.
+
+Preparedness advantages accumulate when investments across these dimensions reinforce one another. Conversely, weaknesses across multiple dimensions generate compounding vulnerabilities that reduce national adaptive capacity.
+
+---
+
+# Concluding Comparative Assessment
+
+The 2026 QSSI results demonstrate that sovereign preparedness is best understood as an integrated system of governance quality, technological capability, resilience capacity, and cybersecurity readiness. Countries occupying leadership positions consistently exhibit balanced performance across these dimensions, while lower-ranked countries generally face simultaneous constraints affecting institutional effectiveness, technological development, resilience planning, and cyber preparedness.
+
+The comparative evidence indicates that long-term preparedness requires coordinated investment across governance systems, technological infrastructure, resilience institutions, and cybersecurity modernization. Countries that successfully integrate these dimensions are better positioned to navigate emerging technological, geopolitical, and systemic risks within an increasingly complex global environment.
+
+---
+
+**Citation Information**
+
+All Versions DOI: 10.5281/zenodo.17302169
+
+Current Edition DOI: 10.5281/zenodo.20385492
+
+ORCID: https://orcid.org/0009-0007-5615-3558
