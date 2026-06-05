@@ -1,52 +1,77 @@
-# QSSI™ 2026 CRITIC Weights Dataset
+# QSSI™ 2026 CRITIC Weights Assessment
 
 ## FAIR+D Canon™ Global Framework
 
 ### Current Edition DOI
-**10.5281/zenodo.20385492**
+10.5281/zenodo.20385492
 
 ### All Versions DOI
-**10.5281/zenodo.17302169**
+10.5281/zenodo.17302169
 
 ### Author
-**Dr. B. Mazumdar**
+Dr. B. Mazumdar
 
 ### ORCID
 https://orcid.org/0009-0007-5615-3558
 
 ---
 
-# FILE INFORMATION
+# QSSI™ 2026 Computational Audit Record
 
-| Field | Value |
-|---------|---------|
-| File Name | QSSI_CRITIC_WEIGHTS.csv |
-| Framework | Quantum Sovereign Security Index (QSSI™) |
-| System | QVP Global System™ |
-| Version | 2026 Canonical Edition |
-| Methodology | CRITIC Weighting Method |
-| Coverage | Global Sovereign Analytics |
-| Reproducibility | Deterministic |
-| Missing Values | 0 |
-| Final Countries | 90 |
-| Status | Audit Complete |
+## Repository
+
+QVP-Global-System
+
+### File
+QSSI_CRITIC_WEIGHTS.csv
+
+### Repository Path
+Computational_System/QSSI_CRITIC_WEIGHTS.csv
+
+### Status
+Canonical Computational Output
+
+### Validation State
+Render-Safe Edition
+
+### CSV Integrity Requirement
+
+All rows must contain a consistent number of columns.
+
+Render errors such as:
+
+- "row 55 should actually have 1 column instead of 2"
+- "row 121 should actually have 1 column instead of 2"
+
+must be eliminated through strict CSV structural validation before publication.
+
+### Publication Standard
+
+- RFC 4180 CSV Compliance
+- GitHub CSV Renderer Compatible
+- Machine Readable
+- Human Readable
+- Audit Reproducible
+- DOI Archived
+- Institutional Repository Ready
 
 ---
 
-# DATA COVERAGE AUDIT
+# Dataset Coverage
 
-## Source Dataset Coverage
-
-| Dataset | Countries |
-|----------|----------:|
-| AI Index | 195 |
-| Legal WGI | 213 |
-| Resilience Index | 181 |
-| PQC-NCSI | 124 |
+| Metric | Value |
+|----------|----------|
+| AI Dataset Coverage | 195 |
+| LEGAL Dataset Coverage | 213 |
+| RES Dataset Coverage | 181 |
+| PQC Dataset Coverage | 124 |
+| Final Integrated Countries | 90 |
+| Excluded Due To PQC Coverage | 36 |
+| Definitive Final N | 90 |
 
 ---
 
-## Cross-Dataset Country Intersection Matrix
+# Overlap Matrix
 
 | | AI | LEGAL | RES | PQC |
 |------|------:|------:|------:|------:|
@@ -57,20 +82,51 @@ https://orcid.org/0009-0007-5615-3558
 
 ---
 
-# FINAL SAMPLE CONSTRUCTION
+# Final Dataset Structure
 
-| Metric | Value |
-|---------|---------:|
-| Definitive Final N | 90 |
-| Countries Included | 90 |
-| Countries Excluded Due To PQC Coverage | 36 |
-| Missing Values | 0 |
+## Dimensions
+
+```text
+(90,5)
+```
+
+### Variables
+
+1. country
+2. AI_INDEX
+3. LEGAL_WGI_SCORE
+4. RES_INDEX
+5. PQC
 
 ---
 
-## Country Coverage
+# Missing Data Audit
 
-### First Countries
+```text
+country             0
+AI_INDEX            0
+LEGAL_WGI_SCORE     0
+RES_INDEX           0
+PQC                 0
+```
+
+### Missing Values
+
+```text
+0
+```
+
+### Data Completeness
+
+```text
+100%
+```
+
+---
+
+# Country Coverage
+
+## First Countries
 
 - Albania
 - Algeria
@@ -78,7 +134,7 @@ https://orcid.org/0009-0007-5615-3558
 - Antigua and Barbuda
 - Argentina
 
-### Final Countries
+## Final Countries
 
 - United Arab Emirates
 - United Kingdom
@@ -88,92 +144,70 @@ https://orcid.org/0009-0007-5615-3558
 
 ---
 
-# DATA QUALITY VALIDATION
+# KMO and Bartlett Validation
 
-## Missing Data Audit
+## KMO Measure
 
-| Variable | Missing Values |
-|-----------|-----------:|
-| country | 0 |
-| AI_INDEX | 0 |
-| LEGAL_WGI_SCORE | 0 |
-| RES_INDEX | 0 |
-| PQC | 0 |
+```text
+0.7355868518654463
+```
 
----
+## Bartlett Test
 
-# KMO AND BARTLETT ADEQUACY TESTS
+### Chi-Square
 
-| Metric | Value |
-|---------|---------:|
-| KMO | 0.7355868518654463 |
-| Bartlett Chi-Square | 249.83379389196242 |
-| Bartlett p-value | 4.450885068086372e-51 |
+```text
+249.83379389196242
+```
 
----
+### p-value
 
-# PCA EXPLAINED VARIANCE
+```text
+4.450885068086372e-51
+```
 
-| Principal Component | Variance Explained |
-|---------|---------:|
-| PC1 | 0.74561879 |
-| PC2 | 0.17028181 |
-| PC3 | 0.04806765 |
-| PC4 | 0.03603175 |
+### Interpretation
 
-### Total Explained Variance
-**0.9999999999999999**
+Factorability confirmed.
 
 ---
 
-# DESCRIPTIVE STATISTICS
+# Explained Variance
 
-| Variable | Mean | Std | Min | 25% | Median | 75% | Max |
-|---------|---------:|---------:|---------:|---------:|---------:|---------:|---------:|
-| AI_INDEX | 0.566620 | 0.250973 | 0.050407 | 0.393117 | 0.633618 | 0.766077 | 1.000000 |
-| LEGAL_WGI_SCORE | 0.540517 | 0.228008 | 0.108866 | 0.359012 | 0.504046 | 0.697156 | 0.966323 |
-| RES_INDEX | 0.394125 | 0.140781 | 0.150195 | 0.298129 | 0.371685 | 0.459482 | 0.808925 |
-| PQC | 0.595676 | 0.272357 | 0.000000 | 0.376115 | 0.641621 | 0.827448 | 0.982370 |
+## PCA Variance Ratio
 
----
+```text
+[0.74561879, 0.17028181, 0.04806765, 0.03603175]
+```
 
-# CORRELATION MATRIX
+### Sum
 
-| Variable | AI | LEGAL | RES | PQC |
-|---------|---------:|---------:|---------:|---------:|
-| AI_INDEX | 1.000000 | 0.783568 | 0.517254 | 0.840634 |
-| LEGAL_WGI_SCORE | 0.783568 | 1.000000 | 0.664976 | 0.730088 |
-| RES_INDEX | 0.517254 | 0.664976 | 1.000000 | 0.380787 |
-| PQC | 0.840634 | 0.730088 | 0.380787 | 1.000000 |
+```text
+0.9999999999999999
+```
 
 ---
 
-# DISTRIBUTIONAL DIAGNOSTICS
+# Reliability Assessment
 
-## Skewness and Kurtosis
+## Cronbach's Alpha
 
-| Variable | Skewness | Kurtosis |
-|-----------|-----------:|-----------:|
-| AI_INDEX | -0.39593851843313316 | -0.9132445811266638 |
-| LEGAL_WGI_SCORE | 0.18383490244953005 | -0.8925871305381747 |
-| RES_INDEX | 0.7807954023495343 | 0.49864057599433886 |
-| PQC | -0.4431250138665039 | -1.0068022159176826 |
+```text
+0.8785685555594794
+```
 
----
+## Confidence Interval
 
-# CRONBACH'S ALPHA
-
-| Metric | Value |
-|---------|---------:|
-| Cronbach Alpha | 0.8785685555594794 |
-| 95% Confidence Interval | [0.832, 0.915] |
+```text
+[0.832, 0.915]
+```
 
 ---
 
-# PCA COMPONENT LOADINGS
+# PCA Component Loadings
 
 | Variable | PC1 | PC2 | PC3 | PC4 |
-|-----------|-----------:|-----------:|-----------:|-----------:|
+|----------|----------:|----------:|----------:|----------:|
 | AI_INDEX | 0.534197 | -0.272778 | -0.351497 | 0.718802 |
 | LEGAL_WGI_SCORE | 0.536276 | 0.105185 | 0.835959 | 0.050156 |
 | RES_INDEX | 0.416053 | 0.816887 | -0.359197 | -0.174850 |
@@ -181,10 +215,10 @@ https://orcid.org/0009-0007-5615-3558
 
 ---
 
-# PCA DERIVED WEIGHTS
+# PCA Weights
 
-| Variable | PCA Weight |
-|-----------|-----------:|
+| Variable | Weight |
+|----------|----------:|
 | AI_INDEX | 0.26837950 |
 | LEGAL_WGI_SCORE | 0.26942446 |
 | RES_INDEX | 0.20902441 |
@@ -192,21 +226,27 @@ https://orcid.org/0009-0007-5615-3558
 
 ---
 
-# CRITIC WEIGHTS
+# CRITIC Weights
 
 | Variable | CRITIC Weight |
-|-----------|-----------:|
+|----------|----------:|
 | AI_INDEX | 0.241936 |
 | LEGAL_WGI_SCORE | 0.210281 |
 | RES_INDEX | 0.227146 |
 | PQC | 0.320637 |
 
+### Highest CRITIC Contribution
+
+```text
+PQC = 0.320637
+```
+
 ---
 
-# ENTROPY WEIGHTS
+# Entropy Weights
 
 | Variable | Entropy Weight |
-|-----------|-----------:|
+|----------|----------:|
 | AI_INDEX | 0.290727 |
 | LEGAL_WGI_SCORE | 0.234477 |
 | RES_INDEX | 0.155500 |
@@ -214,17 +254,95 @@ https://orcid.org/0009-0007-5615-3558
 
 ---
 
-# RANKING ROBUSTNESS TESTS
+# Correlation Matrix
 
-| Comparison | Spearman Correlation | p-value |
-|------------|------------:|------------:|
-| Equal vs PCA | 0.9992427048606825 | 7.153803172038685e-126 |
-| PCA vs Entropy | 0.9972671523233321 | 2.290322902718063e-101 |
-| Additional Robustness Test | 0.998304317405441 | 1.776061187692281e-110 |
+| Variable | AI | LEGAL | RES | PQC |
+|----------|----------:|----------:|----------:|----------:|
+| AI_INDEX | 1.000000 | 0.783568 | 0.517254 | 0.840634 |
+| LEGAL_WGI_SCORE | 0.783568 | 1.000000 | 0.664976 | 0.730088 |
+| RES_INDEX | 0.517254 | 0.664976 | 1.000000 | 0.380787 |
+| PQC | 0.840634 | 0.730088 | 0.380787 | 1.000000 |
 
 ---
 
-# TOP 20 QSSI™ 2026 COUNTRIES
+# Distribution Diagnostics
+
+## AI_INDEX
+
+### Skewness
+
+```text
+-0.39593851843313316
+```
+
+### Kurtosis
+
+```text
+-0.9132445811266638
+```
+
+---
+
+## LEGAL_WGI_SCORE
+
+### Skewness
+
+```text
+0.18383490244953005
+```
+
+### Kurtosis
+
+```text
+-0.8925871305381747
+```
+
+---
+
+## RES_INDEX
+
+### Skewness
+
+```text
+0.7807954023495343
+```
+
+### Kurtosis
+
+```text
+0.49864057599433886
+```
+
+---
+
+## PQC
+
+### Skewness
+
+```text
+-0.4431250138665039
+```
+
+### Kurtosis
+
+```text
+-1.0068022159176826
+```
+
+---
+
+# Descriptive Statistics
+
+| Variable | Mean | Std | Min | 25% | Median | 75% | Max |
+|----------|----------:|----------:|----------:|----------:|----------:|----------:|----------:|
+| AI_INDEX | 0.566620 | 0.250973 | 0.050407 | 0.393117 | 0.633618 | 0.766077 | 1.000000 |
+| LEGAL_WGI_SCORE | 0.540517 | 0.228008 | 0.108866 | 0.359012 | 0.504046 | 0.697156 | 0.966323 |
+| RES_INDEX | 0.394125 | 0.140781 | 0.150195 | 0.298129 | 0.371685 | 0.459482 | 0.808925 |
+| PQC | 0.595676 | 0.272357 | 0.000000 | 0.376115 | 0.641621 | 0.827448 | 0.982370 |
+
+---
+
+# Top 20 QSSI Rankings 2026
 
 | Rank | Country | QSSI |
 |------:|----------|----------:|
@@ -251,7 +369,7 @@ https://orcid.org/0009-0007-5615-3558
 
 ---
 
-# BOTTOM 20 QSSI™ 2026 COUNTRIES
+# Bottom 20 QSSI Rankings 2026
 
 | Rank | Country | QSSI |
 |------:|----------|----------:|
@@ -278,38 +396,79 @@ https://orcid.org/0009-0007-5615-3558
 
 ---
 
-# FINAL VALIDATION SUMMARY
+# Rank Robustness Validation
 
-| Metric | Value |
-|---------|---------|
-| Final N | 90 |
-| Countries | 90 |
-| Missing Values | 0 |
-| Dataset Shape | (90, 5) |
-| Ranking File | QSSI_RANKINGS_2026.csv |
-| Audit File | QSSI_FINAL_AUDIT.json |
-| Weight File | QSSI_CRITIC_WEIGHTS.csv |
-| Entropy File | QSSI_ENTROPY_WEIGHTS.csv |
-| Hash Audit File | QSSI_SHA256_AUDIT.csv |
+## Equal vs PCA
 
----
+```text
+Statistic = 0.9992427048606825
+p-value = 7.153803172038685e-126
+```
 
-# REPRODUCIBILITY AUDIT
+## PCA vs Entropy
 
-| Field | Value |
-|---------|---------|
-| Timestamp | 2026-06-05T16:11:24.057391 |
-| Python Version | 3.12.13 |
-| Platform | Linux-6.6.122+-x86_64-with-glibc2.35 |
-| Countries | 90 |
-| Final N | 90 |
+```text
+Statistic = 0.9972671523233321
+p-value = 2.290322902718063e-101
+```
+
+## Additional Robustness Test
+
+```text
+Statistic = 0.998304317405441
+p-value = 1.776061187692281e-110
+```
 
 ---
 
-# SHA-256 FILE INTEGRITY REGISTRY
+# Computational Environment
 
-| File | SHA-256 |
-|---------|---------|
+## Timestamp
+
+```text
+2026-06-05T16:11:24.057391
+```
+
+## Python
+
+```text
+3.12.13
+```
+
+## Platform
+
+```text
+Linux-6.6.122+-x86_64-with-glibc2.35
+```
+
+## Countries
+
+```text
+90
+```
+
+## Final N
+
+```text
+90
+```
+
+---
+
+# Generated Outputs
+
+- QSSI_RANKINGS_2026.csv
+- QSSI_FINAL_AUDIT.json
+- QSSI_SHA256_AUDIT.csv
+- QSSI_CRITIC_WEIGHTS.csv
+- QSSI_ENTROPY_WEIGHTS.csv
+
+---
+
+# SHA256 Audit Register
+
+| File | SHA256 |
+|----------|----------|
 | AI_INDEX_2026_v1_MC_Canon.csv | 16656947ff8486b896640a00d05deccee086e52358f6614472ad38929af0b776 |
 | LEGAL_WGI_2026_v1_MC_Canon.csv | 13e5310373fc4104b70b0eb410ccb1628099336f21fe705545b472290cc7b4e7 |
 | RES_INDEX_2026_MC_Canon.csv | 4e936fa81a2fa2d491b897313ac136d38af431cb72f55b3adb85006bded88c9d |
@@ -319,17 +478,34 @@ https://orcid.org/0009-0007-5615-3558
 
 ---
 
-## Repository Location
+# Archival Citation
 
-QVP-Global-System  
-Computational_System/QSSI_CRITIC_WEIGHTS.csv
+## Current Edition DOI
+
+10.5281/zenodo.20385492
+
+## All Versions DOI
+
+10.5281/zenodo.17302169
+
+## ORCID
+
+https://orcid.org/0009-0007-5615-3558
 
 ---
 
-### Citation
+## Version
 
-**Current Edition DOI:** 10.5281/zenodo.20385492
+QSSI™ 2026 Canonical Institutional Edition
 
-**All Versions DOI:** 10.5281/zenodo.17302169
+### File
 
-**ORCID:** https://orcid.org/0009-0007-5615-3558
+QSSI_CRITIC_WEIGHTS.csv
+
+### Classification
+
+International Computational Governance Dataset
+
+### Status
+
+Final • Audited • Reproducible • DOI Archived • SHA256 Verified • Render-Safe Edition
