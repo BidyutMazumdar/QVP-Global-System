@@ -1,513 +1,428 @@
-QSSI 2026 Data Provenance Framework
+# QSSI Data Provenance Framework
+## Quantum-Veil Sovereignty Security Index (QSSI™) 2026 Definitive World Edition
+### FAIR+D Canon™ Global Framework
 
-Quantum-Veil Sovereignty Security Index (QSSI)
-
-FAIR+D Canon™ Global Framework
-
-Current Definitive Edition DOI
-
+### Current Edition DOI
 10.5281/zenodo.20385492
 
-All Versions DOI
-
+### All Versions DOI
 10.5281/zenodo.17302169
 
-Author
+### Author
+Dr. B. Mazumdar
 
-Dr. B. Mazumdar, D.Sc. (Hon.), D.Litt. (Hon.)
-
-ORCID
-
+### ORCID
 https://orcid.org/0009-0007-5615-3558
 
-Founder
-
+### Founder
 FAIR+D Canon™ (India, 2025)
 
-Document Classification
+### Framework Classification
+International Sovereign Capability Assessment Framework
 
-Data Provenance, Data Lineage, Traceability, Reproducibility, and Computational Governance Framework
-
-Framework Status
-
-Definitive World Edition (2026)
+### Document Classification
+Official Data Provenance, Auditability, Integrity, Reproducibility, and Traceability Framework
 
 ---
 
-Abstract
+# 1. Executive Summary
 
-This document establishes the formal provenance architecture governing all datasets, transformations, analytical procedures, computational artifacts, validation outputs, and publication records associated with the Quantum-Veil Sovereignty Security Index (QSSI) 2026 Definitive World Edition.
+The Quantum-Veil Sovereignty Security Index (QSSI™) is a multidimensional sovereign capability assessment framework designed to evaluate national preparedness across four analytically distinct but interconnected dimensions:
 
-The framework defines the complete lifecycle of sovereign capability data from source acquisition through validation, harmonization, integration, statistical processing, composite index construction, ranking generation, archival preservation, and DOI-linked publication.
+- Artificial Intelligence Capability
+- Governance and Legal Quality
+- National Resilience Capacity
+- Post-Quantum Cybersecurity Readiness
 
-The objective is to provide an auditable, transparent, reproducible, and institutionally defensible record of data lineage under the FAIR+D Canon™ Global Framework.
+The framework integrates heterogeneous international datasets through a deterministic, reproducible, audit-traceable, and statistically validated methodology consistent with the FAIR+D Canon™ principles.
 
----
-
-1. Purpose
-
-The QSSI Data Provenance Framework establishes a comprehensive governance structure for documenting the origin, transformation, movement, preservation, and utilization of all data assets incorporated into sovereign capability assessment.
-
-The framework supports:
-
-- End-to-end data traceability
-- Computational transparency
-- Source accountability
-- Reproducible analytics
-- Institutional auditability
-- Long-term preservation
-- Methodological defensibility
-- FAIR+D Canon compliance
-
-Every published output within QSSI maintains a documented lineage linking analytical results to originating empirical observations.
+This provenance framework documents the complete lifecycle of data acquisition, validation, harmonization, transformation, integration, statistical verification, reproducibility assessment, integrity auditing, and archival preservation associated with the QSSI™ 2026 Definitive World Edition.
 
 ---
 
-2. Provenance Principles
+# 2. Provenance Objectives
 
-The framework is founded upon five core provenance principles.
+The provenance architecture was established to ensure:
 
-Source Authenticity
-
-All incorporated datasets originate from documented and publicly identifiable institutional sources.
-
-Transformation Transparency
-
-All computational procedures, harmonization operations, validation processes, and analytical transformations are explicitly documented and reproducible.
-
-Traceability
-
-Every intermediate and final output preserves verifiable links to preceding processing stages.
-
-Reproducibility
-
-Independent execution using identical datasets, metadata, and computational procedures should generate equivalent analytical outcomes.
-
-Preservation
-
-Data artifacts, metadata, manifests, validation records, and publication materials are permanently archived through version-controlled repositories and DOI-linked preservation systems.
+- Full data traceability
+- Transparent methodological documentation
+- Reproducible computational workflows
+- Dataset integrity verification
+- Audit-ready evidence preservation
+- Long-term archival sustainability
+- Independent verification capability
+- FAIR+D Canon™ compliance
 
 ---
 
-3. Provenance Architecture
+# 3. Source Data Architecture
 
-The QSSI provenance model adopts a multi-layer architecture.
+## Core Sovereign Capability Components
 
-Source Layer
-
-Original sovereign capability datasets.
-
-Processing Layer
-
-Standardization, harmonization, validation, and integration procedures.
-
-Analytical Layer
-
-Statistical diagnostics, weighting estimation, and composite aggregation.
-
-Publication Layer
-
-Reports, rankings, documentation, repositories, and DOI-linked archives.
-
-Preservation Layer
-
-Metadata, manifests, computational records, and reproducibility artifacts.
-
-Together, these layers establish a continuous and auditable provenance chain.
+| Dimension | Dataset | Coverage |
+|------------|------------|------------|
+| Artificial Intelligence Capability | AI_INDEX_2026_v1_MC_Canon.csv | 195 Countries |
+| Governance and Legal Quality | LEGAL_WGI_2026_v1_MC_Canon.csv | 213 Countries |
+| National Resilience Capacity | RES_INDEX_2026_MC_Canon.csv | 181 Countries |
+| Post-Quantum Cybersecurity Readiness | PQC_NCSI_2026_MC_Canon.csv | 124 Countries |
 
 ---
 
-4. Source Data Architecture
+# 4. Dataset Coverage Audit
 
-QSSI integrates four independent strategic capability dimensions.
+## Coverage Matrix
 
-Dimension| Dataset
-Artificial Intelligence Capability| AI_INDEX_2026
-Governance and Legal Quality| LEGAL_WGI_2026
-National Resilience Capacity| RES_INDEX_2026
-Post-Quantum Cybersecurity Readiness| PQC_NCSI_2026
-
-Each dataset constitutes an independent provenance stream contributing to the integrated sovereign capability framework.
-
----
-
-5. Provenance Lifecycle
-
-Stage 1 — Data Acquisition
-
-Original datasets are acquired from documented institutional sources.
-
-Outputs
-
-- Raw datasets
-- Acquisition records
-- Source references
-- Metadata records
+| Dataset | Coverage |
+|----------|----------|
+| AI | 195 |
+| LEGAL | 213 |
+| RES | 181 |
+| PQC | 124 |
 
 ---
 
-Stage 2 — Source Verification
+## Pairwise Intersection Audit
 
-Datasets undergo integrity and accessibility assessment.
-
-Verification Procedures
-
-- File integrity checks
-- Structural verification
-- Variable inspection
-- Metadata review
-- Coverage assessment
-
-Outputs
-
-- Verified datasets
-- Verification logs
-- Integrity records
+| | AI | LEGAL | RES | PQC |
+|------|------|------|------|------|
+| AI | 195 | 172 | 128 | 118 |
+| LEGAL | 172 | 213 | 136 | 117 |
+| RES | 128 | 136 | 181 | 94 |
+| PQC | 118 | 117 | 94 | 124 |
 
 ---
 
-Stage 3 — Standardization
+## Definitive Harmonized Universe
 
-Heterogeneous source structures are transformed into a common analytical format.
-
-Procedures
-
-- Variable normalization
-- Naming standardization
-- Structural alignment
-- Data-type verification
-
-Outputs
-
-- Standardized datasets
-- Schema records
+| Metric | Value |
+|----------|----------|
+| Definitive Final N | 90 |
+| Countries Included | 90 |
+| Countries Excluded Due To PQC Coverage Constraints | 36 |
+| Missing Values | 0 |
+| Final Dataset Rows | 90 |
+| Final Dataset Columns | 5 |
 
 ---
 
-Stage 4 — Country Harmonization
+# 5. Country Coverage Boundary
 
-Sovereign identifiers are normalized across all source systems.
+## First Country
 
-Examples
+Albania
 
-- United States of America → United States
-- Republic of Korea → South Korea
-- China, People's Republic of → China
-- United Kingdom of Great Britain and Northern Ireland → United Kingdom
-- Liechtenstein, Principality of → Liechtenstein
+## Last Country
 
-Outputs
+Zimbabwe
 
-- Harmonized country identifiers
-- Country matching diagnostics
-- Harmonization logs
+## Country Coverage Range
+
+Albania, Algeria, Angola, Antigua and Barbuda, Argentina, Australia, Austria, Belgium, Bosnia and Herzegovina, Burkina Faso, Burundi, Cambodia, Canada, Chad, Denmark, Finland, France, Germany, Guatemala, Guinea, Haiti, Honduras, Iceland, Iraq, Ireland, Japan, Liberia, Libya, Luxembourg, Mali, Maldives, Myanmar, Nicaragua, Norway, Singapore, Spain, Sweden, Switzerland, Uganda, United Arab Emirates, United Kingdom, United States, Uruguay, Zimbabwe
 
 ---
 
-Stage 5 — Validation
+# 6. Data Quality Validation
 
-Datasets undergo systematic quality assurance evaluation.
+## Missing Value Audit
 
-Validation Procedures
+| Variable | Missing |
+|------------|------------|
+| country | 0 |
+| AI_INDEX | 0 |
+| LEGAL_WGI_SCORE | 0 |
+| RES_INDEX | 0 |
+| PQC | 0 |
 
-- Missing-value assessment
-- Duplicate detection
-- Coverage verification
-- Schema validation
-- Interoperability testing
-- Consistency evaluation
+### Missing Data Status
 
-Outputs
-
-- Validation reports
-- Quality diagnostics
-- Integrity assessments
+Verified Clean Dataset
 
 ---
 
-Stage 6 — Integration
+# 7. Statistical Suitability Assessment
 
-Validated datasets are merged through sovereign intersection procedures.
+## PCA Explained Variance
 
-QSSI 2026 Integration Results
+| Component | Variance |
+|------------|------------|
+| PC1 | 0.74561879 |
+| PC2 | 0.17028181 |
+| PC3 | 0.04806765 |
+| PC4 | 0.03603175 |
 
-Metric| Value
-AI Coverage| 195
-LEGAL Coverage| 213
-RES Coverage| 181
-PQC Coverage| 124
-Final Harmonized Countries| 91
+### Total Explained Variance
 
-Outputs
-
-- Integrated analytical dataset
-- Sovereign intersection records
-- Coverage diagnostics
+0.9999999999999999
 
 ---
 
-Stage 7 — Analytical Processing
+## Kaiser-Meyer-Olkin (KMO)
 
-Integrated datasets undergo computational analysis.
+| Statistic | Value |
+|------------|------------|
+| KMO | 0.7355868518654463 |
 
-Procedures
+Interpretation:
 
-- Min-Max normalization
-- Correlation analysis
-- Principal Component Analysis
-- Entropy weighting
-- CRITIC weighting
-- Composite aggregation
-- Ranking generation
-
-Outputs
-
-- Statistical diagnostics
-- Weight structures
-- Composite scores
-- Sovereign rankings
+Good sampling adequacy for multivariate dimensionality analysis.
 
 ---
 
-Stage 8 — Publication
+## Bartlett's Test of Sphericity
 
-Validated outputs are prepared for dissemination and archival preservation.
+| Statistic | Value |
+|------------|------------|
+| Chi-Square | 249.83379389196242 |
+| P-Value | 4.450885068086372e-51 |
 
-Publication Artifacts
+Interpretation:
 
-- Methodology documents
-- Validation reports
-- Computational records
-- Ranking outputs
-- Reproducibility artifacts
-- DOI-linked archives
-
-Outputs
-
-- Definitive World Edition
-- Repository releases
-- Archival publications
+Highly significant correlation structure suitable for principal component analysis.
 
 ---
 
-6. Data Lineage Framework
+# 8. Reliability Assessment
 
-The formal QSSI lineage structure is defined as:
+## Cronbach's Alpha
 
-Raw Source Data
+| Metric | Value |
+|------------|------------|
+| Alpha | 0.8785685555594794 |
 
-↓
+### 95% Confidence Interval
 
-Verified Source Datasets
+| Lower | Upper |
+|------------|------------|
+| 0.832 | 0.915 |
 
-↓
+Interpretation:
 
-Standardized Datasets
-
-↓
-
-Country Harmonization
-
-↓
-
-Validated Datasets
-
-↓
-
-Integrated Analytical Dataset
-
-↓
-
-Statistical Diagnostics
-
-↓
-
-Weight Estimation
-
-↓
-
-Composite Aggregation
-
-↓
-
-QSSI Scores
-
-↓
-
-Sovereign Rankings
-
-↓
-
-Publication Artifacts
-
-↓
-
-Permanent Archives
-
-Each stage preserves complete traceability to all preceding stages.
+Excellent internal consistency across sovereign capability dimensions.
 
 ---
 
-7. Metadata Architecture
+# 9. Correlation Structure
 
-Each dataset maintains associated metadata records.
-
-Metadata Components
-
-- Dataset identifier
-- Dataset version
-- Source description
-- Coverage information
-- Variable definitions
-- Processing history
-- Validation status
-- Manifest references
-- Publication linkage
-
-Metadata preservation supports interpretability, auditability, and long-term reproducibility.
+| Variable | AI_INDEX | LEGAL_WGI_SCORE | RES_INDEX | PQC |
+|------------|------------|------------|------------|------------|
+| AI_INDEX | 1.000000 | 0.783568 | 0.517254 | 0.840634 |
+| LEGAL_WGI_SCORE | 0.783568 | 1.000000 | 0.664976 | 0.730088 |
+| RES_INDEX | 0.517254 | 0.664976 | 1.000000 | 0.380787 |
+| PQC | 0.840634 | 0.730088 | 0.380787 | 1.000000 |
 
 ---
 
-8. Manifest Framework
+# 10. Distribution Diagnostics
 
-Machine-readable manifests provide automated provenance tracking.
+## AI_INDEX
 
-Manifest Components
+- Skewness: -0.39593851843313316
+- Kurtosis: -0.9132445811266638
 
-- Dataset inventory
-- File references
-- Processing history
-- Validation status
-- Version identifiers
-- Output relationships
-- Preservation records
+## LEGAL_WGI_SCORE
 
-The manifest architecture enables systematic monitoring of data lineage throughout the computational workflow.
+- Skewness: 0.18383490244953005
+- Kurtosis: -0.8925871305381747
 
----
+## RES_INDEX
 
-9. Traceability Model
+- Skewness: 0.7807954023495343
+- Kurtosis: 0.49864057599433886
 
-The provenance framework supports bidirectional traceability.
+## PQC
 
-Output-to-Source Traceability
-
-Analytical outputs can be traced back to originating datasets and variables.
-
-Source-to-Output Traceability
-
-Original observations can be linked to all derived analytical outputs.
-
-Transformation Traceability
-
-All processing operations maintain documented computational histories.
-
-Version Traceability
-
-Changes across framework releases remain identifiable and reconstructable.
-
-This structure supports complete computational reconstruction.
+- Skewness: -0.4431250138665039
+- Kurtosis: -1.0068022159176826
 
 ---
 
-10. Reproducibility Architecture
+# 11. Principal Component Validation
 
-QSSI adopts a reproducibility-first design philosophy.
+## PCA Loadings
 
-Reproducibility Components
-
-- Version-controlled datasets
-- Archived metadata
-- Machine-readable manifests
-- Computational pipeline records
-- Validation documentation
-- DOI-based preservation
-- Repository version control
-
-Independent execution using identical inputs should reproduce equivalent outputs within accepted computational tolerance.
+| Variable | PC1 | PC2 | PC3 | PC4 |
+|------------|------------|------------|------------|------------|
+| AI_INDEX | 0.534197 | -0.272778 | -0.351497 | 0.718802 |
+| LEGAL_WGI_SCORE | 0.536276 | 0.105185 | 0.835959 | 0.050156 |
+| RES_INDEX | 0.416053 | 0.816887 | -0.359197 | -0.174850 |
+| PQC | 0.503926 | -0.497216 | -0.220453 | -0.670996 |
 
 ---
 
-11. Governance and Accountability
+## PCA Canonical Weights
 
-The provenance framework establishes governance responsibilities for:
-
-- Data stewardship
-- Provenance preservation
-- Version management
-- Documentation maintenance
-- Validation oversight
-- Archival integrity
-- Publication consistency
-
-Governance procedures strengthen institutional accountability and analytical reliability.
+| Variable | Weight |
+|------------|------------|
+| AI_INDEX | 0.26837950 |
+| LEGAL_WGI_SCORE | 0.26942446 |
+| RES_INDEX | 0.20902441 |
+| PQC | 0.25317163 |
 
 ---
 
-12. FAIR+D Canon Compliance
+# 12. Alternative Weight Validation
 
-The provenance architecture is fully aligned with FAIR+D Canon™ principles.
+## CRITIC Weights
 
-Findable
-
-Persistent identifiers and archival references support discoverability.
-
-Accessible
-
-Documentation and metadata remain publicly available.
-
-Interoperable
-
-Standardized structures facilitate cross-system integration.
-
-Reusable
-
-Artifacts maintain sufficient documentation for future application.
-
-Defensible
-
-All transformations remain transparent, auditable, and reproducible.
+| Variable | Weight |
+|------------|------------|
+| AI_INDEX | 0.241936 |
+| LEGAL_WGI_SCORE | 0.210281 |
+| RES_INDEX | 0.227146 |
+| PQC | 0.320637 |
 
 ---
 
-13. Institutional Reproducibility Standard
+## Entropy Weights
 
-The provenance framework is designed to satisfy institutional-grade requirements for:
-
-- Computational governance research
-- Sovereign capability analytics
-- Explainable policy intelligence
-- Reproducible benchmarking
-- Longitudinal comparative assessment
-- International methodological transparency
-- Evidence-based decision support
-
-The framework provides a defensible foundation for sovereign capability intelligence under rigorous computational governance standards.
+| Variable | Weight |
+|------------|------------|
+| AI_INDEX | 0.290727 |
+| LEGAL_WGI_SCORE | 0.234477 |
+| RES_INDEX | 0.155500 |
+| PQC | 0.319295 |
 
 ---
 
-Conclusion
+# 13. Robustness Assessment
 
-The QSSI Data Provenance Framework establishes a comprehensive architecture for data lineage, traceability, reproducibility, preservation, and computational accountability across all stages of sovereign capability assessment.
+## Rank Stability Verification
 
-By maintaining transparent provenance pathways from source acquisition through final ranking generation and archival publication, the framework strengthens methodological rigor, institutional transparency, analytical defensibility, and long-term reproducibility under the FAIR+D Canon™ Global Framework.
+| Comparison | Spearman ρ | P-Value |
+|------------|------------|------------|
+| Equal Weight vs PCA | 0.9992427048606825 | 7.153803172038685e-126 |
+| PCA vs Entropy | 0.9972671523233321 | 2.290322902718063e-101 |
+| PCA vs CRITIC | 0.998304317405441 | 1.776061187692281e-110 |
 
-The resulting provenance structure provides a robust foundation for reproducible sovereign analytics, explainable policy intelligence, and institutional-grade computational governance research.
+Interpretation:
+
+Extremely high rank persistence across independent weighting methodologies demonstrates strong methodological robustness and stability.
 
 ---
 
-Citation
+# 14. Sovereign Ranking Audit
+
+## Top 5 Countries
+
+| Rank | Country | QSSI |
+|------------|------------|------------|
+| 1 | Denmark | 0.883898 |
+| 2 | Norway | 0.854815 |
+| 3 | Singapore | 0.846803 |
+| 4 | United States | 0.826602 |
+| 5 | Australia | 0.822180 |
+
+---
+
+## Bottom 5 Countries
+
+| Rank | Country | QSSI |
+|------------|------------|------------|
+| 86 | Zimbabwe | 0.213106 |
+| 87 | Mali | 0.192921 |
+| 88 | Burundi | 0.150303 |
+| 89 | Liberia | 0.141950 |
+| 90 | Haiti | 0.098629 |
+
+---
+
+# 15. Dataset Integrity Verification
+
+## SHA256 Audit Registry
+
+| File | SHA256 |
+|------------|------------|
+| AI_INDEX_2026_v1_MC_Canon.csv | 16656947ff8486b896640a00d05deccee086e52358f6614472ad38929af0b776 |
+| LEGAL_WGI_2026_v1_MC_Canon.csv | 13e5310373fc4104b70b0eb410ccb1628099336f21fe705545b472290cc7b4e7 |
+| RES_INDEX_2026_MC_Canon.csv | 4e936fa81a2fa2d491b897313ac136d38af431cb72f55b3adb85006bded88c9d |
+| PQC_NCSI_2026_MC_Canon.csv | a421685fedadd3fb3b0b9ffbdb3822401ea4ab98098853b104f54397631cda8d |
+| QSSI_MASTER_DATASET.csv | 6ac531236999faa3680978cbe09eb8c93e9ebc85e1881f937d257f873b727931 |
+| QSSI_RANKINGS_2026.csv | 56681c6fcc4c89a89982b9e117beedde76f02ef4c1c473bd86079e66542d8215 |
+
+---
+
+# 16. Generated Audit Artifacts
+
+- QSSI_PAIRWISE_INTERSECTION_AUDIT.csv
+- QSSI_MASTER_DATASET.csv
+- QSSI_RANKINGS_2026.csv
+- QSSI_CRITIC_WEIGHTS.csv
+- QSSI_ENTROPY_WEIGHTS.csv
+- QSSI_SHA256_AUDIT.csv
+- QSSI_FINAL_AUDIT.json
+
+---
+
+# 17. FAIR+D Compliance Framework
+
+- Findable
+- Accessible
+- Interoperable
+- Reusable
+- Defensible
+
+---
+
+# 18. Reproducibility Framework
+
+- Deterministic preprocessing pipeline
+- Canonical country harmonization
+- Explicit intersection constraints
+- Fixed PCA-derived weighting system
+- Complete audit trail preservation
+- Statistical validation documentation
+- SHA256 dataset verification
+- Reproducible computational environment
+- Version-controlled archival publication
+- Cross-method robustness validation
+
+---
+
+# 19. Computational Environment Audit
+
+| Variable | Value |
+|------------|------------|
+| Timestamp | 2026-06-05T16:11:24.057391 |
+| Python Version | 3.12.13 |
+| Platform | Linux-6.6.122+-x86_64-with-glibc2.35 |
+| Countries | 90 |
+| Final N | 90 |
+
+---
+
+# 20. Provenance Governance Principles
+
+The provenance framework is governed by the following principles:
+
+- Transparency
+- Traceability
+- Reproducibility
+- Auditability
+- Documentation Integrity
+- Methodological Consistency
+- Evidence Preservation
+- FAIR+D Compliance
+- Version Governance
+- Long-Term Archival Sustainability
+
+---
+
+# 21. Citation
 
 Mazumdar, B. (2026).
 
-Quantum-Veil Sovereignty Security Index (QSSI) 2026 Definitive World Edition.
+*Quantum-Veil Sovereignty Security Index (QSSI™) 2026 Definitive World Edition.*
 
 Zenodo.
 
-Current DOI: 10.5281/zenodo.20385492
+Current Edition DOI: 10.5281/zenodo.20385492
 
 All Versions DOI: 10.5281/zenodo.17302169
 
-ORCID: 0009-0007-5615-3558
+ORCID: https://orcid.org/0009-0007-5615-3558
 
-END OF FILE
+---
+
+## Version
+
+**QSSI™ 2026 Definitive World Edition — FAIR+D Canon™ Global Framework — Data Provenance, Dataset Traceability, Coverage Validation, Statistical Adequacy Assessment, Reliability Diagnostics, Principal Component Validation, CRITIC Benchmarking, Entropy Weight Validation, Robustness Assessment, SHA256 Integrity Verification, Audit Traceability, Reproducibility Assessment, and Sovereign Capability Analytics Release.**
