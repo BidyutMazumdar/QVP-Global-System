@@ -1,6 +1,6 @@
 # Quantum-Veil Sovereignty Security Index (QSSI)
 
-## 2026 Definitive World Edition — Final Manuscript (FAIR+D Canon Framework)
+## 2026 Definitive World Edition (FAIR+D Canon Framework)
 
 DOI (Current Edition): https://doi.org/10.5281/zenodo.20385492  
 DOI (All Versions): https://doi.org/10.5281/zenodo.17302169  
