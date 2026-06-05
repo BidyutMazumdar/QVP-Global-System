@@ -1,8 +1,5 @@
-# QSSI_CRITIC_WEIGHTS.csv
-
-| Variable | CRITIC_Weight |
-|----------|--------------:|
-| AI_INDEX | 0.241936 |
-| LEGAL_WGI_SCORE | 0.210281 |
-| RES_INDEX | 0.227146 |
-| PQC | 0.320637 |
+Variable,CRITIC_Weight
+AI_INDEX,0.241936
+LEGAL_WGI_SCORE,0.210281
+RES_INDEX,0.227146
+PQC,0.320637
