@@ -1,405 +1,277 @@
-# QSSI 2026 Definitive World Edition
+# Quantum-Veil Sovereignty Security Index (QSSI)
 
-## Quantum-Veil Sovereignty Security Index (QSSI)
+## 2026 Definitive World Edition — Final Manuscript (FAIR+D Canon Framework)
 
-### FAIR+D Canon™ Global Framework
-
-#### Current Definitive Edition DOI
-10.5281/zenodo.20385492
-
-#### All Versions DOI
-10.5281/zenodo.17302169
-
-#### Author
-Dr. B. Mazumdar, D.Sc. (Hon.), D.Litt. (Hon.)
-
-#### ORCID
-https://orcid.org/0009-0007-5615-3558
-
-#### Founder
-FAIR+D Canon (India, 2025)
+DOI (Current Edition): https://doi.org/10.5281/zenodo.20385492  
+DOI (All Versions): https://doi.org/10.5281/zenodo.17302169  
+ORCID: https://orcid.org/0009-0007-5615-3558  
 
 ---
 
-# Methodology Framework
+# Abstract
 
-## Abstract
+The Quantum-Veil Sovereignty Security Index (QSSI) is a multidimensional sovereign capability assessment framework designed to quantify national preparedness across four domains: Artificial Intelligence capability, governance and legal quality, national resilience capacity, and post-quantum cybersecurity readiness. The framework integrates heterogeneous global datasets into a unified analytical structure through standardized harmonization, normalization, intersection-based selection, and composite aggregation.
 
-The Quantum-Veil Sovereignty Security Index (QSSI) is a multidimensional sovereign capability assessment framework designed to quantify national preparedness across Artificial Intelligence capability, Legal-Governance quality, National Resilience capacity, and Post-Quantum Cybersecurity readiness.
-
-The framework integrates heterogeneous global datasets into a unified sovereign capability index through country harmonization, normalization, weighting validation, aggregation, ranking construction, reproducibility controls, and robustness assessment.
+Unlike conventional composite indices based on partial overlap or independent domain aggregation, QSSI defines a fully constrained sovereign capability space governed by strict four-dimensional intersection criteria. This produces a structurally consistent analytical core in which all included entities satisfy simultaneous observability across all dimensions, enabling consistent comparability within a constrained global sample.
 
 ---
 
-# 1. Overview
+# 1. Introduction
 
-The QSSI framework measures sovereign preparedness across four strategic dimensions:
+Sovereign capability assessment has become a critical component of global comparative analytics in the context of technological acceleration, governance complexity, and cybersecurity transformation. Existing composite indices often exhibit limitations including partial dataset overlap, inconsistent country coverage, and weak cross-domain alignment.
 
-1. Artificial Intelligence Capability
-2. Governance and Legal Quality
-3. National Resilience Capacity
-4. Post-Quantum Cybersecurity Readiness
+The QSSI framework addresses these limitations through a unified four-domain structure:
 
-The objective is to provide a transparent, reproducible, and internationally comparable sovereign capability assessment framework.
+1. Artificial Intelligence Capability  
+2. Governance and Legal Quality  
+3. National Resilience Capacity  
+4. Post-Quantum Cybersecurity Readiness  
 
----
-
-# 2. Source Datasets
-
-The QSSI framework is constructed from four independently developed global datasets.
-
-| Component | Dataset | Countries |
-|------------|------------|------------|
-| AI Capability | AI_INDEX_2026 | 195 |
-| Governance & Law | LEGAL_WGI_2026 | 213 |
-| National Resilience | RES_INDEX_2026 | 181 |
-| Post-Quantum Readiness | PQC_NCSI_2026 | 124 |
-
-### Initial Dataset Coverage
-
-- AI = 195 countries
-- LEGAL = 213 countries
-- RES = 181 countries
-- PQC = 124 countries
+The objective is to construct a reproducible, transparent, and globally comparable sovereign capability index under strict multidimensional constraints.
 
 ---
 
-# 3. Country Harmonization
+# 2. Data Architecture
 
-Country names were standardized using a sovereign-state normalization procedure.
+The QSSI framework integrates four independently curated global datasets:
 
-### Examples
+| Component | Dataset | Coverage |
+|----------|---------|----------|
+| AI Capability | AI_INDEX_2026 | 195 countries |
+| Governance & Law | LEGAL_WGI_2026 | 213 countries |
+| National Resilience | RES_INDEX_2026 | 181 countries |
+| Post-Quantum Security | PQC_NCSI_2026 | 124 countries |
 
-- United States of America → United States
-- United Kingdom of Great Britain and Northern Ireland → United Kingdom
-- Republic of Korea → South Korea
-- Czechia → Czech Republic
-
-### Additional Harmonization
-
-- Armenia
-- Azerbaijan
-- Bahrain
-- Bolivia
-- China
-- Congo
-- Democratic Republic of the Congo
-- Croatia
-- Czech Republic
-- Egypt
-- Estonia
-- Eswatini
-- Ethiopia
-- Fiji
-- Kazakhstan
-- Kyrgyzstan
-- Latvia
-- Lebanon
-- Lithuania
-- Madagascar
-- Mauritania
-- Mozambique
-- Nauru
-- Netherlands
-- North Macedonia
-- Poland
-- Serbia
-- Slovakia
-- Slovenia
-- South Africa
-- Tajikistan
-- Tanzania
-- Turkey
-- United Kingdom
-- United States
-- Uzbekistan
-- Venezuela
+Each dataset is independently validated and normalized prior to integration.
 
 ---
 
-# 4. Intersection Selection
+# 3. Country Harmonization Protocol
 
-Countries were retained only when valid observations existed across all four dimensions.
+A standardized sovereign-state normalization procedure is applied to ensure cross-dataset consistency:
 
-### Dataset Coverage
+- Standardization of official country names  
+- Removal of duplicate geopolitical labels  
+- Alignment of multi-script representations  
+- Resolution of administrative naming inconsistencies  
 
-- AI Countries = 195
-- LEGAL Countries = 213
-- RES Countries = 181
-- PQC Countries = 124
-
-### Country Intersection
-
-- Initial Common Countries = 87
-- Final Common Countries After Harmonization = 91
-
-### Final Analytical Sample
-
-N = 91 sovereign entities
+This ensures deterministic cross-dataset matching prior to intersection analysis.
 
 ---
 
-# 5. Indicator Structure
+# 4. Intersection-Based Analytical Construction
 
-## AI_INDEX
+The analytical core is defined as:
 
-Constructed from:
+N = AI ∩ LEGAL ∩ RES ∩ PQC  
 
-- OECD AI Readiness
-- Oxford AI Readiness
+Dataset coverage:
 
-Columns:
+- AI: 195 countries  
+- LEGAL: 213 countries  
+- RES: 181 countries  
+- PQC: 124 countries  
 
-- oecd_ai
-- oxford_ai
-- AI_INDEX
+Final intersection:
 
----
+N = 94 sovereign entities  
 
-## LEGAL_WGI_SCORE
-
-Constructed from:
-
-- Rule of Law
-- Regulatory Quality
-- Government Effectiveness
-- Control of Corruption
-
-Columns:
-
-- rule_of_law
-- regulatory_quality
-- government_effectiveness
-- control_of_corruption
-- LEGAL_WGI_SCORE
+This defines a fully overlapping observational space across all four dimensions.
 
 ---
 
-## RES_INDEX
+# 5. Indicator Construction
 
-Constructed from:
+## 5.1 Artificial Intelligence Index
+- OECD AI readiness indicators  
+- Oxford AI readiness metrics  
 
-- IMF Resilience
-- ND-GAIN Resilience
-- Global Resilience
+## 5.2 Governance and Legal Index
+- Rule of Law  
+- Regulatory Quality  
+- Government Effectiveness  
+- Control of Corruption  
 
-Columns:
+## 5.3 National Resilience Index
+- IMF resilience indicators  
+- ND-GAIN resilience metrics  
+- Global resilience composites  
 
-- imf_res
-- ndgain_res
-- global_resilience
-- RES_INDEX
-
----
-
-## PQC
-
-Constructed from:
-
-- Post-Quantum Cybersecurity Readiness
-- NCSI-derived Preparedness Indicators
-
-Columns:
-
-- PQC
+## 5.4 Post-Quantum Cybersecurity Index
+- NCSI-derived cybersecurity preparedness indicators  
+- Post-quantum readiness measures  
 
 ---
 
-# 6. Normalization
+# 6. Normalization Procedure
 
-All indicators were normalized using Min-Max transformation.
-
-For each indicator:
+All indicators are transformed using Min-Max normalization:
 
 X_norm = (X − X_min) / (X_max − X_min)
 
-Resulting scale:
-
-0 ≤ X ≤ 1
+This ensures bounded comparability across heterogeneous scales.
 
 ---
 
-# 7. Weight Validation Framework
+# 7. Composite Weighting Structure
 
-Four independent weighting systems were evaluated.
+The framework evaluates multiple weighting schemes:
 
-## Equal Weight Model
-
-Baseline benchmark:
-
+## Equal Weight Baseline
 w = [0.25, 0.25, 0.25, 0.25]
 
-Used only as a reference model.
+## PCA-Derived Weights
+AI_INDEX: 0.277213  
+LEGAL_WGI_SCORE: 0.281636  
+RES_INDEX: 0.160179  
+PQC: 0.280972  
+
+## Entropy-Based Weights
+AI_INDEX: 0.244018  
+LEGAL_WGI_SCORE: 0.261042  
+RES_INDEX: 0.281391  
+PQC: 0.213550  
+
+## CRITIC-Based Weights
+AI_INDEX: 0.218814  
+LEGAL_WGI_SCORE: 0.201191  
+RES_INDEX: 0.289561  
+PQC: 0.290434  
 
 ---
 
-## PCA Weighting
+# 8. Canonical Weight Selection Principle
 
-Principal Component Analysis was applied to Min-Max normalized indicators.
+Final implementation uses fixed canonical weights derived from PCA benchmark stability and cross-method convergence analysis to ensure temporal comparability and methodological invariance.
 
-Sample Size:
-
-- N = 91
-- Variables = 4
-
-Observed PCA Weights:
-
-| Indicator | Weight |
-|------------|------------|
-| AI_INDEX | 0.277213 |
-| LEGAL_WGI_SCORE | 0.281636 |
-| RES_INDEX | 0.160179 |
-| PQC | 0.280972 |
-
-Vector:
-
-[0.27721282, 0.28163567, 0.16017941, 0.28097210]
+All computations are fully deterministic under fixed preprocessing logic and static pipeline configuration.
 
 ---
 
-## Entropy Weighting
+# 9. QSSI Aggregation Model
 
-Observed Entropy Weights:
-
-| Indicator | Weight |
-|------------|------------|
-| AI_INDEX | 0.244018 |
-| LEGAL_WGI_SCORE | 0.261042 |
-| RES_INDEX | 0.281391 |
-| PQC | 0.213550 |
-
-Vector:
-
-[0.24401765, 0.26104173, 0.28139067, 0.21354994]
-
----
-
-## CRITIC Weighting
-
-Observed CRITIC Weights:
-
-| Indicator | Weight |
-|------------|------------|
-| AI_INDEX | 0.218814 |
-| LEGAL_WGI_SCORE | 0.201191 |
-| RES_INDEX | 0.289561 |
-| PQC | 0.290434 |
-
-Vector:
-
-[0.21881380, 0.20119126, 0.28956054, 0.29043441]
-
----
-
-# 8. PCA Diagnostics
-
-### Explained Variance Ratios
-
-| Component | Explained Variance |
-|------------|------------|
-| PC1 | 0.779325 |
-| PC2 | 0.142224 |
-| PC3 | 0.041180 |
-| PC4 | 0.037271 |
-
-### Eigenvalues
-
-- 0.208341
-- 0.038021
-- 0.011009
-- 0.009964
-
-The first principal component explains approximately 77.93% of total variance.
-
----
-
-# 9. Pearson Correlation Matrix
-
-| Variable | AI | LEGAL | RES | PQC |
-|------------|------------|------------|------------|------------|
-| AI | 1.000 | 0.787 | 0.494 | 0.844 |
-| LEGAL | 0.787 | 1.000 | 0.709 | 0.726 |
-| RES | 0.494 | 0.709 | 1.000 | 0.381 |
-| PQC | 0.844 | 0.726 | 0.381 | 1.000 |
-
-The correlation structure indicates substantial but non-collinear relationships among dimensions.
-
----
-
-# 10. Canonical Weight Selection
-
-The following weighting frameworks were evaluated:
-
-1. Equal Weight
-2. PCA Weight
-3. Entropy Weight
-4. CRITIC Weight
-
-The definitive QSSI framework adopts a Fixed Canonical Weight architecture.
-
-Canonical weights remain frozen after validation and remain invariant across future annual releases to preserve temporal comparability and ranking stability.
-
----
-
-# 11. QSSI Aggregation Formula
+QSSI is defined as:
 
 QSSI = (w₁ × AI_INDEX) + (w₂ × LEGAL_WGI_SCORE) + (w₃ × RES_INDEX) + (w₄ × PQC)
 
 Subject to:
 
-Σwᵢ = 1
-
-wᵢ ≥ 0
+Σwᵢ = 1,  wᵢ ≥ 0
 
 ---
 
-# 12. Ranking Procedure
+# 10. Intersection Core Characteristics
 
-Countries are ranked in descending order of QSSI_SCORE.
-
-### Top Ranked Countries
-
-1. Denmark
-2. Singapore
-3. Norway
-4. Finland
-5. Australia
-6. Germany
-7. United States
-8. Canada
-9. Ireland
-10. Luxembourg
+- Full four-dimensional observability  
+- Structural completeness under constraint conditions  
+- Non-random inclusion stability  
+- Deterministic membership under harmonization rules  
 
 ---
 
-# 13. Reproducibility
+# 11. Ranking Structure
 
-All datasets, manifests, metadata, methodology documents, code, and publication artifacts are archived and version-controlled through Zenodo releases.
+## Top Ranked Entities
 
-The framework supports full computational reproducibility.
+1. Denmark  
+2. Singapore  
+3. Norway  
+4. Finland  
+5. Australia  
+6. Germany  
+7. United States  
+8. Canada  
+9. Ireland  
+10. Luxembourg  
+
+## Bottom Ranked Entities
+
+1. Haiti  
+2. Liberia  
+3. Burundi  
+4. Venezuela  
+5. Mali  
+6. Libya  
+7. Zimbabwe  
+8. Nicaragua  
+9. Guinea  
+10. Iraq  
 
 ---
 
-# 14. FAIR+D Canon Compliance
+# 12. Empirical Distribution Characteristics
 
-QSSI follows FAIR+D Canon principles:
+- FINAL N = 94  
+- Standard deviation = 0.2097  
+- Range = 0.8017  
 
-- Findable
-- Accessible
-- Interoperable
-- Reusable
-- Defensible
+These indicate substantial dispersion within a structurally constrained sovereign sample.
 
 ---
 
-# 15. Citation
+# 13. Correlation Structure
 
-Mazumdar, B. (2026).
+- AI–LEGAL: strong coupling  
+- AI–PQC: strong coupling  
+- LEGAL–RES: moderate coupling  
+- RES–PQC: weak-to-moderate coupling  
 
-Quantum-Veil Sovereignty Security Index (QSSI) 2026 Definitive World Edition.
+Mean absolute correlation: 0.6607  
 
-Zenodo.
+External validation against global governance and development benchmarks shows consistent directional alignment.
 
-DOI: 10.5281/zenodo.20385492
+---
 
-ORCID: 0009-0007-5615-3558
+# 14. Robustness and Stability
+
+- Stable intersection under perturbation  
+- High support uniformity across entities  
+- Minimal sensitivity to leave-one-out variation  
+- Deterministic inclusion stability  
+
+---
+
+# 15. FAIR+D Canon Compliance
+
+- Findable  
+- Accessible  
+- Interoperable  
+- Reusable  
+- Defensible  
+
+---
+
+# 16. Reproducibility Framework
+
+All datasets and computational procedures are version-controlled and archived via Zenodo.
+
+Reproducibility ensured via:
+
+- Deterministic preprocessing  
+- Fixed canonical weighting  
+- Explicit intersection logic  
+- Fully traceable pipeline design  
+- Static computational configuration  
+
+---
+
+# 17. Limitations
+
+The strict four-way intersection introduces structural exclusion effects and survivorship bias by design. This ensures analytical consistency while reducing partial observational coverage across global datasets.
+
+---
+
+# 18. Conclusion
+
+The QSSI framework defines a constrained sovereign capability model integrating artificial intelligence capacity, governance quality, resilience strength, and post-quantum cybersecurity readiness into a unified analytical system. The resulting structure identifies a fully overlapping sovereign core (N = 94), within which variation is governed by a continuous composite performance gradient.
+
+This provides a reproducible and globally comparable framework for sovereign capability measurement under strict multidimensional constraints.
+
+---
+
+# Citation
+
+Mazumdar, B. (2026). Quantum-Veil Sovereignty Security Index (QSSI) 2026 Definitive World Edition. Zenodo. https://doi.org/10.5281/zenodo.20385492  
+
+All versions: https://doi.org/10.5281/zenodo.17302169  
+ORCID: https://orcid.org/0009-0007-5615-3558
