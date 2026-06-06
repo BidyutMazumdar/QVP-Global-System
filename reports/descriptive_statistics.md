@@ -1,281 +1,364 @@
-Descriptive Statistics Report
+# QSSI™ 2026 Descriptive Statistics, Harmonization, Coverage, Validation and Composite Index Audit
 
-FAIR+D Canon™ Strategic Capability Framework (2026 Edition)
+## Sovereign Intelligence, Security and Stability Index (QSSI™) 2026
 
-Executive Summary
+### FAIR+D Canon Research Series
 
-This report presents the descriptive statistical profile of the FAIR+D Canon™ Strategic Capability Framework, with particular emphasis on the SCI ULTRA 2026 dataset covering 195 countries and territories.
-
-The objective of this analysis is to examine the distributional characteristics, central tendencies, dispersion patterns, confidence structures, capability classifications, and ranking dynamics of the framework before undertaking inferential and validation procedures.
-
-The results demonstrate substantial global variation in strategic capability performance, confidence quality, and resilience-adjusted outcomes, supporting the framework's ability to distinguish among countries across multiple dimensions of technological, governance, and institutional capacity.
-
----
-
-1. Dataset Overview
-
-SCI ULTRA 2026 Dataset
-
-Indicator| Value
-Countries Covered| 195
-Variables| 10
-Missing Values| 0
-Duplicate Records| 0
-
-Variables
-
-The SCI ULTRA dataset contains:
-
-- country
-- SCI_ULTRA_SCORE
-- SCI_ADJUSTED_SCORE
-- confidence_score
-- rank_raw
-- rank_adjusted
-- rank_gap
-- capability_tier
-- confidence_level
-- risk_flag
+**Author:** Dr. B. Mazumdar  
+**ORCID:** 0009-0007-5615-3558  
+**All Versions DOI:** 10.5281/zenodo.17302169  
+**Current Edition DOI:** 10.5281/zenodo.20385492  
 
 ---
 
-2. SCI ULTRA Score Distribution
+# 1. Source Dataset Coverage
 
-Descriptive Statistics
-
-Statistic| SCI_ULTRA_SCORE
-Count| 195
-Mean| 0.4646
-Standard Deviation| 0.1638
-Minimum| 0.1088
-25th Percentile| 0.3557
-Median| 0.4306
-75th Percentile| 0.5555
-Maximum| 0.8754
-
-Interpretation
-
-The average global strategic capability score is 0.4646.
-
-The distribution spans a wide range from 0.1088 to 0.8754, indicating substantial variation in strategic capability across countries.
-
-The median value (0.4306) lies below the mean, suggesting moderate positive skewness driven by a relatively small number of high-performing countries.
+| Dataset | Countries |
+|----------|-----------:|
+| AI_INDEX_2026_v1 | 195 |
+| LEGAL_WGI_2026_v1 | 213 |
+| RES_INDEX_2026 | 181 |
+| PQC_NCSI_2026 | 124 |
 
 ---
 
-3. Confidence-Adjusted Score Distribution
+# 2. Pairwise Dataset Intersection Matrix
 
-SCI_ADJUSTED_SCORE
-
-Statistic| Value
-Count| 195
-Mean| 0.3762
-Standard Deviation| 0.1984
-Minimum| 0.0990
-25th Percentile| 0.2145
-Median| 0.3358
-75th Percentile| 0.5082
-Maximum| 0.8754
-
-Interpretation
-
-Confidence adjustment reduces the overall global mean score from 0.4646 to 0.3762.
-
-This reflects the incorporation of evidence-quality considerations into the strategic capability framework and introduces an additional layer of methodological transparency.
+| Variable | AI | LEGAL | RES | PQC |
+|-----------|----:|------:|----:|----:|
+| AI | 195 | 172 | 128 | 118 |
+| LEGAL | 172 | 213 | 136 | 117 |
+| RES | 128 | 136 | 181 | 94 |
+| PQC | 118 | 117 | 94 | 124 |
 
 ---
 
-4. Confidence Score Distribution
+# 3. Canonical Harmonization Outcome
 
-Confidence Framework Statistics
-
-Statistic| Value
-Count| 195
-Mean| 0.7921
-Standard Deviation| 0.2342
-Minimum| 0.3000
-25th Percentile| 0.6500
-Median| 0.8000
-75th Percentile| 1.0000
-Maximum| 1.0000
-
-Interpretation
-
-The average confidence score is 0.7921, indicating generally strong evidence coverage across the dataset.
-
-The distribution reflects meaningful variation in evidence quality while maintaining a relatively high overall confidence level.
+| Metric | Value |
+|----------|------:|
+| Definitive Final N | 90 |
+| Included Countries | 90 |
+| Excluded Due To PQC Coverage | 36 |
+| Missing Observations | 0 |
 
 ---
 
-5. Confidence-Level Classification
+# 4. Included Countries (N = 90)
 
-Distribution of Confidence Categories
+## First Five Countries
 
-Confidence Level| Countries
-High Confidence| 87
-Moderate Confidence| 59
-Low Confidence| 49
+| Index | Country |
+|-------:|----------|
+| 0 | Albania |
+| 1 | Algeria |
+| 2 | Angola |
+| 3 | Antigua and Barbuda |
+| 4 | Argentina |
 
-Percentage Distribution
+## Last Five Countries
 
-Confidence Level| Percentage
-High Confidence| 44.62%
-Moderate Confidence| 30.26%
-Low Confidence| 25.13%
-
-Interpretation
-
-Nearly half of all countries fall within the High Confidence category, demonstrating substantial data coverage and indicator reliability across the framework.
-
----
-
-6. Capability Tier Distribution
-
-Country Classification
-
-Capability Tier| Countries
-High Capability| 13
-Upper-Mid| 31
-Mid| 49
-Emerging / Fragile| 102
-
-Percentage Distribution
-
-Capability Tier| Percentage
-High Capability| 6.67%
-Upper-Mid| 15.90%
-Mid| 25.13%
-Emerging / Fragile| 52.31%
-
-Interpretation
-
-More than half of the countries are classified as Emerging / Fragile, highlighting persistent global disparities in strategic capability.
-
-Only 6.67% of countries achieve High Capability status, indicating that advanced strategic capacity remains concentrated among a relatively small group of nations.
+| Index | Country |
+|-------:|----------|
+| 85 | United Arab Emirates |
+| 86 | United Kingdom |
+| 87 | United States |
+| 88 | Uruguay |
+| 89 | Zimbabwe |
 
 ---
 
-7. Ranking Dynamics
+# 5. Final Harmonized Dataset Structure
 
-Rank Gap Statistics
-
-Rank Gap = Rank Adjusted − Rank Raw
-
-Statistic| Value
-Mean| 0.00
-Standard Deviation| 36.60
-Minimum| -59
-Median| -7
-Maximum| 126
-
-Interpretation
-
-Confidence adjustment produces meaningful changes in ranking positions.
-
-The large range of rank movements demonstrates that evidence quality can materially influence comparative performance assessments.
+| Property | Value |
+|-----------|--------|
+| Shape | (90, 5) |
+| Variables | country, AI_INDEX, LEGAL_WGI_SCORE, RES_INDEX, PQC |
 
 ---
 
-8. Largest Positive Rank Movements
+# 6. Missing Value Audit
 
-Countries experiencing the greatest upward movement after confidence adjustment include:
+| Variable | Missing Values |
+|------------|---------------:|
+| country | 0 |
+| AI_INDEX | 0 |
+| LEGAL_WGI_SCORE | 0 |
+| RES_INDEX | 0 |
+| PQC | 0 |
 
-Country| Rank Gap
-United States of America| +126
-United Kingdom| +120
-Republic of Korea| +119
-Taiwan| +118
-Republic of Moldova| +98
+### Result
 
-Interpretation
-
-These countries benefit substantially from strong confidence scores and robust evidence quality, leading to improved adjusted rankings.
-
----
-
-9. Largest Negative Rank Movements
-
-Countries experiencing the greatest downward movement after confidence adjustment include:
-
-Country| Rank Gap
-Uganda| -59
-Maldives| -58
-Bosnia and Herzegovina| -57
-Cambodia| -57
-Burkina Faso| -57
-
-Interpretation
-
-These movements indicate lower relative confidence levels despite their raw strategic capability scores.
-
-The adjustment mechanism highlights uncertainty and evidence limitations while preserving score transparency.
+No missing observations remain after harmonization and canonical filtering.
 
 ---
 
-10. Global Leaders
+# 7. PCA Eigenvalue Variance Structure
 
-Top-performing countries in SCI ULTRA 2026 include:
+| Principal Component | Explained Variance |
+|---------------------|-------------------:|
+| PC1 | 0.745619 |
+| PC2 | 0.170282 |
+| PC3 | 0.048068 |
+| PC4 | 0.036032 |
 
-Rank| Country| SCI_ULTRA_SCORE
-1| Denmark| 0.8754
-2| Norway| 0.8550
-3| Singapore| 0.8374
-4| Australia| 0.8090
-5| Germany| 0.8045
+### Total Explained Variance
 
-Interpretation
-
-The highest-ranked countries exhibit strong performance across governance quality, technological capability, resilience, and institutional effectiveness.
-
----
-
-11. Distributional Characteristics
-
-Normality Assessment
-
-Shapiro–Wilk Results
-
-Variable| W| p-value
-SCI_ULTRA_SCORE| 0.9773| 0.0029
-SCI_ADJUSTED_SCORE| 0.9401| <0.001
-confidence_score| 0.8028| <0.001
-
-Interpretation
-
-The distributions depart from strict normality.
-
-Such patterns are common in international benchmarking systems where a limited number of countries occupy the global frontier while a larger number remain in developing capability tiers.
+| Metric | Value |
+|---------|------:|
+| Sum | 1.000000 |
 
 ---
 
-12. Key Descriptive Findings
+# 8. Sampling Adequacy and Factorability Tests
 
-The descriptive analysis reveals several important patterns:
+| Test | Statistic |
+|--------|----------:|
+| Kaiser-Meyer-Olkin (KMO) | 0.735587 |
+| Bartlett Chi-Square | 249.833794 |
+| Bartlett p-value | 4.450885068086372e-51 |
 
-- Strategic capability is unevenly distributed across countries.
-- Confidence-adjusted scores provide additional differentiation beyond raw capability measures.
-- More than half of all countries remain within the Emerging / Fragile capability category.
-- High-confidence observations account for approximately 45% of the global sample.
-- Rank adjustments can be substantial when evidence quality is incorporated.
-- Global capability leadership is concentrated among a relatively small group of countries.
-- The framework demonstrates sufficient dispersion to support meaningful comparative analysis.
+### Interpretation
+
+The KMO statistic indicates acceptable multivariate sampling adequacy. Bartlett's Test rejects the null hypothesis of an identity correlation matrix, confirming suitability for dimensionality reduction and composite index construction.
 
 ---
 
-Conclusion
+# 9. Descriptive Statistics
 
-The descriptive statistical evidence indicates that the FAIR+D Canon™ Strategic Capability Framework successfully captures substantial variation in technological readiness, governance effectiveness, resilience capacity, and confidence-adjusted performance across 195 countries.
+| Statistic | AI_INDEX | LEGAL_WGI_SCORE | RES_INDEX | PQC |
+|------------|---------:|----------------:|----------:|----:|
+| Count | 90.000000 | 90.000000 | 90.000000 | 90.000000 |
+| Mean | 0.566620 | 0.540517 | 0.394125 | 0.595676 |
+| Std. Dev. | 0.250973 | 0.228008 | 0.140781 | 0.272357 |
+| Minimum | 0.050407 | 0.108866 | 0.150195 | 0.000000 |
+| 25% | 0.393117 | 0.359012 | 0.298129 | 0.376115 |
+| Median | 0.633618 | 0.504046 | 0.371685 | 0.641621 |
+| 75% | 0.766077 | 0.697156 | 0.459482 | 0.827448 |
+| Maximum | 1.000000 | 0.966323 | 0.808925 | 0.982370 |
 
-The distributions exhibit strong discriminatory power, meaningful ranking variation, transparent confidence differentiation, and adequate statistical dispersion. These characteristics provide a robust empirical foundation for subsequent validation, regression analysis, comparative assessment, and policy-oriented interpretation.
+---
 
-Overall Assessment:
+# 10. Correlation Matrix
 
-DESCRIPTIVE STATISTICAL QUALITY: HIGH
+| Variable | AI_INDEX | LEGAL_WGI_SCORE | RES_INDEX | PQC |
+|-----------|---------:|----------------:|----------:|----:|
+| AI_INDEX | 1.000000 | 0.783568 | 0.517254 | 0.840634 |
+| LEGAL_WGI_SCORE | 0.783568 | 1.000000 | 0.664976 | 0.730088 |
+| RES_INDEX | 0.517254 | 0.664976 | 1.000000 | 0.380787 |
+| PQC | 0.840634 | 0.730088 | 0.380787 | 1.000000 |
 
-GLOBAL COVERAGE: COMPREHENSIVE
+---
 
-RANK DIFFERENTIATION: STRONG
+# 11. Distribution Diagnostics
 
-CONFIDENCE TRANSPARENCY: HIGH
+| Variable | Skewness | Kurtosis |
+|-----------|---------:|---------:|
+| AI_INDEX | -0.395939 | -0.913245 |
+| LEGAL_WGI_SCORE | 0.183835 | -0.892587 |
+| RES_INDEX | 0.780795 | 0.498641 |
+| PQC | -0.443125 | -1.006802 |
 
-PUBLICATION READINESS: CONFIRMED
+---
+
+# 12. Composite Reliability
+
+| Metric | Estimate | 95% Confidence Interval |
+|---------|---------:|------------------------|
+| Reliability Coefficient | 0.878569 | [0.832, 0.915] |
+
+---
+
+# 13. PCA Component Loadings
+
+| Variable | PC1 | PC2 | PC3 | PC4 |
+|-----------|----------:|----------:|----------:|----------:|
+| AI_INDEX | 0.534197 | -0.272778 | -0.351497 | 0.718802 |
+| LEGAL_WGI_SCORE | 0.536276 | 0.105185 | 0.835959 | 0.050156 |
+| RES_INDEX | 0.416053 | 0.816887 | -0.359197 | -0.174850 |
+| PQC | 0.503926 | -0.497216 | -0.220453 | -0.670996 |
+
+---
+
+# 14. PCA-Derived Composite Weights
+
+| Variable | Weight |
+|-----------|-------:|
+| AI_INDEX | 0.268380 |
+| LEGAL_WGI_SCORE | 0.269424 |
+| RES_INDEX | 0.209024 |
+| PQC | 0.253172 |
+
+---
+
+# 15. CRITIC Objective Weights
+
+| Variable | CRITIC Weight |
+|-----------|--------------:|
+| AI_INDEX | 0.241936 |
+| LEGAL_WGI_SCORE | 0.210281 |
+| RES_INDEX | 0.227146 |
+| PQC | 0.320637 |
+
+---
+
+# 16. Entropy Objective Weights
+
+| Variable | Entropy Weight |
+|-----------|---------------:|
+| AI_INDEX | 0.290727 |
+| LEGAL_WGI_SCORE | 0.234477 |
+| RES_INDEX | 0.155500 |
+| PQC | 0.319295 |
+
+---
+
+# 17. Ranking Robustness Assessment
+
+| Comparison | Spearman Correlation | p-value |
+|------------|--------------------:|---------:|
+| Equal Weight vs PCA | 0.999243 | 7.153803172038685e-126 |
+| PCA vs Entropy | 0.997267 | 2.290322902718063e-101 |
+| Additional Robustness Check | 0.998304 | 1.776061187692281e-110 |
+
+### Interpretation
+
+The exceptionally high rank-order correlations demonstrate strong methodological robustness and ranking stability across alternative weighting frameworks.
+
+---
+
+# 18. Top 20 Sovereign QSSI™ Rankings (2026)
+
+| Rank | Country | QSSI |
+|------:|----------|------:|
+| 1 | Denmark | 0.883898 |
+| 2 | Norway | 0.854815 |
+| 3 | Singapore | 0.846803 |
+| 4 | United States | 0.826602 |
+| 5 | Australia | 0.822180 |
+| 6 | Germany | 0.819843 |
+| 7 | Finland | 0.814612 |
+| 8 | Ireland | 0.805977 |
+| 9 | Canada | 0.804139 |
+| 10 | Luxembourg | 0.798930 |
+| 11 | France | 0.779162 |
+| 12 | Sweden | 0.775481 |
+| 13 | Japan | 0.769431 |
+| 14 | Belgium | 0.762393 |
+| 15 | Switzerland | 0.761517 |
+| 16 | Austria | 0.755492 |
+| 17 | United Kingdom | 0.749018 |
+| 18 | United Arab Emirates | 0.747201 |
+| 19 | Spain | 0.745928 |
+| 20 | Iceland | 0.728642 |
+
+---
+
+# 19. Bottom 20 Sovereign QSSI™ Rankings (2026)
+
+| Rank | Country | QSSI |
+|------:|----------|------:|
+| 71 | Antigua and Barbuda | 0.351695 |
+| 72 | Bosnia and Herzegovina | 0.342012 |
+| 73 | Maldives | 0.339315 |
+| 74 | Uganda | 0.332203 |
+| 75 | Burkina Faso | 0.315858 |
+| 76 | Cambodia | 0.303576 |
+| 77 | Angola | 0.278110 |
+| 78 | Guatemala | 0.255819 |
+| 79 | Myanmar | 0.247054 |
+| 80 | Chad | 0.239890 |
+| 81 | Honduras | 0.230823 |
+| 82 | Nicaragua | 0.220457 |
+| 83 | Iraq | 0.220278 |
+| 84 | Guinea | 0.219293 |
+| 85 | Libya | 0.213475 |
+| 86 | Zimbabwe | 0.213106 |
+| 87 | Mali | 0.192921 |
+| 88 | Burundi | 0.150303 |
+| 89 | Liberia | 0.141950 |
+| 90 | Haiti | 0.098629 |
+
+---
+
+# 20. Final Top 10
+
+| Rank | Country | QSSI |
+|------:|----------|------:|
+| 1 | Denmark | 0.883898 |
+| 2 | Norway | 0.854815 |
+| 3 | Singapore | 0.846803 |
+| 4 | United States | 0.826602 |
+| 5 | Australia | 0.822180 |
+| 6 | Germany | 0.819843 |
+| 7 | Finland | 0.814612 |
+| 8 | Ireland | 0.805977 |
+| 9 | Canada | 0.804139 |
+| 10 | Luxembourg | 0.798930 |
+
+---
+
+# 21. Final Bottom 10
+
+| Rank | Country | QSSI |
+|------:|----------|------:|
+| 81 | Honduras | 0.230823 |
+| 82 | Nicaragua | 0.220457 |
+| 83 | Iraq | 0.220278 |
+| 84 | Guinea | 0.219293 |
+| 85 | Libya | 0.213475 |
+| 86 | Zimbabwe | 0.213106 |
+| 87 | Mali | 0.192921 |
+| 88 | Burundi | 0.150303 |
+| 89 | Liberia | 0.141950 |
+| 90 | Haiti | 0.098629 |
+
+---
+
+# 22. Reproducibility and Computational Environment
+
+| Attribute | Value |
+|------------|--------|
+| Timestamp | 2026-06-05T16:11:24.057391 |
+| Python Version | 3.12.13 |
+| Platform | Linux-6.6.122+-x86_64-with-glibc2.35 |
+| Final Countries | 90 |
+| Final N | 90 |
+
+---
+
+# 23. SHA-256 Integrity Audit
+
+| File | SHA-256 |
+|--------|----------|
+| AI_INDEX_2026_v1_MC_Canon.csv | 16656947ff8486b896640a00d05deccee086e52358f6614472ad38929af0b776 |
+| LEGAL_WGI_2026_v1_MC_Canon.csv | 13e5310373fc4104b70b0eb410ccb1628099336f21fe705545b472290cc7b4e7 |
+| RES_INDEX_2026_MC_Canon.csv | 4e936fa81a2fa2d491b897313ac136d38af431cb72f55b3adb85006bded88c9d |
+| PQC_NCSI_2026_MC_Canon.csv | a421685fedadd3fb3b0b9ffbdb3822401ea4ab98098853b104f54397631cda8d |
+| QSSI_MASTER_DATASET.csv | 6ac531236999faa3680978cbe09eb8c93e9ebc85e1881f937d257f873b727931 |
+| QSSI_RANKINGS_2026.csv | 56681c6fcc4c89a89982b9e117beedde76f02ef4c1c473bd86079e66542d8215 |
+
+---
+
+# 24. Generated Outputs
+
+| Output File |
+|-------------|
+| QSSI_RANKINGS_2026.csv |
+| QSSI_FINAL_AUDIT.json |
+| QSSI_SHA256_AUDIT.csv |
+| QSSI_CRITIC_WEIGHTS.csv |
+| QSSI_ENTROPY_WEIGHTS.csv |
+
+---
+
+# Citation
+
+Mazumdar, B. (2026). *QSSI™ 2026: Sovereign Intelligence, Security and Stability Index (QSSI™) Framework, Datasets, Harmonization Protocols, Composite Index Construction, Validation and International Rankings*. FAIR+D Canon Research Series.
+
+**ORCID:** 0009-0007-5615-3558  
+**Current Edition DOI:** 10.5281/zenodo.20385492  
+**All Versions DOI:** 10.5281/zenodo.17302169
+
+---
+End of Report
