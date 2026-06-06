@@ -1,603 +1,488 @@
-# Comparative Analysis
+# Comparative Analysis Report
+## Quantum Sovereign State Index (QSSI) 2026
+### Canonical Harmonized International Dataset
 
-## FAIR+D Canon™ Composite Indices (2026 Edition)
-
-### Current Edition DOI
-10.5281/zenodo.20385492
-
-### All Versions DOI
-10.5281/zenodo.17302169
-
-### Author
-Dr. B. Mazumdar
-
-### ORCID
-https://orcid.org/0009-0007-5615-3558
+**Author:** Dr. B. Mazumdar  
+**ORCID:** https://orcid.org/0009-0007-5615-3558  
+**Current Edition DOI:** 10.5281/zenodo.20385492  
+**Canonical DOI (All Versions):** 10.5281/zenodo.17302169
 
 ---
 
-## Abstract
+# 1. Dataset Harmonization Summary
 
-This report presents a comprehensive comparative analysis of the FAIR+D Canon™ index family, including SCI 2026, SCI+ 2026, SCI ULTRA 2026, AI Index 2026, LEGAL-WGI 2026, RES Index 2026, and PQC-NCSI 2026.
+## Source Coverage
 
-The analysis evaluates coverage, dimensionality, statistical characteristics, correlation structures, governance–technology relationships, confidence-adjusted ranking mechanisms, robustness evidence, and comparative performance across multiple international capability assessment frameworks.
-
-The objective is to provide a transparent evidence base for understanding the methodological evolution of the FAIR+D Canon™ architecture and the empirical characteristics of its constituent indices.
-
----
-
-## Executive Summary
-
-The FAIR+D Canon™ index family represents a progressively integrated framework for evaluating national capability across technological readiness, governance quality, resilience capacity, cybersecurity preparedness, and confidence-adjusted performance assessment.
-
-The analytical architecture spans multiple datasets and progressively expands conceptual coverage from single-domain measurement to multidimensional capability evaluation.
+| Variable | Raw Coverage |
+|----------|-------------|
+| AI_INDEX | 195 |
+| LEGAL_WGI_SCORE | 213 |
+| RES_INDEX | 181 |
+| PQC | 124 |
 
 ---
 
-## Dataset Coverage Comparison
+## Pairwise Coverage Matrix
 
-### Coverage and Dimensionality
-
-| Index | Countries | Variables |
-|----------|----------:|----------:|
-| SCI 2026 | 167 | 11 |
-| SCI+ 2026 | 112 | 12 |
-| AI Index 2026 | 195 | 5 |
-| LEGAL-WGI 2026 | 213 | 7 |
-| PQC-NCSI 2026 | 124 | 2 |
-| RES Index 2026 | 181 | 5 |
-| SCI ULTRA 2026 | 195 | 10 |
-
-### Data Integrity Assessment
-
-| Dataset | Missing Values | Duplicate Records |
-|----------|----------:|----------:|
-| SCI 2026 | 0 | 0 |
-| SCI+ 2026 | 0 | 0 |
-| AI Index 2026 | 0 | 0 |
-| LEGAL-WGI 2026 | 0 | 0 |
-| PQC-NCSI 2026 | 0 | 0 |
-| RES Index 2026 | 0 | 0 |
-| SCI ULTRA 2026 | 0 | 0 |
-
-### Key Observations
-
-- LEGAL-WGI provides the broadest country coverage.
-- AI Index and SCI ULTRA achieve near-global analytical coverage.
-- SCI+ coverage is constrained by PQC data availability.
-- All datasets demonstrate complete structural integrity.
-- No dataset contains missing observations.
-- No dataset contains duplicate records.
-- All frameworks satisfy baseline reproducibility requirements.
+| Variable | AI | LEGAL | RES | PQC |
+|----------|----|--------|-----|-----|
+| AI | 195 | 172 | 128 | 118 |
+| LEGAL | 172 | 213 | 136 | 117 |
+| RES | 128 | 136 | 181 | 94 |
+| PQC | 118 | 117 | 94 | 124 |
 
 ---
 
-## Conceptual Framework Comparison
-
-### AI Index 2026
-
-#### Components
-
-- OECD AI Readiness
-- Oxford AI Readiness
-
-#### Purpose
-
-Measures national artificial intelligence preparedness and technological capability.
-
-#### Strengths
-
-- Direct assessment of AI ecosystems.
-- High international comparability.
-- Strong technological focus.
-
-#### Limitations
-
-- Does not directly evaluate governance quality.
-- Does not include resilience capacity.
-- Does not include cybersecurity readiness.
-
----
-
-### LEGAL-WGI 2026
-
-#### Components
-
-- Rule of Law
-- Regulatory Quality
-- Government Effectiveness
-- Control of Corruption
-
-#### Purpose
-
-Measures institutional quality and governance effectiveness.
-
-#### Strengths
-
-- Captures legal and regulatory foundations.
-- Strong institutional coverage.
-- Broad country availability.
-
-#### Limitations
-
-- Does not directly measure technological capability.
-- Does not capture AI readiness.
-
----
-
-### RES Index 2026
-
-#### Components
-
-- IMF Resilience
-- ND-GAIN Resilience
-- Global Resilience Indicators
-
-#### Purpose
-
-Measures adaptive capacity and systemic resilience.
-
-#### Strengths
-
-- Captures resilience and recovery capability.
-- Evaluates adaptive performance.
-
-#### Limitations
-
-- Limited direct measurement of technological readiness.
-- Limited governance-specific assessment.
-
----
-
-### PQC-NCSI 2026
-
-#### Purpose
-
-Measures post-quantum cybersecurity preparedness.
-
-#### Strengths
-
-- Future-oriented security perspective.
-- Cybersecurity readiness assessment.
-- Strategic technological relevance.
-
-#### Limitations
-
-- Limited country coverage.
-- Dependent on cybersecurity reporting availability.
-
----
-
-### SCI 2026
-
-#### Formula
-
-SCI = 0.50 × AI_INDEX + 0.50 × LEGAL_WGI_SCORE
-
-#### Purpose
-
-Balances technological capability and governance quality.
-
-#### Strengths
-
-- Integrative framework.
-- Transparent structure.
-- High interpretability.
-
----
-
-### SCI+ 2026
-
-#### Purpose
-
-Extends SCI through cybersecurity preparedness integration.
-
-#### Components
-
-- AI Capability
-- Governance Quality
-- PQC Readiness
-
-#### Strengths
-
-- Adds future-security assessment.
-- Expands capability measurement.
-
----
-
-### SCI ULTRA 2026
-
-#### Purpose
-
-Confidence-adjusted global capability assessment framework.
-
-#### Components
-
-- SCI Foundation
-- Resilience Layer
-- Confidence Weighting
-- Rank Adjustment Mechanism
-- Robustness Validation
-
-SCI ULTRA represents the most comprehensive framework within the FAIR+D Canon™ analytical architecture.
-
----
-
-## Statistical Comparison
-
-### Mean Performance Comparison
-
-| Dataset | Mean Score |
-|----------|----------:|
-| AI Index | 0.4409 |
-| LEGAL-WGI | 0.4967 |
-| SCI | 0.4742 |
-| SCI+ | 0.5534 |
-| RES Index | 0.3697 |
-| SCI ULTRA | 0.4646 |
-
-### Interpretation
-
-SCI performance lies between AI readiness and governance performance, confirming its integrative structure.
-
-SCI+ demonstrates higher average values due to the inclusion of countries possessing measurable cybersecurity readiness characteristics.
-
-SCI ULTRA preserves comparability while introducing confidence-adjusted evaluation mechanisms.
-
----
-
-## Correlation Analysis
-
-### SCI 2026 Correlation Highlights
-
-| Relationship | Correlation |
-|----------|----------:|
-| SCI vs AI Index | 0.935 |
-| SCI vs LEGAL-WGI | 0.902 |
-| AI Index vs LEGAL-WGI | 0.690 |
-
-### Interpretation
-
-SCI demonstrates strong relationships with both technological readiness and governance quality.
-
-The moderate AI–Governance relationship indicates that the two dimensions contribute distinct information rather than measuring the same underlying phenomenon.
-
----
-
-## Governance–Technology Relationship
-
-### Ordinary Least Squares Regression
-
-#### Dependent Variable
-
-LEGAL_WGI_SCORE
-
-#### Independent Variable
-
-AI_INDEX
-
-### Results
+# 2. Canonical Filtering Results
 
 | Metric | Value |
-|----------|----------:|
-| R² | 0.476 |
-| Adjusted R² | 0.473 |
-| β (AI_INDEX) | 0.5695 |
-| F Statistic | 149.9 |
-| p-value | <0.001 |
-
-### Interpretation
-
-Approximately 47.6% of governance variation is statistically associated with variation in AI readiness.
-
-Countries exhibiting stronger AI ecosystems tend to demonstrate stronger governance performance.
-
----
-
-## SCI Framework Validation
-
-### Pearson Correlation
-
-| Relationship | Correlation |
-|----------|----------:|
-| SCI vs LEGAL-WGI | 0.9023 |
-
-### Interpretation
-
-The strong positive relationship confirms substantial alignment between technological and governance dimensions while maintaining meaningful conceptual differentiation.
-
----
-
-## SCI ULTRA 2026 Performance
-
-### Coverage
-
-| Metric | Value |
-|----------|----------:|
-| Countries | 195 |
-| Variables | 10 |
+|----------|----------|
+| Countries Before Filtering | 195 |
+| Countries Retained | 90 |
+| Countries Excluded Due to PQC Coverage Constraints | 36 |
+| Final Harmonized Sample (N) | 90 |
+| Variables | 5 |
 | Missing Values | 0 |
-| Duplicate Records | 0 |
 
-### Summary Statistics
+---
+
+## Final Harmonized Dataset Shape
+
+```text
+(90, 5)
+```
+
+### Missing Value Audit
+
+```text
+country              0
+AI_INDEX             0
+LEGAL_WGI_SCORE      0
+RES_INDEX            0
+PQC                  0
+dtype: int64
+```
+
+### Data Integrity Verification
+
+No missing observations remain after harmonization and canonical filtering.
+
+---
+
+# 3. Included Countries (N = 90)
+
+```csv
+Albania
+Algeria
+Angola
+Antigua and Barbuda
+Argentina
+Australia
+Austria
+Belgium
+Bosnia and Herzegovina
+Brazil
+Bulgaria
+Burkina Faso
+Burundi
+Cambodia
+Canada
+Chile
+China
+Colombia
+Croatia
+Cyprus
+Czech Republic
+Denmark
+Dominican Republic
+Ecuador
+Egypt
+Estonia
+Finland
+France
+Georgia
+Germany
+Ghana
+Greece
+Guatemala
+Guinea
+Haiti
+Honduras
+Hungary
+Iceland
+India
+Indonesia
+Iraq
+Ireland
+Israel
+Italy
+Japan
+Jordan
+Kazakhstan
+Kenya
+Kuwait
+Latvia
+Liberia
+Lithuania
+Luxembourg
+Maldives
+Mali
+Malta
+Mexico
+Mongolia
+Morocco
+Myanmar
+Nepal
+Nicaragua
+Nigeria
+Norway
+Oman
+Pakistan
+Panama
+Paraguay
+Peru
+Philippines
+Poland
+Portugal
+Qatar
+Romania
+Saudi Arabia
+Singapore
+Slovakia
+Slovenia
+South Africa
+Spain
+Sweden
+Switzerland
+Thailand
+Tunisia
+Uganda
+United Arab Emirates
+United Kingdom
+United States
+Uruguay
+Zimbabwe
+```
+
+---
+
+# 4. Statistical Adequacy Assessment
+
+## Kaiser–Meyer–Olkin Measure
+
+| Metric | Value |
+|----------|----------|
+| KMO | 0.7355868518654463 |
+
+Interpretation: Good sampling adequacy for latent factor extraction and dimensionality reduction.
+
+---
+
+## Bartlett's Test of Sphericity
 
 | Statistic | Value |
-|----------|----------:|
-| Mean | 0.4646 |
-| Standard Deviation | 0.1638 |
-| Minimum | 0.1088 |
-| Median | 0.4306 |
-| Maximum | 0.8754 |
+|------------|------------|
+| Chi-Square | 249.83379389196242 |
+| p-value | 4.450885068086372e-51 |
 
-### 95% Confidence Interval of Mean
-
-| Bound | Value |
-|----------|----------:|
-| Lower | 0.4420 |
-| Upper | 0.4875 |
-
-### Interpretation
-
-SCI ULTRA preserves global comparability while incorporating confidence-based ranking adjustments and uncertainty-aware assessment mechanisms.
+Interpretation: Strong rejection of the null hypothesis, confirming suitability for multivariate factor-based analysis.
 
 ---
 
-## Distributional Assessment
+# 5. PCA Eigenvalue Structure
 
-### Shapiro–Wilk Tests
+## Explained Variance Ratios
 
-| Variable | W Statistic | p-value |
-|----------|----------:|----------:|
-| SCI_ULTRA_SCORE | 0.9773 | 0.0029 |
-| SCI_ADJUSTED_SCORE | 0.9401 | <0.0001 |
-| confidence_score | 0.8028 | <0.0001 |
+```text
+[0.74561879 0.17028181 0.04806765 0.03603175]
+```
 
-### Interpretation
+### Variance Sum Check
 
-All variables reject strict normality assumptions at conventional significance levels, supporting the use of non-parametric robustness procedures.
-
----
-
-## Capability Tier Comparison
-
-### SCI ULTRA Classification
-
-| Tier | Countries | Percentage |
-|----------|----------:|----------:|
-| High Capability | 13 | 6.67% |
-| Upper-Mid | 31 | 15.90% |
-| Mid | 49 | 25.13% |
-| Emerging / Fragile | 102 | 52.31% |
-
-### Interpretation
-
-A majority of countries remain within the Emerging / Fragile category, highlighting persistent international capability disparities.
+```text
+0.9999999999999999
+```
 
 ---
 
-## Confidence Framework Assessment
+# 6. PCA-Derived Composite Weights
 
-### Confidence Distribution
-
-| Confidence Level | Countries |
-|----------|----------:|
-| High Confidence | 87 |
-| Moderate Confidence | 59 |
-| Low Confidence | 49 |
-
-### Confidence Statistics
-
-| Metric | Value |
-|----------|----------:|
-| Mean Confidence Score | 0.7921 |
-| Median Confidence Score | 0.8000 |
-| Minimum | 0.3000 |
-| Maximum | 1.0000 |
-
-### Interpretation
-
-Confidence-adjusted rankings provide uncertainty-aware assessment and improve interpretive transparency.
+| Variable | PCA Weight |
+|----------|------------|
+| AI_INDEX | 0.26837950 |
+| LEGAL_WGI_SCORE | 0.26942446 |
+| RES_INDEX | 0.20902441 |
+| PQC | 0.25317163 |
 
 ---
 
-## Ranking Comparison
+# 7. Principal Component Loadings
 
-### SCI 2026 Leading Countries
+| Variable | PC1 | PC2 | PC3 | PC4 |
+|----------|----------|----------|----------|----------|
+| AI_INDEX | 0.534197 | -0.272778 | -0.351497 | 0.718802 |
+| LEGAL_WGI_SCORE | 0.536276 | 0.105185 | 0.835959 | 0.050156 |
+| RES_INDEX | 0.416053 | 0.816887 | -0.359197 | -0.174850 |
+| PQC | 0.503926 | -0.497216 | -0.220453 | -0.670996 |
 
-| Rank | Country |
+---
+
+# 8. Descriptive Statistics
+
+| Statistic | AI_INDEX | LEGAL_WGI_SCORE | RES_INDEX | PQC |
+|------------|------------|------------|------------|------------|
+| Count | 90.0 | 90.0 | 90.0 | 90.0 |
+| Mean | 0.566620 | 0.540517 | 0.394125 | 0.595676 |
+| Std | 0.250973 | 0.228008 | 0.140781 | 0.272357 |
+| Min | 0.050407 | 0.108866 | 0.150195 | 0.000000 |
+| 25% | 0.393117 | 0.359012 | 0.298129 | 0.376115 |
+| 50% | 0.633618 | 0.504046 | 0.371685 | 0.641621 |
+| 75% | 0.766077 | 0.697156 | 0.459482 | 0.827448 |
+| Max | 1.000000 | 0.966323 | 0.808925 | 0.982370 |
+
+---
+
+# 9. Correlation Matrix
+
+| Variable | AI_INDEX | LEGAL_WGI_SCORE | RES_INDEX | PQC |
+|----------|----------|----------|----------|----------|
+| AI_INDEX | 1.000000 | 0.783568 | 0.517254 | 0.840634 |
+| LEGAL_WGI_SCORE | 0.783568 | 1.000000 | 0.664976 | 0.730088 |
+| RES_INDEX | 0.517254 | 0.664976 | 1.000000 | 0.380787 |
+| PQC | 0.840634 | 0.730088 | 0.380787 | 1.000000 |
+
+---
+
+# 10. Distribution Diagnostics
+
+## AI_INDEX
+
+```text
+Skewness = -0.39593851843313316
+Kurtosis = -0.9132445811266638
+```
+
+## LEGAL_WGI_SCORE
+
+```text
+Skewness = 0.18383490244953005
+Kurtosis = -0.8925871305381747
+```
+
+## RES_INDEX
+
+```text
+Skewness = 0.7807954023495343
+Kurtosis = 0.49864057599433886
+```
+
+## PQC
+
+```text
+Skewness = -0.4431250138665039
+Kurtosis = -1.0068022159176826
+```
+
+---
+
+# 11. Reliability Assessment
+
+```text
+Cronbach Alpha = 0.8785685555594794
+95% CI = [0.832, 0.915]
+```
+
+Interpretation: Excellent internal consistency.
+
+---
+
+# 12. Alternative Weighting Validation
+
+## CRITIC Weights
+
+| Variable | CRITIC Weight |
 |----------|----------|
-| 1 | Denmark |
-| 2 | Singapore |
-| 3 | Netherlands |
-| 4 | Norway |
-| 5 | Australia |
+| AI_INDEX | 0.241936 |
+| LEGAL_WGI_SCORE | 0.210281 |
+| RES_INDEX | 0.227146 |
+| PQC | 0.320637 |
 
 ---
 
-### SCI ULTRA 2026 Leading Countries
+## Entropy Weights
 
-| Rank | Country |
+| Variable | Entropy Weight |
 |----------|----------|
-| 1 | Denmark |
-| 2 | Norway |
-| 3 | Singapore |
-| 4 | Australia |
-| 5 | Germany |
-
-### Interpretation
-
-Top-performing countries remain broadly consistent across methodologies, demonstrating ranking stability and methodological coherence.
+| AI_INDEX | 0.290727 |
+| LEGAL_WGI_SCORE | 0.234477 |
+| RES_INDEX | 0.155500 |
+| PQC | 0.319295 |
 
 ---
 
-## Rank Adjustment Effects
+# 13. Robustness Assessment
 
-### Largest Positive Rank Adjustments
+## Equal Weight vs PCA
 
-| Country | Rank Gap |
-|----------|----------:|
-| United States of America | +126 |
-| United Kingdom | +120 |
-| Republic of Korea | +119 |
-| Taiwan | +118 |
-| Republic of Moldova | +98 |
+```text
+Spearman ρ = 0.9992427048606825
+p-value = 7.153803172038685e-126
+```
 
-### Interpretation
+## PCA vs Entropy
 
-These countries possess relatively strong capability scores combined with lower confidence estimates, producing substantial confidence-adjusted rank movements.
+```text
+Spearman ρ = 0.9972671523233321
+p-value = 2.290322902718063e-101
+```
 
----
+## Additional Robustness Verification
 
-### Largest Negative Rank Adjustments
+```text
+Spearman ρ = 0.998304317405441
+p-value = 1.776061187692281e-110
+```
 
-| Country | Rank Gap |
-|----------|----------:|
-| Uganda | -59 |
-| Maldives | -58 |
-| Bosnia and Herzegovina | -57 |
-| Cambodia | -57 |
-| Burkina Faso | -57 |
-
-### Interpretation
-
-Negative rank gaps indicate countries whose confidence-adjusted positions exceed their raw ranking positions.
+Interpretation: Near-perfect rank stability across weighting methodologies.
 
 ---
 
-## Multicollinearity Assessment
+# 14. QSSI 2026 Top 20 Countries
 
-### Variance Inflation Factors (VIF)
-
-| Variable | VIF |
-|----------|----------:|
-| AI_INDEX | 4.488 |
-| LEGAL_WGI_SCORE | 4.465 |
-| RES_INDEX | 2.185 |
-| PQC | 3.832 |
-
-### Interpretation
-
-All explanatory variables remain below commonly used critical thresholds, indicating acceptable multicollinearity characteristics.
-
----
-
-## Influence Diagnostics
-
-### Largest Cook's Distance Observations
-
-| Country | Cook's Distance |
-|----------|----------:|
-| Denmark | 0.055993 |
-| Albania | 0.051095 |
-| Norway | 0.047061 |
-
-### Interpretation
-
-No observation demonstrates influence levels sufficient to threaten overall model stability.
+| Rank | Country | QSSI |
+|-------|---------|---------|
+| 1 | Denmark | 0.883898 |
+| 2 | Norway | 0.854815 |
+| 3 | Singapore | 0.846803 |
+| 4 | United States | 0.826602 |
+| 5 | Australia | 0.822180 |
+| 6 | Germany | 0.819843 |
+| 7 | Finland | 0.814612 |
+| 8 | Ireland | 0.805977 |
+| 9 | Canada | 0.804139 |
+| 10 | Luxembourg | 0.798930 |
+| 11 | France | 0.779162 |
+| 12 | Sweden | 0.775481 |
+| 13 | Japan | 0.769431 |
+| 14 | Belgium | 0.762393 |
+| 15 | Switzerland | 0.761517 |
+| 16 | Austria | 0.755492 |
+| 17 | United Kingdom | 0.749018 |
+| 18 | United Arab Emirates | 0.747201 |
+| 19 | Spain | 0.745928 |
+| 20 | Iceland | 0.728642 |
 
 ---
 
-## Robustness Evidence
+# 15. QSSI 2026 Bottom 20 Countries
 
-### Spearman Rank Correlation
-
-| Metric | Value |
-|----------|----------:|
-| Spearman ρ | 0.7897 |
-| Significance | p < 0.001 |
-
-### Interpretation
-
-Strong rank preservation indicates substantial methodological robustness.
-
-The confidence-adjustment mechanism modifies rankings while preserving the underlying capability structure.
-
----
-
-## Comparative Conclusions
-
-The FAIR+D Canon™ framework demonstrates a structured methodological progression:
-
-### Evolution of Analytical Scope
-
-AI Index → Technology Readiness
-
-LEGAL-WGI → Governance Quality
-
-SCI → Technology + Governance
-
-SCI+ → Technology + Governance + Cybersecurity
-
-SCI ULTRA → Technology + Governance + Cybersecurity + Resilience + Confidence Adjustment
+| Rank | Country | QSSI |
+|-------|---------|---------|
+| 71 | Antigua and Barbuda | 0.351695 |
+| 72 | Bosnia and Herzegovina | 0.342012 |
+| 73 | Maldives | 0.339315 |
+| 74 | Uganda | 0.332203 |
+| 75 | Burkina Faso | 0.315858 |
+| 76 | Cambodia | 0.303576 |
+| 77 | Angola | 0.278110 |
+| 78 | Guatemala | 0.255819 |
+| 79 | Myanmar | 0.247054 |
+| 80 | Chad | 0.239890 |
+| 81 | Honduras | 0.230823 |
+| 82 | Nicaragua | 0.220457 |
+| 83 | Iraq | 0.220278 |
+| 84 | Guinea | 0.219293 |
+| 85 | Libya | 0.213475 |
+| 86 | Zimbabwe | 0.213106 |
+| 87 | Mali | 0.192921 |
+| 88 | Burundi | 0.150303 |
+| 89 | Liberia | 0.141950 |
+| 90 | Haiti | 0.098629 |
 
 ---
 
-## Key Findings
+# 16. Final Top 10
 
-1. Complete data integrity across all evaluated datasets.
-2. Zero missing values and zero duplicate observations.
-3. Strong integration between governance and technological capability.
-4. High correlation between SCI and its foundational dimensions.
-5. Robust confidence-adjusted ranking performance.
-6. Significant rank stability under adjustment procedures.
-7. Strong evidence of methodological robustness.
-8. Broad international coverage across analytical frameworks.
-9. Transparent statistical architecture.
-10. Reproducible comparative benchmarking capability.
-
----
-
-## Conclusion
-
-The FAIR+D Canon™ index family provides a progressive analytical framework for international capability assessment.
-
-The evidence demonstrates a clear evolution from single-domain measurement toward multidimensional capability evaluation incorporating governance quality, technological readiness, cybersecurity preparedness, resilience capacity, and confidence-adjusted ranking methodologies.
-
-SCI ULTRA 2026 integrates these dimensions within a unified framework and provides a comprehensive evidence base for comparative international capability assessment across 195 countries and territories.
+| Rank | Country | QSSI |
+|-------|---------|---------|
+| 1 | Denmark | 0.883898 |
+| 2 | Norway | 0.854815 |
+| 3 | Singapore | 0.846803 |
+| 4 | United States | 0.826602 |
+| 5 | Australia | 0.822180 |
+| 6 | Germany | 0.819843 |
+| 7 | Finland | 0.814612 |
+| 8 | Ireland | 0.805977 |
+| 9 | Canada | 0.804139 |
+| 10 | Luxembourg | 0.798930 |
 
 ---
 
-## Citation Information
+# 17. Final Bottom 10
 
-### Current Edition DOI
+| Rank | Country | QSSI |
+|-------|---------|---------|
+| 81 | Honduras | 0.230823 |
+| 82 | Nicaragua | 0.220457 |
+| 83 | Iraq | 0.220278 |
+| 84 | Guinea | 0.219293 |
+| 85 | Libya | 0.213475 |
+| 86 | Zimbabwe | 0.213106 |
+| 87 | Mali | 0.192921 |
+| 88 | Burundi | 0.150303 |
+| 89 | Liberia | 0.141950 |
+| 90 | Haiti | 0.098629 |
 
+---
+
+# 18. Reproducibility Metadata
+
+```json
+{
+  "timestamp": "2026-06-05T16:11:24.057391",
+  "python_version": "3.12.13 (main, Mar 4 2026, 09:23:07) [GCC 11.4.0]",
+  "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+  "countries": 90,
+  "final_N": 90
+}
+```
+
+---
+
+# 19. SHA-256 Integrity Audit
+
+| File | SHA256 |
+|--------|--------|
+| AI_INDEX_2026_v1_MC_Canon.csv | 16656947ff8486b896640a00d05deccee086e52358f6614472ad38929af0b776 |
+| LEGAL_WGI_2026_v1_MC_Canon.csv | 13e5310373fc4104b70b0eb410ccb1628099336f21fe705545b472290cc7b4e7 |
+| RES_INDEX_2026_MC_Canon.csv | 4e936fa81a2fa2d491b897313ac136d38af431cb72f55b3adb85006bded88c9d |
+| PQC_NCSI_2026_MC_Canon.csv | a421685fedadd3fb3b0b9ffbdb3822401ea4ab98098853b104f54397631cda8d |
+| QSSI_MASTER_DATASET.csv | 6ac531236999faa3680978cbe09eb8c93e9ebc85e1881f937d257f873b727931 |
+| QSSI_RANKINGS_2026.csv | 56681c6fcc4c89a89982b9e117beedde76f02ef4c1c473bd86079e66542d8215 |
+
+---
+
+# 20. Canonical Outputs
+
+```text
+Saved: QSSI_RANKINGS_2026.csv
+Saved: QSSI_FINAL_AUDIT.json
+Saved: QSSI_SHA256_AUDIT.csv
+Saved: QSSI_CRITIC_WEIGHTS.csv
+Saved: QSSI_ENTROPY_WEIGHTS.csv
+```
+
+---
+
+# Citation
+
+Mazumdar, B. (2026). *Quantum Sovereign State Index (QSSI) 2026: Canonical Harmonized International Dataset and Comparative Analysis Framework*. Zenodo.
+
+Current Edition DOI:
 10.5281/zenodo.20385492
 
-### All Versions DOI
-
+Canonical DOI (All Versions):
 10.5281/zenodo.17302169
 
-### ORCID
-
+ORCID:
 https://orcid.org/0009-0007-5615-3558
-
-### Author
-
-Dr. B. Mazumdar
-
-### Framework
-
-FAIR+D Canon™ Composite Indices (2026 Edition)
-
-### Document Type
-
-Comparative Analysis
-
----
-
-### Citation Notice
-
-You can cite all framework versions using:
-
-**DOI:** 10.5281/zenodo.17302169
-
-For citation of the current edition, use:
-
-**DOI:** 10.5281/zenodo.20385492
-
----
-
-**FAIR+D Canon™ Composite Indices (2026 Edition)**  
-**Comparative Analysis**  
-**Current Edition DOI: 10.5281/zenodo.20385492**  
-**All Versions DOI: 10.5281/zenodo.17302169**
