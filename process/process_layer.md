@@ -1,5 +1,3 @@
-# process/process_layer.md
-
 # QSSI™ 2026 — Process Layer Audit and Harmonization Report
 
 ## Sovereign Intelligence, Security and Stability Index (QSSI)
