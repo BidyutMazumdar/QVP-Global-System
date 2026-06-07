@@ -1,0 +1,9 @@
+{
+    "edition": "Enterprise",
+    "framework": "QSSI 2026",
+    "deployment": "Institutional",
+    "coverage": 195,
+    "doi": "10.5281/zenodo.20385492",
+    "orcid": "0009-0007-5615-3558",
+    "repository": "https://github.com/BidyutMazumdar/QVP-Global-System"
+}
