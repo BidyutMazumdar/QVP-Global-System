@@ -1,8 +1,0 @@
-Criterion,Value,Status
-Dataset Size,195.0,PASS
-RES Framework Weight (%),19.3119,PASS
-Average Rank Shift,5.8205,PASS
-Tier Stability (%),87.69,PASS
-Minimum Robustness Spearman,0.968106,PASS
-Maximum Robustness Spearman,0.990631,PASS
-Average Weight Sensitivity Spearman,0.99981,PASS

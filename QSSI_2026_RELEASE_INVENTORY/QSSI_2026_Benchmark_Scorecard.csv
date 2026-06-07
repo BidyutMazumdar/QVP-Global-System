@@ -1,4 +1,0 @@
-Framework,Coverage_Overlap,Spearman,Top10_Overlap,Top25_Overlap,Top50_Overlap,Benchmark_Status
-SCI,167,0.983992,6,21,45,EXCELLENT
-SCI_PLUS,112,0.987751,6,21,42,EXCELLENT
-SCI_ULTRA,195,0.970307,7,21,49,EXCELLENT

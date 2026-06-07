@@ -1,4 +1,0 @@
-Variable_A,Variable_B,Pearson_r,Spearman_r,P_Value,Interpretation
-AI_INDEX,RES_INDEX,0.499335,0.44741,0.0,Moderate Independence
-LEGAL_WGI_SCORE,RES_INDEX,0.677644,0.614654,0.0,Related but Distinct
-PQC,RES_INDEX,0.422125,0.403718,0.0,Moderate Independence
