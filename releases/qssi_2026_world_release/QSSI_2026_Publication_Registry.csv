@@ -1,7 +1,8 @@
-Publication_Component,Status
-Metadata,READY
-Citation,READY
-License,READY
-Manifest,READY
-Benchmark,READY
-Release Package,READY
+Component,Status
+Methodology,PASS
+Validation,PASS
+Benchmark,PASS
+Reproducibility,PASS
+Citation,PASS
+License,PASS
+Publication Metadata,PASS
