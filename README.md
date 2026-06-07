@@ -1,128 +1,79 @@
-# QVP GLOBAL SYSTEM™
-
-## International Framework for Sovereign Analytics, Computational Governance, Reproducible Policy Intelligence, Explainable Institutional Benchmarking, and Probabilistic Capability Assessment
-
-### Institutional-Grade Sovereign Intelligence
-### Explainable AI • Governance Analytics • QSSI™ • FAIR+D Canon™
-### Post-Quantum Security • Reproducible Global Benchmarking
- 
 <div align="center">
 
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20257025-blue?style=for-the-badge)](https://doi.org/10.5281/zenodo.20257025)
-[![Canonical DOI](https://img.shields.io/badge/Canonical_DOI-10.5281%2Fzenodo.17302169-darkblue?style=for-the-badge)](https://doi.org/10.5281/zenodo.17302169)
-[![License](https://img.shields.io/badge/License-Proprietary_Sovereign_Research-red?style=for-the-badge)](#license)
-[![Python](https://img.shields.io/badge/Python-3.x-yellow?style=for-the-badge)](https://www.python.org/)
-[![Status](https://img.shields.io/badge/Status-Production_Release-success?style=for-the-badge)](https://github.com/BidyutMazumdar/QVP-Global-System)
-[![Reproducibility](https://img.shields.io/badge/Reproducibility-Audit_Grade-brightgreen?style=for-the-badge)](https://github.com/BidyutMazumdar/QVP-Global-System)
-[![Validation](https://img.shields.io/badge/Validation-Institutional_Grade-purple?style=for-the-badge)](https://github.com/BidyutMazumdar/QVP-Global-System)
-[![Explainability](https://img.shields.io/badge/Explainability-SHAP_Integrated-orange?style=for-the-badge)](https://github.com/BidyutMazumdar/QVP-Global-System)
-[![FAIR](https://img.shields.io/badge/FAIR-Compliant-success?style=for-the-badge)](https://github.com/BidyutMazumdar/QVP-Global-System)
-[![CI/CD](https://img.shields.io/badge/CI%2FCD-Validated-informational?style=for-the-badge)](https://github.com/BidyutMazumdar/QVP-Global-System/actions)
-[![SBOM](https://img.shields.io/badge/SBOM-Enabled-blueviolet?style=for-the-badge)](https://github.com/BidyutMazumdar/QVP-Global-System)
-[![Integrity](https://img.shields.io/badge/Integrity-SHA256_Verified-black?style=for-the-badge)](https://github.com/BidyutMazumdar/QVP-Global-System)
+# QSSI 2026™
+# Quantum Sovereign Security Index
+
+## FAIR+D Canon™ Global Framework
+
+### Institutional Sovereign Intelligence • AI Governance • Post-Quantum Security • Legal Capacity • Economic Resilience
+
+[![Current Edition DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20385492-blue)](https://doi.org/10.5281/zenodo.20385492)
+[![All Versions DOI](https://img.shields.io/badge/Canonical_DOI-10.5281%2Fzenodo.17302169-green)](https://doi.org/10.5281/zenodo.17302169)
+[![ORCID](https://img.shields.io/badge/ORCID-0009--0007--5615--3558-A6CE39)](https://orcid.org/0009-0007-5615-3558)
+[![Repository](https://img.shields.io/badge/GitHub-QVP_Global_System-black)](https://github.com/BidyutMazumdar/QVP-Global-System)
+[![License](https://img.shields.io/badge/Status-Research_Release-blue)](https://github.com/BidyutMazumdar/QVP-Global-System)
 
 </div>
 
 ---
 
-# OFFICIAL INTERNATIONAL CANONICAL RELEASE
+# OFFICIAL INTERNATIONAL RELEASE
 
-QVP GLOBAL SYSTEM™ v9.0 establishes a mathematically structured, computationally reproducible, cryptographically verifiable, statistically rigorous, institutionally auditable, explainable, uncertainty-aware, and governance-oriented sovereign analytics ecosystem integrating:
+The Quantum Sovereign Security Index (QSSI) 2026 is a multidimensional sovereign benchmarking framework designed to evaluate national preparedness across Artificial Intelligence Governance, Legal and Institutional Capacity, Post-Quantum Cybersecurity Readiness, and Economic Resilience.
 
-- Sovereign capability intelligence
-- Computational governance evaluation
-- Explainable policy intelligence
-- Bayesian probabilistic inference
-- Monte Carlo robustness modeling
-- Institutional benchmarking systems
-- Strategic resilience analytics
-- Post-Quantum Cryptographic readiness evaluation
-- Governance-oriented statistical validation
-- Deterministic reproducibility engineering
-- FAIR-oriented archival infrastructure
-- Publication-grade computational governance systems
-- Institutional transparency engineering
-- Explainable institutional benchmarking
-- Governance accountability infrastructure
-- Probabilistic sovereign intelligence pipelines
-- Governance traceability engineering
-- Reproducible sovereign analytical infrastructure
-
-The framework operationalizes sovereign analytics as an internationally structured computational governance architecture designed for reproducible analytical research, institutional benchmarking, policy intelligence, explainable governance evaluation, and sovereign capability assessment at publication-grade standards.
-
----
-
-# TABLE OF CONTENTS
-
-- Executive Overview
-- Canonical Identifiers
-- Public Infrastructure
-- Live Demonstrations
-- Author
-- International Positioning Statement
-- Repository Navigation
-- System Architecture
-- Governance Analytics Pipeline
-- Core Analytical Architecture
-- Computational Methodology
-- API Schema Overview
-- Probabilistic Sovereign Intelligence Layer
-- Included Analytical Datasets
-- FAIR Compliance Matrix
-- Interoperability Matrix
-- Benchmark Visualization Infrastructure
-- Validation and Integrity Infrastructure
-- Release Artifacts
-- Automated Documentation Index
-- Reproducibility Workflow
-- CI/CD Validation Infrastructure
-- Installation
-- Archival and Publication Suitability
-- Foundational Evolution Pipeline
-- Official Developmental Dataset Notice
-- License
-- Official Citation
-- Canonical Citation Notice
-- International Canonical Release Declaration
-
----
-
-# EXECUTIVE OVERVIEW
-
-QVP GLOBAL SYSTEM™ v9.0 is an integrated sovereign analytics and computational governance framework combining:
-
-| Domain | Infrastructure |
-|---|---|
-| Sovereign Intelligence | Multi-dimensional sovereign capability benchmarking |
-| Governance Analytics | Computational institutional evaluation systems |
-| Explainable AI | SHAP-driven interpretability infrastructure |
-| Probabilistic Modeling | Bayesian and Monte Carlo analytical systems |
-| Reproducibility Engineering | Deterministic computational pipelines |
-| Validation Engineering | Statistical robustness diagnostics |
-| Integrity Infrastructure | Cryptographic provenance and attestation systems |
-| FAIR Infrastructure | FAIR-oriented reproducibility packaging |
-| Policy Intelligence | Explainable governance intelligence architecture |
-| Institutional Benchmarking | International comparative governance systems |
-| Governance Auditability | Traceability and accountability infrastructure |
-| Sovereign Resilience | Strategic resilience analytical systems |
+The framework integrates transparent data engineering, deterministic reproducibility, statistical validation, robustness diagnostics, confidence assessment, Monte Carlo simulation, audit-oriented publication infrastructure, and FAIR+D Canon™ archival standards within a unified sovereign analytical architecture.
 
 ---
 
 # CANONICAL IDENTIFIERS
 
 | Component | Identifier |
-|---|---|
-| Authoritative Production DOI | https://doi.org/10.5281/zenodo.20257025 |
-| Canonical All-Versions DOI | https://doi.org/10.5281/zenodo.17302169 |
+|------------|------------|
+| Current Edition DOI | https://doi.org/10.5281/zenodo.20385492 |
+| Canonical All Versions DOI | https://doi.org/10.5281/zenodo.17302169 |
 | ORCID | https://orcid.org/0009-0007-5615-3558 |
-| Zenodo Release | https://zenodo.org/records/20257025 |
-| GitHub Repository | https://github.com/BidyutMazumdar/QVP-Global-System |
+| Repository | https://github.com/BidyutMazumdar/QVP-Global-System |
+
+---
+
+# CITATION
+
+You can cite all versions of the Quantum Sovereign Security Index (QSSI) using:
+
+**DOI:** 10.5281/zenodo.17302169
+
+Current archival release:
+
+**DOI:** 10.5281/zenodo.20385492
+
+---
+
+# EXECUTIVE OVERVIEW
+
+QSSI 2026 operationalizes sovereign preparedness assessment through a transparent computational framework integrating:
+
+- Artificial Intelligence Governance Readiness
+- Legal and Institutional Quality
+- Post-Quantum Cybersecurity Preparedness
+- Economic and Financial Resilience
+- Statistical Validation Infrastructure
+- Confidence Assessment Systems
+- Monte Carlo Robustness Evaluation
+- Weight Sensitivity Analysis
+- External Benchmark Validation
+- FAIR+D Reproducibility Architecture
+- Audit-Oriented Research Engineering
+- Institutional Transparency Infrastructure
 
 ---
 
 # PUBLIC INFRASTRUCTURE
 
-## API
+## GitHub Repository
+
+https://github.com/BidyutMazumdar/QVP-Global-System
+
+## Railway Live Platform
 
 https://qvp-global-system-production.up.railway.app/
 
@@ -134,13 +85,33 @@ https://qvp-global-system-production.up.railway.app/dashboard
 
 https://qvp-global-system-production.up.railway.app/rankings
 
-## GitHub Repository
+## Metadata Endpoint
 
-https://github.com/BidyutMazumdar/QVP-Global-System
+https://qvp-global-system-production.up.railway.app/metadata
+
+## Validation Endpoint
+
+https://qvp-global-system-production.up.railway.app/validation
+
+## Integrity Endpoint
+
+https://qvp-global-system-production.up.railway.app/integrity
+
+## Provenance Endpoint
+
+https://qvp-global-system-production.up.railway.app/provenance
 
 ---
 
 # LIVE DEMONSTRATIONS
+
+## Railway Production Demonstration
+
+https://qvp-global-system-production.up.railway.app/
+
+## Dashboard Demonstration
+
+https://qvp-global-system-production.up.railway.app/dashboard
 
 ## Primary Demonstration
 
@@ -152,608 +123,315 @@ https://drive.google.com/file/d/1AKQ2ZeNlJoG9VE7if_hypskUP1KHmGiA/view
 
 ---
 
-# AUTHOR
+# FRAMEWORK ARCHITECTURE
 
-## Dr. B. Mazumdar
+| Dimension | Description |
+|------------|------------|
+| AI | Artificial Intelligence Governance and Readiness |
+| LEGAL | Rule of Law and Regulatory Quality |
+| PQC | Post-Quantum Cybersecurity Readiness |
+| RES | Economic and Financial Resilience |
 
-Independent Researcher–Scholar
+---
 
-### Research Domains
+# COVERAGE
 
-- AI Governance
-- Computational Governance
-- Sovereign Analytics
-- Explainable AI Systems
-- Post-Quantum Cryptography
-- Governance Intelligence
-- Strategic Digital Statecraft
-- Probabilistic Policy Intelligence
-- Computational Institutional Benchmarking
-- Sovereign Cybersecurity Analytics
+| Metric | Value |
+|---------|---------|
+| Countries Evaluated | 195 |
+| Final Rankings | 195 |
+| Validation Coverage | 195 |
+| Confidence Assessment Coverage | 195 |
+| Monte Carlo Coverage | 195 |
+| Robustness Coverage | 195 |
 
-Founder — FAIR+D Canon™ — India
+---
+
+# DATA ACQUISITION FRAMEWORK
+
+Independent sovereign-level datasets were integrated across:
+
+- Artificial Intelligence Governance
+- Legal and Institutional Capacity
+- Post-Quantum Cybersecurity Readiness
+- Economic and Financial Resilience
+
+---
+
+# DATA STANDARDIZATION
+
+All dimensions were transformed onto a harmonized analytical scale enabling cross-country comparability and reproducible benchmarking.
+
+---
+
+# MISSING DATA MANAGEMENT
+
+Observed and imputed values are explicitly tracked through:
+
+- AI_OBSERVED
+- LEGAL_OBSERVED
+- PQC_OBSERVED
+- RES_OBSERVED
+- AI_IMPUTED
+- LEGAL_IMPUTED
+- PQC_IMPUTED
+- RES_IMPUTED
+
+---
+
+# CONFIDENCE FRAMEWORK
+
+## Confidence Tiers
+
+| Tier | Interpretation |
+|--------|--------|
+| A | Highest Confidence |
+| B | High Confidence |
+| C | Moderate Confidence |
+| D | Limited Observational Coverage |
+
+## Distribution
+
+| Tier | Countries |
+|--------|--------|
+| A | 87 |
+| B | 59 |
+| C | 27 |
+| D | 22 |
+
+---
+
+# WEIGHT CONSTRUCTION
+
+Three independent weighting methodologies were applied:
+
+## Entropy Weighting
+
+Information diversity and indicator dispersion.
+
+## CRITIC Weighting
+
+Indicator variability and inter-indicator conflict.
+
+## Principal Component Analysis (PCA)
+
+Latent variance structure extraction.
+
+---
+
+# FINAL COMPOSITE WEIGHTS
+
+| Dimension | Entropy | CRITIC | PCA | Final Weight |
+|------------|------------|------------|------------|------------|
+| AI | 0.395579 | 0.300079 | 0.360168 | 0.351942 |
+| LEGAL | 0.237359 | 0.208429 | 0.270896 | 0.238895 |
+| PQC | 0.153593 | 0.259712 | 0.234829 | 0.216045 |
+| RES | 0.213469 | 0.231780 | 0.134107 | 0.193119 |
+
+---
+
+# PERCENTAGE REPRESENTATION
+
+| Dimension | Weight (%) |
+|------------|------------|
+| AI | 35.194224 |
+| LEGAL | 23.889468 |
+| PQC | 21.604454 |
+| RES | 19.311854 |
+
+---
+
+# COMPOSITE SCORING FRAMEWORK
+
+Independent scoring systems:
+
+- QSSI_ENTROPY
+- QSSI_CRITIC
+- QSSI_PCA
+
+Final outputs:
+
+- QSSI_SCORE
+- QSSI_RANK
+- QSSI_TIER
+
+---
+
+# MONTE CARLO VALIDATION
+
+## Simulation Summary
+
+| Metric | Value |
+|----------|----------|
+| Countries | 195 |
+| Simulations | 1000 |
+| Mean Rank SD | 3.5037 |
+| Median Rank SD | 1.9825 |
+| Maximum Rank SD | 13.5572 |
+
+## Stability Outputs
+
+- mean_score
+- score_sd
+- mean_rank
+- rank_sd
+- rank_ci_lower
+- rank_ci_upper
+- stability_score
+- stability_tier
+
+---
+
+# ROBUSTNESS VALIDATION
+
+## Dimension Removal Assessment
+
+| Scenario | Top10 Common | Top25 Common | Top50 Common | Spearman | Kendall |
+|------------|------------|------------|------------|------------|------------|
+| AI_REMOVED | 9 | 23 | 43 | 0.968106 | 0.856508 |
+| LEGAL_REMOVED | 9 | 24 | 47 | 0.983962 | 0.900074 |
+| PQC_REMOVED | 10 | 23 | 48 | 0.989257 | 0.919953 |
+| RES_REMOVED | 7 | 24 | 47 | 0.990631 | 0.919636 |
+
+---
+
+# LEAVE-ONE-DIMENSION-OUT ANALYSIS
+
+| Removed Dimension | Average Rank Shift | Maximum Rank Shift | Spearman with QSSI |
+|-------------------|-------------------|-------------------|-------------------|
+| AI | 10.3538 | 47 | 0.968106 |
+| LEGAL | 7.0718 | 37 | 0.983962 |
+| PQC | 5.8205 | 31 | 0.989257 |
+| RES | 5.8205 | 27 | 0.990631 |
+
+---
+
+# DOMINANCE ANALYSIS
+
+| Dimension | Framework Weight | Average Rank Shift | Relative Importance |
+|------------|------------|------------|------------|
+| AI | 0.351942 | 10.3538 | 0.356210 |
+| LEGAL | 0.238895 | 7.0718 | 0.243296 |
+| PQC | 0.216045 | 5.8205 | 0.200247 |
+| RES | 0.193119 | 5.8205 | 0.200247 |
+
+---
+
+# INCREMENTAL VALIDITY
+
+| Metric | Value |
+|----------|----------|
+| Countries | 195 |
+| RES Framework Weight Percent | 19.3119 |
+| Average Absolute Rank Shift | 5.8205 |
+| Maximum Rank Improvement | 27 |
+| Maximum Rank Penalty | -19 |
+
+---
+
+# WEIGHT SENSITIVITY ASSESSMENT
+
+| Perturbation | Spearman | Average Rank Shift | Maximum Rank Shift |
+|------------|------------|------------|------------|
+| 5% | 0.999935 | 0.30000 | 4 |
+| 10% | 0.999823 | 0.63075 | 5 |
+| 15% | 0.999673 | 0.91280 | 6 |
+
+---
+
+# EXTERNAL VALIDATION
+
+| Benchmark | Pearson_r | Spearman_r | Kendall_tau |
+|------------|------------|------------|------------|
+| SCI | 0.985837 | 0.983078 | 0.896718 |
+| SCI_PLUS | 0.986295 | 0.987751 | 0.912806 |
+| SCI_ULTRA | 0.998136 | 0.997788 | 0.970077 |
+| SCI_ULTRA_ADJUSTED | 0.953030 | 0.947723 | 0.850386 |
+
+---
+
+# REPRODUCIBILITY FRAMEWORK
+
+| Validation | Status |
+|------------|--------|
+| Dataset Integrity | PASS |
+| Hash Registry | PASS |
+| Artifact Registry | PASS |
+| Environment Capture | PASS |
+| Metadata Capture | PASS |
+| Reproducibility Validation | PASS |
+
+---
+
+# FAIR+D COMPLIANCE
+
+| Requirement | Status |
+|------------|--------|
+| Findable | PASS |
+| Accessible | PASS |
+| Interoperable | PASS |
+| Reusable | PASS |
+| Deterministic Reproducibility | PASS |
+
+---
+
+# ARCHIVE STATISTICS
+
+| Metric | Value |
+|---------|---------|
+| Total Archived Files | 270 |
+| Master Dataset | Included |
+| Rankings Dataset | Included |
+| Validation Reports | Included |
+| Audit Reports | Included |
+| FAIR+D Reports | Included |
+| Citation Package | Included |
+| Metadata Package | Included |
+| Distribution Package | Included |
+| Institutional Release Package | Included |
+| Reproducibility Package | Included |
+
+---
+
+# PRIMARY ARTIFACTS
+
+- QSSI_2026_MASTER_FINAL.csv
+- QSSI_2026_Final_Rankings.csv
+- QSSI_2026_Weights.csv
+- QSSI_2026_Robustness_Validation.csv
+- QSSI_2026_MonteCarlo_Validation.csv
+- QSSI_2026_External_Validation.csv
+- QSSI_2026_Shapley_LODO.csv
+- QSSI_2026_Incremental_Validity.csv
+- QSSI_2026_Dominance_Analysis.csv
+- QSSI_2026_Weight_Sensitivity_Summary.csv
+- QSSI_2026_FAIRD_Compliance_Report.csv
+- QSSI_2026_Reproducibility_Audit.csv
+- QSSI_2026_Final_Audit_Report.csv
+- QSSI_2026_Manifest.json
+- QSSI_2026_Journal_Submission_Package.json
+
+---
+
+# RECOMMENDED CITATION
+
+Mazumdar, B. (2026).
+
+*Quantum Sovereign Security Index (QSSI) 2026: FAIR+D Canon™ Global Framework.*
+
+Zenodo.
+
+Current Edition DOI:
+
+10.5281/zenodo.20385492
+
+All Versions DOI:
+
+10.5281/zenodo.17302169
 
 ORCID:
 
 https://orcid.org/0009-0007-5615-3558
-
----
-
-# INTERNATIONAL POSITIONING STATEMENT
-
-QVP GLOBAL SYSTEM™ v9.0 operationalizes sovereign capability intelligence through a mathematically bounded, reproducibility-oriented, explainable, statistically rigorous, institutionally traceable, and governance-auditable computational ecosystem integrating:
-
-- Artificial Intelligence Governance Capacity
-- Sovereign Computational Intelligence
-- Explainable Governance Analytics
-- Institutional Stability Modeling
-- Governance Transparency Infrastructure
-- Bayesian Uncertainty Quantification
-- Monte Carlo Sovereign Stability Evaluation
-- Strategic National Resilience Analytics
-- Governance Statistical Diagnostics
-- Computational Accountability Systems
-- Institutional Validation Engineering
-- FAIR-Oriented Reproducibility Pipelines
-- Sovereign Archival Infrastructure
-- Explainable Policy Intelligence Systems
-- Governance Benchmarking Methodologies
-- Publication-Oriented Research Engineering
-
----
-
-# REPOSITORY NAVIGATION
-
-```text
-QVP-Global-System/
-│
-├── api/
-├── dashboard/
-├── data/
-│   ├── raw/
-│   ├── processed/
-│   ├── final/
-│   └── canonical/
-│
-├── docs/
-├── exports/
-├── reports/
-├── notebooks/
-├── provenance/
-├── validation/
-├── integrity/
-├── sbom/
-├── manifests/
-├── reproducibility/
-├── rankings/
-├── explainability/
-├── monte_carlo/
-├── bayesian/
-├── fairness/
-├── diagnostics/
-├── workflows/
-├── ci/
-├── scripts/
-├── configs/
-├── tests/
-├── archive/
-└── release/
-```
-
----
-
-# SYSTEM ARCHITECTURE
-
-```text
-Sovereign Datasets
-        ↓
-Normalization Infrastructure
-        ↓
-Validation Diagnostics
-        ↓
-PCA–Entropy Weighting
-        ↓
-TOPSIS Ranking Systems
-        ↓
-Bayesian Probabilistic Evaluation
-        ↓
-Monte Carlo Robustness Simulation
-        ↓
-Explainability Analytics
-        ↓
-Fairness Diagnostics
-        ↓
-Integrity Verification
-        ↓
-Provenance Generation
-        ↓
-Reproducibility Packaging
-        ↓
-Institutional Release Infrastructure
-```
-
----
-
-# GOVERNANCE ANALYTICS PIPELINE
-
-```text
-Data Acquisition
-      ↓
-Data Harmonization
-      ↓
-Feature Engineering
-      ↓
-Governance Indicator Calibration
-      ↓
-Statistical Diagnostics
-      ↓
-Sovereign Benchmarking
-      ↓
-Probabilistic Stability Analysis
-      ↓
-Explainability Infrastructure
-      ↓
-Governance Auditability
-      ↓
-Institutional Publication
-```
-
----
-
-# CORE ANALYTICAL ARCHITECTURE
-
-## 1. Deterministic Reproducibility Infrastructure
-
-- Deterministic execution pipelines
-- Dependency locking architecture
-- Numerical consistency verification
-- Environment fingerprinting systems
-- Reproducibility manifests
-- Computational traceability infrastructure
-- Audit-oriented execution validation
-- Release integrity certification
-- Provenance engineering systems
-- FAIR-compliant reproducibility packaging
-- Institutional reproducibility assurance
-- Governance-grade archival structures
-
----
-
-## 2. Sovereign Benchmarking Infrastructure
-
-- PCA–Entropy hybrid weighting systems
-- TOPSIS sovereign ranking methodology
-- Bayesian probabilistic inference
-- Monte Carlo simulation infrastructure
-- Statistical sensitivity diagnostics
-- Rank stability verification
-- Spearman rank correlation validation
-- Comparative governance analytics
-- Sovereign calibration systems
-- Institutional benchmarking architecture
-- Stability-aware sovereign intelligence modeling
-
----
-
-## 3. Explainable Artificial Intelligence Infrastructure
-
-- SHAP explainability analytics
-- Governance interpretability systems
-- Feature attribution infrastructure
-- Institutional transparency diagnostics
-- Explainable policy intelligence pipelines
-- Model accountability engineering
-- Fairness diagnostics systems
-- Explainability validation controls
-- Governance-oriented interpretability architecture
-- AI transparency infrastructure
-
----
-
-## 4. Governance Audit and Integrity Architecture
-
-- Institutional provenance manifests
-- Cryptographic integrity verification
-- SHA256 checksum validation
-- Software Bill of Materials (SBOM)
-- Computational attestation infrastructure
-- Release authenticity diagnostics
-- Institutional metadata systems
-- Governance-grade audit pipelines
-- Sovereign archival verification
-- Traceability engineering systems
-- Publication-oriented validation controls
-
----
-
-# COMPUTATIONAL METHODOLOGY
-
-| Methodology | Functional Role |
-|---|---|
-| Principal Component Analysis (PCA) | Dimensionality reduction |
-| Entropy Weight Method | Objective weighting |
-| TOPSIS Ranking Systems | Sovereign ranking infrastructure |
-| Bayesian Probabilistic Modeling | Uncertainty-aware governance evaluation |
-| Monte Carlo Simulation | Robustness and stability analysis |
-| SHAP Explainability Analysis | Governance interpretability |
-| Variance Inflation Factor (VIF) | Multicollinearity diagnostics |
-| Spearman Rank Correlation | Ranking consistency verification |
-| Fairness Evaluation Metrics | Institutional fairness diagnostics |
-| Sensitivity Analysis | Stability diagnostics |
-| Numerical Consistency Verification | Reproducibility validation |
-| Bayesian Convergence Diagnostics | Probabilistic validation |
-| Governance Statistical Diagnostics | Institutional analytical evaluation |
-
----
-
-# API SCHEMA OVERVIEW
-
-| Endpoint | Functional Role |
-|---|---|
-| `/` | API root infrastructure |
-| `/dashboard` | Interactive governance dashboard |
-| `/rankings` | Sovereign ranking outputs |
-| `/datasets` | Dataset discovery infrastructure |
-| `/metadata` | Institutional metadata systems |
-| `/validation` | Validation diagnostics |
-| `/integrity` | Integrity verification infrastructure |
-| `/provenance` | Provenance and traceability systems |
-
----
-
-# PROBABILISTIC SOVEREIGN INTELLIGENCE LAYER
-
-The probabilistic infrastructure integrates:
-
-- Bayesian uncertainty propagation
-- Monte Carlo robustness evaluation
-- Probabilistic sovereign ranking stability
-- Confidence interval estimation
-- Statistical sensitivity diagnostics
-- Bayesian trace export systems
-- Governance-oriented uncertainty quantification
-- Stability-aware benchmarking systems
-- Sovereign calibration diagnostics
-- Institutional probabilistic validation
-- Analytical uncertainty engineering
-
----
-
-# INCLUDED ANALYTICAL DATASETS
-
-## Core Canonical Datasets
-
-| Dataset | Description |
-|---|---|
-| AI_INDEX_2026_v1_MC_Canon.csv | AI governance and sovereign AI capacity analytics |
-| SCI_2026_v1_MC_Canon.csv | Sovereign capability intelligence benchmarking |
-| SCI_PLUS_2026_v1_MC_Canon.csv | Expanded sovereign governance intelligence |
-| SCI_ULTRA_2026_v1_Fair+DCanon.csv | FAIR+D Canon institutional sovereign intelligence |
-| LEGAL_WGI_2026_v1_MC_Canon.csv | Governance and legal institutional analytics |
-| PQC_NCSI_2026_MC_Canon.csv | Post-Quantum Cryptography readiness benchmarking |
-| RES_INDEX_2026_MC_Canon.csv | Strategic national resilience analytics |
-
----
-
-# FAIR COMPLIANCE MATRIX
-
-| FAIR Principle | Implementation |
-|---|---|
-| Findable | DOI-indexed archival infrastructure |
-| Accessible | GitHub and Zenodo public release systems |
-| Interoperable | Structured metadata and standardized exports |
-| Reusable | Reproducibility-oriented validation architecture |
-
----
-
-# INTEROPERABILITY MATRIX
-
-| System | Compatibility |
-|---|---|
-| GitHub | Native repository integration |
-| Zenodo | DOI archival synchronization |
-| CSV Pipelines | Structured analytical interoperability |
-| Python Ecosystem | Native scientific computing compatibility |
-| FAIR Infrastructure | Metadata-compliant archival workflows |
-| Institutional Repositories | Publication-oriented compatibility |
-
----
-
-# BENCHMARK VISUALIZATION INFRASTRUCTURE
-
-| Visualization | Functional Role |
-|---|---|
-| Sovereign Ranking Dashboards | Comparative institutional benchmarking |
-| Monte Carlo Stability Charts | Probabilistic robustness evaluation |
-| Bayesian Trace Exports | Uncertainty-aware analytical diagnostics |
-| SHAP Visualizations | Explainable governance intelligence |
-| Fairness Diagnostics | Institutional fairness validation |
-| Correlation Heatmaps | Governance statistical diagnostics |
-
----
-
-# VALIDATION AND INTEGRITY INFRASTRUCTURE
-
-## Integrity Systems
-
-- SHA256 checksum verification
-- ZIP archive integrity validation
-- SBOM generation systems
-- Reproducibility scorecards
-- Numerical consistency diagnostics
-- Bayesian convergence validation
-- Institutional attestation systems
-- Computational audit infrastructure
-- Governance traceability systems
-- Sovereign archival verification
-
----
-
-## Provenance and Metadata Infrastructure
-
-- Institutional provenance manifests
-- Dataset traceability architecture
-- Release attestation systems
-- Computational provenance pipelines
-- Governance-grade metadata engineering
-- FAIR-oriented archival packaging
-- Publication-grade integrity verification
-- Reproducibility-oriented validation systems
-- Institutional transparency infrastructure
-
----
-
-# RELEASE ARTIFACTS
-
-## Core Release Archive
-
-```text
-QVP_GLOBAL_SYSTEM_V9_20260520_202930_FULL_RELEASE.zip
-```
-
----
-
-## Integrity and Validation Files
-
-```text
-SHA256SUMS_V9.json
-release_manifest_v9.json
-release_integrity_v9.json
-reproducibility_scorecard_v9.json
-environment_fingerprint_v9.json
-institutional_metadata_v9.json
-sbom_v9.json
-memory_report_v9.json
-```
-
----
-
-## Provenance Infrastructure
-
-```text
-PROVENANCE_MANIFEST_AI_INDEX_2026_v1_MC_Canon.json
-PROVENANCE_MANIFEST_LEGAL_WGI_2026_v1_MC_Canon.json
-PROVENANCE_MANIFEST_PQC_NCSI_2026_MC_Canon.json
-PROVENANCE_MANIFEST_RES_INDEX_2026_MC_Canon.json
-PROVENANCE_MANIFEST_SCI_2026_v1_MC_Canon.json
-PROVENANCE_MANIFEST_SCI_PLUS_2026_v1_MC_Canon.json
-PROVENANCE_MANIFEST_SCI_ULTRA_2026_v1_Fair+DCanon.json
-```
-
----
-
-# AUTOMATED DOCUMENTATION INDEX
-
-| Documentation Component | Purpose |
-|---|---|
-| README.md | Canonical repository overview |
-| DATA_VALIDATION_REPORT.md | Validation diagnostics |
-| REPRODUCIBILITY_REPORT.md | Deterministic reproducibility verification |
-| FAIR_COMPLIANCE.md | FAIR-oriented archival validation |
-| API_DOCUMENTATION.md | API infrastructure documentation |
-| GOVERNANCE_METHODS.md | Governance analytical methodology |
-| INTEGRITY_REPORT.md | Integrity and attestation infrastructure |
-| SBOM_REPORT.md | Dependency transparency infrastructure |
-
----
-
-# REPRODUCIBILITY WORKFLOW
-
-```text
-Raw Data
-   ↓
-Normalization
-   ↓
-Validation
-   ↓
-PCA–Entropy Weighting
-   ↓
-TOPSIS Ranking
-   ↓
-Bayesian Evaluation
-   ↓
-Monte Carlo Simulation
-   ↓
-Explainability Analytics
-   ↓
-Fairness Diagnostics
-   ↓
-Integrity Verification
-   ↓
-Provenance Generation
-   ↓
-Reproducibility Packaging
-   ↓
-Institutional Release
-```
-
----
-
-# CI/CD VALIDATION INFRASTRUCTURE
-
-| Pipeline Component | Functional Role |
-|---|---|
-| Automated Validation | Dataset consistency verification |
-| Integrity Checks | SHA256 verification pipelines |
-| Reproducibility Tests | Deterministic execution validation |
-| Dependency Audits | Environment consistency assurance |
-| SBOM Validation | Supply-chain transparency verification |
-| Release Packaging | Institutional archival generation |
-
----
-
-# INSTALLATION
-
-```bash
-git clone https://github.com/BidyutMazumdar/QVP-Global-System.git
-
-cd QVP-Global-System
-
-python -m venv .venv
-
-# Windows
-.venv\Scripts\activate
-
-# Linux / macOS
-source .venv/bin/activate
-
-pip install -r requirements.txt
-
-python api/app.py
-```
-
----
-
-# ARCHIVAL AND PUBLICATION SUITABILITY
-
-This framework is structured for:
-
-- Institutional technical review
-- Sovereign analytics research
-- Governance benchmarking studies
-- Explainable AI policy evaluation
-- Computational reproducibility assessment
-- Institutional capability benchmarking
-- Statistical governance evaluation
-- Digital-statecraft analytical research
-- Governance computational intelligence
-- Publication-grade sovereign benchmarking
-- International policy intelligence analytics
-- Reproducible computational governance research
-- Audit-oriented sovereign assessment
-- FAIR-oriented research archival workflows
-- International analytical validation systems
-
----
-
-# FOUNDATIONAL EVOLUTION PIPELINE
-
-| Version | Release | DOI |
-|---|---|---|
-| V1 | Foundational Prototype Architecture | 10.5281/zenodo.17302170 |
-| V2 | Deterministic Architecture Edition | 10.5281/zenodo.17965286 |
-| V3 | Canonical Global Standard | 10.5281/zenodo.19071570 |
-| V4 | Computational Validation Edition | 10.5281/zenodo.19298458 |
-| V5 | Sovereign Intelligence Framework Edition | 10.5281/zenodo.19371223 |
-| V6 | Institutional Research Edition | 10.5281/zenodo.19375967 |
-| V7 | International Scientific Pre-Release Edition | 10.5281/zenodo.20007621 |
-| V8 | International Scientific Institutional Master Edition | 10.5281/zenodo.20127955 |
-| V9 | Canonical International Sovereign Analytics Edition | 10.5281/zenodo.20257025 |
-
----
-
-# OFFICIAL DEVELOPMENTAL DATASET NOTICE
-
-Earlier developmental releases contained experimental or non-authoritative validation datasets intended exclusively for:
-
-- Framework prototyping
-- Computational architecture testing
-- Reproducibility verification
-- Methodological calibration
-- Governance-system experimentation
-- Sovereign benchmarking engineering
-
-Only officially designated canonical production releases should be considered authoritative for:
-
-- Institutional interpretation
-- Sovereign benchmarking
-- Governance analytics
-- Explainable governance evaluation
-- Computational policy intelligence
-- Reproducible international analytical assessment
-
----
-
-# LICENSE
-
-## Proprietary Sovereign Research License
-
-All Rights Reserved.
-
-Unauthorized reproduction, derivative deployment, institutional redistribution, commercial exploitation, autonomous operationalization, external governance deployment, or derivative analytical redistribution prohibited without explicit written authorization from the author.
-
----
-
-# OFFICIAL CITATION
-
-```bibtex
-@software{mazumdar2026qvp,
-  author       = {Mazumdar, Bidyut},
-  title        = {QVP GLOBAL SYSTEM™ v9.0 — International Framework for Sovereign Analytics, Computational Governance, and Reproducible Policy Intelligence},
-  year         = {2026},
-  version      = {v9.0},
-  publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.20257025},
-  url          = {https://doi.org/10.5281/zenodo.20257025}
-}
-```
-
----
-
-# OFFICIAL CANONICAL CITATION NOTICE
-
-All canonical framework versions may be cited using:
-
-```text
-10.5281/zenodo.17302169
-```
-
-The authoritative production release for QVP GLOBAL SYSTEM™ v9.0 is:
-
-```text
-10.5281/zenodo.20257025
-```
-
----
-
-# INTERNATIONAL CANONICAL RELEASE DECLARATION
-
-QVP GLOBAL SYSTEM™ v9.0 represents an integrated international sovereign analytics framework combining:
-
-- Computational governance intelligence
-- Explainable AI governance systems
-- Probabilistic sovereign evaluation
-- Reproducible analytical engineering
-- Institutional transparency architecture
-- Governance-oriented benchmarking systems
-- Audit-grade computational reproducibility
-- Publication-oriented sovereign intelligence infrastructure
-- FAIR-oriented archival engineering
-- Explainable institutional benchmarking
-- Governance statistical validation
-- Probabilistic policy intelligence systems
-
-within a mathematically structured, institutionally traceable, reproducibility-oriented, and governance-auditable analytical ecosystem designed for:
-
-- Governance intelligence
-- Computational policy evaluation
-- Explainable institutional benchmarking
-- Probabilistic sovereign assessment
-- Governance statistical validation
-- Publication-grade computational governance research
-- International sovereign analytical infrastructure
-
-at international research and institutional analytical standards.
 
 ---
 
@@ -763,19 +441,31 @@ https://github.com/BidyutMazumdar/QVP-Global-System
 
 ---
 
-# ZENODO RELEASE
+# RAILWAY LIVE PLATFORM
 
-https://zenodo.org/records/20257025
-
----
-
-# AUTHORITATIVE DOI
-
-https://doi.org/10.5281/zenodo.20257025
+https://qvp-global-system-production.up.railway.app/
 
 ---
 
-# CANONICAL ALL-VERSIONS DOI
+# INTERACTIVE DASHBOARD
+
+https://qvp-global-system-production.up.railway.app/dashboard
+
+---
+
+# RANKINGS API
+
+https://qvp-global-system-production.up.railway.app/rankings
+
+---
+
+# CURRENT EDITION DOI
+
+https://doi.org/10.5281/zenodo.20385492
+
+---
+
+# ALL VERSIONS DOI
 
 https://doi.org/10.5281/zenodo.17302169
 
@@ -784,3 +474,9 @@ https://doi.org/10.5281/zenodo.17302169
 # ORCID
 
 https://orcid.org/0009-0007-5615-3558
+
+---
+
+Version: QSSI 2026 Definitive World Edition
+
+FAIR+D Canon™ Global Release
