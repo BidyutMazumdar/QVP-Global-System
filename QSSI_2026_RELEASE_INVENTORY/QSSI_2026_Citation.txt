@@ -1,0 +1,54 @@
+
+==============================================================================
+QVP GLOBAL SYSTEM™ v10.0
+OFFICIAL CITATION PACKAGE
+==============================================================================
+
+TITLE
+QVP GLOBAL SYSTEM™ v10.0 — International Framework for Sovereign Intelligence, Computational Governance, Explainable AI, Post-Quantum Security, Strategic Resilience Analytics, and Reproducible Global Capability Benchmarking
+
+AUTHOR
+Bidyut Mazumdar
+
+YEAR
+2026
+
+ORCID
+https://orcid.org/0009-0007-5615-3558
+
+CURRENT EDITION DOI
+https://doi.org/10.5281/zenodo.20385492
+
+CANONICAL ALL-VERSIONS DOI
+https://doi.org/10.5281/zenodo.17302169
+
+REPOSITORY
+https://github.com/BidyutMazumdar/QVP-Global-System
+
+APA
+
+Mazumdar, B. (2026).
+QVP GLOBAL SYSTEM™ v10.0 — International Framework for Sovereign Intelligence, Computational Governance, Explainable AI, Post-Quantum Security, Strategic Resilience Analytics, and Reproducible Global Capability Benchmarking.
+Zenodo.
+https://doi.org/10.5281/zenodo.20385492
+
+Canonical DOI:
+https://doi.org/10.5281/zenodo.17302169
+
+
+CHICAGO
+
+Mazumdar, Bidyut.
+"QVP GLOBAL SYSTEM™ v10.0 — International Framework for Sovereign Intelligence, Computational Governance, Explainable AI, Post-Quantum Security, Strategic Resilience Analytics, and Reproducible Global Capability Benchmarking."
+Zenodo, 2026.
+https://doi.org/10.5281/zenodo.20385492.
+
+
+IEEE
+
+B. Mazumdar,
+"QVP GLOBAL SYSTEM™ v10.0 — International Framework for Sovereign Intelligence, Computational Governance, Explainable AI, Post-Quantum Security, Strategic Resilience Analytics, and Reproducible Global Capability Benchmarking,"
+Zenodo,
+2026,
+doi: 10.5281/zenodo.20385492.
+

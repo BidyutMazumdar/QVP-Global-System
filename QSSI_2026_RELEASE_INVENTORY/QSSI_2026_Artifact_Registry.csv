@@ -1,0 +1,11 @@
+Artifact,Rows,Columns,Status
+QSSI_2026_MASTER_STAGE10B.csv,195,36,REGISTERED
+QSSI_2026_Shapley_LODO.csv,4,4,REGISTERED
+QSSI_2026_Dominance_Analysis.csv,4,6,REGISTERED
+QSSI_2026_Robustness_Validation.csv,4,6,REGISTERED
+QSSI_2026_Tier_Transition_Matrix.csv,5,6,REGISTERED
+QSSI_2026_Tier_Stability.csv,4,2,REGISTERED
+QSSI_2026_Weight_Sensitivity.csv,12,5,REGISTERED
+QSSI_2026_Weight_Sensitivity_Summary.csv,3,4,REGISTERED
+QSSI_2026_Final_Publication_Summary.csv,7,2,REGISTERED
+QSSI_2026_STAGE10B_FINAL_REPORT.csv,8,2,REGISTERED

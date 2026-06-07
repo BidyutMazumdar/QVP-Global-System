@@ -1,0 +1,11 @@
+
+DISCLAIMER
+
+This framework is provided for research,
+analytical, benchmarking, educational,
+and policy intelligence purposes.
+
+Results should not be interpreted as
+official governmental positions,
+legal determinations,
+or regulatory decisions.

@@ -1,0 +1,4 @@
+Perturbation,Spearman,Average_Rank_Shift,Maximum_Rank_Shift
+10%,0.99982325,0.6307499999999999,5
+15%,0.999673,0.9128000000000001,6
+5%,0.999935,0.3,4
