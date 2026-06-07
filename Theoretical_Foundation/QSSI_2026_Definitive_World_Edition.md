@@ -1,4 +1,4 @@
-# QSSI 2026 Adversarial Testing, Robustness Assessment and Definitive World Edition
+# QSSI 2026 Methodology
 
 ## FAIR+D Canon™ Global Framework
 
@@ -16,425 +16,385 @@ https://orcid.org/0009-0007-5615-3558
 
 ---
 
-# Quantum-Veil Sovereignty Security Index (QSSI)
+## Framework Overview
 
-## 2026 Definitive World Edition
+The Quantum Sovereign Security Index (QSSI) 2026 is a multidimensional sovereign assessment framework designed to evaluate national preparedness, governance capability, strategic resilience, cybersecurity readiness, and institutional robustness within the evolving artificial intelligence and post-quantum security landscape.
 
-### Abstract
+The framework integrates four independent dimensions:
 
-The Quantum-Veil Sovereignty Security Index (QSSI) is a multidimensional sovereign capability assessment framework designed to evaluate national preparedness across Artificial Intelligence capability, governance and legal quality, resilience capacity, and post-quantum cybersecurity readiness.
-
-The framework integrates heterogeneous global datasets into a unified analytical architecture through deterministic harmonization, strict intersection-based selection, Min-Max normalization, dimensionality analysis, robustness validation, audit-traceable computation, and reproducible aggregation.
-
-The 2026 Definitive World Edition represents the fully validated FAIR+D Canon™ implementation with complete statistical diagnostics, principal component validation, entropy comparison, CRITIC benchmarking, SHA256 integrity verification, audit-grade reproducibility controls, and cross-method robustness assessment.
-
----
-
-# 1. Data Architecture
-
-## Source Dataset Coverage
-
-| Component | Dataset | Coverage |
-|------------|------------|------------:|
-| Artificial Intelligence | AI_INDEX_2026 | 195 Countries |
-| Governance & Legal Quality | LEGAL_WGI_2026 | 213 Countries |
-| National Resilience | RES_INDEX_2026 | 181 Countries |
-| Post-Quantum Cybersecurity | PQC_NCSI_2026 | 124 Countries |
-
-### Dataset Matrix
-
-| Dataset | Coverage |
-|----------|----------:|
-| AI | 195 |
-| LEGAL | 213 |
-| RES | 181 |
-| PQC | 124 |
-
-### Cross-Domain Overlap Matrix
-
-| | AI | LEGAL | RES | PQC |
-|---|---:|---:|---:|---:|
-| AI | 195 | 172 | 128 | 118 |
-| LEGAL | 172 | 213 | 136 | 117 |
-| RES | 128 | 136 | 181 | 94 |
-| PQC | 118 | 117 | 94 | 124 |
+| Dimension | Description |
+|-----------|-------------|
+| AI | Artificial Intelligence Governance and Readiness |
+| LEGAL | Rule of Law and Regulatory Quality |
+| PQC | Post-Quantum Cybersecurity Readiness |
+| RES | Economic and Financial Resilience |
 
 ---
 
-# 2. Harmonized Analytical Universe
-
-## Final Analytical Sample
-
-### Definitive Final N = 90 Countries
-
-### Coverage Summary
+## Country Coverage
 
 | Metric | Value |
-|----------|----------:|
-| Countries Included | 90 |
-| Countries Excluded Due To PQC Coverage Constraints | 36 |
-| Missing Values | 0 |
-| Final Observations | 90 |
-
-### Final Dataset Shape
-
-```text
-(90, 5)
-```
-
-### Country Coverage Range
-
-```text
-Albania
-Algeria
-Angola
-Antigua and Barbuda
-Argentina
-...
-United Arab Emirates
-United Kingdom
-United States
-Uruguay
-Zimbabwe
-```
-
-### Missing Value Audit
-
-```text
-country              0
-AI_INDEX             0
-LEGAL_WGI_SCORE      0
-RES_INDEX            0
-PQC                  0
-dtype: int64
-```
-
----
-
-# 3. Statistical Adequacy Assessment
-
-## Eigenvalue Structure
-
-```text
-[0.74561879 0.17028181 0.04806765 0.03603175]
-```
-
-### Eigenvalue Sum
-
-```text
-0.9999999999999999
-```
-
-## Kaiser-Meyer-Olkin (KMO) Measure
-
-| Statistic | Value |
-|------------|------------:|
-| KMO | 0.7355868518654463 |
-
-**Interpretation:** Good sampling adequacy for multivariate dimensionality reduction.
-
-## Bartlett's Test of Sphericity
-
-| Statistic | Value |
-|------------|------------:|
-| Chi-Square | 249.83379389196242 |
-| P-Value | 4.450885068086372e-51 |
-
-**Interpretation:** Highly significant correlation structure suitable for principal component analysis.
-
----
-
-# 4. Descriptive Statistics
-
-| Variable | Count | Mean | Std | Min | 25% | Median | 75% | Max |
-|------------|------------:|------------:|------------:|------------:|------------:|------------:|------------:|------------:|
-| AI_INDEX | 90 | 0.566620 | 0.250973 | 0.050407 | 0.393117 | 0.633618 | 0.766077 | 1.000000 |
-| LEGAL_WGI_SCORE | 90 | 0.540517 | 0.228008 | 0.108866 | 0.359012 | 0.504046 | 0.697156 | 0.966323 |
-| RES_INDEX | 90 | 0.394125 | 0.140781 | 0.150195 | 0.298129 | 0.371685 | 0.459482 | 0.808925 |
-| PQC | 90 | 0.595676 | 0.272357 | 0.000000 | 0.376115 | 0.641621 | 0.827448 | 0.982370 |
-
----
-
-# 5. Correlation Structure
-
-| Variable | AI_INDEX | LEGAL_WGI_SCORE | RES_INDEX | PQC |
-|------------|------------:|------------:|------------:|------------:|
-| AI_INDEX | 1.000000 | 0.783568 | 0.517254 | 0.840634 |
-| LEGAL_WGI_SCORE | 0.783568 | 1.000000 | 0.664976 | 0.730088 |
-| RES_INDEX | 0.517254 | 0.664976 | 1.000000 | 0.380787 |
-| PQC | 0.840634 | 0.730088 | 0.380787 | 1.000000 |
-
----
-
-# 6. Distribution Diagnostics
-
-## AI_INDEX
-
-- Skewness = -0.39593851843313316
-- Kurtosis = -0.9132445811266638
-
-## LEGAL_WGI_SCORE
-
-- Skewness = 0.18383490244953005
-- Kurtosis = -0.8925871305381747
-
-## RES_INDEX
-
-- Skewness = 0.7807954023495343
-- Kurtosis = 0.49864057599433886
-
-## PQC
-
-- Skewness = -0.4431250138665039
-- Kurtosis = -1.0068022159176826
-
----
-
-# 7. Reliability Assessment
-
-## Cronbach's Alpha
-
-| Metric | Value |
-|----------|------------:|
-| Alpha | 0.8785685555594794 |
-
-### 95% Confidence Interval
-
-```text
-[0.832, 0.915]
-```
-
-**Interpretation:** Excellent internal consistency across sovereign capability dimensions.
-
----
-
-# 8. Principal Component Analysis
-
-## PCA Loadings
-
-| Variable | PC1 | PC2 | PC3 | PC4 |
-|------------|------------:|------------:|------------:|------------:|
-| AI_INDEX | 0.534197 | -0.272778 | -0.351497 | 0.718802 |
-| LEGAL_WGI_SCORE | 0.536276 | 0.105185 | 0.835959 | 0.050156 |
-| RES_INDEX | 0.416053 | 0.816887 | -0.359197 | -0.174850 |
-| PQC | 0.503926 | -0.497216 | -0.220453 | -0.670996 |
-
-## PCA-Derived Canonical Weights
-
-| Variable | Weight |
-|------------|------------:|
-| AI_INDEX | 0.26837950 |
-| LEGAL_WGI_SCORE | 0.26942446 |
-| RES_INDEX | 0.20902441 |
-| PQC | 0.25317163 |
-
-### Weight Validation
-
-```text
-AI_INDEX            1.0
-LEGAL_WGI_SCORE     1.0
-RES_INDEX           1.0
-PQC                 1.0
-```
-
----
-
-# 9. CRITIC Weights
-
-| Variable | CRITIC Weight |
-|------------|------------:|
-| AI_INDEX | 0.241936 |
-| LEGAL_WGI_SCORE | 0.210281 |
-| RES_INDEX | 0.227146 |
-| PQC | 0.320637 |
-
----
-
-# 10. Entropy Weights
-
-| Variable | Entropy Weight |
-|------------|------------:|
-| AI_INDEX | 0.290727 |
-| LEGAL_WGI_SCORE | 0.234477 |
-| RES_INDEX | 0.155500 |
-| PQC | 0.319295 |
-
----
-
-# 11. Methodological Robustness Validation
-
-## Rank Correlation Comparison
-
-### Equal Weight vs PCA
-
-```text
-Spearman ρ = 0.9992427048606825
-p-value = 7.153803172038685e-126
-```
-
-### PCA vs Entropy
-
-```text
-Spearman ρ = 0.9972671523233321
-p-value = 2.290322902718063e-101
-```
-
-### PCA vs CRITIC
-
-```text
-Spearman ρ = 0.998304317405441
-p-value = 1.776061187692281e-110
-```
-
-**Interpretation:** Extremely high ranking stability across independent weighting methodologies, indicating strong methodological robustness and ranking persistence.
-
----
-
-# 12. Top 20 Sovereign Performers
-
-| Rank | Country | QSSI |
-|-------:|------------|------------:|
-| 1 | Denmark | 0.883898 |
-| 2 | Norway | 0.854815 |
-| 3 | Singapore | 0.846803 |
-| 4 | United States | 0.826602 |
-| 5 | Australia | 0.822180 |
-| 6 | Germany | 0.819843 |
-| 7 | Finland | 0.814612 |
-| 8 | Ireland | 0.805977 |
-| 9 | Canada | 0.804139 |
-| 10 | Luxembourg | 0.798930 |
-| 11 | France | 0.779162 |
-| 12 | Sweden | 0.775481 |
-| 13 | Japan | 0.769431 |
-| 14 | Belgium | 0.762393 |
-| 15 | Switzerland | 0.761517 |
-| 16 | Austria | 0.755492 |
-| 17 | United Kingdom | 0.749018 |
-| 18 | United Arab Emirates | 0.747201 |
-| 19 | Spain | 0.745928 |
-| 20 | Iceland | 0.728642 |
-
----
-
-# 13. Bottom 20 Sovereign Performers
-
-| Rank | Country | QSSI |
-|-------:|------------|------------:|
-| 71 | Antigua and Barbuda | 0.351695 |
-| 72 | Bosnia and Herzegovina | 0.342012 |
-| 73 | Maldives | 0.339315 |
-| 74 | Uganda | 0.332203 |
-| 75 | Burkina Faso | 0.315858 |
-| 76 | Cambodia | 0.303576 |
-| 77 | Angola | 0.278110 |
-| 78 | Guatemala | 0.255819 |
-| 79 | Myanmar | 0.247054 |
-| 80 | Chad | 0.239890 |
-| 81 | Honduras | 0.230823 |
-| 82 | Nicaragua | 0.220457 |
-| 83 | Iraq | 0.220278 |
-| 84 | Guinea | 0.219293 |
-| 85 | Libya | 0.213475 |
-| 86 | Zimbabwe | 0.213106 |
-| 87 | Mali | 0.192921 |
-| 88 | Burundi | 0.150303 |
-| 89 | Liberia | 0.141950 |
-| 90 | Haiti | 0.098629 |
-
----
-
-# 14. Dataset Integrity Verification
-# 14. Dataset Integrity Verification
-
-## SHA256 Audit Registry (Full 64-Character SHA256)
-
-| File | SHA256 |
 |----------|----------|
-| AI_INDEX_2026_v1_MC_Canon.csv | 16656947ff8486b896640a00d05deccee086e52358f6614472ad38929af0b776 |
-| LEGAL_WGI_2026_v1_MC_Canon.csv | 13e5310373fc4104b70b0eb410ccb1628099336f21fe705545b472290cc7b4e7 |
-| RES_INDEX_2026_MC_Canon.csv | 4e936fa81a2fa2d491b897313ac136d38af431cb72f55b3adb85006bded88c9d |
-| PQC_NCSI_2026_MC_Canon.csv | a421685fedadd3fb3b0b9ffbdb3822401ea4ab98098853b104f54397631cda8d |
-| QSSI_MASTER_DATASET.csv | 6ac531236999faa3680978cbe09eb8c93e9ebc85e1881f937d257f873b727931 |
-| QSSI_RANKINGS_2026.csv | 56681c6fcc4c89a89982b9e117beedde76f02ef4c1c473bd86079e66542d8215 |
+| Total Countries Evaluated | 195 |
+| Final Ranking Coverage | 195 |
+| Monte Carlo Coverage | 195 |
+| Robustness Coverage | 195 |
+| Confidence Assessment Coverage | 195 |
 
-### Integrity Verification Status
-
-```text
-Files Audited           : 6
-Hash Algorithm          : SHA256
-Hash Length             : 64 Characters
-Verification Status     : Passed
-Integrity Status        : Verified
-Audit Traceability      : Complete
-Reproducibility Status  : Verified
-```
 ---
 
-# 15. Audit Metadata
+## Source Architecture
 
-| Variable | Value |
+### AI Dimension
+
+Measures sovereign artificial intelligence readiness, governance capacity, institutional capability, and strategic AI preparedness.
+
+### LEGAL Dimension
+
+Measures rule of law, institutional effectiveness, governance quality, and regulatory performance.
+
+### PQC Dimension
+
+Measures sovereign cybersecurity readiness and preparedness for post-quantum security environments.
+
+### RES Dimension
+
+Measures macroeconomic resilience, financial system robustness, and economic stability.
+
+---
+
+## Data Processing Framework
+
+### Stage 1 — Data Acquisition
+
+Independent source datasets were collected for all framework dimensions.
+
+### Stage 2 — Data Harmonization
+
+Indicators were standardized to ensure cross-dimensional comparability.
+
+### Stage 3 — Missing Data Management
+
+Observed and imputed values were explicitly tracked.
+
+### Observed Variables
+
+- AI_OBSERVED
+- LEGAL_OBSERVED
+- PQC_OBSERVED
+- RES_OBSERVED
+
+### Imputed Variables
+
+- AI_IMPUTED
+- LEGAL_IMPUTED
+- PQC_IMPUTED
+- RES_IMPUTED
+
+---
+
+## Confidence Assessment Framework
+
+Country-level confidence scores were generated using observed indicator availability.
+
+### Confidence Tier Definitions
+
+| Tier | Interpretation |
+|--------|--------|
+| A | Highest Confidence |
+| B | High Confidence |
+| C | Moderate Confidence |
+| D | Limited Observational Coverage |
+
+### Confidence Distribution
+
+| Tier | Countries |
+|--------|--------|
+| A | 87 |
+| B | 59 |
+| C | 27 |
+| D | 22 |
+
+---
+
+## Normalization Framework
+
+The following normalized variables were constructed:
+
+- AI_NORM
+- LEGAL_NORM
+- PQC_NORM
+- RES_NORM
+
+---
+
+## Weight Construction Methodology
+
+Three independent weighting approaches were applied.
+
+### Entropy Weighting
+
+Captures informational diversity and indicator dispersion.
+
+### CRITIC Weighting
+
+Captures variability and conflict structure among dimensions.
+
+### Principal Component Analysis (PCA)
+
+Captures latent variance structures within the multidimensional framework.
+
+---
+
+## Final Composite Weights
+
+| Dimension | Entropy | CRITIC | PCA | Final Weight |
+|------------|------------|------------|------------|------------|
+| AI | 0.395579 | 0.300079 | 0.360168 | 0.351942 |
+| LEGAL | 0.237359 | 0.208429 | 0.270896 | 0.238895 |
+| PQC | 0.153593 | 0.259712 | 0.234829 | 0.216045 |
+| RES | 0.213469 | 0.231780 | 0.134107 | 0.193119 |
+
+### Weight Distribution
+
+| Dimension | Weight (%) |
 |------------|------------|
-| Timestamp | 2026-06-05T16:11:24.057391 |
-| Python Version | 3.12.13 |
-| Platform | Linux-6.6.122+-x86_64-with-glibc2.35 |
-| Countries | 90 |
-| Final N | 90 |
+| AI | 35.194224 |
+| LEGAL | 23.889468 |
+| PQC | 21.604454 |
+| RES | 19.311854 |
 
 ---
 
-# 16. Generated Audit Artifacts
+## Composite Score Construction
 
-- QSSI_RANKINGS_2026.csv
-- QSSI_FINAL_AUDIT.json
-- QSSI_SHA256_AUDIT.csv
-- QSSI_CRITIC_WEIGHTS.csv
-- QSSI_ENTROPY_WEIGHTS.csv
-- QSSI_MASTER_DATASET.csv
+Three independent composite models were generated:
+
+- QSSI_ENTROPY
+- QSSI_CRITIC
+- QSSI_PCA
+
+The final composite score was generated through methodological synthesis of the independent models.
+
+### Final Output Variables
+
+- QSSI_SCORE
+- QSSI_RANK
+- QSSI_TIER
 
 ---
 
-# 17. FAIR+D Compliance Framework
+## Monte Carlo Stability Assessment
+
+A Monte Carlo simulation framework was applied to evaluate ranking robustness.
+
+### Monte Carlo Summary
+
+| Metric | Value |
+|----------|----------|
+| Countries | 195 |
+| Simulations | 1000 |
+| Mean Rank SD | 3.5037 |
+| Median Rank SD | 1.9825 |
+| Maximum Rank SD | 13.5572 |
+
+### Stability Variables
+
+- mean_score
+- score_sd
+- mean_rank
+- rank_sd
+- rank_ci_lower
+- rank_ci_upper
+- stability_score
+- stability_tier
+
+---
+
+## Stability Classification
+
+### Stability Tiers
+
+- Very Stable
+- Stable
+
+The majority of leading countries demonstrated high ranking persistence across repeated simulation environments.
+
+---
+
+## Robustness Validation
+
+Dimension-removal experiments were conducted to evaluate framework robustness.
+
+| Scenario | Top10 Common | Top25 Common | Top50 Common | Spearman | Kendall |
+|------------|------------|------------|------------|------------|------------|
+| AI_REMOVED | 9 | 23 | 43 | 0.968106 | 0.856508 |
+| LEGAL_REMOVED | 9 | 24 | 47 | 0.983962 | 0.900074 |
+| PQC_REMOVED | 10 | 23 | 48 | 0.989257 | 0.919953 |
+| RES_REMOVED | 7 | 24 | 47 | 0.990631 | 0.919636 |
+
+---
+
+## Shapley / Leave-One-Dimension-Out Analysis
+
+| Removed Dimension | Average Rank Shift | Maximum Rank Shift | Spearman with QSSI |
+|-------------------|-------------------|-------------------|-------------------|
+| AI | 10.3538 | 47 | 0.968106 |
+| LEGAL | 7.0718 | 37 | 0.983962 |
+| PQC | 5.8205 | 31 | 0.989257 |
+| RES | 5.8205 | 27 | 0.990631 |
+
+---
+
+## Dominance Analysis
+
+| Dimension | Framework Weight | Average Rank Shift | Relative Importance |
+|------------|------------|------------|------------|
+| AI | 0.351942 | 10.3538 | 0.356210 |
+| LEGAL | 0.238895 | 7.0718 | 0.243296 |
+| PQC | 0.216045 | 5.8205 | 0.200247 |
+| RES | 0.193119 | 5.8205 | 0.200247 |
+
+---
+
+## Incremental Validity
+
+| Metric | Value |
+|----------|----------|
+| Countries | 195 |
+| RES Framework Weight Percent | 19.3119 |
+| Average Absolute Rank Shift | 5.8205 |
+| Maximum Rank Improvement | 27 |
+| Maximum Rank Penalty | -19 |
+
+---
+
+## Weight Sensitivity Analysis
+
+| Perturbation | Spearman | Average Rank Shift | Maximum Rank Shift |
+|------------|------------|------------|------------|
+| 5% | 0.999935 | 0.30000 | 4 |
+| 10% | 0.999823 | 0.63075 | 5 |
+| 15% | 0.999673 | 0.91280 | 6 |
+
+---
+
+## External Validation
+
+| Benchmark | Pearson_r | Spearman_r | Kendall_tau | Convergent Validity |
+|------------|------------|------------|------------|------------|
+| SCI | 0.985837 | 0.983078 | 0.896718 | Possible Redundancy |
+| SCI_PLUS | 0.986295 | 0.987751 | 0.912806 | Possible Redundancy |
+| SCI_ULTRA | 0.998136 | 0.997788 | 0.970077 | Possible Redundancy |
+| SCI_ULTRA_ADJUSTED | 0.953030 | 0.947723 | 0.850386 | Very Strong |
+
+---
+
+## Reproducibility Framework
+
+The framework incorporates deterministic reproducibility controls including:
+
+- Dataset Integrity
+- Hash Registry
+- Artifact Registry
+- Environment Capture
+- Metadata Capture
+- Reproducibility Validation
+
+All validation procedures completed successfully.
+
+---
+
+## FAIR+D Compliance
+
+The framework aligns with FAIR+D principles.
 
 - Findable
 - Accessible
 - Interoperable
 - Reusable
-- Defensible
+- Deterministic Reproducibility
+
+All compliance assessments completed successfully.
 
 ---
 
-# 18. Reproducibility Framework
+## Audit Outcomes
 
-- Deterministic preprocessing pipeline
-- Canonical country harmonization
-- Explicit intersection constraints
-- Fixed PCA-derived weighting system
-- Complete audit trail preservation
-- Statistical validation documentation
-- SHA256 dataset verification
-- Reproducible computational environment
-- Version-controlled archival publication
-- Cross-method robustness validation
+The audit framework evaluated:
 
----
+- Dataset Size
+- Framework Weight Validation
+- Rank Shift Validation
+- Tier Stability Validation
+- Robustness Validation
 
-# 19. Citation
-
-Mazumdar, B. (2026).
-
-*Quantum-Veil Sovereignty Security Index (QSSI) 2026 Definitive World Edition.*
-
-Zenodo.
-
-**Current Edition DOI:** 10.5281/zenodo.20385492
-
-**All Versions DOI:** 10.5281/zenodo.17302169
-
-**ORCID:** https://orcid.org/0009-0007-5615-3558
+All audit criteria completed successfully.
 
 ---
 
-## Version
+## Core Publication Artifacts
 
-**QSSI 2026 Definitive World Edition — FAIR+D Canon™ Global Framework — Adversarial Testing, Robustness Assessment, Statistical Validation, Principal Component Validation, CRITIC Benchmarking, Entropy Weight Comparison, Dataset Integrity Verification, Audit Traceability, Reproducibility Assessment, and Sovereign Capability Analytics Release.**
+QSSI_2026_MASTER_FINAL.csv
+
+QSSI_2026_Final_Rankings.csv
+
+QSSI_2026_Weights.csv
+
+QSSI_2026_Robustness_Validation.csv
+
+QSSI_2026_MonteCarlo_Validation.csv
+
+QSSI_2026_External_Validation.csv
+
+QSSI_2026_Shapley_LODO.csv
+
+QSSI_2026_Incremental_Validity.csv
+
+QSSI_2026_Dominance_Analysis.csv
+
+QSSI_2026_Weight_Sensitivity_Summary.csv
+
+QSSI_2026_FAIRD_Compliance_Report.csv
+
+QSSI_2026_Reproducibility_Audit.csv
+
+QSSI_2026_Final_Audit_Report.csv
+
+QSSI_2026_Manifest.json
+
+QSSI_2026_Journal_Submission_Package.json
+
+---
+
+## Archival Record
+
+| Item | Value |
+|--------|--------|
+| Framework | Quantum Sovereign Security Index |
+| Edition | QSSI 2026 |
+| Countries | 195 |
+| Archived Files | 270 |
+| Current Edition DOI | 10.5281/zenodo.20385492 |
+| All Versions DOI | 10.5281/zenodo.17302169 |
+| ORCID | https://orcid.org/0009-0007-5615-3558 |
+
+---
+
+## Citation
+
+You can cite all versions using DOI:
+
+10.5281/zenodo.17302169
+
+Current edition:
+
+10.5281/zenodo.20385492
+
+ORCID:
+
+https://orcid.org/0009-0007-5615-3558
+
+---
+
+Version: QSSI 2026 Definitive World Edition
