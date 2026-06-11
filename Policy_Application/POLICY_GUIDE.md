@@ -1,21 +1,3 @@
-====================================================================================================
-CANONICAL DATASET
-====================================================================================================
-/content/QSSI_EXTRACTED/QSSI_2026_TOP_TIER_WORLD_PUBLICATION_PACKAGE/CSV/QSSI_FULL_ENRICHED_DATASET.csv
-
-SHAPE
-(195, 37)
-
-====================================================================================================
-POLICY GUIDE GENERATED
-====================================================================================================
-/content/Policy_Application/POLICY_GUIDE.md
-
-WORD COUNT : 650
-CHAR COUNT : 4864
-
-PREVIEW
-
 # QSSI 2026 Policy Guide
 
 ## FAIR+D Canon™ Global Framework
@@ -257,5 +239,4 @@ reproducibility standards, and FAIR+D governance principles.
 **Current Edition DOI:** 10.5281/zenodo.20385492
 
 **All Versions DOI:** 10.5281/zenodo.17302169
-
 
