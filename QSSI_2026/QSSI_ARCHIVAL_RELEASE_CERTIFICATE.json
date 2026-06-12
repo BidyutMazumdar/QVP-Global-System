@@ -1,0 +1,18 @@
+{
+  "release_name": "QSSI_2026_FINAL_ARCHIVAL_RELEASE",
+  "status": "ARCHIVAL_READY",
+  "country_coverage": 195,
+  "publication_readiness": "100%",
+  "artifact_package": "QSSI_FINAL_PUBLICATION_PACKAGE.zip",
+  "artifact_count": 23,
+  "verification_status": "PASSED",
+  "reproducibility_status": "PASSED",
+  "integrity_status": "PASSED",
+  "evidence_ledger": "QSSI_RELEASE_EVIDENCE_LEDGER.csv",
+  "manifest": "QSSI_FINAL_PUBLICATION_MANIFEST.csv",
+  "metadata": "QSSI_FINAL_PUBLICATION_METADATA.json",
+  "certificate": "QSSI_REPRODUCIBILITY_CERTIFICATE.json",
+  "provenance": "QSSI_CITATION_PROVENANCE_RECORD.json",
+  "final_package_sha256": "5b9638fb17f91398733b8f3eab3c8614cd36ffd66de898979ecf0ccee8f13dad",
+  "generated_utc": "2026-06-12T09:18:50.159302+00:00"
+}

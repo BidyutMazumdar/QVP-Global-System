@@ -1,0 +1,24 @@
+{
+  "framework": "QSSI",
+  "edition": "2026",
+  "country_coverage": 195,
+  "publication_package": "QSSI_FINAL_PUBLICATION_PACKAGE.zip",
+  "publication_package_sha256": "5b9638fb17f91398733b8f3eab3c8614cd36ffd66de898979ecf0ccee8f13dad",
+  "artifact_count": 23,
+  "validation_components": [
+    "Monte Carlo Validation",
+    "Reliability Adjusted Ranking",
+    "KNN Sensitivity",
+    "Weight Sensitivity",
+    "External Validation",
+    "Robustness Validation"
+  ],
+  "core_datasets": [
+    "QSSI_FULL_ENRICHED_DATASET.csv",
+    "QSSI_2026_MASTER_FINAL.csv",
+    "QSSI_2026_Final_Rankings.csv"
+  ],
+  "publication_readiness": "100%",
+  "verification_status": "PASSED",
+  "generated_utc": "2026-06-12T09:17:18.982385+00:00"
+}

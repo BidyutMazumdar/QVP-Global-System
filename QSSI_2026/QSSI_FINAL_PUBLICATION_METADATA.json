@@ -1,0 +1,10 @@
+{
+  "timestamp_utc": "2026-06-12T09:15:48.364680",
+  "artifact_count": 23,
+  "bundle_name": "QSSI_GOLDEN_BUNDLE",
+  "country_coverage": 195,
+  "core_dataset": "QSSI_FULL_ENRICHED_DATASET.csv",
+  "publication_readiness": "100%",
+  "validation_layer": true,
+  "monte_carlo_runs": 10000
+}
