@@ -1,482 +1,337 @@
 <div align="center">
 
 # QSSI 2026™
-# Quantum Sovereign Security Index
+## Quantum Sovereign Security Index
 
-## FAIR+D Canon™ Global Framework
+### Definitive Master Release v10.0.0
+### Supreme Canonical Sovereign Infrastructure Edition
 
-### Institutional Sovereign Intelligence • AI Governance • Post-Quantum Security • Legal Capacity • Economic Resilience
-
-[![Current Edition DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20385492-blue)](https://doi.org/10.5281/zenodo.20385492)
-[![All Versions DOI](https://img.shields.io/badge/Canonical_DOI-10.5281%2Fzenodo.17302169-green)](https://doi.org/10.5281/zenodo.17302169)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20385492-blue)](https://doi.org/10.5281/zenodo.20385492)
+[![Canonical DOI](https://img.shields.io/badge/Canonical_DOI-10.5281%2Fzenodo.17302169-green)](https://doi.org/10.5281/zenodo.17302169)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0007--5615--3558-A6CE39)](https://orcid.org/0009-0007-5615-3558)
 [![Repository](https://img.shields.io/badge/GitHub-QVP_Global_System-black)](https://github.com/BidyutMazumdar/QVP-Global-System)
-[![License](https://img.shields.io/badge/Status-Research_Release-blue)](https://github.com/BidyutMazumdar/QVP-Global-System)
+[![License](https://img.shields.io/badge/License-CC_BY--NC--ND_4.0-lightgrey)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 </div>
 
 ---
 
-# OFFICIAL INTERNATIONAL RELEASE
+# Overview
 
-The Quantum Sovereign Security Index (QSSI) 2026 is a multidimensional sovereign benchmarking framework designed to evaluate national preparedness across Artificial Intelligence Governance, Legal and Institutional Capacity, Post-Quantum Cybersecurity Readiness, and Economic Resilience.
+**QSSI 2026™ (Quantum Sovereign Security Index)** is a sovereign assessment and research framework designed to support multidimensional evaluation of national preparedness across artificial intelligence governance, post-quantum cybersecurity readiness, institutional effectiveness, legal and regulatory capacity, economic resilience, strategic infrastructure, sovereign security preparedness, and long-term sustainability.
 
-The framework integrates transparent data engineering, deterministic reproducibility, statistical validation, robustness diagnostics, confidence assessment, Monte Carlo simulation, audit-oriented publication infrastructure, and FAIR+D Canon™ archival standards within a unified sovereign analytical architecture.
-
----
-
-# CANONICAL IDENTIFIERS
-
-| Component | Identifier |
-|------------|------------|
-| Current Edition DOI | https://doi.org/10.5281/zenodo.20385492 |
-| Canonical All Versions DOI | https://doi.org/10.5281/zenodo.17302169 |
-| ORCID | https://orcid.org/0009-0007-5615-3558 |
-| Repository | https://github.com/BidyutMazumdar/QVP-Global-System |
+The **Definitive Master Release v10.0.0** consolidates analytical methodologies, benchmarking resources, validation systems, governance registries, provenance documentation, metadata infrastructures, software transparency resources, reproducibility assets, certification frameworks, and preservation-oriented publication resources within a unified archival environment.
 
 ---
 
-# CITATION
+# Release Information
 
-You can cite all versions of the Quantum Sovereign Security Index (QSSI) using:
-
-**DOI:** 10.5281/zenodo.17302169
-
-Current archival release:
-
-**DOI:** 10.5281/zenodo.20385492
-
----
-
-# EXECUTIVE OVERVIEW
-
-QSSI 2026 operationalizes sovereign preparedness assessment through a transparent computational framework integrating:
-
-- Artificial Intelligence Governance Readiness
-- Legal and Institutional Quality
-- Post-Quantum Cybersecurity Preparedness
-- Economic and Financial Resilience
-- Statistical Validation Infrastructure
-- Confidence Assessment Systems
-- Monte Carlo Robustness Evaluation
-- Weight Sensitivity Analysis
-- External Benchmark Validation
-- FAIR+D Reproducibility Architecture
-- Audit-Oriented Research Engineering
-- Institutional Transparency Infrastructure
-
----
-
-# PUBLIC INFRASTRUCTURE
-
-## GitHub Repository
-
-https://github.com/BidyutMazumdar/QVP-Global-System
-
-## Railway Live Platform
-
-https://qvp-global-system-production.up.railway.app/
-
-## Interactive Dashboard
-
-https://qvp-global-system-production.up.railway.app/dashboard
-
-## Rankings API
-
-https://qvp-global-system-production.up.railway.app/rankings
-
-## Metadata Endpoint
-
-https://qvp-global-system-production.up.railway.app/metadata
-
-## Validation Endpoint
-
-https://qvp-global-system-production.up.railway.app/validation
-
-## Integrity Endpoint
-
-https://qvp-global-system-production.up.railway.app/integrity
-
-## Provenance Endpoint
-
-https://qvp-global-system-production.up.railway.app/provenance
-
----
-
-# LIVE DEMONSTRATIONS
-
-## Railway Production Demonstration
-
-https://qvp-global-system-production.up.railway.app/
-
-## Dashboard Demonstration
-
-https://qvp-global-system-production.up.railway.app/dashboard
-
-## Primary Demonstration
-
-https://drive.google.com/file/d/1eWq_lMJGfRbwSP8s7wRjJTXAaYmqQaWl/view
-
-## Archive Demonstration
-
-https://drive.google.com/file/d/1AKQ2ZeNlJoG9VE7if_hypskUP1KHmGiA/view
-
----
-
-# FRAMEWORK ARCHITECTURE
-
-| Dimension | Description |
-|------------|------------|
-| AI | Artificial Intelligence Governance and Readiness |
-| LEGAL | Rule of Law and Regulatory Quality |
-| PQC | Post-Quantum Cybersecurity Readiness |
-| RES | Economic and Financial Resilience |
-
----
-
-# COVERAGE
-
-| Metric | Value |
+| Field | Value |
 |---------|---------|
-| Countries Evaluated | 195 |
-| Final Rankings | 195 |
-| Validation Coverage | 195 |
-| Confidence Assessment Coverage | 195 |
-| Monte Carlo Coverage | 195 |
-| Robustness Coverage | 195 |
+| Framework | QSSI |
+| Framework Name | Quantum Sovereign Security Index |
+| Repository | QVP Global System |
+| Version | 10.0.0 |
+| Release Name | Supreme Canonical Sovereign Infrastructure Edition |
+| Release Type | Definitive Institutional Master Release |
+| Author | Bidyut Mazumdar |
+| ORCID | 0009-0007-5615-3558 |
+| Publication Year | 2026 |
+| Current Edition DOI | 10.5281/zenodo.20385492 |
+| Canonical DOI | 10.5281/zenodo.17302169 |
 
 ---
 
-# DATA ACQUISITION FRAMEWORK
+# Abstract
 
-Independent sovereign-level datasets were integrated across:
+QSSI 2026™ provides a structured framework for sovereign benchmarking and preparedness assessment across governance, security, technology, resilience, institutional capacity, and economic sustainability domains.
+
+The framework integrates transparent methodologies, reproducible computational workflows, validation infrastructures, governance traceability systems, provenance architectures, metadata ecosystems, software transparency documentation, certification mechanisms, and preservation-oriented publication practices.
+
+Version 10.0.0 serves as the definitive archival release and incorporates governance, provenance, validation, certification, publication, dissemination, and preservation components supporting transparent and auditable sovereign assessment research.
+
+---
+
+# Research Scope
+
+QSSI 2026™ supports research and evaluation across:
 
 - Artificial Intelligence Governance
-- Legal and Institutional Capacity
 - Post-Quantum Cybersecurity Readiness
-- Economic and Financial Resilience
+- Institutional Governance Assessment
+- Legal and Regulatory Capacity
+- Strategic Infrastructure Evaluation
+- Sovereign Security Preparedness
+- Economic Resilience Assessment
+- Comparative Sovereign Benchmarking
+- Computational Governance Research
+- Policy Analytics
+- Strategic Preparedness Assessment
+- Long-Term National Capacity Evaluation
 
 ---
 
-# DATA STANDARDIZATION
+# Repository Structure
 
-All dimensions were transformed onto a harmonized analytical scale enabling cross-country comparability and reproducible benchmarking.
-
----
-
-# MISSING DATA MANAGEMENT
-
-Observed and imputed values are explicitly tracked through:
-
-- AI_OBSERVED
-- LEGAL_OBSERVED
-- PQC_OBSERVED
-- RES_OBSERVED
-- AI_IMPUTED
-- LEGAL_IMPUTED
-- PQC_IMPUTED
-- RES_IMPUTED
+```text
+QSSI_2026_V10_DEFINITIVE_MASTER_RELEASE/
+├── RELEASE_MANIFEST/
+├── SOURCE_ARCHIVES/
+├── REGISTRY/
+├── AUDIT/
+├── CERTIFICATION/
+├── GOVERNANCE/
+├── PROVENANCE/
+├── INTEGRATION/
+├── PRESERVATION/
+└── ARCHIVE_DISCOVERY/
+```
 
 ---
 
-# CONFIDENCE FRAMEWORK
+# Integrated Archive Portfolio
 
-## Confidence Tiers
-
-| Tier | Interpretation |
-|--------|--------|
-| A | Highest Confidence |
-| B | High Confidence |
-| C | Moderate Confidence |
-| D | Limited Observational Coverage |
-
-## Distribution
-
-| Tier | Countries |
-|--------|--------|
-| A | 87 |
-| B | 59 |
-| C | 27 |
-| D | 22 |
+| Archive | Purpose |
+|----------|----------|
+| QSSI_2026_V10_DEFINITIVE_MASTER_RELEASE.zip | Canonical preservation archive |
+| QSSI_2026_CLEAN_WORLD_RELEASE_ARCHIVE.zip | Analytical and publication archive |
+| QSSI_2026_PUBLICATION_CANONICAL_RELEASE.zip | Computational and methodological archive |
+| QSSI_2026_MASTER_PUBLICATION_RELEASE.zip | Publication distribution archive |
+| QSSI_2026_TOP_TIER_WORLD_PUBLICATION_PACKAGE.zip | International dissemination package |
+| QSSI_2026_REAL_PUBLICATION_PACKAGE.zip | Public release package |
+| QSSI_2026_V10_PRE_P23_ARCHIVE.zip | Historical development archive |
+| QSSI_2026_P23_CANONICAL_RELEASE_PACKAGE.zip | Lifecycle governance archive |
+| QSSI_2026_SBOM_PACKAGE.zip | Software transparency archive |
 
 ---
 
-# WEIGHT CONSTRUCTION
-
-Three independent weighting methodologies were applied:
-
-## Entropy Weighting
-
-Information diversity and indicator dispersion.
-
-## CRITIC Weighting
-
-Indicator variability and inter-indicator conflict.
-
-## Principal Component Analysis (PCA)
-
-Latent variance structure extraction.
-
----
-
-# FINAL COMPOSITE WEIGHTS
-
-| Dimension | Entropy | CRITIC | PCA | Final Weight |
-|------------|------------|------------|------------|------------|
-| AI | 0.395579 | 0.300079 | 0.360168 | 0.351942 |
-| LEGAL | 0.237359 | 0.208429 | 0.270896 | 0.238895 |
-| PQC | 0.153593 | 0.259712 | 0.234829 | 0.216045 |
-| RES | 0.213469 | 0.231780 | 0.134107 | 0.193119 |
-
----
-
-# PERCENTAGE REPRESENTATION
-
-| Dimension | Weight (%) |
-|------------|------------|
-| AI | 35.194224 |
-| LEGAL | 23.889468 |
-| PQC | 21.604454 |
-| RES | 19.311854 |
-
----
-
-# COMPOSITE SCORING FRAMEWORK
-
-Independent scoring systems:
-
-- QSSI_ENTROPY
-- QSSI_CRITIC
-- QSSI_PCA
-
-Final outputs:
-
-- QSSI_SCORE
-- QSSI_RANK
-- QSSI_TIER
-
----
-
-# MONTE CARLO VALIDATION
-
-## Simulation Summary
+# Integrated Archive Statistics
 
 | Metric | Value |
 |----------|----------|
-| Countries | 195 |
-| Simulations | 1000 |
-| Mean Rank SD | 3.5037 |
-| Median Rank SD | 1.9825 |
-| Maximum Rank SD | 13.5572 |
-
-## Stability Outputs
-
-- mean_score
-- score_sd
-- mean_rank
-- rank_sd
-- rank_ci_lower
-- rank_ci_upper
-- stability_score
-- stability_tier
+| Integrated Archives | 9 |
+| Total Files | 952 |
+| Total Release Size | 14.357 MB |
+| Framework Version | 10.0.0 |
+| Publication Year | 2026 |
 
 ---
 
-# ROBUSTNESS VALIDATION
+# Core Assessment Domains
 
-## Dimension Removal Assessment
+The framework incorporates multidimensional assessment across:
 
-| Scenario | Top10 Common | Top25 Common | Top50 Common | Spearman | Kendall |
-|------------|------------|------------|------------|------------|------------|
-| AI_REMOVED | 9 | 23 | 43 | 0.968106 | 0.856508 |
-| LEGAL_REMOVED | 9 | 24 | 47 | 0.983962 | 0.900074 |
-| PQC_REMOVED | 10 | 23 | 48 | 0.989257 | 0.919953 |
-| RES_REMOVED | 7 | 24 | 47 | 0.990631 | 0.919636 |
-
----
-
-# LEAVE-ONE-DIMENSION-OUT ANALYSIS
-
-| Removed Dimension | Average Rank Shift | Maximum Rank Shift | Spearman with QSSI |
-|-------------------|-------------------|-------------------|-------------------|
-| AI | 10.3538 | 47 | 0.968106 |
-| LEGAL | 7.0718 | 37 | 0.983962 |
-| PQC | 5.8205 | 31 | 0.989257 |
-| RES | 5.8205 | 27 | 0.990631 |
+- Artificial Intelligence Readiness
+- AI Governance Capacity
+- Institutional Governance Effectiveness
+- Legal and Regulatory Preparedness
+- Post-Quantum Cybersecurity Readiness
+- Strategic Infrastructure Capacity
+- National Resilience Assessment
+- Sovereign Security Preparedness
+- Economic Resilience Evaluation
+- Infrastructure Robustness Assessment
+- Institutional Capacity Analysis
+- Comparative Sovereign Benchmarking
+- Cross-Domain Capacity Evaluation
+- Security and Stability Assessment
+- Long-Term Strategic Preparedness
 
 ---
 
-# DOMINANCE ANALYSIS
+# Validation Framework
 
-| Dimension | Framework Weight | Average Rank Shift | Relative Importance |
-|------------|------------|------------|------------|
-| AI | 0.351942 | 10.3538 | 0.356210 |
-| LEGAL | 0.238895 | 7.0718 | 0.243296 |
-| PQC | 0.216045 | 5.8205 | 0.200247 |
-| RES | 0.193119 | 5.8205 | 0.200247 |
+QSSI 2026™ incorporates multiple validation and robustness procedures including:
 
----
-
-# INCREMENTAL VALIDITY
-
-| Metric | Value |
-|----------|----------|
-| Countries | 195 |
-| RES Framework Weight Percent | 19.3119 |
-| Average Absolute Rank Shift | 5.8205 |
-| Maximum Rank Improvement | 27 |
-| Maximum Rank Penalty | -19 |
+- External Validation
+- Monte Carlo Simulation Validation
+- Incremental Validity Assessment
+- Dominance Analysis
+- Orthogonality Evaluation
+- Correlation Structure Assessment
+- Sensitivity Analysis
+- Robustness Assessment
+- Consistency Verification
+- Cross-Archive Validation
+- Reproducibility Verification
+- Computational Reliability Assessment
+- Integrity Verification
 
 ---
 
-# WEIGHT SENSITIVITY ASSESSMENT
+# Governance and Provenance Architecture
 
-| Perturbation | Spearman | Average Rank Shift | Maximum Rank Shift |
-|------------|------------|------------|------------|
-| 5% | 0.999935 | 0.30000 | 4 |
-| 10% | 0.999823 | 0.63075 | 5 |
-| 15% | 0.999673 | 0.91280 | 6 |
+The framework includes:
 
----
+- Governance Registry
+- Release Authority Chain
+- Master Provenance Chain
+- Digital Object Registry
+- Certification Registry
+- Citation Registry
+- Session Registry
+- Metadata Registries
+- Canonical Integration Reports
+- Discovery Reports
+- Verification Infrastructure
+- Preservation Documentation
 
-# EXTERNAL VALIDATION
-
-| Benchmark | Pearson_r | Spearman_r | Kendall_tau |
-|------------|------------|------------|------------|
-| SCI | 0.985837 | 0.983078 | 0.896718 |
-| SCI_PLUS | 0.986295 | 0.987751 | 0.912806 |
-| SCI_ULTRA | 0.998136 | 0.997788 | 0.970077 |
-| SCI_ULTRA_ADJUSTED | 0.953030 | 0.947723 | 0.850386 |
-
----
-
-# REPRODUCIBILITY FRAMEWORK
-
-| Validation | Status |
-|------------|--------|
-| Dataset Integrity | PASS |
-| Hash Registry | PASS |
-| Artifact Registry | PASS |
-| Environment Capture | PASS |
-| Metadata Capture | PASS |
-| Reproducibility Validation | PASS |
+These resources support transparency, accountability, traceability, reproducibility, and preservation continuity.
 
 ---
 
-# FAIR+D COMPLIANCE
+# Software Transparency Infrastructure
 
-| Requirement | Status |
-|------------|--------|
-| Findable | PASS |
-| Accessible | PASS |
-| Interoperable | PASS |
-| Reusable | PASS |
-| Deterministic Reproducibility | PASS |
+The release includes software transparency resources supporting reproducible computational research:
 
----
-
-# ARCHIVE STATISTICS
-
-| Metric | Value |
-|---------|---------|
-| Total Archived Files | 270 |
-| Master Dataset | Included |
-| Rankings Dataset | Included |
-| Validation Reports | Included |
-| Audit Reports | Included |
-| FAIR+D Reports | Included |
-| Citation Package | Included |
-| Metadata Package | Included |
-| Distribution Package | Included |
-| Institutional Release Package | Included |
-| Reproducibility Package | Included |
+- Software Bill of Materials (SBOM)
+- Dependency Transparency Documentation
+- Software Inventory Records
+- Reproducibility Assets
+- Workflow Documentation
+- Verification Resources
+- Computational Governance Documentation
+- Research Traceability Resources
 
 ---
 
-# PRIMARY ARTIFACTS
+# FAIR+D Research Infrastructure
 
-- QSSI_2026_MASTER_FINAL.csv
-- QSSI_2026_Final_Rankings.csv
-- QSSI_2026_Weights.csv
-- QSSI_2026_Robustness_Validation.csv
-- QSSI_2026_MonteCarlo_Validation.csv
-- QSSI_2026_External_Validation.csv
-- QSSI_2026_Shapley_LODO.csv
-- QSSI_2026_Incremental_Validity.csv
-- QSSI_2026_Dominance_Analysis.csv
-- QSSI_2026_Weight_Sensitivity_Summary.csv
-- QSSI_2026_FAIRD_Compliance_Report.csv
-- QSSI_2026_Reproducibility_Audit.csv
-- QSSI_2026_Final_Audit_Report.csv
-- QSSI_2026_Manifest.json
-- QSSI_2026_Journal_Submission_Package.json
+## Findable
+
+Persistent identifiers, structured metadata systems, citation infrastructures, discovery records, and registries support discoverability and scholarly visibility.
+
+## Accessible
+
+Repository-based dissemination and archival packaging support sustainable accessibility and long-term availability.
+
+## Interoperable
+
+Machine-readable formats including JSON, CSV, metadata registries, manifests, certification resources, and audit documentation support interoperability.
+
+## Reusable
+
+Documentation, validation assets, governance records, provenance resources, reproducibility infrastructures, and preservation systems support long-term reuse.
+
+## Documentation (+D)
+
+Governance, certification, preservation, audit, verification, metadata, and publication resources support transparency and stewardship.
 
 ---
 
-# RECOMMENDED CITATION
+# Audit Summary
 
+| Audit Phase | Status |
+|-------------|---------|
+| Core Manifest Validation | PASS |
+| Registry Reconciliation Audit | PASS |
+| DOI and ORCID Validation Audit | PASS |
+| Release Consistency Audit | PASS |
+| Final Certification Audit | PASS |
+| Master Release Closure Audit | PASS |
+
+### Validation Outcome
+
+- Success Rate: 100%
+- Certification Score: 100%
+- Closure Score: 100%
+
+---
+
+# Preservation Status
+
+| Component | Count |
+|------------|---------|
+| Manifest Assets | 14 |
+| Metadata Assets | 32 |
+| Registry Assets | 21 |
+| Certification Assets | 12 |
+| Publication Assets | 34 |
+
+**Archival Status:** ARCHIVAL READY
+
+---
+
+# Included Core Assets
+
+## Archives
+
+- QSSI_2026_V10_DEFINITIVE_MASTER_RELEASE.zip
+- QSSI_2026_CLEAN_WORLD_RELEASE_ARCHIVE.zip
+- QSSI_2026_PUBLICATION_CANONICAL_RELEASE.zip
+- QSSI_2026_MASTER_PUBLICATION_RELEASE.zip
+- QSSI_2026_TOP_TIER_WORLD_PUBLICATION_PACKAGE.zip
+- QSSI_2026_REAL_PUBLICATION_PACKAGE.zip
+- QSSI_2026_V10_PRE_P23_ARCHIVE.zip
+- QSSI_2026_P23_CANONICAL_RELEASE_PACKAGE.zip
+- QSSI_2026_SBOM_PACKAGE.zip
+
+## Infrastructure Assets
+
+- QSSI_MASTER_ARCHIVE_MANIFEST.json
+- QSSI_MASTER_ARCHIVE_METADATA.csv
+
+---
+
+# Persistent Identifiers
+
+| Identifier | Value |
+|------------|---------|
+| Current Edition DOI | 10.5281/zenodo.20385492 |
+| Canonical DOI | 10.5281/zenodo.17302169 |
+| ORCID | 0009-0007-5615-3558 |
+
+---
+
+# Recommended Citation
+
+```text
 Mazumdar, B. (2026).
 
-*Quantum Sovereign Security Index (QSSI) 2026: FAIR+D Canon™ Global Framework.*
+QSSI 2026™: Quantum Sovereign Security Index.
+Definitive Master Release v10.0.0.
 
 Zenodo.
 
-Current Edition DOI:
-
-10.5281/zenodo.20385492
-
-All Versions DOI:
-
-10.5281/zenodo.17302169
-
-ORCID:
-
-https://orcid.org/0009-0007-5615-3558
-
----
-
-# SOFTWARE REPOSITORY
-
-https://github.com/BidyutMazumdar/QVP-Global-System
-
----
-
-# RAILWAY LIVE PLATFORM
-
-https://qvp-global-system-production.up.railway.app/
-
----
-
-# INTERACTIVE DASHBOARD
-
-https://qvp-global-system-production.up.railway.app/dashboard
-
----
-
-# RANKINGS API
-
-https://qvp-global-system-production.up.railway.app/rankings
-
----
-
-# CURRENT EDITION DOI
-
 https://doi.org/10.5281/zenodo.20385492
+```
 
 ---
 
-# ALL VERSIONS DOI
+# License
 
-https://doi.org/10.5281/zenodo.17302169
+**Creative Commons Attribution–NonCommercial–NoDerivatives 4.0 International (CC BY-NC-ND 4.0)**
 
----
+Copyright © 2026 Bidyut Mazumdar.
 
-# ORCID
-
-https://orcid.org/0009-0007-5615-3558
+https://creativecommons.org/licenses/by-nc-nd/4.0/
 
 ---
 
-Version: QSSI 2026 Definitive World Edition
+# Release Status
 
-FAIR+D Canon™ Global Release
+| Status |
+|----------|
+| Canonical Release |
+| Certified |
+| Archival Ready |
+| Preservation Ready |
+| Publication Ready |
+| DOI Registered |
+
+---
+
+<div align="center">
+
+### QSSI 2026™
+### Quantum Sovereign Security Index
+
+**Definitive Master Release v10.0.0**
+
+[Current Edition DOI](https://doi.org/10.5281/zenodo.20385492) •
+[Canonical DOI](https://doi.org/10.5281/zenodo.17302169) •
+[ORCID](https://orcid.org/0009-0007-5615-3558) •
+[Repository](https://github.com/BidyutMazumdar/QVP-Global-System) •
+[License](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+</div>
