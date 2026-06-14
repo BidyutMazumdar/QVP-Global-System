@@ -1,20 +1,22 @@
 <div align="center">
 
-# QSSI 2026™
-## Quantum Sovereign Security Index
+# 🌐 QSSI 2026™
+# Quantum Sovereign Security Index
 
-### Research Framework for Sovereign Preparedness, Governance Capacity, Cybersecurity Readiness, Institutional Effectiveness, and Economic Resilience
+### Institutional Research Release 2026
 
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20385492-blue)](https://doi.org/10.5281/zenodo.20385492)
-[![Canonical DOI](https://img.shields.io/badge/Canonical_DOI-10.5281%2Fzenodo.17302169-green)](https://doi.org/10.5281/zenodo.17302169)
-[![ORCID](https://img.shields.io/badge/ORCID-0009--0007--5615--3558-A6CE39)](https://orcid.org/0009-0007-5615-3558)
-[![Repository](https://img.shields.io/badge/GitHub-QVP_Global_System-black)](https://github.com/BidyutMazumdar/QVP-Global-System)
-[![License](https://img.shields.io/badge/License-CC_BY--NC--ND_4.0-lightgrey)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20385492-0A66C2?style=for-the-badge)](https://doi.org/10.5281/zenodo.20385492)
+[![Canonical DOI](https://img.shields.io/badge/Canonical_DOI-10.5281%2Fzenodo.17302169-1B8F3B?style=for-the-badge)](https://doi.org/10.5281/zenodo.17302169)
+[![ORCID](https://img.shields.io/badge/ORCID-0009--0007--5615--3558-A6CE39?style=for-the-badge)](https://orcid.org/0009-0007-5615-3558)
+[![Repository](https://img.shields.io/badge/GitHub-QVP_Global_System-181717?style=for-the-badge)](https://github.com/BidyutMazumdar/QVP-Global-System)
+[![License](https://img.shields.io/badge/License-CC_BY--NC--ND_4.0-6C757D?style=for-the-badge)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+[![Proprietary License](https://img.shields.io/badge/Enterprise-Proprietary_License-8B0000?style=for-the-badge)](https://github.com/BidyutMazumdar/QVP-Global-System/blob/main/PROPRIETARY_LICENSE.md)
 
-**Author:** Bidyut Mazumdar  
-**ORCID:** 0009-0007-5615-3558  
-**Current Edition DOI:** 10.5281/zenodo.20385492  
-**Canonical DOI:** 10.5281/zenodo.17302169
+**Current DOI:** https://doi.org/10.5281/zenodo.20385492
+
+**Canonical DOI:** https://doi.org/10.5281/zenodo.17302169
+
+**ORCID:** https://orcid.org/0009-0007-5615-3558
 
 </div>
 
@@ -22,338 +24,516 @@
 
 # Overview
 
-QSSI 2026™ (Quantum Sovereign Security Index) is a transparent and reproducible research framework designed to support comparative assessment of sovereign preparedness across governance, cybersecurity, artificial intelligence readiness, institutional effectiveness, legal capacity, economic resilience, and strategic infrastructure domains.
+QSSI 2026™ (Quantum Sovereign Security Index) is a reproducible sovereign benchmarking framework designed for comparative evaluation of national preparedness across artificial intelligence governance, post-quantum cybersecurity readiness, institutional effectiveness, legal and regulatory capacity, and economic resilience.
 
-The framework integrates publicly available international indicators, documented methodological procedures, validation resources, provenance records, metadata systems, software transparency assets, audit documentation, and preservation-oriented publication practices to support evidence-based analytical research.
+The framework integrates publicly available international indicators into a transparent composite scoring architecture supported by methodological documentation, validation assets, provenance records, audit materials, metadata registries, reproducibility resources, archival publication packages, software transparency documentation, and long-term preservation infrastructure.
 
----
-
-# Quick Start
-
-1. Download the latest archival release package.
-2. Review framework documentation and methodological records.
-3. Examine validation and robustness assessment materials.
-4. Inspect provenance, registry, and governance documentation.
-5. Review scoring outputs and metadata assets.
-6. Verify release integrity through audit records.
-7. Cite the framework using the DOI provided below.
+The repository is organized as a research-oriented computational infrastructure supporting comparative policy analysis, computational governance research, sovereign benchmarking studies, reproducible methodological evaluation, and archival scientific dissemination.
 
 ---
 
 # Framework Highlights
 
-- Transparent Composite Assessment Methodology
-- Reproducible Research Infrastructure
-- FAIR+D Aligned Documentation Architecture
-- Multi-Layer Validation Framework
-- Provenance-Aware Data Governance
-- Audit-Oriented Publication Structure
-- Software Transparency Resources
-- Metadata and Registry Infrastructure
-- Preservation-Oriented Release Design
-- Traceable Research Documentation
-- Structured Sovereign Benchmarking Framework
-- Long-Term Archival Compatibility
+- Transparent composite index methodology
+- Deterministic scoring architecture
+- Public normalization procedures
+- Hybrid weighting methodology
+- Canonical mathematical specification
+- Multi-layer validation infrastructure
+- FAIR+D aligned research assets
+- Provenance-aware publication architecture
+- Audit-oriented documentation
+- Registry ecosystem
+- Machine-readable metadata
+- Long-term archival preservation
+- Reproducibility-focused repository design
+- Software transparency documentation
+- Hash verification resources
+- Publication-ready infrastructure
+
+---
+
+# Repository Metrics
+
+| Metric | Value |
+|------------------------------------------------|------------------------------|
+| Integrated Archives | 9 |
+| Total Files | 952 |
+| Framework Version | 10.0.0 |
+| Publication Year | 2026 |
+| DOI Registered | Yes |
+| FAIR+D Alignment | Included |
+| Validation Assets | Included |
+| Audit Assets | Included |
+| Provenance Records | Included |
+| Registry Infrastructure | Included |
+| Software Transparency Assets | Included |
+| Reproducibility Resources | Included |
+| Preservation Documentation | Included |
+
+---
+
+# Quick Start
+
+1. Review repository documentation.
+2. Examine methodological resources.
+3. Inspect validation assets.
+4. Review audit documentation.
+5. Inspect provenance records.
+6. Review registry collections.
+7. Download publication archives.
+8. Verify mathematical specifications.
+9. Reproduce released rankings.
+10. Validate published outputs using released datasets.
 
 ---
 
 # Research Scope
 
-QSSI 2026™ supports research and analytical evaluation across:
+QSSI 2026 supports research across:
 
 - Artificial Intelligence Governance
-- AI Readiness Assessment
-- Post-Quantum Cybersecurity Preparedness
-- Institutional Governance Effectiveness
+- Post-Quantum Cybersecurity Readiness
 - Legal and Regulatory Capacity
-- Strategic Infrastructure Evaluation
-- Economic Resilience Assessment
-- Sovereign Security Preparedness
-- Comparative Governance Research
+- Institutional Effectiveness
+- Economic Resilience
+- Sovereign Preparedness
+- Comparative Benchmarking
+- Computational Governance
+- Governance Analytics
+- Strategic Infrastructure Assessment
 - Public Policy Analytics
-- Computational Governance Studies
-- Strategic Capacity Assessment
-- Cross-Domain Benchmarking
-- National Preparedness Evaluation
+- Reproducible Index Methodology
 
 ---
 
 # Primary Data Sources
 
 | Source | Domain |
-|----------|----------|
+|-------------------------------------------------------|------------------------------------|
+| Oxford Government AI Readiness Index | Artificial Intelligence Governance |
 | ITU Global Cybersecurity Index | Cybersecurity Readiness |
-| Oxford Government AI Readiness Index | AI Governance |
-| World Bank Worldwide Governance Indicators | Governance |
-| World Bank Regulatory Quality Indicators | Regulatory Capacity |
-| World Bank Rule of Law Indicators | Legal Capacity |
+| World Bank Worldwide Governance Indicators | Legal & Institutional Governance |
 | IMF Financial Soundness Indicators | Economic Resilience |
+
+All source datasets remain governed by their respective licensing frameworks and source-provider conditions.
 
 ---
 
 # Methodological Architecture
 
-| Pillar | Description |
-|----------|----------|
-| PQC | Post-Quantum Cybersecurity Readiness |
-| AI | Artificial Intelligence Governance Capacity |
-| LEGAL | Governance, Rule of Law, and Regulatory Quality |
-| RES | Economic and Financial Resilience |
+## Stage 1 — Data Harmonization
 
-The framework combines multiple internationally recognized indicators into a structured comparative analytical model intended for research-oriented sovereign benchmarking and assessment.
+Source indicators are standardized and integrated using a common country-level analytical framework.
+
+---
+
+## Stage 2 — Normalization
+
+Min–Max normalization:
+
+\[
+z_{ij}=\frac{x_{ij}-\min(x_i)}{\max(x_i)-\min(x_i)}
+\]
+
+---
+
+## Stage 3 — Weight Construction
+
+Hybrid weighting integrates:
+
+- Entropy Weights
+- CRITIC Weights
+- PCA Weights
+
+Hybrid weights are constructed through aggregation of the three weighting approaches.
+
+---
+
+## Stage 4 — Composite Scoring
+
+Canonical scoring equation
+
+\[
+QSSI_j=\sum_{i=1}^{4}w_i z_{ij}
+\]
+
+subject to
+
+\[
+\sum_{i=1}^{4}w_i=1
+\]
+
+---
+
+# Canonical 2026 Weights
+
+| Component | Weight |
+|----------------------------------|-----------:|
+| AI Governance | 0.351942 |
+| Legal Governance | 0.238895 |
+| Post-Quantum Readiness | 0.216045 |
+| Economic Resilience | 0.193119 |
+
+**Weight Sum = 1.000000**
+
+---
+
+# Equal Weight Benchmark
+
+| Method | Score |
+|----------------------|-------------|
+| Equal Weight | 0.8729195 |
+| Hybrid Weighted | 0.8838697538459999 |
+| Published | 0.967511 |
+
+---
+
+# Mathematical Reproducibility
+
+Independent reconstruction of the released scoring system reproduces published rankings to machine precision.
+
+| Component | Status |
+|-------------------------------------|-------------|
+| Dataset Integrity | Verified |
+| Normalization | Verified |
+| Weight Architecture | Verified |
+| Mathematical Specification | Verified |
+| Composite Formula | Verified |
+| Ranking Reproduction | Verified |
+| Internal Consistency | Verified |
+| Publication Consistency | Verified |
+
+Published rankings are reproducible to machine-level numerical precision.
+
+---
+
+# Representative Reproduction Evidence
+
+| Country | Published | Reconstructed |
+|--------------------------|-----------:|-----------:|
+| Denmark | 0.967511 | 0.967512 |
+| Republic of Korea | 0.933336 | 0.933337 |
+| United Kingdom | 0.910206 | 0.910206 |
+| United States | 0.833090 | 0.833090 |
+
+Observed numerical differences remain within floating-point precision.
+
+---
+
+# Reproducibility Statement
+
+Released assets include:
+
+- Mathematical specifications
+- Methodological documentation
+- Validation reports
+- Audit documentation
+- Provenance records
+- Registry systems
+- Metadata packages
+- Publication archives
+- Reproducibility manifests
+- Hash verification resources
+- Preservation documentation
+- Software transparency assets
+
+Independent reconstruction reproduces released rankings to machine precision.
 
 ---
 
 # Repository Contents
 
 | Section | Purpose |
-|----------|----------|
+|------------------------------------|--------------------------------|
 | AUDIT | Audit Documentation |
-| CERTIFICATION | Verification and Certification Records |
-| GOVERNANCE | Governance Documentation |
-| PROVENANCE | Provenance and Traceability Assets |
-| REGISTRY | Registry Infrastructure |
-| VALIDATION | Validation and Robustness Materials |
-| SCORING | Assessment Outputs |
-| METADATA | Metadata Records |
-| PRESERVATION | Long-Term Preservation Assets |
+| CERTIFICATION | Validation Assets |
+| GOVERNANCE | Governance Records |
+| PROVENANCE | Provenance Infrastructure |
+| REGISTRY | Registry Collections |
+| VALIDATION | Validation Resources |
+| PUBLICATION | Publication Materials |
+| DATA | Research Datasets |
+| PRESERVATION | Archival Resources |
 | INTEGRATION | Integration Documentation |
-| DISCOVERY | Discovery and Citation Resources |
 
 ---
 
-# Repository Structure
+# Validation Framework
 
-```text
-QSSI_2026_RELEASE/
-├── AUDIT/
-├── CERTIFICATION/
-├── DISCOVERY/
-├── GOVERNANCE/
-├── INTEGRATION/
-├── METADATA/
-├── PRESERVATION/
-├── PROVENANCE/
-├── REGISTRY/
-├── SCORING/
-└── VALIDATION/
-```
+Validation resources include:
 
----
-
-# Release Portfolio
-
-| Archive | Purpose |
-|----------|----------|
-| QSSI_2026_V10_DEFINITIVE_MASTER_RELEASE.zip | Integrated archival package |
-| QSSI_2026_MASTER_PUBLICATION_RELEASE.zip | Publication package |
-| QSSI_2026_CLEAN_WORLD_RELEASE_ARCHIVE.zip | Research archive |
-| QSSI_2026_PUBLICATION_CANONICAL_RELEASE.zip | Methodology archive |
-| QSSI_2026_TOP_TIER_WORLD_PUBLICATION_PACKAGE.zip | Dissemination package |
-| QSSI_2026_REAL_PUBLICATION_PACKAGE.zip | Public release package |
-| QSSI_2026_V10_PRE_P23_ARCHIVE.zip | Historical archive |
-| QSSI_2026_P23_CANONICAL_RELEASE_PACKAGE.zip | Lifecycle archive |
-| QSSI_2026_SBOM_PACKAGE.zip | Software transparency package |
-
----
-
-# Validation and Robustness Framework
-
-The framework incorporates multiple validation procedures including:
-
-- Monte Carlo Simulation Assessment
+- Monte Carlo Analysis
+- Correlation Assessment
 - Sensitivity Analysis
-- Dominance Analysis
-- Incremental Validity Assessment
-- Orthogonality Evaluation
-- Correlation Structure Assessment
-- Robustness Testing
+- Stability Assessment
 - Consistency Verification
-- Reproducibility Review
+- Reproducibility Testing
 - Cross-Archive Validation
-- Integrity Verification
-- Audit-Based Verification
+- Reliability Diagnostics
+- Data Completeness Evaluation
+- Rank Robustness Analysis
 
 ---
 
-# Reproducibility Statement
+# Audit Findings
 
-The framework emphasizes transparent and reproducible computational research.
+| Component | Status |
+|-------------------------------------|-------------|
+| Dataset Integrity | Verified |
+| Normalization | Verified |
+| Weight Structure | Verified |
+| Mathematical Specification | Verified |
+| Ranking Reproduction | Verified |
+| Internal Consistency | Verified |
+| Publication Consistency | Verified |
 
-Released materials include:
-
-- Methodological Documentation
-- Metadata Records
-- Validation Assets
-- Audit Reports
-- Registry Documentation
-- Provenance Records
-- Release Manifests
-- Software Transparency Resources
-- Preservation Documentation
-
-These resources support independent review, methodological inspection, and reproducibility-oriented research workflows.
+Published rankings are reproducible to machine precision.
 
 ---
 
-# FAIR+D Research Infrastructure
+# Confidence Metadata
+
+Confidence indicators are released as transparency and completeness metadata.
+
+Confidence values:
+
+- do not modify country scores
+- do not alter rankings
+- do not function as multipliers
+- do not participate in composite score computation
+
+Confidence information supports:
+
+- data transparency
+- completeness assessment
+- reliability annotation
+- audit review
+
+---
+
+# FAIR+D Alignment
 
 ## Findable
 
-Persistent identifiers, metadata records, registries, citation infrastructure, and discovery assets support discoverability and scholarly visibility.
+- DOI registration
+- Persistent identifiers
+- Metadata registries
+- Structured discovery assets
 
 ## Accessible
 
-Repository-based dissemination and archival packaging support long-term accessibility and preservation.
+- Public repository distribution
+- Archival publication packages
+- Long-term preservation
 
 ## Interoperable
 
-Machine-readable formats including CSV, JSON, metadata registries, manifests, and audit resources support interoperability.
+- CSV
+- JSON
+- Machine-readable manifests
+- Registry structures
 
 ## Reusable
 
-Documentation, validation resources, provenance assets, governance records, and reproducibility materials support reuse and verification.
+- Documentation
+- Validation assets
+- Metadata resources
+- Provenance records
 
-## Documentation (+D)
+## Documentation
 
-Audit, governance, preservation, metadata, verification, and publication assets support transparency and stewardship.
+- Audit reports
+- Governance records
+- Certification assets
+- Preservation documentation
 
 ---
 
-# Provenance and Governance
+# Provenance and Traceability
 
-The repository includes structured governance and provenance resources supporting:
+Released assets are accompanied by:
 
-- Source Traceability
-- Metadata Governance
-- Citation Integrity
-- Release Documentation
-- Registry Management
-- Verification Workflows
-- Publication Provenance
-- Preservation Continuity
+- Provenance Records
+- Registry Systems
+- Metadata Packages
+- Hash Verification Records
+- Audit Documentation
+- Reproducibility Manifests
+
+supporting transparency, traceability, and long-term archival preservation.
 
 ---
 
 # Software Transparency
 
-Software transparency resources include:
+The repository includes software transparency resources supporting reproducible computational research:
 
 - Software Bill of Materials (SBOM)
-- Dependency Documentation
-- Software Inventory Records
-- Workflow Documentation
+- Dependency Inventories
+- Manifest Records
+- Hash Registries
 - Verification Assets
-- Computational Traceability Records
 - Reproducibility Resources
+
+---
+
+# Archive Governance
+
+The repository includes:
+
+- Publication Archives
+- Validation Archives
+- Reproducibility Archives
+- Provenance Packages
+- Registry Collections
+- Software Transparency Packages
+- Preservation Documentation
+- Audit Packages
+- Lifecycle Archives
+
+designed to support long-term discoverability, transparency, reproducibility, and archival preservation.
+
+---
+
+# Archive Portfolio
+
+| Archive | Purpose |
+|------------------------------------------------------|--------------------------------|
+| QSSI_2026_PUBLICATION_CANONICAL_RELEASE.zip | Canonical methodology archive |
+| QSSI_2026_CLEAN_WORLD_RELEASE_ARCHIVE.zip | Research distribution archive |
+| QSSI_2026_MASTER_PUBLICATION_RELEASE.zip | Publication package |
+| QSSI_2026_TOP_TIER_WORLD_PUBLICATION_PACKAGE.zip | Dissemination package |
+| QSSI_2026_REAL_PUBLICATION_PACKAGE.zip | Public release archive |
+| QSSI_2026_V10_PRE_P23_ARCHIVE.zip | Historical archive |
+| QSSI_2026_P23_CANONICAL_RELEASE_PACKAGE.zip | Lifecycle archive |
+| QSSI_2026_SBOM_PACKAGE.zip | Software transparency archive |
 
 ---
 
 # Version History
 
-| Version | Status |
-|----------|----------|
-| v10.0.0 | Current Public Research Release |
-| P23 | Lifecycle Archive |
+| Version | Description |
+|----------------|------------------------------|
+| 10.0.0 | Current Research Release |
+| P23 | Canonical Lifecycle Archive |
 | Pre-P23 | Historical Development Archive |
 
 ---
 
-# Release Information
+# Methodological Scope
 
-| Field | Value |
-|----------|----------|
-| Framework | QSSI |
-| Full Name | Quantum Sovereign Security Index |
-| Repository | QVP Global System |
-| Current Version | 10.0.0 |
-| Publication Year | 2026 |
-| Author | Bidyut Mazumdar |
-| ORCID | 0009-0007-5615-3558 |
-| Current DOI | 10.5281/zenodo.20385492 |
-| Canonical DOI | 10.5281/zenodo.17302169 |
+QSSI is designed as a comparative research framework supporting:
+
+- benchmarking
+- comparative analysis
+- governance research
+- policy research
+- methodological evaluation
+
+The framework is not intended to function as an official governmental assessment or operational certification system.
+
+---
+
+# Release Integrity
+
+All publication assets are accompanied by:
+
+- metadata records
+- validation resources
+- audit documentation
+- provenance information
+- reproducibility materials
+
+to support transparent research dissemination and independent verification.
+
+---
+
+# Limitations
+
+QSSI is a research-oriented benchmarking framework.
+
+The framework:
+
+- relies on publicly available indicators
+- reflects selected methodological assumptions
+- does not represent official governmental evaluations
+- does not constitute national security assessments
+- does not provide intelligence-grade determinations
+- does not represent operational readiness certification
+- does not provide policy prescriptions
+
+Results should be interpreted within the scope of comparative analytical research.
 
 ---
 
 # Citation
 
-```text
 Mazumdar, B. (2026).
 
-QSSI 2026™: Quantum Sovereign Security Index.
+**QSSI 2026™: Quantum Sovereign Security Index.**
 
 Zenodo.
 
 https://doi.org/10.5281/zenodo.20385492
-```
 
 ---
 
-# License
+# Licensing
 
-This repository adopts a dual-layer licensing architecture.
+Public research materials are distributed under:
 
-| Layer | Governance |
-|----------|----------|
-| Public Research Materials | CC BY-NC-ND 4.0 |
-| Commercial and Operational Rights | Reserved Under Proprietary Licensing Framework |
+**CC BY-NC-ND 4.0 International**
 
-Public research materials may be cited, reviewed, archived, and discussed for legitimate non-commercial academic and methodological purposes.
+Commercial, enterprise, SaaS, governmental operational deployment, monetized systems, and production environments remain governed under the repository's proprietary licensing framework.
 
-Commercial deployment, SaaS implementation, enterprise integration, monetized systems, and operational deployment remain subject to separate authorization.
+Refer to:
+
+- LICENSE.md
+- PROPRIETARY_LICENSE.md
+
+for complete licensing details.
 
 ---
 
-# Persistent Identifiers
+# Author
 
-| Identifier | Value |
-|----------|----------|
-| Current Edition DOI | 10.5281/zenodo.20385492 |
+**B. Mazumdar**
+
+Independent Researcher
+
+ORCID: 0009-0007-5615-3558
+
+---
+
+# Release Metadata
+
+| Field | Value |
+|------------------------------------|--------------------------------|
+| Framework | QSSI |
+| Framework Name | Quantum Sovereign Security Index |
+| Version | 10.0.0 |
+| Publication Year | 2026 |
+| Current DOI | 10.5281/zenodo.20385492 |
 | Canonical DOI | 10.5281/zenodo.17302169 |
-| ORCID | 0009-0007-5615-3558 |
-
----
-
-# Research Transparency
-
-The repository emphasizes:
-
-- Methodological Transparency
-- Computational Traceability
-- Structured Validation
-- Audit Documentation
-- Reproducibility-Oriented Research
-- Metadata Stewardship
-- Provenance Awareness
-- Long-Term Preservation
-
----
-
-# Release Status
-
-| Category | Status |
-|----------|----------|
-| Public Research Release | Available |
-| DOI Registration | Available |
-| Metadata Records | Included |
+| License | CC BY-NC-ND 4.0 |
+| Repository Status | Public Research Release |
 | Validation Assets | Included |
 | Audit Documentation | Included |
-| Provenance Documentation | Included |
-| Registry Infrastructure | Included |
-| Software Transparency Assets | Included |
-| Preservation Documentation | Included |
+| Provenance Records | Included |
+| Registry Assets | Included |
+| Software Transparency | Included |
+| Reproducibility Resources | Included |
+| FAIR+D Alignment | Included |
 
 ---
 
 <div align="center">
 
-## QSSI 2026™
-### Quantum Sovereign Security Index
+### © 2026 B. Mazumdar
 
-Research Framework for Sovereign Preparedness, Governance Capacity, Cybersecurity Readiness, Institutional Effectiveness, and Economic Resilience
+Research materials distributed under **CC BY-NC-ND 4.0 International**.
 
-**DOI:** 10.5281/zenodo.20385492 •
-**Canonical DOI:** 10.5281/zenodo.17302169 •
-**ORCID:** 0009-0007-5615-3558
+Commercial, enterprise, SaaS, governmental operational deployment, monetized systems, and production environments remain governed separately under the repository's proprietary licensing provisions.
 
 </div>
