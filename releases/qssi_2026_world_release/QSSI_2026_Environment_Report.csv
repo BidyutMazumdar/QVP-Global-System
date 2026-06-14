@@ -1,8 +1,0 @@
-Component,Version
-Python,3.12.13
-Platform,Linux-6.6.122+-x86_64-with-glibc2.35
-Pandas,2.2.2
-NumPy,2.0.2
-SciPy,1.16.3
-Scikit-Learn,1.6.1
-Matplotlib,3.10.0
