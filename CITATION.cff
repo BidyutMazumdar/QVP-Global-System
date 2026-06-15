@@ -1,77 +1,37 @@
 cff-version: 1.2.0
+message: "If you use QSSI 2026™, please cite using the metadata below."
 
-title: "Quantum Veil Protocol (QVP) — Global System 2026"
+title: "QSSI 2026™: Quantum Sovereign Security Index"
 
-message: >
-  If you use this framework, methodology, dataset, computational architecture,
-  validation system, or archival release, please cite the repository and the
-  corresponding Zenodo DOI.
+version: "10.0.0"
 
 type: software
 
 authors:
   - family-names: "Mazumdar"
     given-names: "Bidyut"
-    name-particle: "Dr."
     orcid: "https://orcid.org/0009-0007-5615-3558"
-    affiliation: "Independent Research Scholar, FAIR+D Canon™"
 
-identifiers:
-  - type: doi
-    value: "10.5281/zenodo.20257025"
-    description: "Current Release DOI"
+doi: 10.5281/zenodo.20385492
 
 repository-code: "https://github.com/BidyutMazumdar/QVP-Global-System"
 
-url: "https://github.com/BidyutMazumdar/QVP-Global-System"
-
-repository-artifact: "https://doi.org/10.5281/zenodo.17302169"
-
-abstract: >
-  QVP-Global-System™ establishes a deterministic, reproducible,
-  audit-oriented, and computationally traceable sovereign intelligence
-  framework for cybersecurity benchmarking, AI governance evaluation,
-  post-quantum resilience assessment, digital sovereignty analysis,
-  systemic risk modeling, and computational governance research
-  through the QSSI™ (Quantum Sovereign Security Index) architecture.
-
-keywords:
-  - Post-Quantum Cryptography
-  - AI Governance
-  - Cybersecurity
-  - Digital Sovereignty
-  - Sovereign Intelligence
-  - QSSI
-  - Computational Governance
-  - Sovereign Benchmarking
-  - Risk Assessment
-  - Reproducible Research
-  - Explainable AI
-  - Computational Policy Modeling
-  - Strategic Governance Analytics
-  - Deterministic Systems
-  - Institutional Research Infrastructure
+url: "https://doi.org/10.5281/zenodo.20385492"
 
 license: "CC-BY-NC-ND-4.0"
 
-version: "v1.0.1"
+keywords:
+  - Quantum Sovereign Security Index
+  - QSSI
+  - Sovereign Benchmarking
+  - AI Governance
+  - Post Quantum Security
+  - Computational Governance
+  - FAIR+D
+  - Reproducible Research
 
-date-released: "2026-05-17"
-
-preferred-citation:
-  type: report
-  title: "Quantum Veil Protocol (QVP) — Global System 2026: QSSI™ Sovereign Computational Governance Framework"
-  authors:
-    - family-names: "Mazumdar"
-      given-names: "Bidyut"
-      orcid: "https://orcid.org/0009-0007-5615-3558"
-  doi: "10.5281/zenodo.20257025"
-  publisher: "Zenodo"
-  year: 2026
-
-references:
-  - type: generic
-    scope: "Canonical All-Version DOI"
-    value: "https://doi.org/10.5281/zenodo.17302169"
-
-license-url: "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+abstract: >
+  QSSI 2026™ is a reproducible sovereign benchmarking framework
+  for comparative evaluation of national preparedness across
+  AI governance, post-quantum cybersecurity readiness,
+  institutional effectiveness, legal capacity, and economic resilience.
