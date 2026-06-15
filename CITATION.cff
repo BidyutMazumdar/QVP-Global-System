@@ -1,216 +1,56 @@
 cff-version: 1.2.0
 message: "If you use QSSI 2026™ in research, policy analysis, governance assessment, benchmarking studies, software systems, datasets, publications, or derivative scholarly works, please cite this release."
-
 title: "QSSI 2026™: Quantum Sovereign Security Index — Definitive Master Release v10.0.0"
-
 type: software
-
 authors:
   - family-names: "Mazumdar"
     given-names: "Bidyut"
-    name-particle: "Dr."
     orcid: "https://orcid.org/0009-0007-5615-3558"
     affiliation: "Independent Researcher–Scholar (AI Governance, Cybersecurity, Post-Quantum Cryptography, Digital Statecraft); Founder, FAIR+D Canon (India)"
-
-identifiers:
-  - type: doi
-    value: "10.5281/zenodo.20385492"
-    description: "Definitive Master Release DOI"
-
-  - type: doi
-    value: "10.5281/zenodo.17302169"
-    description: "All Versions DOI"
-
+version: "10.0.0"
+date-released: "2026-06-11"
+doi: "10.5281/zenodo.20385492"
 repository-code: "https://github.com/QVP-Global-System/QVP-Global-System"
-
 url: "https://zenodo.org/records/20385492"
-
-abstract: >
-  QSSI 2026™ (Quantum Sovereign Security Index) is a comprehensive sovereign
-  benchmarking, governance analytics, resilience assessment, and research
-  infrastructure framework designed to evaluate national preparedness across
-  artificial intelligence governance, post-quantum cybersecurity readiness,
-  institutional effectiveness, legal and regulatory capacity, economic
-  resilience, strategic infrastructure, sovereign security preparedness,
-  sustainability, and long-term national capability development.
-
-  The Definitive Master Release v10.0.0 consolidates the complete QSSI
-  ecosystem into a unified preservation-grade scholarly resource integrating
-  sovereign benchmarking methodologies, computational governance frameworks,
-  validation architectures, reproducibility systems, governance registries,
-  provenance infrastructures, metadata ecosystems, software transparency
-  resources, certification environments, audit mechanisms, FAIR+D preservation
-  assets, and long-term scholarly dissemination infrastructure.
-
-  The framework supports evidence-based policy analysis, sovereign benchmarking,
-  institutional capacity evaluation, resilience assessment, cybersecurity
-  readiness evaluation, governance diagnostics, strategic preparedness
-  assessment, computational governance research, and reproducible digital
-  scholarship.
-
+license: "CC-BY-NC-ND-4.0"
 keywords:
   - QSSI
   - QSSI 2026
   - Quantum Sovereign Security Index
   - QVP Global System
-  - Quantum Veil Protocol
-  - Sovereign Benchmarking
-  - Sovereign Security Analytics
-  - Artificial Intelligence Governance
   - AI Governance
-  - Post-Quantum Cryptography
-  - PQC
   - Cybersecurity
+  - Post-Quantum Cryptography
   - Digital Sovereignty
   - Computational Governance
   - Governance Analytics
-  - Governance Intelligence
-  - Policy Intelligence
-  - Strategic Governance
+  - Sovereign Benchmarking
   - National Preparedness
-  - National Resilience
-  - Institutional Capacity
-  - Institutional Analytics
-  - Strategic Infrastructure
-  - Economic Resilience
-  - Digital Governance
-  - Decision Intelligence
-  - Explainable AI
-  - XAI
-  - Bayesian Modeling
-  - Monte Carlo Simulation
-  - TOPSIS
-  - SHAP
-  - Scientific Reproducibility
+  - Strategic Security Assessment
+  - Resilience Analytics
   - FAIR+D
+  - Research Infrastructure
+  - Reproducible Research
+  - Software Transparency
   - SBOM
-  - Research Integrity
-  - Computational Social Science
-  - Public Policy Analytics
-  - Strategic Technology Assessment
-  - Computational Intelligence
-  - Digital Statecraft
-
-license: "CC-BY-NC-ND-4.0"
-
-version: "10.0.0"
-
-date-released: "2026-06-11"
-
+  - Policy Intelligence
+abstract: >
+  QSSI 2026™ (Quantum Sovereign Security Index) is a sovereign benchmarking,
+  governance analytics, resilience assessment, and computational governance
+  research infrastructure designed to evaluate national preparedness across
+  artificial intelligence governance, post-quantum cybersecurity readiness,
+  institutional effectiveness, legal and regulatory capacity, economic
+  resilience, strategic infrastructure, sovereign security preparedness,
+  sustainability, and long-term national capability development.
 preferred-citation:
   type: dataset
   authors:
     - family-names: "Mazumdar"
       given-names: "Bidyut"
-      name-particle: "Dr."
       orcid: "https://orcid.org/0009-0007-5615-3558"
-
   title: "QSSI 2026™: Quantum Sovereign Security Index — Definitive Master Release v10.0.0"
-
   version: "10.0.0"
-
   doi: "10.5281/zenodo.20385492"
-
-  publisher:
-    name: "Zenodo"
-
-  year: 2026
-
-references:
-  - type: dataset
-    title: "QSSI Framework — All Versions Archive"
-    doi: "10.5281/zenodo.17302169"
-
-  - type: dataset
-    title: "QSSI 2026™: Quantum Sovereign Security Index — Definitive Master Release v10.0.0"
-    doi: "10.5281/zenodo.20385492"
-
-contact:
-  - family-names: "Mazumdar"
-    given-names: "Bidyut"
-    orcid: "https://orcid.org/0009-0007-5615-3558"
-
-project:
-  name: "QVP Global System™"
-
-repository-artifact-count:
-  integrated-archives: 9
-  total-files: 952
-  total-release-size-mb: 14.357
-
-included-archives:
-  - "QSSI_2026_V10_DEFINITIVE_MASTER_RELEASE.zip"
-  - "QSSI_2026_CLEAN_WORLD_RELEASE_ARCHIVE.zip"
-  - "QSSI_2026_PUBLICATION_CANONICAL_RELEASE.zip"
-  - "QSSI_2026_MASTER_PUBLICATION_RELEASE.zip"
-  - "QSSI_2026_TOP_TIER_WORLD_PUBLICATION_PACKAGE.zip"
-  - "QSSI_2026_REAL_PUBLICATION_PACKAGE.zip"
-  - "QSSI_2026_V10_PRE_P23_ARCHIVE.zip"
-  - "QSSI_2026_P23_CANONICAL_RELEASE_PACKAGE.zip"
-  - "QSSI_2026_SBOM_PACKAGE.zip"
-
-research-domains:
-  - Sovereign Benchmarking
-  - Artificial Intelligence Governance Assessment
-  - Post-Quantum Cybersecurity Evaluation
-  - Institutional Capacity Analysis
-  - Economic Resilience Measurement
-  - Strategic Security Assessment
-  - Computational Governance
-  - Research Preservation
-  - Reproducible Computational Scholarship
-  - Digital Governance Analytics
-
-fundamental-principles:
-  - Scientific Transparency
-  - Methodological Reproducibility
-  - Institutional Accountability
-  - Governance Traceability
-  - FAIR+D Compliance
-  - Long-Term Preservation
-  - Computational Reliability
-  - Open Research Infrastructure
-  - Scholarly Sustainability
-  - Evidence-Based Decision Support
-
-software-transparency:
-  - Software Bill of Materials (SBOM)
-  - Dependency Transparency
-  - Software Traceability
-  - Reproducibility Assets
-  - Verification Resources
-
-validation-framework:
-  - Monte Carlo Simulation Validation
-  - Incremental Validity Assessment
-  - Dominance Analysis
-  - Orthogonality Evaluation
-  - Correlation Structure Assessment
-  - Sensitivity Testing
-  - Robustness Analysis
-  - Reproducibility Verification
-  - Computational Reliability Assessment
-  - Independent Verification Infrastructure
-
-governance-components:
-  - Governance Registry
-  - Release Authority Chain
-  - Digital Object Registry
-  - Session Registry
-  - Master Provenance Chain
-  - Certification Registry
-  - Citation Registry
-  - Verification Infrastructure
-  - Archival Continuity Systems
-
-note: >
-  QSSI 2026™ Version 10.0.0 constitutes the definitive master release of the
-  Quantum Sovereign Security Index framework. This release integrates sovereign
-  benchmarking methodologies, validation infrastructures, governance systems,
-  provenance architectures, metadata ecosystems, certification resources,
-  reproducibility assets, software transparency documentation, audit
-  mechanisms, integrity verification systems, and FAIR+D preservation
-  frameworks into a unified scholarly research environment supporting rigorous
-  analysis, transparent assessment, institutional reproducibility, long-term
-  preservation, sustainable digital stewardship, and global scholarly
-  dissemination.
+  publisher: "Zenodo"
+publisher: "Zenodo"
+language: "en"
