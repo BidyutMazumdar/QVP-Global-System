@@ -781,6 +781,6 @@ FINAL RELEASE BUNDLE       : PASS
 
 ---
 
-**V10 — Final Publication Handoff**
+**V10 — Publication Handoff**
 
 </p>
