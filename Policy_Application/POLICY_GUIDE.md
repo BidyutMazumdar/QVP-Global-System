@@ -1,61 +1,127 @@
 # 🌐 QSSI 2026 Policy Guide
 
-## 🏛️ FAIR+D Canon™ Global Framework
+<div align="center">
 
 # ⚛️ Quantum Sovereign Stability Index (QSSI) 2026
 
-> **Comparative Sovereign Capability & Institutional Benchmarking Framework**
+## 🏛️ FAIR+D Canon™ Global Framework
 
-**Generated:** 2026-06-11T19:11:20.282910+00:00
+### **Comparative Sovereign Capability & Institutional Benchmarking Framework**
+
+📅 **Generated:** 2026-06-11T19:11:20.282910+00:00
+
+![divider](https://img.shields.io/badge/QSSI-2026-blue?style=for-the-badge)
+![Countries](https://img.shields.io/badge/Coverage-195_Countries-success?style=for-the-badge)
+![Framework](https://img.shields.io/badge/Framework-FAIR+D_Canon-gold?style=for-the-badge)
+![Policy](https://img.shields.io/badge/Edition-Policy_Guide-red?style=for-the-badge)
+
+</div>
 
 ---
 
 # 📌 Executive Summary
 
-The **Quantum Sovereign Stability Index (QSSI) 2026** provides a multidimensional benchmarking framework for evaluating sovereign institutional preparedness across four strategic domains:
+The **Quantum Sovereign Stability Index (QSSI) 2026** provides a comprehensive multidimensional benchmarking framework designed to evaluate sovereign institutional preparedness across four strategic policy domains.
 
-- 🤖 **Artificial Intelligence (AI) Governance**
-- ⚖️ **Legal Governance & Institutional Capability**
-- 🔐 **Post-Quantum Cybersecurity Preparedness (PQC)**
-- 🛡️ **National Resilience & Institutional Adaptability**
+| Strategic Dimension | Purpose |
+|--------------------|---------|
+| 🤖 Artificial Intelligence Governance | AI capability & governance readiness |
+| ⚖️ Legal Governance | Institutional capability & regulatory quality |
+| 🔐 Post-Quantum Cybersecurity | Cryptographic preparedness & cyber resilience |
+| 🛡️ National Resilience | Strategic resilience & adaptive governance |
 
-The framework supports **comparative policy analysis**, **strategic planning**, **governance assessment**, **resilience evaluation**, and **institutional benchmarking**.
+The framework supports:
 
-## 🌍 Geographic Coverage
+- 🌍 Comparative Policy Analysis
+- 🏛️ Institutional Benchmarking
+- 📈 Strategic Planning
+- 📊 Governance Assessment
+- 🛡️ National Resilience Evaluation
+- 📚 Evidence-Based Policy Development
 
-**Assessment Coverage:** **195 countries**
+---
 
-The geographic coverage establishes the comparative scope of the QSSI 2026 assessment. Country-level interpretation should take account of differences in data availability, institutional structures, reporting practices, and measurement environments.
+# 🌍 Geographic Coverage
+
+> ## 🌐 **Assessment Coverage**
+>
+> # **195 Countries**
+
+The geographic coverage establishes the comparative scope of the **QSSI 2026** assessment.
+
+Country-level interpretation should consider:
+
+- 📊 Data availability
+- 🏛️ Institutional structures
+- 📑 Reporting practices
+- 🌍 Measurement environments
+- 📚 Contextual governance differences
 
 ---
 
 # 📊 Global Statistical Profile
 
-<Table columnSizing="equal"><Table.Row header><Table.Cell>Metric</Table.Cell><Table.Cell>Value</Table.Cell></Table.Row><Table.Row><Table.Cell>Countries</Table.Cell><Table.Cell>195</Table.Cell></Table.Row><Table.Row><Table.Cell>Mean QSSI Score</Table.Cell><Table.Cell>0.4535</Table.Cell></Table.Row><Table.Row><Table.Cell>Median QSSI Score</Table.Cell><Table.Cell>0.4320</Table.Cell></Table.Row><Table.Row><Table.Cell>Standard Deviation</Table.Cell><Table.Cell>0.2307</Table.Cell></Table.Row><Table.Row><Table.Cell>Top Country</Table.Cell><Table.Cell>Denmark</Table.Cell></Table.Row><Table.Row><Table.Cell>Top Score</Table.Cell><Table.Cell>0.9675</Table.Cell></Table.Row></Table>
+| 📈 Metric | 📌 Value |
+|-----------|----------|
+| 🌍 Countries | **195** |
+| 📊 Mean QSSI Score | **0.4535** |
+| 📍 Median Score | **0.4320** |
+| 📉 Standard Deviation | **0.2307** |
+| 🥇 Highest Ranked Country | **Denmark** |
+| ⭐ Highest Score | **0.9675** |
 
 ---
 
 # 🏆 Global Tier Distribution
 
-<Table columnSizing="equal"><Table.Row header><Table.Cell>Tier</Table.Cell><Table.Cell>Countries</Table.Cell></Table.Row><Table.Row><Table.Cell>🟦 ELITE</Table.Cell><Table.Cell>49</Table.Cell></Table.Row><Table.Row><Table.Cell>🟩 HIGH</Table.Cell><Table.Cell>48</Table.Cell></Table.Row><Table.Row><Table.Cell>🟨 MODERATE</Table.Cell><Table.Cell>49</Table.Cell></Table.Row><Table.Row><Table.Cell>🟥 LOW</Table.Cell><Table.Cell>49</Table.Cell></Table.Row></Table>
+| Tier | Countries |
+|------|-----------:|
+| 🟦 ELITE | **49** |
+| 🟩 HIGH | **48** |
+| 🟨 MODERATE | **49** |
+| 🟥 LOW | **49** |
 
 ---
 
 # 🌟 Top 10 Countries
 
-<Table columnSizing="equal"><Table.Row header><Table.Cell>Rank</Table.Cell><Table.Cell>Country</Table.Cell><Table.Cell>QSSI Score</Table.Cell></Table.Row><Table.Row><Table.Cell>1</Table.Cell><Table.Cell>🇩🇰 Denmark</Table.Cell><Table.Cell>0.9675</Table.Cell></Table.Row><Table.Row><Table.Cell>2</Table.Cell><Table.Cell>🇰🇷 Republic of Korea</Table.Cell><Table.Cell>0.9333</Table.Cell></Table.Row><Table.Row><Table.Cell>3</Table.Cell><Table.Cell>🇳🇴 Norway</Table.Cell><Table.Cell>0.9283</Table.Cell></Table.Row><Table.Row><Table.Cell>4</Table.Cell><Table.Cell>🇸🇬 Singapore</Table.Cell><Table.Cell>0.9225</Table.Cell></Table.Row><Table.Row><Table.Cell>5</Table.Cell><Table.Cell>🇬🇧 United Kingdom of Great Britain and Northern Ireland</Table.Cell><Table.Cell>0.9102</Table.Cell></Table.Row><Table.Row><Table.Cell>6</Table.Cell><Table.Cell>🇳🇱 Netherlands</Table.Cell><Table.Cell>0.9091</Table.Cell></Table.Row><Table.Row><Table.Cell>7</Table.Cell><Table.Cell>🇮🇪 Ireland</Table.Cell><Table.Cell>0.8871</Table.Cell></Table.Row><Table.Row><Table.Cell>8</Table.Cell><Table.Cell>🇦🇺 Australia</Table.Cell><Table.Cell>0.8861</Table.Cell></Table.Row><Table.Row><Table.Cell>9</Table.Cell><Table.Cell>🇩🇪 Germany</Table.Cell><Table.Cell>0.8803</Table.Cell></Table.Row><Table.Row><Table.Cell>10</Table.Cell><Table.Cell>🇱🇺 Luxembourg</Table.Cell><Table.Cell>0.8693</Table.Cell></Table.Row></Table>
+| Rank | Country | Score |
+|----:|---------|------:|
+| 🥇 1 | 🇩🇰 Denmark | **0.9675** |
+| 🥈 2 | 🇰🇷 Republic of Korea | **0.9333** |
+| 🥉 3 | 🇳🇴 Norway | **0.9283** |
+| 4 | 🇸🇬 Singapore | **0.9225** |
+| 5 | 🇬🇧 United Kingdom | **0.9102** |
+| 6 | 🇳🇱 Netherlands | **0.9091** |
+| 7 | 🇮🇪 Ireland | **0.8871** |
+| 8 | 🇦🇺 Australia | **0.8861** |
+| 9 | 🇩🇪 Germany | **0.8803** |
+| 10 | 🇱🇺 Luxembourg | **0.8693** |
 
 ---
 
-# 🧭 Policy Application Architecture
+# 🧭 Integrated Policy Architecture
 
-<Box background="surface" border={{size:1,color:"default"}} radius="3xl" padding={3} gap={1}><Row align="center" justify="center" gap={1}><Badge label="QSSI 2026"/><Text weight="semibold">Integrated policy architecture</Text></Row><Divider/><Box padding={1}><Row align="center" justify="center" gap={1}><Box background="surface" border={{size:1,color:"default"}} radius="3xl" padding={2} width={112}><Col align="center" gap={1}><Icon name="bot" color="blue"/><Text size="xs" weight="semibold" textAlign="center">AI governance</Text></Col></Box><Icon name="arrow-right" color="secondary"/><Box background="surface" border={{size:1,color:"default"}} radius="3xl" padding={2} width={112}><Col align="center" gap={1}><Icon name="scale" color="blue"/><Text size="xs" weight="semibold" textAlign="center">Legal governance</Text></Col></Box><Icon name="arrow-right" color="secondary"/><Box background="surface" border={{size:1,color:"default"}} radius="3xl" padding={2} width={112}><Col align="center" gap={1}><Icon name="shield" color="blue"/><Text size="xs" weight="semibold" textAlign="center">PQC readiness</Text></Col></Box></Row></Box><Row align="center" justify="center"><Icon name="arrow-down" color="secondary"/></Row><Box padding={1}><Row align="center" justify="center"><Box background="surface" border={{size:1,color:"default"}} radius="3xl" padding={2} width={140}><Col align="center" gap={1}><Icon name="heart-pulse" color="blue"/><Text size="xs" weight="semibold" textAlign="center">National resilience</Text></Col></Box></Row></Box><Row align="center" justify="center"><Icon name="arrow-down" color="secondary"/></Row><Box padding={1}><Row align="center" justify="center"><Box background="surface" border={{size:1,color:"default"}} radius="3xl" padding={2} width={196}><Col align="center" gap={1}><Icon name="chart-bar" color="blue"/><Text size="xs" weight="semibold" textAlign="center">Comparative assessment &amp; policy benchmarking</Text></Col></Box></Row></Box></Box>
+```text
+                         🌐 QSSI 2026
+                               │
+     ┌──────────────┬──────────────┬──────────────┬──────────────┐
+     │              │              │              │
+ 🤖 AI         ⚖️ LEGAL        🔐 PQC        🛡️ RESILIENCE
+ Governance    Governance     Preparedness    Assessment
+     │              │              │              │
+     └──────────────┴──────────────┴──────────────┘
+                               │
+                 📊 Comparative Policy Assessment
+                               │
+               🌍 Institutional Benchmarking
+```
 
 ---
 
-# 🧠 Artificial Intelligence Policy
+# 🤖 Artificial Intelligence Policy
 
-### 📌 Applications
+## 📌 Applications
 
 - National AI readiness assessment
 - AI governance benchmarking
@@ -74,7 +140,7 @@ The geographic coverage establishes the comparative scope of the QSSI 2026 asses
 
 # ⚖️ Legal Governance Policy
 
-### 📌 Applications
+## 📌 Applications
 
 - Governance benchmarking
 - Institutional quality assessment
@@ -92,7 +158,7 @@ The geographic coverage establishes the comparative scope of the QSSI 2026 asses
 
 # 🔐 Post-Quantum Cybersecurity Policy
 
-### 📌 Applications
+## 📌 Applications
 
 - PQC transition planning
 - Cyber resilience assessment
@@ -110,7 +176,7 @@ The geographic coverage establishes the comparative scope of the QSSI 2026 asses
 
 # 🛡️ National Resilience Policy
 
-### 📌 Applications
+## 📌 Applications
 
 - Strategic resilience evaluation
 - Preparedness assessment
@@ -128,94 +194,131 @@ The geographic coverage establishes the comparative scope of the QSSI 2026 asses
 
 # 📖 Interpretation Guidance
 
-QSSI should be interpreted as a **comparative benchmarking framework**.
+> ## Comparative Benchmarking Framework
 
-The framework evaluates **relative institutional preparedness and capability** across the measured dimensions.
+QSSI evaluates **relative institutional preparedness** rather than absolute national capability.
 
-### Key Interpretation Principles
+### Key Principles
 
-- 📈 Higher scores generally indicate stronger performance within the evaluated architecture.
-- 📉 Lower scores may identify areas for further institutional development.
-- 🌍 Cross-country comparisons should consider contextual institutional differences.
-- 📚 Results should be interpreted alongside complementary evidence and national statistics.
+✅ Higher scores indicate stronger institutional capability.
+
+✅ Lower scores identify potential development opportunities.
+
+✅ Cross-country comparisons require contextual interpretation.
+
+✅ Results should be considered alongside complementary national evidence.
 
 ---
 
 # 👥 Intended Users
 
-- 🏛️ Governments
-- 📜 Policymakers
-- 🌐 International Organizations
-- 🎓 Academic Researchers
-- 📈 Strategic Analysts
-- 🏢 Public Sector Institutions
-- 🤝 Development Agencies
-- 🧠 Think Tanks
+| Sector | Users |
+|--------|-------|
+| 🏛️ Government | Ministries & Agencies |
+| 📜 Policymakers | National Decision Makers |
+| 🌍 International Organizations | Global Institutions |
+| 🎓 Academia | Researchers & Universities |
+| 📈 Strategic Analysts | Policy Analysts |
+| 🏢 Public Sector | Government Institutions |
+| 🤝 Development Agencies | International Development |
+| 🧠 Think Tanks | Policy Research Organizations |
 
 ---
 
 # ⚠️ Important Limitations
 
-QSSI does **not** directly measure:
+QSSI **does not directly measure**:
 
-- Military capability
-- Gross Domestic Product (GDP)
-- Political ideology
-- Electoral outcomes
-- Future economic performance
+- ❌ Military capability
+- ❌ Gross Domestic Product (GDP)
+- ❌ Political ideology
+- ❌ Electoral outcomes
+- ❌ Future economic performance
 
-The framework should be interpreted alongside **complementary evidence**, **national statistics**, and **domain-specific analysis**.
+The framework should always be interpreted alongside:
 
----
-
-# 🌱 FAIR+D Governance
-
-The framework follows **FAIR+D principles**:
-
-- 🔍 **Findable**
-- 🌐 **Accessible**
-- 🔗 **Interoperable**
-- ♻️ **Reusable**
-- 📝 **Documented**
-
-These principles support **transparency**, **reproducibility**, and **archival integrity**.
+- 📚 Complementary evidence
+- 📊 National statistics
+- 🏛️ Institutional context
+- 📖 Domain-specific expertise
 
 ---
 
-# 🚀 Recommended Use
+# 🌱 FAIR+D Governance Principles
 
-QSSI may support:
+| Principle | Meaning |
+|-----------|---------|
+| 🔍 Findable | Discoverable research assets |
+| 🌐 Accessible | Public accessibility |
+| 🔗 Interoperable | Cross-platform compatibility |
+| ♻️ Reusable | Sustainable scientific reuse |
+| 📝 Documented | Transparent documentation |
 
-- Sovereign benchmarking
-- Governance assessment
-- AI readiness evaluation
-- Cybersecurity preparedness analysis
-- National resilience assessment
-- Comparative institutional research
-- Strategic policy studies
+These principles promote:
+
+- ✅ Transparency
+- ✅ Reproducibility
+- ✅ Long-term Preservation
+- ✅ Archival Integrity
+
+---
+
+# 🚀 Recommended Applications
+
+- 🌍 Sovereign Benchmarking
+- 🏛️ Governance Assessment
+- 🤖 AI Readiness Evaluation
+- 🔐 Cybersecurity Preparedness Analysis
+- 🛡️ National Resilience Assessment
+- 📚 Comparative Institutional Research
+- 📈 Strategic Policy Studies
 
 ---
 
 # 🧾 Conclusion
 
-The **Quantum Sovereign Stability Index (QSSI) 2026** provides a **transparent**, **reproducible**, and **multidimensional institutional benchmarking framework** suitable for sovereign capability assessment and comparative policy analysis.
+The **Quantum Sovereign Stability Index (QSSI) 2026** provides a **transparent**, **reproducible**, and **multidimensional** benchmarking framework suitable for sovereign capability assessment and comparative policy analysis.
 
-The framework integrates **objective weighting**, **validation procedures**, **reproducibility standards**, and **FAIR+D governance principles**, enabling evidence-based institutional benchmarking across **195 countries**.
+The framework integrates:
+
+- ⚙️ Objective Weighting
+- 🔬 Validation Procedures
+- 📚 Reproducibility Standards
+- 🌱 FAIR+D Governance Principles
+- 🌍 Comparative Institutional Assessment
+
+across **195 countries**.
 
 ---
 
 # 📌 Official Metadata
 
-<Table columnSizing="equal"><Table.Row header><Table.Cell>Property</Table.Cell><Table.Cell>Description</Table.Cell></Table.Row><Table.Row><Table.Cell>🌐 Framework</Table.Cell><Table.Cell>Quantum Sovereign Stability Index (QSSI) 2026</Table.Cell></Table.Row><Table.Row><Table.Cell>🌍 Coverage</Table.Cell><Table.Cell>195 Countries</Table.Cell></Table.Row><Table.Row><Table.Cell>📅 Release Year</Table.Cell><Table.Cell>2026</Table.Cell></Table.Row><Table.Row><Table.Cell>🏛️ Framework Standard</Table.Cell><Table.Cell>FAIR+D Canon™</Table.Cell></Table.Row><Table.Row><Table.Cell>📄 Document Type</Table.Cell><Table.Cell>Policy Guide</Table.Cell></Table.Row><Table.Row><Table.Cell>✍️ Author</Table.Cell><Table.Cell>Dr. B. Mazumdar</Table.Cell></Table.Row><Table.Row><Table.Cell>🆔 ORCID</Table.Cell><Table.Cell>https://orcid.org/0009-0007-5615-3558</Table.Cell></Table.Row><Table.Row><Table.Cell>📘 Current Edition DOI</Table.Cell><Table.Cell>10.5281/zenodo.20385492</Table.Cell></Table.Row><Table.Row><Table.Cell>📚 All Versions DOI</Table.Cell><Table.Cell>10.5281/zenodo.17302169</Table.Cell></Table.Row></Table>
+| Property | Value |
+|-----------|-------|
+| 🌐 Framework | Quantum Sovereign Stability Index (QSSI) 2026 |
+| 🏛️ Framework Standard | FAIR+D Canon™ |
+| 🌍 Coverage | **195 Countries** |
+| 📅 Release Year | **2026** |
+| 📄 Document Type | Policy Guide |
+| ✍️ Author | **Dr. B. Mazumdar** |
+| 🆔 ORCID | https://orcid.org/0009-0007-5615-3558 |
+| 📘 Current Edition DOI | **10.5281/zenodo.20385492** |
+| 📚 All Versions DOI | **10.5281/zenodo.17302169** |
 
 ---
 
 <div align="center">
 
+# 🌐 Quantum Sovereign Stability Index (QSSI) 2026
+
+### FAIR+D Canon™ Global Framework
+
+**Comparative Sovereign Capability & Institutional Benchmarking**
+
+**Coverage:** 🌍 195 Countries
+
+**Edition:** 📄 Policy Guide
+
 **© 2026 Dr. B. Mazumdar**
-
-**FAIR+D Canon™ Global Framework**
-
-**Quantum Sovereign Stability Index (QSSI) 2026**
 
 </div>
