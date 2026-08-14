@@ -1,200 +1,348 @@
-# QSSI 2026 Executive Summary
+# 🧬 QSSI 2026 — Executive Summary
 
-## FAIR+D Canon™ Global Framework
+## 🌐 FAIR+D Canon™ Global Framework
 
-**Quantum Sovereign Stability Index (QSSI) 2026**
+### ⚛️ Quantum Sovereign Stability Index (QSSI) 2026
 
-Generated: 2026-06-11T19:14:03.178546+00:00
-
----
-
-# Executive Overview
-
-The Quantum Sovereign Stability Index (QSSI) 2026 is a multidimensional
-institutional benchmarking framework developed to evaluate sovereign
-preparedness across Artificial Intelligence (AI), Legal Governance (LEGAL),
-Post-Quantum Cybersecurity Preparedness (PQC), and National Resilience (RES).
-
-The framework provides a transparent, reproducible and validation-oriented
-architecture for comparative international assessment.
-
-Coverage includes **195 countries**.
+**Comparative Sovereign Capability & Institutional Benchmarking**
 
 ---
 
-# Key Global Findings
+## 📌 Executive Overview
+
+The **Quantum Sovereign Stability Index (QSSI) 2026** is a multidimensional institutional benchmarking framework designed to evaluate comparative sovereign preparedness across four principal domains:
+
+- 🤖 **Artificial Intelligence Capacity (AI)**
+- ⚖️ **Legal Governance Capacity (LEGAL)**
+- 🔐 **Post-Quantum Cybersecurity Preparedness (PQC)**
+- 🛡️ **National Resilience Capacity (RES)**
+
+QSSI provides a structured, transparent, reproducible and validation-oriented architecture for comparative international assessment.
+
+The 2026 assessment covers **195 countries**.
+
+---
+
+## 📊 Global Assessment Snapshot
 
 | Metric | Value |
-|----------|----------:|
-| Countries | 195 |
-| Mean QSSI Score | 0.4535 |
-| Median QSSI Score | 0.432 |
-| Standard Deviation | 0.2307 |
-| Top Country | Denmark |
-| Top Score | 0.9675 |
+|---|---:|
+| 🌍 Countries Evaluated | **195** |
+| 📈 Mean QSSI Score | **0.4535** |
+| 📍 Median QSSI Score | **0.4320** |
+| 📐 Standard Deviation | **0.2307** |
+| 🥇 Highest-Ranked Country | **Denmark** |
+| ⭐ Highest QSSI Score | **0.9675** |
 
 ---
 
-# Tier Distribution
+## 🏷️ QSSI Tier Distribution
 
 | Tier | Countries |
-|----------|----------:|
-| ELITE | 49 |
-| HIGH | 48 |
-| MODERATE | 49 |
-| LOW | 49 |
+|---|---:|
+| 🟢 **ELITE** | 49 |
+| 🔵 **HIGH** | 48 |
+| 🟡 **MODERATE** | 49 |
+| 🔴 **LOW** | 49 |
+
+The tier structure provides a simplified comparative view of the distribution of assessed sovereign capability within the QSSI measurement architecture.
 
 ---
 
-# Strategic Importance
+# 🎯 Strategic Scope
 
-QSSI was designed to support evidence-based sovereign benchmarking
-in an environment increasingly shaped by digital transformation,
-AI adoption, cyber risk evolution, institutional modernization,
-and resilience challenges.
+QSSI was designed to support evidence-oriented sovereign benchmarking in an environment increasingly influenced by:
 
-The framework supports cross-country comparison while maintaining
-methodological transparency and reproducibility.
+- Digital transformation
+- Artificial intelligence adoption
+- Cybersecurity evolution
+- Post-quantum transition requirements
+- Institutional modernization
+- Governance capacity
+- National resilience
+- Strategic preparedness
+
+The framework enables structured cross-country comparison while emphasizing methodological transparency, reproducibility and documented analytical procedures.
 
 ---
 
-# Policy Domain Analysis
+# 🧠 Policy Domain Analysis
 
-## Artificial Intelligence
+## 🤖 1. Artificial Intelligence Capacity — AI
 
-AI capacity reflects a country's readiness to develop,
-govern and deploy AI systems responsibly.
+The **AI dimension** reflects comparative national capacity relating to the development, governance and responsible deployment of artificial intelligence.
 
-Priority areas include:
+### Key Areas
 
 - National AI strategies
 - AI governance frameworks
-- Research ecosystems
+- Research and innovation ecosystems
 - Human capital development
+- Strategic technology adoption
 - Responsible AI implementation
 
-## Legal Governance
+### Potential Policy Applications
 
-Governance quality remains a critical determinant of
-institutional effectiveness.
+- National AI strategy assessment
+- AI ecosystem benchmarking
+- Responsible AI planning
+- Innovation-capacity evaluation
+- Digital transformation planning
 
-Priority areas include:
+---
+
+## ⚖️ 2. Legal Governance Capacity — LEGAL
+
+The **LEGAL dimension** evaluates institutional and regulatory conditions relevant to governance effectiveness.
+
+### Key Areas
 
 - Regulatory quality
 - Rule of law
 - Accountability
 - Transparency
 - Institutional effectiveness
+- Administrative capability
 
-## Post-Quantum Cybersecurity
+### Potential Policy Applications
 
-Emerging post-quantum risks require long-term planning
-and modernization of cryptographic infrastructure.
+- Governance modernization
+- Regulatory benchmarking
+- Institutional reform assessment
+- Public-sector evaluation
+- Administrative capacity development
 
-Priority areas include:
+---
+
+## 🔐 3. Post-Quantum Cybersecurity Preparedness — PQC
+
+The **PQC dimension** addresses comparative preparedness for the transition toward post-quantum cryptographic security.
+
+### Key Areas
 
 - PQC migration planning
 - Cryptographic inventory management
 - Critical infrastructure protection
-- Cyber resilience enhancement
+- Cybersecurity modernization
+- Cryptographic transition readiness
+- Strategic cyber resilience
 
-## National Resilience
+### Potential Policy Applications
 
-Resilience reflects preparedness for disruption,
-adaptation and continuity.
+- National PQC transition roadmaps
+- Critical-infrastructure protection planning
+- Cryptographic modernization
+- Cyber-resilience enhancement
+- Long-term cybersecurity strategy
 
-Priority areas include:
+---
+
+## 🛡️ 4. National Resilience Capacity — RES
+
+The **RES dimension** reflects comparative preparedness for disruption, adaptation and institutional continuity.
+
+### Key Areas
 
 - Continuity planning
 - Emergency preparedness
 - Strategic coordination
 - Adaptive governance
+- Institutional resilience
+- Crisis preparedness
+
+### Potential Policy Applications
+
+- National resilience planning
+- Continuity assessment
+- Crisis-preparedness evaluation
+- Institutional adaptation planning
+- Strategic risk management
 
 ---
 
-# Interpretation Guidance
+# 🔎 Interpretation Guidance
 
-QSSI is a comparative benchmarking framework.
+QSSI should be interpreted as a **comparative benchmarking framework**.
 
-Higher scores generally indicate stronger performance
-across the evaluated institutional dimensions.
+In general:
 
-Scores should not be interpreted as forecasts or
-deterministic predictions of future outcomes.
+> **Higher QSSI scores indicate stronger performance within the dimensions and measurement architecture evaluated by the framework.**
+
+A QSSI score should **not** be interpreted as:
+
+- A prediction of future national performance
+- A deterministic forecast
+- A complete assessment of national power
+- A universal measure of national quality
+- A substitute for sector-specific evidence
+
+Country-level results should therefore be interpreted in conjunction with relevant contextual and sector-specific evidence.
 
 ---
 
-# Limitations
+# ⚠️ Measurement Scope & Limitations
 
-QSSI does not directly measure:
+QSSI does **not directly measure**:
 
 - Military capability
 - GDP performance
 - Political ideology
 - Electoral outcomes
-- Future growth trajectories
+- Diplomatic influence
+- Future economic growth
+- Geopolitical forecasting
+- Every dimension of national development
 
-Results should be interpreted alongside national
-statistics, expert assessments and sector-specific evidence.
+Consequently, QSSI results should be considered within the defined scope of the framework.
 
----
+For policy or strategic decisions, additional evidence may include:
 
-# FAIR+D Governance
-
-The framework follows:
-
-- Findable
-- Accessible
-- Interoperable
-- Reusable
-- Documented
-
-principles supporting transparency,
-reproducibility and archival integrity.
+- National statistics
+- Sector-specific indicators
+- Economic data
+- Security assessments
+- Administrative records
+- Expert assessment
+- Institutional evidence
 
 ---
 
-# Intended Users
+# 🔬 Analytical & Reproducibility Orientation
 
-- Governments
-- Policymakers
-- International Organizations
-- Academic Researchers
-- Think Tanks
-- Strategic Analysts
-- Development Agencies
+The QSSI architecture emphasizes:
+
+### 📐 Measurement
+
+Structured multidimensional measurement across defined institutional domains.
+
+### 🔍 Validation
+
+Application of validation-oriented procedures to support analytical reliability.
+
+### 🔁 Reproducibility
+
+Documented procedures intended to facilitate independent review and reproduction of analytical outputs.
+
+### 🧾 Transparency
+
+Explicit documentation of framework dimensions, interpretation principles and limitations.
+
+### 🗃️ Archival Integrity
+
+Structured preservation of analytical materials and associated documentation.
 
 ---
 
-# Conclusion
+# 🌐 FAIR+D Governance
 
-QSSI 2026 provides a transparent and reproducible
-benchmarking framework for sovereign institutional
-preparedness assessment.
+QSSI is developed within the **FAIR+D Canon™** framework.
 
-The framework integrates objective weighting,
-validation procedures, reproducibility standards
-and FAIR+D governance principles into a unified
-analytical architecture.
+The framework emphasizes five principal information-governance principles:
+
+| Principle | Meaning |
+|---|---|
+| 🔎 **Findable** | Outputs can be located and identified |
+| 🔓 **Accessible** | Research materials can be accessed where available |
+| 🔗 **Interoperable** | Materials support structured analytical integration |
+| ♻️ **Reusable** | Documentation supports appropriate future reuse |
+| 📝 **Documented** | Methods and outputs are explicitly recorded |
+
+These principles support transparency, reproducibility and long-term research preservation.
 
 ---
 
-# Official Metadata
+# 👥 Intended Users
 
-**Framework:** Quantum Sovereign Stability Index (QSSI) 2026
+QSSI may be relevant to:
 
-**Coverage:** 195 Countries
+- 🏛️ Governments
+- 📋 Policymakers
+- 🌐 International Organizations
+- 🎓 Academic Researchers
+- 🧠 Think Tanks
+- 📊 Strategic Analysts
+- 🏗️ Development Agencies
+- ⚖️ Regulatory and Institutional Analysts
+- 🏢 Public-Sector Institutions
 
-**Release Year:** 2026
+---
 
-**Document Type:** Executive Summary
+# 💡 Key Analytical Questions
 
-**Author:** Dr. B. Mazumdar
+QSSI can help structure questions such as:
 
-**ORCID:** https://orcid.org/0009-0007-5615-3558
+- How does a country's measured institutional capability compare internationally?
+- Which QSSI dimensions represent relative strengths?
+- Which dimensions represent relative gaps?
+- How does a country compare with regional or strategic peers?
+- Where may additional institutional capacity-building be considered?
+- How can capability changes be monitored across future editions?
 
-**Current Edition DOI:** 10.5281/zenodo.20385492
+---
 
-**All Versions DOI:** 10.5281/zenodo.17302169
+# 🔄 Recommended Analytical Workflow
 
-**Framework Standard:** FAIR+D Canon™
+### 01 — Baseline
+
+Review the overall QSSI position and dimension-level results.
+
+### 02 — Diagnose
+
+Identify relative strengths, weaknesses and capability gaps.
+
+### 03 — Compare
+
+Benchmark results against relevant regional, developmental or strategic peer groups.
+
+### 04 — Prioritize
+
+Identify domains where additional evidence, institutional development or policy attention may be appropriate.
+
+### 05 — Monitor
+
+Compare subsequent QSSI editions to observe changes over time.
+
+---
+
+# 🧭 Interpretation Principle
+
+> **QSSI is an analytical benchmarking instrument, not a standalone policy decision mechanism.**
+
+Its results are most appropriately used as one component within a broader evidence base that includes contextual, sector-specific, institutional and expert information.
+
+---
+
+# 📚 Document Information
+
+| Property | Description |
+|---|---|
+| **Framework** | Quantum Sovereign Stability Index (QSSI) 2026 |
+| **Framework Standard** | FAIR+D Canon™ |
+| **Coverage** | 195 Countries |
+| **Release Year** | 2026 |
+| **Document Type** | Executive Summary |
+| **Edition** | V10.0.0 — Reference Edition |
+| **Author** | B. Mazumdar |
+| **ORCID** | 0009-0007-5615-3558 |
+| **Current Edition DOI** | 10.5281/zenodo.20385492 |
+| **All Versions DOI** | 10.5281/zenodo.17302169 |
+
+---
+
+# 🔐 Reference & Integrity Note
+
+This document provides a concise overview of the QSSI 2026 framework, its principal dimensions, global assessment statistics, interpretation principles, scope and limitations.
+
+For complete methodological details, source documentation, datasets, analytical procedures and reproducibility materials, the corresponding research and archival materials should be consulted.
+
+---
+
+## 🧬 QSSI 2026
+
+**Quantum Sovereign Stability Index**
+
+**FAIR+D Canon™ Global Framework**
+
+*Comparative • Evidence-Oriented • Reproducibility-Focused • Documented*
+
+---
