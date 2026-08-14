@@ -1,42 +1,32 @@
-# QSSI 2026 Decisionmaker Guide
+# 🧬 QSSI 2026 — Decisionmaker Guide
 
 ## FAIR+D Canon™ Global Framework
-
 ### Quantum Sovereign Stability Index (QSSI) 2026
 
-**Canonical Policy Support Release**
+**Policy Support & Decision Analysis Guide**
 
-**Author:** Dr. B. Mazumdar, D.Sc. (Hon.), D.Litt. (Hon.)
+**Author:** Bidyut Mazumdar  
+Independent Research Scholar  
+Founder and Principal Architect, FAIR+D Canon™  
 
-Independent Research Scholar
+**ORCID:** https://orcid.org/0009-0007-5615-3558  
 
-Founder and Principal Architect, FAIR+D Canon™
+**Current Edition DOI:** 10.5281/zenodo.20385492  
+**All Versions DOI:** 10.5281/zenodo.17302169  
 
-**ORCID:** https://orcid.org/0009-0007-5615-3558
-
-**Current Edition DOI:** 10.5281/zenodo.20385492
-
-**All Versions DOI:** 10.5281/zenodo.17302169
-
-**Version:** V10.0.0 Final Canonical Decisionmaker Guide
-
+**Version:** V10.0.0  
+**Document Status:** Released Edition  
 **Generated:** 2026-06-11T19:32:43.946565+00:00
 
 ---
 
 # Executive Overview
 
-The Quantum Sovereign Stability Index (QSSI) 2026 is a multidimensional
-institutional benchmarking framework developed to support evidence-based
-assessment of sovereign preparedness, governance quality, technological
-capacity, resilience capability, and strategic institutional readiness.
+The **Quantum Sovereign Stability Index (QSSI) 2026** is a multidimensional institutional benchmarking framework developed to support evidence-based assessment of sovereign preparedness, governance quality, technological capacity, resilience capability, and strategic institutional readiness.
 
-QSSI integrates multiple dimensions of national capability into a
-transparent, reproducible, and statistically validated benchmarking
-architecture designed for comparative analysis across 195 countries.
+QSSI integrates multiple dimensions of national capability into a transparent, reproducible, and validation-oriented benchmarking architecture designed for comparative analysis across 195 countries.
 
-The framework is intended to support strategic evaluation rather than
-predict future outcomes.
+The framework is intended to support structured assessment and strategic analysis rather than predict future outcomes.
 
 ---
 
@@ -60,7 +50,7 @@ QSSI has been developed to assist decision-makers in:
 # Coverage
 
 | Metric | Value |
-|----------|----------|
+|---|---|
 | Countries Evaluated | 195 |
 | Framework Type | Composite Institutional Benchmark |
 | Release Year | 2026 |
@@ -147,11 +137,11 @@ Evaluates:
 
 # Recommended Decision Framework
 
-Decision-makers should interpret QSSI results through five stages:
+Decision-makers should interpret QSSI results through five stages.
 
 ## Stage 1: Baseline Assessment
 
-Determine current relative position.
+Determine the current relative position.
 
 Questions:
 
@@ -169,7 +159,7 @@ Questions:
 
 - Which dimensions constrain performance?
 - Which indicators require improvement?
-- Which domains offer highest improvement potential?
+- Which domains offer the highest improvement potential?
 
 ---
 
@@ -199,7 +189,7 @@ Compare performance against:
 
 ## Stage 5: Monitoring and Evaluation
 
-Use future releases to monitor:
+Use subsequent releases to monitor:
 
 - Progress
 - Stability
@@ -212,14 +202,11 @@ Use future releases to monitor:
 
 QSSI should be interpreted as a relative benchmarking framework.
 
-Higher scores generally indicate stronger performance within the measured
-architecture.
+Higher scores generally indicate stronger performance within the measured architecture.
 
-Lower scores indicate areas where additional institutional capacity
-development may be considered.
+Lower scores indicate areas where additional institutional capacity development may be considered.
 
-QSSI does not imply superiority in all policy domains and should not be
-used as a standalone basis for policy decisions.
+QSSI does not imply superiority across all policy domains and should not be used as a standalone basis for policy decisions.
 
 ---
 
@@ -264,8 +251,7 @@ QSSI does not directly measure:
 - Future performance
 - Geopolitical forecasting
 
-Results should therefore be interpreted within the specific scope of the
-framework.
+Results should therefore be interpreted within the specific scope of the framework.
 
 ---
 
@@ -285,7 +271,7 @@ Decision-makers should consider confidence metrics alongside rankings.
 
 # Validation Architecture
 
-The framework incorporates:
+The framework incorporates several validation domains.
 
 ## Statistical Validation
 
@@ -315,15 +301,15 @@ The framework incorporates:
 
 # FAIR+D Governance
 
-The framework follows FAIR+D principles:
+The framework follows FAIR+D principles.
 
 ## Findable
 
-Research outputs are discoverable.
+Research outputs are structured for discoverability.
 
 ## Accessible
 
-Materials are publicly available.
+Relevant materials are made publicly available.
 
 ## Interoperable
 
@@ -331,11 +317,11 @@ Outputs support cross-platform integration.
 
 ## Reusable
 
-Materials support future reuse.
+Materials support future research and analytical reuse.
 
 ## Documented
 
-Methods and outputs are fully documented.
+Methods, assumptions, and outputs are documented for inspection.
 
 ---
 
@@ -377,13 +363,13 @@ QSSI may assist in evaluating:
 4. Identify capability gaps.
 5. Compare against peers.
 6. Develop policy priorities.
-7. Monitor future editions.
+7. Monitor subsequent editions.
 
 ---
 
 # Relationship to FAIR+D Canon™
 
-QSSI is developed within the FAIR+D Canon™ framework.
+QSSI is developed within the **FAIR+D Canon™** framework.
 
 The FAIR+D Canon™ promotes:
 
@@ -397,39 +383,32 @@ The FAIR+D Canon™ promotes:
 
 # Conclusion
 
-QSSI 2026 provides a transparent, reproducible, and multidimensional
-benchmarking framework supporting sovereign capability assessment,
-institutional evaluation, governance analysis, resilience assessment,
-AI readiness review, and strategic policy planning.
+QSSI 2026 provides a transparent, reproducible, and multidimensional benchmarking framework supporting sovereign capability assessment, institutional evaluation, governance analysis, resilience assessment, AI readiness review, and strategic policy planning.
 
-The framework is designed to assist decision-makers by providing
-structured evidence, comparative benchmarking, and validation-oriented
-analysis while maintaining methodological transparency and FAIR+D
-governance standards.
+The framework is designed to assist decision-makers through structured evidence, comparative benchmarking, and validation-oriented analysis while maintaining methodological transparency and FAIR+D governance standards.
 
 ---
 
 # Official Metadata
 
-**Framework:** Quantum Sovereign Stability Index (QSSI) 2026
+**Framework:** Quantum Sovereign Stability Index (QSSI) 2026  
+**Framework Standard:** FAIR+D Canon™  
+**Coverage:** 195 Countries  
+**Release Year:** 2026  
+**Document Type:** Decisionmaker Guide  
+**Version:** V10.0.0  
+**Author:** Bidyut Mazumdar  
+**ORCID:** https://orcid.org/0009-0007-5615-3558  
+**Current Edition DOI:** 10.5281/zenodo.20385492  
+**All Versions DOI:** 10.5281/zenodo.17302169  
+**Document Status:** Released Edition
 
-**Framework Standard:** FAIR+D Canon™
+---
 
-**Coverage:** 195 Countries
+## Document Control
 
-**Release Year:** 2026
+This document describes the intended interpretation and decision-support use of QSSI 2026.
 
-**Document Type:** Final Canonical Decisionmaker Guide
+It should be read together with the associated methodology, data documentation, computational artifacts, validation records, provenance information, and applicable release materials.
 
-**Version:** V10.0.0
-
-**Author:** Dr. B. Mazumdar
-
-**ORCID:** https://orcid.org/0009-0007-5615-3558
-
-**Current Edition DOI:** 10.5281/zenodo.20385492
-
-**All Versions DOI:** 10.5281/zenodo.17302169
-
-**Status:** Canonical Release
-
+Subsequent revisions may be issued under a new version number where substantive methodological, analytical, or documentary changes are introduced.
