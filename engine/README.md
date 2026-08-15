@@ -5,7 +5,7 @@
 ### Complete Canonical Research, Evidence, Reproducibility, Audit & Publication Package
 
 **Version:** V10  
-**Release Status:** FINAL — CANONICAL — VALID_AND_SEALED  
+**Release Status:** — CANONICAL — VALID_AND_SEALED  
 **Publication State:** READY  
 **Audit State:** VERIFIED  
 **Release Date:** 14 August 2026  
